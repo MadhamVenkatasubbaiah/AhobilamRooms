@@ -31,23 +31,6 @@ font-size:18px;
 cursor:pointer;
 border-radius:5px;
 }
-
-.watermark::before {
-content: "";
-position: fixed;
-top: 50%;
-left: 50%;
-transform: translate(-50%, -50%);
-background-image: url("logo.png");
-background-repeat: no-repeat;
-background-position: center;
-background-size: 100px;
-opacity: 0.08;
-width: 10%;
-height: 10%;
-pointer-events: none;
-z-index: -1;
-}
     
 </style>
 </head>
@@ -62,12 +45,6 @@ z-index: -1;
     and affordable rooms with a peaceful atmosphere, perfect for
     pilgrims and families seeking a pleasant stay.
 </p>
-</header>
-
-
-<header class="top-header">
-    <img src="logo.png" alt="Ahobilam Rooms Logo" class="logo">
-    <h1>AhobilamRooms</h1>
 </header>
 
 <section>
