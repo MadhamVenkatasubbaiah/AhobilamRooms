@@ -47,7 +47,7 @@ border-radius:5px;
 </header>
 
 <header class="top-header">
-    <img src="images/logo.png" alt="Ahobilam Rooms Logo" class="logo">
+    <img src="logo.png" alt="Ahobilam Rooms Logo" class="logo">
     <h1>AhobilamRooms</h1>
 </header>
 
