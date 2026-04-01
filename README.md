@@ -1,7 +1,7 @@
 <html>
 <head>
 <title>Ahobilam Rooms</title>
-<meta name="viewport" content="width=device-width, initial-scale=100">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
 body{
@@ -13,7 +13,7 @@ background:#FFF8E1;
 header{
 background:#FFCC80;
 color:white;
-padding:40px;
+padding:80px;
 text-align:center;
 }
 
