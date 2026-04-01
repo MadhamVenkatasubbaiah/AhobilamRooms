@@ -1,7 +1,7 @@
 <html>
 <head>
 <title>Ahobilam Rooms</title>
-<meta name="viewport" content="width=device-width, initial-scale=10">
+<meta name="viewport" content="width=device-width, initial-scale=30">
 
 <style>
 body{
