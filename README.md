@@ -63,12 +63,11 @@ z-index: -1;
 </p>
 </header>
 
-<!--
+
 <header class="top-header">
     <img src="logo.png" alt="Ahobilam Rooms Logo" class="logo">
     <h1>AhobilamRooms</h1>
 </header>
--->
 
 <section>
 <h2>Welcome</h2>
