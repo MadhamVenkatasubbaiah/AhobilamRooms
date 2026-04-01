@@ -1,0 +1,82 @@
+index.html
+<!DOCTYPE html>
+<html>
+<head>
+<title>Ahobilam Rooms</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  font-family: Arial;
+  margin: 0;
+  background:#f4f4f4;
+}
+header {
+  background:#2c3e50;
+  color:white;
+  padding:20px;
+  text-align:center;
+}
+section {
+  padding:20px;
+}
+.card {
+  background:white;
+  padding:20px;
+  margin:15px 0;
+  border-radius:8px;
+}
+button {
+  background:#27ae60;
+  color:white;
+  border:none;
+  padding:12px 20px;
+  font-size:16px;
+  border-radius:5px;
+}
+footer {
+  background:#222;
+  color:white;
+  text-align:center;
+  padding:10px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>Ahobilam Rooms</h1>
+<p>Comfortable Stay Near Ahobilam Temple</p>
+</header>
+
+<section>
+<div class="card">
+<h2>Welcome</h2>
+<p>Affordable and clean rooms available for pilgrims visiting Ahobilam.</p>
+</div>
+
+<div class="card">
+<h2>Facilities</h2>
+<ul>
+<li>Clean Rooms</li>
+<li>24 Hours Water</li>
+<li>Family Friendly</li>
+<li>Near Temple Location</li>
+</ul>
+</div>
+
+<div class="card">
+<h2>Contact</h2>
+<p>Call / WhatsApp for Booking:</p>
+<button onclick="window.location.href='tel:+919441310549'">
+Call Now
+</button>
+</div>
+</section>
+
+<footer>
+<p>© 2026 Ahobilam Rooms</p>
+</footer>
+
+</body>
+</html>
