@@ -31,6 +31,23 @@ font-size:18px;
 cursor:pointer;
 border-radius:5px;
 }
+
+.watermark::before {
+content: "";
+position: fixed;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+background-image: url("logo.png");
+background-repeat: no-repeat;
+background-position: center;
+background-size: 400px;
+opacity: 0.08;
+width: 100%;
+height: 100%;
+pointer-events: none;
+z-index: -1;
+}
 </style>
 </head>
 
