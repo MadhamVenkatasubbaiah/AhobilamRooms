@@ -39,7 +39,9 @@ border-radius:5px;
 
 <header>
 <h1>Ahobilam Rooms</h1>
-<p>Comfortable Stay Near Ahobilam Temple</p>
+<p>Welcome to Ahobilam Rooms 
+ your comfortable stay near Ahobilam Temple.
+Clean rooms, friendly service, and peaceful surroundings for pilgrims and families.</p>
 </header>
 
 <section>
@@ -48,11 +50,11 @@ border-radius:5px;
 
 <h3>Facilities</h3>
 <p>✅ AC & Non-AC Rooms<br>
-✅ Hot Water<br>
+✅ Hot Water 24 Hours <br>
 ✅ Parking Available<br>
 ✅ Family Friendly</p>
 
-<button onclick="location.href='tel:+919999999999'">
+<button onclick="location.href='tel:+919441310549'">
 Call For Booking
 </button>
 </section>
