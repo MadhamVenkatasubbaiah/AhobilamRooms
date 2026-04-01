@@ -41,13 +41,14 @@ transform: translate(-50%, -50%);
 background-image: url("logo.png");
 background-repeat: no-repeat;
 background-position: center;
-background-size: 400px;
+background-size: 100px;
 opacity: 0.08;
-width: 100%;
-height: 100%;
+width: 10%;
+height: 10%;
 pointer-events: none;
 z-index: -1;
 }
+    
 </style>
 </head>
 
