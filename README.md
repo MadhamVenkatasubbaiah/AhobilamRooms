@@ -2,17 +2,17 @@
 <html>
 <head>
 <title>Ahobilam Rooms</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=10">
 
 <style>
 body{
 font-family: Arial;
 margin:0;
-background:#f5f5f5;
+background:#FFF8E1;
 }
 
 header{
-background:#2c3e50;
+background:#FFCC80;
 color:white;
 padding:20px;
 text-align:center;
