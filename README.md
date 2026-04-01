@@ -39,9 +39,11 @@ border-radius:5px;
 
 <header>
 <h1>Ahobilam Rooms</h1>
-<p>Welcome to Ahobilam Rooms 
- your comfortable stay near Ahobilam Temple.
-Clean rooms, friendly service, and peaceful surroundings for pilgrims and families.</p>
+<p>Welcome to <strong>Ahobilam Rooms</strong>, your ideal accommodation
+    near the sacred Ahobilam Temple. We provide clean, comfortable,
+    and affordable rooms with a peaceful atmosphere, perfect for
+    pilgrims and families seeking a pleasant stay.
+</p>
 </header>
 
 <section>
