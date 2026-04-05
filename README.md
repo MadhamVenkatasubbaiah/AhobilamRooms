@@ -92,14 +92,17 @@ Call For Booking
 </section>
 
 
-<img src="Rajeshwari.Complex.jpeg" alt="Rajeshwari Complex"
-class="complex-photo">
+<div class="complex-card">
 
-<br><br>
+    <img src="Rajeshwari.Complex.jpeg"
+    alt="Rajeshwari Complex"
+    class="complex-photo">
 
-<button class="complex-btn">
-Rajeshwari Complex 12
-</button>
+    <button class="complex-btn">
+        Rajeshwari Complex 1
+    </button>
+
+</div>
 
 <!--
 <button onclick="location.href='rooms.html'">
