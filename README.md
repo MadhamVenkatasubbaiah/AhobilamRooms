@@ -54,7 +54,7 @@ background:#27ae60;
 color:white;
 padding:30px 30px;
 border:none;
-font-size:20px;
+font-size:30px;
 border-radius:20px;
 cursor:pointer;
 }  
