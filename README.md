@@ -32,12 +32,13 @@ cursor:pointer;
 border-radius:5px;
 }
 
-complex-photo{
-width:10px;
-border-radius:5px;
-box-shadow:0 2px 8px rgba(0,0,0,0.3);
+.complex-photo{
+width:250px;     /* change size here */
+height:auto;
 display:block;
-margin:5px auto;
+margin:20px auto;
+border-radius:10px;
+box-shadow:0 4px 10px rgba(0,0,0,0.3);
 }
 
 complex-btn{
