@@ -106,25 +106,16 @@ Call For Booking
     alt="Rajeshwari Complex"
     class="complex-photo">
 
-    <button class="complex-btn">
-        Rajeshwari Complex 1
-    </button>
-    
     <button onclick="location.href='rooms.html'">
     Rajeshwari Complex
     </button>
 
 </div>
-
 <!--
-<button onclick="location.href='rooms.html'">
-    Rajeshwari Complex
-</button>
--->
 <nav>
     <a href="rooms.html"></a>
 </nav>
-
+-->
 
 </body>
 </html>
