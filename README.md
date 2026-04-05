@@ -34,7 +34,7 @@ border-radius:5px;
 
 /* container */
 .complex-card{
-text-align:center;
+text-align:left;
 margin:40px auto;
 }
 
