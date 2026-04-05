@@ -69,7 +69,7 @@ Call For Booking
 </button>
 
 <nav>
-    <a href="rooms.html">Rooms</a>
+    <a href="rooms.html"></a>
 </nav>
 
 
