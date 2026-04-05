@@ -32,14 +32,6 @@ cursor:pointer;
 border-radius:5px;
 }
 
- <!--   
-/* container */
-.complex-card{
-text-align:left;
-margin:40px auto;
-}
--->
-
 .complex-card{
 width:320px;
 margin:40px 0 40px 40px; /* move to left */
@@ -60,10 +52,10 @@ box-shadow:0 4px 12px rgba(0,0,0,0.3);
 .complex-btn{
 background:#27ae60;
 color:white;
-padding:12px 25px;
+padding:30px 25px;
 border:none;
-font-size:18px;
-border-radius:6px;
+font-size:20px;
+border-radius:10px;
 cursor:pointer;
 }  
     
@@ -108,6 +100,7 @@ Call For Booking
 
     <button onclick="location.href='rooms.html'">
     Rajeshwari Complex
+    Book Now
     </button>
 
 </div>
