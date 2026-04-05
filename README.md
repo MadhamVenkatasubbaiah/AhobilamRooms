@@ -99,8 +99,8 @@ Call For Booking
     class="complex-photo">
 
     <button onclick="location.href='rooms.html'">
-    Rajeshwari Complex <br>
-    Book Now 1
+    Rajeshwari Complex        <br>
+           Book Now
     </button>
 
 </div>
