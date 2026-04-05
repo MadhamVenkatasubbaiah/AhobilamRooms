@@ -31,6 +31,24 @@ font-size:18px;
 cursor:pointer;
 border-radius:5px;
 }
+
+complex-photo{
+width:10px;
+border-radius:5px;
+box-shadow:0 2px 8px rgba(0,0,0,0.3);
+display:block;
+margin:5px auto;
+}
+
+complex-btn{
+background:#27ae60;
+color:white;
+padding:1px 1px;
+border:none;
+font-size:2px;
+border-radius:3px;
+cursor:pointer;
+}    
     
 </style>
 </head>
@@ -64,23 +82,7 @@ Call For Booking
 </button>
 </section>
 
-.complex-photo{
-width:10px;
-border-radius:5px;
-box-shadow:0 2px 8px rgba(0,0,0,0.3);
-display:block;
-margin:5px auto;
-}
 
-.complex-btn{
-background:#27ae60;
-color:white;
-padding:1px 1px;
-border:none;
-font-size:2px;
-border-radius:3px;
-cursor:pointer;
-}
 <img src="Rajeshwari.Complex.jpeg" alt="Rajeshwari Complex"
 class="complex-photo">
 
