@@ -64,10 +64,37 @@ Call For Booking
 </button>
 </section>
 
+.complex-photo{
+width:300px;
+border-radius:10px;
+box-shadow:0 4px 10px rgba(0,0,0,0.3);
+display:block;
+margin:20px auto;
+}
+
+.complex-btn{
+background:#27ae60;
+color:white;
+padding:15px 25px;
+border:none;
+font-size:18px;
+border-radius:5px;
+cursor:pointer;
+}
+<img src="images/rajeshwari.jpg" alt="Rajeshwari Complex"
+class="complex-photo">
+
+<br><br>
+
+<button class="complex-btn">
+Rajeshwari Complex
+</button>
+
+</--
 <button onclick="location.href='rooms.html'">
     Rajeshwari Complex
 </button>
-
+-->
 <nav>
     <a href="rooms.html"></a>
 </nav>
