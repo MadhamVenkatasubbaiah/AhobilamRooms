@@ -32,24 +32,32 @@ cursor:pointer;
 border-radius:5px;
 }
 
-.complex-photo{
-width:300px;     /* change size here */
-height:auto;
-display:block;
-margin:20px auto;
-border-radius:10px;
-box-shadow:0 4px 10px rgba(0,0,0,0.3);
+/* container */
+.complex-card{
+text-align:center;
+margin:40px auto;
 }
 
-complex-btn{
+/* image */
+.complex-photo{
+width:300px;
+height:auto;
+border-radius:12px;
+display:block;
+margin:0 auto 15px auto;
+box-shadow:0 4px 12px rgba(0,0,0,0.3);
+}
+
+/* button */
+.complex-btn{
 background:#27ae60;
 color:white;
-padding:1px 1px;
+padding:12px 25px;
 border:none;
-font-size:2px;
-border-radius:3px;
+font-size:18px;
+border-radius:6px;
 cursor:pointer;
-}    
+}  
     
 </style>
 </head>
