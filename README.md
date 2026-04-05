@@ -33,7 +33,7 @@ border-radius:5px;
 }
 
 .complex-photo{
-width:20px;     /* change size here */
+width:300px;     /* change size here */
 height:auto;
 display:block;
 margin:20px auto;
