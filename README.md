@@ -51,11 +51,6 @@ border-radius:5px;
 <h2>Welcome</h2>
 <p>Clean rooms available for pilgrims and families visiting Ahobilam.</p>
 
-    
-<header class="top-header">
-    <img src="large.png" alt="Ahobilam Rooms Logo" class="large">
-    <h1>AhobilamRooms</h1>
-</header>
 
     
 <h3>Facilities</h3>
