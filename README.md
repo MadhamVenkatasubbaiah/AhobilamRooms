@@ -65,7 +65,7 @@ Call For Booking
 </section>
 
 .complex-photo{
-width:30px;
+width:10px;
 border-radius:5px;
 box-shadow:0 2px 8px rgba(0,0,0,0.3);
 display:block;
@@ -75,9 +75,9 @@ margin:5px auto;
 .complex-btn{
 background:#27ae60;
 color:white;
-padding:15px 25px;
+padding:5px 5px;
 border:none;
-font-size:18px;
+font-size:8px;
 border-radius:5px;
 cursor:pointer;
 }
