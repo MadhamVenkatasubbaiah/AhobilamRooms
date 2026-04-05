@@ -37,11 +37,6 @@ border-radius:5px;
 
 <body>
 
-<nav>
-    <a href="index.html">Home</a>
-    <a href="rooms.html">Rooms</a>
-</nav>
-
 <header>
 <h1>Ahobilam Rooms</h1>
 <p><strong> Welcome to Ahobilam Rooms </strong><br>
@@ -68,6 +63,15 @@ border-radius:5px;
 Call For Booking
 </button>
 </section>
+
+<button onclick="location.href='rooms.html'">
+    View Rooms
+</button>
+
+<nav>
+    <a href="rooms.html">Rooms</a>
+</nav>
+
 
 </body>
 </html>
