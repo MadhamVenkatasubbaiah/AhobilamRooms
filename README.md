@@ -75,10 +75,10 @@ margin:5px auto;
 .complex-btn{
 background:#27ae60;
 color:white;
-padding:5px 5px;
+padding:1px 1px;
 border:none;
-font-size:8px;
-border-radius:5px;
+font-size:2px;
+border-radius:3px;
 cursor:pointer;
 }
 <img src="Rajeshwari.Complex.jpeg" alt="Rajeshwari Complex"
