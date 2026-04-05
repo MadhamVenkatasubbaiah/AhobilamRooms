@@ -65,7 +65,7 @@ Call For Booking
 </section>
 
 <button onclick="location.href='rooms.html'">
-    View Rooms
+    Rajeshwari Complex
 </button>
 
 <nav>
