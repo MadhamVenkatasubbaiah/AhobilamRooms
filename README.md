@@ -81,7 +81,7 @@ font-size:18px;
 border-radius:5px;
 cursor:pointer;
 }
-<img src="images/Rajeshwari.Complex.jpeg" alt="Rajeshwari Complex"
+<img src="Rajeshwari.Complex.jpeg" alt="Rajeshwari Complex"
 class="complex-photo">
 
 <br><br>
