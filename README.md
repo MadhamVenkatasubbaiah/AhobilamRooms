@@ -33,7 +33,7 @@ border-radius:5px;
 }
 
 .complex-photo{
-width:250px;     /* change size here */
+width:20px;     /* change size here */
 height:auto;
 display:block;
 margin:20px auto;
@@ -90,7 +90,7 @@ class="complex-photo">
 <br><br>
 
 <button class="complex-btn">
-Rajeshwari Complex
+Rajeshwari Complex 1
 </button>
 
 <!--
