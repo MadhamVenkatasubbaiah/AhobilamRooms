@@ -32,10 +32,18 @@ cursor:pointer;
 border-radius:5px;
 }
 
+ <!--   
 /* container */
 .complex-card{
 text-align:left;
 margin:40px auto;
+}
+-->
+
+.complex-card{
+width:320px;
+margin:40px 0 40px 40px; /* move to left */
+text-align:left;
 }
 
 /* image */
