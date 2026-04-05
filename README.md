@@ -57,7 +57,7 @@ border-radius:5px;
 ✅ Parking Available<br>
 ✅ Family Friendly</p>
 
-<button onclick="location.href='tel:+919515214371'">
+<button onclick="location.href='tel:+917675962840'">
 Call For Booking
 </button>
 </section>
