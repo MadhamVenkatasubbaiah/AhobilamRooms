@@ -54,7 +54,7 @@ background:#27ae60;
 color:white;
 padding:30px 30px;
 border:none;
-font-size:30px;
+font-size:25px;
 border-radius:20px;
 cursor:pointer;
 }  
@@ -99,8 +99,8 @@ Call For Booking
     class="complex-photo">
 
     <button onclick="location.href='rooms.html'">
-        Rajeshwari Complex        <br>
-             Book Now 1
+    <br>   Rajeshwari Complex        <br>
+               Book Now
     </button>
 
 </div>
