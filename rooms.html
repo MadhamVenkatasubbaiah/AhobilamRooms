@@ -1,52 +1,87 @@
-<!DOCTYPE html>
 <html>
 <head>
-    <title>Rooms - Ahobilam Rooms</title>
+<title>Rooms - Ahobilam Rooms</title>
 
-    <style>
-        body {
-            font-family: Arial;
-            text-align: center;
-            margin: 0;
-        }
+<style>
 
-        header {
-            background-color: #2c3e50;
-            color: white;
-            padding: 15px;
-        }
+body{
+font-family: Arial;
+background:#FFF8E1;
+margin:0;
+text-align:center;
+}
 
-        .room-card {
-            border: 1px solid #ccc;
-            width: 300px;
-            margin: 20px auto;
-            padding: 15px;
-            border-radius: 10px;
-        }
+/* Rooms container */
+.rooms-container{
+display:flex;
+justify-content:center;
+gap:30px;
+flex-wrap:wrap;
+padding:40px;
+}
 
-        img {
-            width: 100%;
-            border-radius: 10px;
-        }
-    </style>
+/* Room card */
+.room-card{
+background:white;
+border-radius:10px;
+box-shadow:0 4px 10px rgba(0,0,0,0.2);
+width:300px;
+padding:15px;
+}
+
+/* Image */
+.room-card img{
+width:100%;
+border-radius:10px;
+}
+
+/* Booking button */
+.book-btn{
+background:#27ae60;
+color:white;
+padding:10px 20px;
+border:none;
+border-radius:5px;
+cursor:pointer;
+font-size:16px;
+margin-top:10px;
+}
+
+.book-btn:hover{
+background:#219150;
+}
+
+</style>
 </head>
 
 <body>
 
-<header>
-    <h1>Our Rooms</h1>
-</header>
+<h1>Our Rooms</h1>
 
-<div class="room-card">
-    <img src="logo.png" alt="Deluxe Room">
-    <h3>Deluxe Room</h3>
-    <p>Comfortable stay with AC and WiFi</p>
-</div>
+<div class="rooms-container">
 
-<div class="room-card">
-    <img src="large.png" alt="Family Room">
-    <h3>Family Room</h3>
-    <p>Perfect for families</p>
+    <div class="room-card">
+        <img src="logo.png" alt="Deluxe Room">
+        <h3>Deluxe Room</h3>
+        <p>Comfortable stay with AC and WiFi</p>
+
+        <button class="book-btn"
+        onclick="location.href='tel:+917675962840'">
+        Book Now
+        </button>
+    </div>
+
+    <div class="room-card">
+        <img src="large.png" alt="Family Room">
+        <h3>Family Room</h3>
+        <p>Perfect for families</p>
+
+        <button class="book-btn"
+        onclick="location.href='tel:+917675962840'">
+        Book Now
+        </button>
+    </div>
+
 </div>
 
 </body>
