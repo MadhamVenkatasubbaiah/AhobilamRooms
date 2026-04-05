@@ -97,9 +97,8 @@ Call For Booking
     <img src="Rajeshwari.Complex.jpeg"
     alt="Rajeshwari Complex"
     class="complex-photo">
-
     <button onclick="location.href='rooms.html'">
-    <br>   Rajeshwari Complex        <br>
+            Rajeshwari Complex   <br>
                Book Now
     </button>
 
