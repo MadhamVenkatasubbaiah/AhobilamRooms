@@ -109,6 +109,10 @@ Call For Booking
     <button class="complex-btn">
         Rajeshwari Complex 1
     </button>
+    
+    <button onclick="location.href='rooms.html'">
+    Rajeshwari Complex
+    </button>
 
 </div>
 
