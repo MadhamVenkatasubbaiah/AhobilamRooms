@@ -1,6 +1,6 @@
 <html>
 <head>
-<title>Ahobilam Rooms 11</title>
+<title>Ahobilam Rooms</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <iframe src="logo.html" 
@@ -102,7 +102,7 @@ Call For Booking
     alt="Rajeshwari Complex"
     class="complex-photo">
     <button onclick="location.href='rooms.html'">
-            Rajeshwari Complex   <br>
+            Rajeshwari Complex 123   <br>
                Book Now
     </button>
 
