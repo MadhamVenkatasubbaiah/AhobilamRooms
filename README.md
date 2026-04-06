@@ -6,6 +6,7 @@
     <h1 class="site-title"> Ahobilam </h1>
     <!-- Title -->
     <img src="without_bg.png" class="logo" alt="Ahobilam Temple Logo">
+    <img src="without_bg.png" alt="Logo Left">
     <!-- Menu -->
     <div class="menu">
         <a href="#about">About</a>
