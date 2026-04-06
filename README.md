@@ -24,6 +24,12 @@
         style="border:none;height:100px;width:100%;overflow:hidden;">
 </iframe>
 
+<div class="logo-header">
+    <img src="logo.png">
+    <h1>Ahobilam</h1>
+    <img src="large.png">
+</div>
+
 <style>
 body{
 font-family: Arial;
@@ -62,6 +68,19 @@ background:#FFF8E1;
     width:100px;      /* image stretch avvakunda */
 }
 
+.logo-header{
+    position:fixed;
+    top:100px;        /* navbar kinda position */
+    left:0;
+    width:100%;
+    background:#d6a65c;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:10px 40px;
+    z-index:999;
+}
+    
 <!-- Don't touch below lines -->
 header{
 background:#FFCC80;
