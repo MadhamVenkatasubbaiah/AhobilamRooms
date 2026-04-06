@@ -9,8 +9,7 @@
     </div>
 
     <div class="menu">
-        <a href="#about">About</a>
-        <a href="#hotels">Hotels</a>
+        <a href="#about">About</a>   <a href="#hotels">Hotels</a>
         <a href="#temple">Temple Timings</a>
     </div>
 
@@ -20,7 +19,6 @@
 <head>
 <title>Ahobilam Rooms</title>
 
-</style>
 </head>
 <iframe src="logo.html" 
         style="border:none;height:120px;width:100%;">
