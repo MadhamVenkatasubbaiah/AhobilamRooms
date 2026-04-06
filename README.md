@@ -14,13 +14,12 @@
     </div>
 </div>
 <br>
-<br>
-<br>
 
+<!--
 <head>
 <title>Ahobilam Rooms </title>
-<br>
 </head>
+-->
 <iframe src="logo.html"
         style="border:none;height:50px;width:100%;overflow:hidden;">
 </iframe>
