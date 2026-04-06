@@ -144,7 +144,7 @@ Call For Booking
     alt="Rajeshwari Complex"
     class="complex-photo">
     <button onclick="location.href='rooms.html'">
-            Rajeshwari Complex 123 <br>
+            Rajeshwari Complex <br>
                Book Now
     </button>
 
