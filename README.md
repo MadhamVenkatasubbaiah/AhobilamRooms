@@ -5,7 +5,7 @@
     <!-- Title -->
     <h1 class="site-title"> Ahobilam </h1>
     <!-- Title -->
-    <img src="temple-logo.png" class="logo" alt="Ahobilam Temple Logo">
+    <img src="logo.png" class="logo" alt="Ahobilam Temple Logo">
     <!-- Menu -->
     <div class="menu">
         <a href="#about">About</a>
@@ -55,6 +55,10 @@ background:#FFF8E1;
 .site-title{
     margin:0;
     color:white;
+}
+.logo{
+    height:55px;     /* navbar height ki match */
+    width:auto;      /* image stretch avvakunda */
 }
 
 <!-- Don'ttouch below lines -->
