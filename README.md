@@ -3,6 +3,32 @@
 <title>Ahobilam Rooms</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<head>
+<title>Ahobilam Rooms</title>
+
+<style>
+
+.header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:10px;
+    background:#d6a65c;
+
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    z-index:1000;
+}
+
+body{
+    margin:0;
+    padding-top:120px;
+}
+
+</style>
+</head>
 <iframe src="logo.html" 
         style="border:none;height:120px;width:100%;">
 </iframe>
