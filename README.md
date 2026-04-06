@@ -13,7 +13,6 @@
         <a href="#temple">Temple Timings</a>
     </div>
 </div>
-<br>
 
 <iframe src="logo.html"
         style="border:none;height:100px;width:100%;overflow:hidden;">
@@ -148,7 +147,7 @@ Call For Booking
     alt="Rajeshwari Complex"
     class="complex-photo">
     <button onclick="location.href='rooms.html'">
-            Rajeshwari Complex  1234 <br>
+            Rajeshwari Complex  <br>
                Book Now
     </button>
 
