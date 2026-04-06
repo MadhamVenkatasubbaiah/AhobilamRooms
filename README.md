@@ -2,14 +2,16 @@
 <head>
 <title>Ahobilam Rooms</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <div class="navbar">
 
-    <div class="logo-title">
-        <h1>AhobilamRooms</h1>
-    </div>
+    <!-- Title -->
+    <h1 class="site-title">AhobilamRooms</h1>
 
+    <!-- Menu -->
     <div class="menu">
-        <a href="#about">About</a>   <a href="#hotels">Hotels</a>
+        <a href="#about">About</a>
+        <a href="#hotels">Hotels</a>
         <a href="#temple">Temple Timings</a>
     </div>
 
