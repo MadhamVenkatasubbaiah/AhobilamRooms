@@ -57,8 +57,8 @@ background:#FFF8E1;
     color:white;
 }
 .logo{
-    height:55px;     /* navbar height ki match */
-    width:auto;      /* image stretch avvakunda */
+    height:100px;     /* navbar height ki match */
+    width:100px;      /* image stretch avvakunda */
 }
 
 <!-- Don'ttouch below lines -->
