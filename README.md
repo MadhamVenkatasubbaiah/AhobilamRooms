@@ -13,7 +13,7 @@
         <a href="#temple">Temple Timings</a>
     </div>
 </div>
-
+<br>
 <iframe src="logo.html"
         style="border:none;height:100px;width:100%;overflow:hidden;">
 </iframe>
