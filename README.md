@@ -35,7 +35,7 @@ background:#FFF8E1;
     display:flex;
     justify-content:space-between;
     align-items:center;
-    padding:10px 20px;
+    padding:10px 10px;
     background:#d6a65c;
 
     position:fixed;   /* sticky */
@@ -61,7 +61,7 @@ background:#FFF8E1;
     width:100px;      /* image stretch avvakunda */
 }
 
-<!-- Don'ttouch below lines -->
+<!-- Don't touch below lines -->
 header{
 background:#FFCC80;
 color:white;
