@@ -20,7 +20,7 @@
 
 </head>
 <iframe src="logo.html" 
-        style="border:-5.10px;height:100px;width:100%;">
+        style="border:none;height:100px;width:100%;">
 </iframe>
 
 <style>
