@@ -24,12 +24,6 @@
         style="border:none;height:100px;width:100%;overflow:hidden;">
 </iframe>
 
-<div class="logo-header">
-    <img src="logo.png">
-    <h1>Ahobilam</h1>
-    <img src="large.png">
-</div>
-
 <style>
 body{
 font-family: Arial;
