@@ -31,6 +31,34 @@ margin:0;
 background:#FFF8E1;
 }
 
+/* ✅ ADD NAVBAR CSS HERE */
+.navbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:10px 20px;
+    background:#d6a65c;
+
+    position:fixed;   /* sticky */
+    top:0;
+    left:0;
+    width:100%;
+    z-index:1000;
+}
+
+.menu a{
+    margin-left:20px;
+    text-decoration:none;
+    color:white;
+    font-weight:bold;
+}
+
+.site-title{
+    margin:0;
+    color:white;
+}
+
+<!-- Don'ttouch below lines -->
 header{
 background:#FFCC80;
 color:white;
