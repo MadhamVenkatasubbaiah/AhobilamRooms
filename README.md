@@ -4,17 +4,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <div class="navbar">
-
     <!-- Title -->
     <h1 class="site-title">AhobilamRooms</h1>
-
     <!-- Menu -->
     <div class="menu">
         <a href="#about">About</a>
         <a href="#hotels">Hotels</a>
         <a href="#temple">Temple Timings</a>
     </div>
-
 </div>
 
 
