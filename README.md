@@ -1,12 +1,9 @@
 <html>
 <head>
-<!-- 
-<title>Ahobilam Rooms</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
--->
+
 <div class="navbar">
     <!-- Title -->
-    <h1 class="site-title">AhobilamRooms</h1>
+    <h1 class="site-title"> Ahobilam </h1>
     <!-- Menu -->
     <div class="menu">
         <a href="#about">About</a>
