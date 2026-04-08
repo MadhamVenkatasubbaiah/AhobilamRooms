@@ -103,7 +103,7 @@
     <!-- NAVBAR -->
     <div class="navbar">
         <img src="AVS1.png" class="logo" alt="Logo">
-        <h1 class="site-title">Ahobilam12</h1>
+        <h1 class="site-title">Ahobilam</h1>
         <img src="without_bg.png" class="logo" alt="Logo">
         <div class="menu">
             <a href="#about">About</a>
