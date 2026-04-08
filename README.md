@@ -21,7 +21,7 @@ body{
     align-items:center;
     justify-content:space-between;
     background:#d6a65c;
-    height:55px;
+    height100px;
     padding:0 12px;
     position:fixed;
     top:0;
