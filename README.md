@@ -128,11 +128,6 @@ button{
 
 </div>
 
-<!-- ✅ BACKGROUND AREA (instead of logo.html iframe) -->
-<div class="logo-background">
-    <img src="background.png" class="bg-image">
-</div>
-
 <header>
 <h1>Ahobilam Rooms</h1>
 <p>
