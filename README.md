@@ -180,9 +180,9 @@ button{
 <!-- ===== NAVBAR ===== -->
 <div class="navbar">
 
-    <img src="AVS2.png" class="logo">
+    <img src="AVS3.png" class="logo">
 
-    <h1 class="site-title">Ahobilam123</h1>
+    <h1 class="site-title">Ahobilam</h1>
 
     <img src="without_bg.png" class="logo">
 
