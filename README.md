@@ -3,8 +3,8 @@
 
 <div class="navbar">
     <!-- Title -->
-    <img src="AVS.jpeg" class="logo" alt="Ahobilam Temple Logo">
-    <h1 class="site-title"> Ahobilam </h1>
+    <img src="AVS1.png.png" class="logo" alt="Ahobilam Temple Logo">
+   <!-- <h1 class="site-title"> Ahobilam </h1>  -->
     <!-- Title -->
     <img src="without_bg.png" class="logo" alt="Ahobilam Temple Logo">
     <!-- Menu -->
