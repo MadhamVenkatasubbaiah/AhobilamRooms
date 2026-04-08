@@ -1,38 +1,46 @@
+<!DOCTYPE html>
 <html>
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Ahobilam Rooms</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
 
-/* ---------- BODY ---------- */
+/* ===== BODY ===== */
 body{
+    font-family: Arial;
     margin:0;
-    font-family:Arial;
     background:#FFF8E1;
 }
 
-/* ---------- NAVBAR ---------- */
+/* ===== NAVBAR ===== */
 .navbar{
     display:flex;
     align-items:center;
     justify-content:space-between;
     background:#d6a65c;
-    padding:8px 20px;
+    padding:10px 20px;
     position:fixed;
     top:0;
     width:100%;
     z-index:1000;
+    box-sizing:border-box;
 }
 
-/* logo sizes */
-.logo-left,
-.logo-right{
-    height:65px;
+.nav-left,
+.nav-right{
+    display:flex;
+    align-items:center;
+    gap:15px;
+}
+
+.logo{
+    height:60px;
     width:auto;
 }
 
-/* title center */
+/* TITLE CENTER */
 .site-title{
     color:white;
     margin:0;
@@ -41,7 +49,7 @@ body{
     flex:1;
 }
 
-/* menu */
+/* MENU */
 .menu{
     display:flex;
     gap:20px;
@@ -53,7 +61,7 @@ body{
     font-weight:bold;
 }
 
-/* ---------- MOBILE MENU ---------- */
+/* MOBILE ICON */
 .menu-icon{
     display:none;
     font-size:28px;
@@ -61,33 +69,41 @@ body{
     cursor:pointer;
 }
 
-/* ---------- HEADER WATERMARK ---------- */
+/* ===== HEADER SECTION ===== */
 header{
-    margin-top:90px; /* fix navbar overlap */
-    padding:120px 20px;
-    text-align:center;
+    margin-top:100px;
+    background:#e6b56b;
     color:white;
-
-    /* WATERMARK IMAGE */
-    background:
-        linear-gradient(rgba(230,180,110,0.9),
-        rgba(230,180,110,0.9)),
-        url("without_bg.png");
-
-    background-size:300px;
-    background-repeat:no-repeat;
-    background-position:center;
-    background-attachment:fixed;
-}
-
-header h1{
-    font-size:40px;
-}
-
-/* ---------- SECTION ---------- */
-section{
+    padding:80px 20px;
     text-align:center;
+    position:relative;
+    overflow:hidden;
+}
+
+/* WATERMARK IMAGE */
+header::before{
+    content:"";
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    width:300px;
+    height:300px;
+    background:url("without_bg.png") no-repeat center;
+    background-size:contain;
+    opacity:0.15;
+}
+
+/* HEADER TEXT ABOVE WATERMARK */
+header *{
+    position:relative;
+    z-index:2;
+}
+
+/* ===== CONTENT ===== */
+section{
     padding:40px;
+    text-align:center;
 }
 
 button{
@@ -96,11 +112,11 @@ button{
     padding:15px 25px;
     border:none;
     font-size:18px;
-    border-radius:6px;
     cursor:pointer;
+    border-radius:5px;
 }
 
-/* ---------- ROOM CARD ---------- */
+/* ===== COMPLEX CARD ===== */
 .complex-card{
     width:320px;
     margin:40px auto;
@@ -110,32 +126,34 @@ button{
 .complex-photo{
     width:300px;
     border-radius:12px;
+    display:block;
+    margin:auto;
     box-shadow:0 4px 12px rgba(0,0,0,0.3);
 }
 
 .complex-btn{
-    margin-top:15px;
     background:#27ae60;
     color:white;
     padding:20px;
     border:none;
-    font-size:22px;
+    font-size:20px;
     border-radius:15px;
     cursor:pointer;
+    margin-top:15px;
 }
 
-/* ---------- MOBILE RESPONSIVE ---------- */
+/* ===== MOBILE RESPONSIVE ===== */
 @media(max-width:768px){
 
 .menu{
     display:none;
     flex-direction:column;
-    background:#d6a65c;
     position:absolute;
+    right:20px;
     top:70px;
-    right:0;
-    width:200px;
+    background:#d6a65c;
     padding:15px;
+    border-radius:8px;
 }
 
 .menu.show{
@@ -147,55 +165,64 @@ button{
 }
 
 .site-title{
-    font-size:24px;
+    font-size:22px;
 }
 
-.logo-left,
-.logo-right{
-    height:50px;
-}
-
-header{
-    padding:80px 15px;
+.logo{
+    height:45px;
 }
 
 }
 
 </style>
+
+<script>
+function toggleMenu(){
+    document.getElementById("menu").classList.toggle("show");
+}
+</script>
+
 </head>
 
 <body>
 
-<!-- NAVBAR -->
+<!-- ===== NAVBAR ===== -->
 <div class="navbar">
 
-    <img src="AVS1.png" class="logo-left">
+    <div class="nav-left">
+        <img src="AVS1.png" class="logo">
+    </div>
 
     <h1 class="site-title">Ahobilam</h1>
 
-    <div class="menu" id="menu">
-        <a href="#about">About</a>
-        <a href="#hotels">Hotels</a>
-        <a href="#temple">Temple</a>
+    <div class="nav-right">
+
+        <div class="menu" id="menu">
+            <a href="#about">About</a>
+            <a href="#hotels">Hotels</a>
+            <a href="#temple">Temple Timings</a>
+        </div>
+
+        <div class="menu-icon" onclick="toggleMenu()">☰</div>
+
+        <img src="without_bg.png" class="logo">
+
     </div>
-
-    <div class="menu-icon" onclick="toggleMenu()">☰</div>
-
-    <img src="without_bg.png" class="logo-right">
 
 </div>
 
-<!-- HEADER WITH WATERMARK -->
+<!-- ===== HEADER ===== -->
 <header>
 <h1>Ahobilam Rooms</h1>
+
 <p>
-Welcome to Ahobilam Rooms<br>
+<strong>Welcome to Ahobilam Rooms</strong><br>
 Your ideal accommodation near the sacred Ahobilam Temple.
 </p>
 </header>
 
-<!-- CONTENT -->
-<section>
+<!-- ===== FACILITIES ===== -->
+<section id="about">
 
 <h2>Facilities</h2>
 
@@ -212,7 +239,9 @@ Call For Booking
 
 </section>
 
-<!-- ROOM CARD -->
+<!-- ===== HOTEL CARD ===== -->
+<section id="hotels">
+
 <div class="complex-card">
 
 <img src="Rajeshwari.Complex.jpeg" class="complex-photo">
@@ -225,12 +254,7 @@ Book Now
 
 </div>
 
-<!-- MOBILE MENU SCRIPT -->
-<script>
-function toggleMenu(){
-    document.getElementById("menu").classList.toggle("show");
-}
-</script>
+</section>
 
 </body>
 </html>
