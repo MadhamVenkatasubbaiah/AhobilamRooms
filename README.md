@@ -4,6 +4,7 @@
 <title>Ahobilam Rooms</title>
 
 <style>
+
 body{
     font-family: Arial;
     margin:0;
@@ -17,7 +18,6 @@ body{
     justify-content:space-between;
     padding:10px 20px;
     background:#d6a65c;
-
     position:fixed;
     top:0;
     left:0;
@@ -25,7 +25,7 @@ body{
     z-index:1000;
 }
 
-/* TRANSPARENT LOGO */
+/* LOGO */
 .logo{
     height:100px;
     width:100px;
@@ -46,13 +46,19 @@ body{
     font-weight:bold;
 }
 
-/* iframe background area */
-.logo-frame{
+/* ✅ BACKGROUND SECTION (same like logo.html) */
+.logo-background{
     margin-top:120px;
     width:100%;
     height:120px;
-    border:none;
-    background:transparent;
+    overflow:hidden;
+}
+
+.bg-image{
+    width:100%;
+    height:120px;
+    object-fit:cover;
+    display:block;
 }
 
 /* CONTENT */
@@ -101,6 +107,7 @@ button{
     border-radius:20px;
     cursor:pointer;
 }
+
 </style>
 </head>
 
@@ -120,28 +127,22 @@ button{
     </div>
 
 </div>
-/* background section like logo.html */
-.logo-background{
-    margin-top:120px;   /* space for fixed navbar */
-    width:100%;
-    height:120px;
-    overflow:hidden;
-}
 
-.bg-image{
-    width:100%;
-    height:120px;
-    object-fit:cover;
-    display:block;
-}
+<!-- ✅ BACKGROUND AREA (instead of logo.html iframe) -->
+<div class="logo-background">
+    <img src="background.png" class="bg-image">
+</div>
+
 <header>
 <h1>Ahobilam Rooms</h1>
-<p><strong>Welcome to Ahobilam Rooms</strong><br>
+<p>
+<strong>Welcome to Ahobilam Rooms</strong><br>
 your ideal accommodation near the sacred Ahobilam Temple.
 </p>
 </header>
 
 <section>
+
 <h2>Welcome</h2>
 
 <p>
