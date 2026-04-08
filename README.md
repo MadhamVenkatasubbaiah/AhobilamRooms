@@ -1,175 +1,237 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ahobilam Rooms</title>
-    <style>
-        /* 1. GENERAL SETTINGS & WATERMARK */
-        body {
-            font-family: 'Segoe UI', Arial, sans-serif;
-            margin: 0;
-            background: #FFF8E1;
-            /* Watermark Sketch Effect */
-            background-image: url('AVS1.png'); 
-            background-repeat: no-repeat;
-            background-position: center;
-            background-attachment: fixed;
-            background-size: 50%;
-            transition: 0.3s;
-        }
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ahobilam Rooms</title>
 
-        /* Create the "faded" watermark look over the background */
-        body::before {
-            content: "";
-            position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(255, 248, 225, 0.85); /* Adjust opacity here */
-            z-index: -1;
-        }
+<style>
 
-        /* 2. NAVIGATION BAR */
-        .navbar {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 5px 20px;
-            background: #d6a65c;
-            position: fixed;
-            top: 0; width: 100%;
-            z-index: 2000;
-            box-sizing: border-box;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
+/* ---------- BODY ---------- */
+body{
+    margin:0;
+    font-family:Arial;
+    background:#FFF8E1;
+}
 
-        .logo-container {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
+/* ---------- NAVBAR ---------- */
+.navbar{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    background:#d6a65c;
+    padding:8px 20px;
+    position:fixed;
+    top:0;
+    width:100%;
+    z-index:1000;
+}
 
-        /* ADJUST LOGO SIZE HERE */
-        .logo {
-            height: 60px; /* Smaller, cleaner size */
-            width: auto;
-            object-fit: contain;
-        }
+/* logo sizes */
+.logo-left,
+.logo-right{
+    height:65px;
+    width:auto;
+}
 
-        .site-title {
-            color: white;
-            margin: 0;
-            font-size: 1.5rem;
-        }
+/* title center */
+.site-title{
+    color:white;
+    margin:0;
+    font-size:32px;
+    text-align:center;
+    flex:1;
+}
 
-        /* 3. MENU (DESKTOP) */
-        .menu {
-            display: flex;
-        }
+/* menu */
+.menu{
+    display:flex;
+    gap:20px;
+}
 
-        .menu a {
-            margin-left: 20px;
-            text-decoration: none;
-            color: white;
-            font-weight: bold;
-            font-size: 16px;
-        }
+.menu a{
+    color:white;
+    text-decoration:none;
+    font-weight:bold;
+}
 
-        /* 4. MOBILE MENU (HIDDEN BY DEFAULT) */
-        .menu-toggle {
-            display: none;
-            flex-direction: column;
-            cursor: pointer;
-        }
+/* ---------- MOBILE MENU ---------- */
+.menu-icon{
+    display:none;
+    font-size:28px;
+    color:white;
+    cursor:pointer;
+}
 
-        .menu-toggle span {
-            height: 3px;
-            width: 25px;
-            background: white;
-            margin: 4px 0;
-            border-radius: 2px;
-        }
+/* ---------- HEADER WATERMARK ---------- */
+header{
+    margin-top:90px; /* fix navbar overlap */
+    padding:120px 20px;
+    text-align:center;
+    color:white;
 
-        /* 5. CONTENT ADJUSTMENT (Prevents "test data" overlap) */
-        header {
-            margin-top: 80px; /* Pushes content below the fixed navbar */
-            background: #FFCC80;
-            color: white;
-            padding: 60px 20px;
-            text-align: center;
-            width: 80%; /* Match your sketch look */
-            margin-left: auto;
-            margin-right: auto;
-            border-radius: 8px;
-        }
+    /* WATERMARK IMAGE */
+    background:
+        linear-gradient(rgba(230,180,110,0.9),
+        rgba(230,180,110,0.9)),
+        url("without_bg.png");
 
-        /* 6. RESPONSIVE DESIGN (MOBILE) */
-        @media (max-width: 768px) {
-            .menu {
-                display: none; /* Hide standard menu */
-                flex-direction: column;
-                position: absolute;
-                top: 70px;
-                right: 20px;
-                background: #d6a65c;
-                padding: 20px;
-                border-radius: 10px;
-                width: 150px;
-            }
+    background-size:300px;
+    background-repeat:no-repeat;
+    background-position:center;
+    background-attachment:fixed;
+}
 
-            .menu.active {
-                display: flex; /* Show when toggled */
-            }
+header h1{
+    font-size:40px;
+}
 
-            .menu a {
-                margin: 10px 0;
-            }
+/* ---------- SECTION ---------- */
+section{
+    text-align:center;
+    padding:40px;
+}
 
-            .menu-toggle {
-                display: flex; /* Show hamburger on mobile */
-            }
+button{
+    background:#27ae60;
+    color:white;
+    padding:15px 25px;
+    border:none;
+    font-size:18px;
+    border-radius:6px;
+    cursor:pointer;
+}
 
-            .site-title { font-size: 1.2rem; }
-            .logo { height: 45px; }
-            header { width: 95%; margin-top: 100px; }
-        }
-    </style>
+/* ---------- ROOM CARD ---------- */
+.complex-card{
+    width:320px;
+    margin:40px auto;
+    text-align:center;
+}
+
+.complex-photo{
+    width:300px;
+    border-radius:12px;
+    box-shadow:0 4px 12px rgba(0,0,0,0.3);
+}
+
+.complex-btn{
+    margin-top:15px;
+    background:#27ae60;
+    color:white;
+    padding:20px;
+    border:none;
+    font-size:22px;
+    border-radius:15px;
+    cursor:pointer;
+}
+
+/* ---------- MOBILE RESPONSIVE ---------- */
+@media(max-width:768px){
+
+.menu{
+    display:none;
+    flex-direction:column;
+    background:#d6a65c;
+    position:absolute;
+    top:70px;
+    right:0;
+    width:200px;
+    padding:15px;
+}
+
+.menu.show{
+    display:flex;
+}
+
+.menu-icon{
+    display:block;
+}
+
+.site-title{
+    font-size:24px;
+}
+
+.logo-left,
+.logo-right{
+    height:50px;
+}
+
+header{
+    padding:80px 15px;
+}
+
+}
+
+</style>
 </head>
+
 <body>
 
-    <nav class="navbar">
-        <div class="logo-container">
-            <img src="AVS1.png" class="logo" alt="Logo 1">
-            <h1 class="site-title">Ahobilam112313</h1>
-            <img src="without_bg.png" class="logo" alt="Logo 2">
-        </div>
+<!-- NAVBAR -->
+<div class="navbar">
 
-        <!-- Hamburger Icon for Mobile -->
-        <div class="menu-toggle" onclick="toggleMenu()">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
+    <img src="AVS1.png" class="logo-left">
 
-        <div class="menu" id="navLinks">
-            <a href="#about">About</a>
-            <a href="#hotels">Hotels</a>
-            <a href="#temple">Temple</a>
-        </div>
-    </nav>
+    <h1 class="site-title">Ahobilam</h1>
 
-    <header id="about">
-        <h1>Ahobilam Rooms</h1>
-        <p>Welcome to Ahobilam Rooms<br>
-        Your ideal accommodation near the sacred Ahobilam Temple.</p>
-    </header>
+    <div class="menu" id="menu">
+        <a href="#about">About</a>
+        <a href="#hotels">Hotels</a>
+        <a href="#temple">Temple</a>
+    </div>
 
-    <!-- MOBILE MENU SCRIPT -->
-    <script>
-        function toggleMenu() {
-            const nav = document.getElementById('navLinks');
-            nav.classList.toggle('active');
-        }
-    </script>
+    <div class="menu-icon" onclick="toggleMenu()">☰</div>
+
+    <img src="without_bg.png" class="logo-right">
+
+</div>
+
+<!-- HEADER WITH WATERMARK -->
+<header>
+<h1>Ahobilam Rooms</h1>
+<p>
+Welcome to Ahobilam Rooms<br>
+Your ideal accommodation near the sacred Ahobilam Temple.
+</p>
+</header>
+
+<!-- CONTENT -->
+<section>
+
+<h2>Facilities</h2>
+
+<p>
+✅ AC & Non-AC Rooms<br>
+✅ Hot Water 24 Hours<br>
+✅ Parking Available<br>
+✅ Family Friendly
+</p>
+
+<button onclick="location.href='tel:+917675962840'">
+Call For Booking
+</button>
+
+</section>
+
+<!-- ROOM CARD -->
+<div class="complex-card">
+
+<img src="Rajeshwari.Complex.jpeg" class="complex-photo">
+
+<button class="complex-btn"
+onclick="location.href='rooms.html'">
+Rajeshwari Complex<br>
+Book Now
+</button>
+
+</div>
+
+<!-- MOBILE MENU SCRIPT -->
+<script>
+function toggleMenu(){
+    document.getElementById("menu").classList.toggle("show");
+}
+</script>
 
 </body>
 </html>
