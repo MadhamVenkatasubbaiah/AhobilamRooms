@@ -34,7 +34,7 @@ body{
 
 /* LOGOS */
 .logo{
-    height:32px;
+    height:50px;
     width:auto;
 }
 
@@ -42,7 +42,7 @@ body{
 .site-title{
     color:white;
     margin:0;
-    font-size:20px;
+    font-size:30px;
     text-align:center;
     flex:1;
 }
@@ -56,8 +56,8 @@ body{
     text-decoration:none;
     color:white;
     font-weight:bold;
-    font-size:14px;
-    margin-left:15px;
+    font-size:20px;
+    margin-left:20px;
 }
 
 /* MOBILE MENU BUTTON */
