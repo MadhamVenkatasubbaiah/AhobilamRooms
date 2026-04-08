@@ -10,7 +10,7 @@ body{
     background:#FFF8E1;
 }
 
-/* ✅ NAVBAR */
+/* NAVBAR */
 .navbar{
     display:flex;
     align-items:center;
@@ -25,7 +25,7 @@ body{
     z-index:1000;
 }
 
-/* ✅ TRANSPARENT LOGO FIX */
+/* TRANSPARENT LOGO */
 .logo{
     height:100px;
     width:100px;
@@ -34,13 +34,11 @@ body{
     display:block;
 }
 
-/* title */
 .site-title{
     margin:0;
     color:white;
 }
 
-/* menu */
 .menu a{
     margin-left:20px;
     text-decoration:none;
@@ -48,16 +46,16 @@ body{
     font-weight:bold;
 }
 
-/* ✅ iframe background section */
+/* iframe background area */
 .logo-frame{
-    margin-top:120px;   /* space below fixed navbar */
+    margin-top:120px;
     width:100%;
     height:120px;
     border:none;
-    overflow:hidden;
+    background:transparent;
 }
 
-/* Don't touch below */
+/* CONTENT */
 header{
     background:#FFCC80;
     color:white;
@@ -82,7 +80,7 @@ button{
 
 .complex-card{
     width:320px;
-    margin:40px 0 40px 40px;
+    margin:40px;
     text-align:left;
 }
 
@@ -108,7 +106,7 @@ button{
 
 <body>
 
-<!-- ✅ NAVBAR -->
+<!-- NAVBAR -->
 <div class="navbar">
 
     <img src="AVS1.png" class="logo">
@@ -123,8 +121,8 @@ button{
 
 </div>
 
-<!-- ✅ YOUR BACKGROUND RETURNS HERE -->
-<iframe src="logo.html" class="logo-frame"></iframe>
+<!-- BACKGROUND FROM logo.html -->
+<iframe src="logo.html" class="logo-frame" scrolling="no"></iframe>
 
 <header>
 <h1>Ahobilam Rooms</h1>
@@ -135,12 +133,10 @@ your ideal accommodation near the sacred Ahobilam Temple.
 
 <section>
 <h2>Welcome</h2>
-<p>Clean rooms available for pilgrims and families visiting Ahobilam.</p>
 
-<h3>Facilities</h3>
 <p>
 ✅ AC & Non-AC Rooms<br>
-✅ Hot Water 24 Hours <br>
+✅ Hot Water 24 Hours<br>
 ✅ Parking Available<br>
 ✅ Family Friendly
 </p>
@@ -148,6 +144,7 @@ your ideal accommodation near the sacred Ahobilam Temple.
 <button onclick="location.href='tel:+917675962840'">
 Call For Booking
 </button>
+
 </section>
 
 <div class="complex-card">
