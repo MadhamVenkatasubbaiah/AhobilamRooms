@@ -111,7 +111,7 @@ button{
 <!-- ✅ NAVBAR -->
 <div class="navbar">
 
-    <img src="AVS1.png.png" class="logo">
+    <img src="AVS1.png" class="logo">
     <h1 class="site-title">Ahobilam</h1>
     <img src="without_bg.png" class="logo">
 
