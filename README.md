@@ -121,9 +121,6 @@ button{
 
 </div>
 
-<!-- BACKGROUND FROM logo.html -->
-<iframe src="logo.html" class="logo-frame" scrolling="no"></iframe>
-
 <header>
 <h1>Ahobilam Rooms</h1>
 <p><strong>Welcome to Ahobilam Rooms</strong><br>
