@@ -25,7 +25,7 @@ body{
     z-index:1000;
 }
 
-/* ✅ LOGO FIX (TRANSPARENT IMAGE) */
+/* ✅ TRANSPARENT LOGO FIX */
 .logo{
     height:100px;
     width:100px;
@@ -48,12 +48,16 @@ body{
     font-weight:bold;
 }
 
-/* space below fixed navbar */
-.header-space{
+/* ✅ iframe background section */
+.logo-frame{
+    margin-top:120px;   /* space below fixed navbar */
+    width:100%;
     height:120px;
+    border:none;
+    overflow:hidden;
 }
 
-/* Don't touch below lines */
+/* Don't touch below */
 header{
     background:#FFCC80;
     color:white;
@@ -84,7 +88,6 @@ button{
 
 .complex-photo{
     width:300px;
-    height:auto;
     border-radius:12px;
     display:block;
     margin:0 auto 15px auto;
@@ -94,7 +97,7 @@ button{
 .complex-btn{
     background:#27ae60;
     color:white;
-    padding:30px 30px;
+    padding:30px;
     border:none;
     font-size:25px;
     border-radius:20px;
@@ -105,19 +108,13 @@ button{
 
 <body>
 
-<!-- ✅ NAVBAR MOVED TO BODY -->
+<!-- ✅ NAVBAR -->
 <div class="navbar">
 
-    <!-- Left Logo -->
-    <img src="AVS1.png" class="logo" alt="AVS Logo">
-
-    <!-- Title -->
+    <img src="AVS1.png.png" class="logo">
     <h1 class="site-title">Ahobilam</h1>
+    <img src="without_bg.png" class="logo">
 
-    <!-- Right Logo -->
-    <img src="without_bg.png" class="logo" alt="Temple Logo">
-
-    <!-- Menu -->
     <div class="menu">
         <a href="#about">About</a>
         <a href="#hotels">Hotels</a>
@@ -126,15 +123,13 @@ button{
 
 </div>
 
-<!-- space for fixed navbar -->
-<div class="header-space"></div>
+<!-- ✅ YOUR BACKGROUND RETURNS HERE -->
+<iframe src="logo.html" class="logo-frame"></iframe>
 
 <header>
 <h1>Ahobilam Rooms</h1>
 <p><strong>Welcome to Ahobilam Rooms</strong><br>
 your ideal accommodation near the sacred Ahobilam Temple.
-We provide clean, comfortable, and affordable rooms with
-a peaceful atmosphere, perfect for pilgrims and families.
 </p>
 </header>
 
@@ -157,9 +152,7 @@ Call For Booking
 
 <div class="complex-card">
 
-<img src="Rajeshwari.Complex.jpeg"
-alt="Rajeshwari Complex"
-class="complex-photo">
+<img src="Rajeshwari.Complex.jpeg" class="complex-photo">
 
 <button class="complex-btn"
 onclick="location.href='rooms.html'">
