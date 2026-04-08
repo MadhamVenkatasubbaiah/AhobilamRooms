@@ -2,7 +2,8 @@
 <html>
 <head>
 
-<!--<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!--<
+meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Ahobilam Rooms</title>
 -->
 
@@ -21,7 +22,7 @@ body{
     align-items:center;
     justify-content:space-between;
     background:#d6a65c;
-    height100px;
+    height:100px;
     padding:0 12px;
     position:fixed;
     top:0;
@@ -182,7 +183,7 @@ button{
 
     <img src="AVS3.png" class="logo">
 
-    <h1 class="site-title">Ahobilam</h1>
+    <h1 class="site-title">Ahobilam123</h1>
 
     <img src="without_bg.png" class="logo">
 
