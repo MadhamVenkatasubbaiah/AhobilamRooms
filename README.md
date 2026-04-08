@@ -2,6 +2,7 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<br>
 <title>Ahobilam Rooms</title>
 
 <style>
@@ -178,7 +179,7 @@ button{
 <!-- ===== NAVBAR ===== -->
 <div class="navbar">
 
-    <img src="AVS1.png" class="logo">
+    <img src="AVS2.png" class="logo">
 
     <h1 class="site-title">Ahobilam123</h1>
 
