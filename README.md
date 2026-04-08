@@ -120,7 +120,20 @@ button{
     </div>
 
 </div>
+/* background section like logo.html */
+.logo-background{
+    margin-top:120px;   /* space for fixed navbar */
+    width:100%;
+    height:120px;
+    overflow:hidden;
+}
 
+.bg-image{
+    width:100%;
+    height:120px;
+    object-fit:cover;
+    display:block;
+}
 <header>
 <h1>Ahobilam Rooms</h1>
 <p><strong>Welcome to Ahobilam Rooms</strong><br>
