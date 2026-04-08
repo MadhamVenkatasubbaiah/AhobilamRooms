@@ -9,8 +9,8 @@
 
 /* ===== BODY ===== */
 body{
-    font-family: Arial;
     margin:0;
+    font-family:Arial;
     background:#FFF8E1;
 }
 
@@ -20,7 +20,7 @@ body{
     align-items:center;
     justify-content:space-between;
     background:#d6a65c;
-    padding:10px 20px;
+    padding:6px 15px;   /* SMALL HEIGHT */
     position:fixed;
     top:0;
     width:100%;
@@ -28,25 +28,19 @@ body{
     box-sizing:border-box;
 }
 
-.nav-left,
-.nav-right{
-    display:flex;
-    align-items:center;
-    gap:15px;
-}
-
+/* LOGO SIZE FIX */
 .logo{
-    height:60px;
+    height:45px;     /* CONTROL SIZE HERE */
     width:auto;
 }
 
-/* TITLE CENTER */
+/* TITLE */
 .site-title{
     color:white;
     margin:0;
-    font-size:32px;
-    text-align:center;
+    font-size:26px;
     flex:1;
+    text-align:center;
 }
 
 /* MENU */
@@ -56,51 +50,50 @@ body{
 }
 
 .menu a{
-    color:white;
     text-decoration:none;
+    color:white;
     font-weight:bold;
 }
 
-/* MOBILE ICON */
+/* MOBILE MENU ICON */
 .menu-icon{
     display:none;
-    font-size:28px;
+    font-size:26px;
     color:white;
     cursor:pointer;
 }
 
-/* ===== HEADER SECTION ===== */
+/* ===== HEADER ===== */
 header{
-    margin-top:100px;
+    margin-top:70px; /* MATCH NAVBAR HEIGHT */
     background:#e6b56b;
     color:white;
-    padding:80px 20px;
+    padding:70px 20px;
     text-align:center;
     position:relative;
     overflow:hidden;
 }
 
-/* WATERMARK IMAGE */
+/* WATERMARK */
 header::before{
     content:"";
     position:absolute;
     top:50%;
     left:50%;
     transform:translate(-50%,-50%);
-    width:300px;
-    height:300px;
+    width:250px;
+    height:250px;
     background:url("without_bg.png") no-repeat center;
     background-size:contain;
-    opacity:0.15;
+    opacity:0.12;
 }
 
-/* HEADER TEXT ABOVE WATERMARK */
 header *{
     position:relative;
     z-index:2;
 }
 
-/* ===== CONTENT ===== */
+/* CONTENT */
 section{
     padding:40px;
     text-align:center;
@@ -109,48 +102,41 @@ section{
 button{
     background:#27ae60;
     color:white;
-    padding:15px 25px;
+    padding:14px 22px;
     border:none;
-    font-size:18px;
+    font-size:17px;
+    border-radius:6px;
     cursor:pointer;
-    border-radius:5px;
 }
 
-/* ===== COMPLEX CARD ===== */
+/* CARD */
 .complex-card{
     width:320px;
     margin:40px auto;
-    text-align:center;
 }
 
 .complex-photo{
-    width:300px;
+    width:100%;
     border-radius:12px;
-    display:block;
-    margin:auto;
     box-shadow:0 4px 12px rgba(0,0,0,0.3);
 }
 
 .complex-btn{
-    background:#27ae60;
-    color:white;
-    padding:20px;
-    border:none;
-    font-size:20px;
-    border-radius:15px;
-    cursor:pointer;
     margin-top:15px;
+    padding:18px;
+    font-size:18px;
+    border-radius:12px;
 }
 
-/* ===== MOBILE RESPONSIVE ===== */
+/* ===== MOBILE ===== */
 @media(max-width:768px){
 
 .menu{
     display:none;
     flex-direction:column;
     position:absolute;
-    right:20px;
-    top:70px;
+    right:10px;
+    top:60px;
     background:#d6a65c;
     padding:15px;
     border-radius:8px;
@@ -165,11 +151,11 @@ button{
 }
 
 .site-title{
-    font-size:22px;
+    font-size:20px;
 }
 
 .logo{
-    height:45px;
+    height:38px;
 }
 
 }
@@ -186,42 +172,39 @@ function toggleMenu(){
 
 <body>
 
-<!-- ===== NAVBAR ===== -->
+<!-- NAVBAR -->
 <div class="navbar">
 
-    <div class="nav-left">
-        <img src="AVS1.png" class="logo">
-    </div>
+<img src="AVS1.png" class="logo">
 
-    <h1 class="site-title">Ahobilam</h1>
+<h1 class="site-title">Ahobilam</h1>
 
-    <div class="nav-right">
+<div style="display:flex;align-items:center;gap:15px;">
 
-        <div class="menu" id="menu">
-            <a href="#about">About</a>
-            <a href="#hotels">Hotels</a>
-            <a href="#temple">Temple Timings</a>
-        </div>
+<div class="menu" id="menu">
+<a href="#about">About</a>
+<a href="#hotels">Hotels</a>
+<a href="#temple">Temple</a>
+</div>
 
-        <div class="menu-icon" onclick="toggleMenu()">☰</div>
+<div class="menu-icon" onclick="toggleMenu()">☰</div>
 
-        <img src="without_bg.png" class="logo">
-
-    </div>
+<img src="without_bg.png" class="logo">
 
 </div>
 
-<!-- ===== HEADER ===== -->
+</div>
+
+<!-- HEADER -->
 <header>
 <h1>Ahobilam Rooms</h1>
-
 <p>
 <strong>Welcome to Ahobilam Rooms</strong><br>
 Your ideal accommodation near the sacred Ahobilam Temple.
 </p>
 </header>
 
-<!-- ===== FACILITIES ===== -->
+<!-- FACILITIES -->
 <section id="about">
 
 <h2>Facilities</h2>
@@ -239,7 +222,7 @@ Call For Booking
 
 </section>
 
-<!-- ===== HOTEL CARD ===== -->
+<!-- HOTEL -->
 <section id="hotels">
 
 <div class="complex-card">
@@ -248,8 +231,7 @@ Call For Booking
 
 <button class="complex-btn"
 onclick="location.href='rooms.html'">
-Rajeshwari Complex<br>
-Book Now
+Rajeshwari Complex<br>Book Now
 </button>
 
 </div>
