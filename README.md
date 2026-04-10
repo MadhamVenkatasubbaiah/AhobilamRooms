@@ -21,7 +21,7 @@ body{
     display:flex;
     align-items:center;
     justify-content:space-between;
-    background:#FFE386;
+    background:#FF9933;
     height:100px;
     padding:0 12px;
     position:fixed;
@@ -64,7 +64,7 @@ body{
 .menu-toggle{
     display:none;
     font-size:24px;
-    color:white;
+    color:black;
     cursor:pointer;
 }
 
