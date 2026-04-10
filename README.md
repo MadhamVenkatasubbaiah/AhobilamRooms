@@ -96,7 +96,7 @@ body{
 }
 
 .site-title{
-    font-size:18px;
+    font-size:30px;
 }
 }
 
