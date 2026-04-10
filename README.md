@@ -186,7 +186,11 @@ button{
   <div class="left">
     <img src="logo.png" height="70">
   </div>
-
+/* THis menu toggle in mobile */
+  <div class="right">
+    <span class="menu-toggle">☰</span>
+  </div>
+  
   <div class="center">
     <h1>AHOBILAM</h1>
     <div class="menu">
