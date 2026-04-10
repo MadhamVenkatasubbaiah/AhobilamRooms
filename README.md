@@ -253,6 +253,8 @@ button{
 <h1>Ahobilam Rooms</h1>
 
 <p>
+<img src="logo.png" height="70">
+<img src="logo.png" height="70">
 <strong>Welcome to Ahobilam Rooms</strong><br>
 Your ideal accommodation near the sacred Ahobilam Temple.
 </p>
@@ -325,7 +327,9 @@ Book Now
 
 <!-- ===== WHATSAPP BUTTON (AUTO MESSAGE ADDED) ===== -->
 <a class="whatsapp"
-href="https://wa.me/917675962840?text=Hi%20I%20want%20to%20book%20a%20room%20at%20Ahobilam%20Rooms.%20Please%20share%20availability%20and%20price."
+href="https://wa.me/917675962840?
+ <img src="logo.png" height="70">
+text=Hi%20I%20want%20to%20book%20a%20room%20at%20Ahobilam%20Rooms.%20Please%20share%20availability%20and%20price."
 target="_blank">
 💬
 </a>
