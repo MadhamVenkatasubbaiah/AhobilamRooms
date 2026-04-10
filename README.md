@@ -59,7 +59,7 @@ body{
     font-weight: bold;
 }
 
-/* RIGHT */
+/* RIGHT SIDE */
 .right{
     display:flex;
     align-items:center;
@@ -181,8 +181,32 @@ button{
     cursor:pointer;
 }
 
+/* ===== PANELS ===== */
+.panel{
+    display:none;
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:#FFF8E1;
+    z-index:2000;
+    padding:20px;
+    overflow:auto;
+}
+
+.panel button{
+    background:#FF9933;
+    color:white;
+    border:none;
+    padding:10px 15px;
+    margin-bottom:20px;
+    border-radius:5px;
+    cursor:pointer;
+}
+
 /* ===== WHATSAPP BUTTON ===== */
-.whatsapp-btn{
+.whatsapp{
     position:fixed;
     bottom:20px;
     right:20px;
@@ -193,7 +217,7 @@ button{
     text-decoration:none;
     font-size:18px;
     box-shadow:0 4px 10px rgba(0,0,0,0.3);
-    z-index:2000;
+    z-index:3000;
 }
 
 </style>
@@ -211,9 +235,9 @@ button{
   <div class="center">
     <h1>AHOBILAM</h1>
     <div class="menu" id="menu">
-      <a href="#">About</a>
-      <a href="#">Hotels</a>
-      <a href="#">Temple Timings</a>
+      <a href="#" onclick="openPanel('aboutPanel')">About</a>
+      <a href="#" onclick="openPanel('hotelsPanel')">Hotels</a>
+      <a href="#" onclick="openPanel('timingsPanel')">Temple Timings</a>
     </div>
   </div>
   
@@ -265,7 +289,7 @@ Book Now
 
 </div>
 
-<!-- ===== ROOM CARD 2 (SAME) ===== -->
+<!-- ===== ROOM CARD 2 (ADDED SAME) ===== -->
 <div class="complex-card">
 
 <img src="Rajeshwari.Complex.jpeg" class="complex-photo">
@@ -278,18 +302,51 @@ Book Now
 
 </div>
 
+<!-- ===== PANELS ===== -->
+
+<div id="aboutPanel" class="panel">
+  <button onclick="goHome()">⬅ Back</button>
+  <h2>About</h2>
+  <p>Welcome to Ahobilam Rooms. Best stay near temple.</p>
+</div>
+
+<div id="hotelsPanel" class="panel">
+  <button onclick="goHome()">⬅ Back</button>
+  <h2>Hotels</h2>
+  <p>Nearby hotels list coming soon.</p>
+</div>
+
+<div id="timingsPanel" class="panel">
+  <button onclick="goHome()">⬅ Back</button>
+  <h2>Temple Timings</h2>
+  <p>Morning: 7:00 AM – 1:00 PM</p>
+  <p>Afternoon: 2:00 PM – 5:00 PM</p>
+</div>
+
 <!-- ===== WHATSAPP BUTTON ===== -->
-<a class="whatsapp-btn"
+<a class="whatsapp"
 href="https://wa.me/917675962840"
 target="_blank">
-💬 WhatsApp
+💬
 </a>
 
 <!-- ===== SCRIPT ===== -->
 <script>
+
 function toggleMenu(){
     document.getElementById("menu").classList.toggle("show");
 }
+
+function openPanel(id){
+    document.getElementById(id).style.display = "block";
+}
+
+function goHome(){
+    document.getElementById("aboutPanel").style.display = "none";
+    document.getElementById("hotelsPanel").style.display = "none";
+    document.getElementById("timingsPanel").style.display = "none";
+}
+
 </script>
 
 </body>
