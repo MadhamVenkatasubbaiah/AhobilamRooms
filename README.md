@@ -1,4 +1,4 @@
-<!-- <!DOCTYPE html> -->
+<!DOCTYPE html>
 <html>
 <head>
 
@@ -45,7 +45,7 @@ body{
     font-weight: bold;
 }
 
-/* MENU (DESKTOP) */
+/* MENU */
 .menu {
     display: flex;
     justify-content: center;
@@ -101,7 +101,6 @@ body{
     display:block;
 }
 
-/* 🔥 HIDE AVS IMAGE IN MOBILE */
 .right img{
     display:none;
 }
@@ -141,28 +140,7 @@ header p{
     z-index:2;
 }
 
-/* ===== MENU BUTTONS (ADDED) ===== */
-.menu-buttons{
-    text-align:center;
-    margin-top:20px;
-}
-
-.menu-buttons button{
-    background:#FF9933;
-    color:white;
-    border:none;
-    padding:12px 18px;
-    margin:8px;
-    font-size:16px;
-    border-radius:6px;
-    cursor:pointer;
-}
-
-.menu-buttons button:hover{
-    background:#e67e22;
-}
-
-/* ===== SECTION ===== */
+/* ===== CONTENT ===== */
 section{
     padding:40px;
     text-align:center;
@@ -203,6 +181,30 @@ button{
     cursor:pointer;
 }
 
+/* ===== PANELS (NEW) ===== */
+.panel{
+    display:none;
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:#FFF8E1;
+    z-index:2000;
+    padding:20px;
+    overflow:auto;
+}
+
+.panel button{
+    background:#FF9933;
+    color:white;
+    border:none;
+    padding:10px 15px;
+    margin-bottom:20px;
+    border-radius:5px;
+    cursor:pointer;
+}
+
 </style>
 </head>
 
@@ -218,9 +220,9 @@ button{
   <div class="center">
     <h1>AHOBILAM</h1>
     <div class="menu" id="menu">
-      <a href="#">About</a>
-      <a href="#">Hotels</a>
-      <a href="#">Temple Timings</a>
+      <a href="#" onclick="openPanel('aboutPanel')">About</a>
+      <a href="#" onclick="openPanel('hotelsPanel')">Hotels</a>
+      <a href="#" onclick="openPanel('timingsPanel')">Temple Timings</a>
     </div>
   </div>
   
@@ -240,13 +242,6 @@ button{
 Your ideal accommodation near the sacred Ahobilam Temple.
 </p>
 </header>
-
-<!-- ===== MENU BUTTONS (ADDED) ===== -->
-<div class="menu-buttons">
-    <button>About</button>
-    <button>Hotels</button>
-    <button>Temple Timings</button>
-</div>
 
 <!-- ===== CONTENT ===== -->
 <section>
@@ -279,11 +274,44 @@ Book Now
 
 </div>
 
+<!-- ===== PANELS ===== -->
+
+<div id="aboutPanel" class="panel">
+  <button onclick="goHome()">⬅ Back</button>
+  <h2>About</h2>
+  <p>Welcome to Ahobilam Rooms. Best stay near temple.</p>
+</div>
+
+<div id="hotelsPanel" class="panel">
+  <button onclick="goHome()">⬅ Back</button>
+  <h2>Hotels</h2>
+  <p>Nearby hotels list will be added soon.</p>
+</div>
+
+<div id="timingsPanel" class="panel">
+  <button onclick="goHome()">⬅ Back</button>
+  <h2>Temple Timings</h2>
+  <p>Morning: 6:00 AM – 12:30 PM</p>
+  <p>Evening: 3:00 PM – 8:00 PM</p>
+</div>
+
 <!-- ===== SCRIPT ===== -->
 <script>
+
 function toggleMenu(){
     document.getElementById("menu").classList.toggle("show");
 }
+
+function openPanel(id){
+    document.getElementById(id).style.display = "block";
+}
+
+function goHome(){
+    document.getElementById("aboutPanel").style.display = "none";
+    document.getElementById("hotelsPanel").style.display = "none";
+    document.getElementById("timingsPanel").style.display = "none";
+}
+
 </script>
 
 </body>
