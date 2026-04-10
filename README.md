@@ -1,5 +1,9 @@
+<!DOCTYPE html>
 <html>
 <head>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ahobilam Rooms</title>
 
 <style>
 
@@ -46,7 +50,13 @@ body{
 .right{
     display:flex;
     align-items:center;
+    justify-content:flex-end;
     gap:10px;
+}
+
+.right img{
+    height:70px;
+    display:block;
 }
 
 /* HAMBURGER */
@@ -57,7 +67,7 @@ body{
     cursor:pointer;
 }
 
-/* MOBILE */
+/* MOBILE MENU */
 @media(max-width:768px){
 
 .menu{
@@ -84,7 +94,7 @@ body{
     display:block;
 }
 
-/* hide AVS logo in mobile */
+/* hide AVS only on mobile */
 .right img{
     display:none;
 }
@@ -164,6 +174,7 @@ button{
     margin:20px;
     padding:15px;
     border-radius:10px;
+    box-shadow:0 4px 10px rgba(0,0,0,0.2);
 }
 
 .room-main{
@@ -199,6 +210,12 @@ button{
     border-radius:50px;
 }
 
+/* FORCE FIX (IMPORTANT) */
+.right img{
+    visibility:visible;
+    opacity:1;
+}
+
 </style>
 </head>
 
@@ -212,7 +229,10 @@ button{
 </div>
 
 <div class="center">
+
 <h2 style="color:white;margin:0;">AHOBILAM</h2>
+
+<span class="menu-toggle" onclick="toggleMenu()">☰</span>
 
 <div class="menu" id="menu">
 <a href="#" onclick="openPanel('aboutPanel')">About</a>
@@ -223,8 +243,7 @@ button{
 </div>
 
 <div class="right">
-<span class="menu-toggle" onclick="toggleMenu()">☰</span>
-<img src="AVS3.png" height="70">
+<img src="AVS3.png" height="70" alt="AVS Logo">
 </div>
 
 </div>
@@ -232,12 +251,17 @@ button{
 <!-- HEADER -->
 <header>
 <h1>Ahobilam Rooms</h1>
-<p>Welcome to Ahobilam Rooms</p>
+<p>
+<strong>Welcome to Ahobilam Rooms</strong><br>
+Your ideal accommodation near the temple
+</p>
 </header>
 
 <!-- FACILITIES -->
 <section>
+
 <h2>Facilities</h2>
+
 <p>
 🛏 AC & Non-AC Rooms<br>
 🚿 Hot Water 24 Hours<br>
@@ -248,6 +272,7 @@ button{
 <button onclick="location.href='tel:+917675962840'">
 Call For Booking
 </button>
+
 </section>
 
 <!-- COMPLEX -->
@@ -261,6 +286,7 @@ Rajeshwari Complex - Book Now
 
 <!-- ROOMS PANEL -->
 <div id="roomsPanel" class="panel">
+
 <button onclick="goHome()">⬅ Back</button>
 
 <h2>Rajeshwari Complex</h2>
@@ -310,6 +336,7 @@ Rajeshwari Complex - Book Now
 <h2>Temple Timings</h2>
 </div>
 
+<!-- WHATSAPP -->
 <a class="whatsapp"
 href="https://wa.me/917675962840"
 target="_blank">💬</a>
