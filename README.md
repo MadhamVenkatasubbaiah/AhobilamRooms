@@ -13,7 +13,7 @@ body{
     background:#FFF8E1;
 }
 
-/* ================= NAVBAR (FLEX FIXED) ================= */
+/* ================= NAVBAR ================= */
 .navbar{
     display:flex;
     justify-content:space-between;
@@ -34,7 +34,7 @@ body{
     display:block;
 }
 
-/* CENTER */
+/* CENTER TITLE + MENU */
 .center{
     flex:1;
     text-align:center;
@@ -61,13 +61,9 @@ body{
 }
 
 /* RIGHT LOGO */
-.right{
-    display:flex;
-    align-items:center;
-}
-
 .right img{
     height:70px;
+    width:auto;
     display:block;
 }
 
@@ -106,13 +102,13 @@ body{
     display:block;
 }
 
-/* hide AVS only on mobile */
+/* hide AVS logo on mobile */
 .right img{
     display:none;
 }
 }
 
-/* ================= HEADER (WATERMARK) ================= */
+/* ================= HEADER ================= */
 header{
     margin-top:100px;
     padding:90px 20px;
@@ -254,7 +250,8 @@ button{
 
     </div>
 
-    <div class="center">
+    <!-- ✅ FIXED: AVS LOGO IN RIGHT -->
+    <div class="right">
         <img src="AVS3.png" alt="AVS Logo">
     </div>
 
@@ -300,7 +297,6 @@ Rajeshwari Complex - Book Now
 
 <h2>Rooms</h2>
 
-<!-- 3 BED -->
 <div class="room-row">
 <img src="3bed.jpeg" class="room-main" onclick="toggleGallery('g1')">
 <div class="room-info">
@@ -314,7 +310,6 @@ Rajeshwari Complex - Book Now
 <img src="washroom.jpeg">
 </div>
 
-<!-- 2 BED -->
 <div class="room-row">
 <img src="2-bed.jpeg" class="room-main" onclick="toggleGallery('g2')">
 <div class="room-info">
