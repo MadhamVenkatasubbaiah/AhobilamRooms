@@ -33,6 +33,7 @@ body{
     box-sizing: border-box;
 }
 
+/* Center */
 .center {
     text-align: center;
 }
@@ -41,9 +42,10 @@ body{
     margin: 0;
     color: white;
     font-size: 32px;
+    font-weight: bold;
 }
 
-/* MENU */
+/* MENU (DESKTOP) */
 .menu {
     display: flex;
     justify-content: center;
@@ -57,7 +59,7 @@ body{
     font-weight: bold;
 }
 
-/* RIGHT */
+/* RIGHT SIDE */
 .right{
     display:flex;
     align-items:center;
@@ -72,7 +74,7 @@ body{
     cursor:pointer;
 }
 
-/* MOBILE */
+/* ===== MOBILE VIEW ===== */
 @media(max-width:768px){
 
 .menu{
@@ -99,7 +101,7 @@ body{
     display:block;
 }
 
-/* hide AVS */
+/* 🔥 HIDE AVS IMAGE IN MOBILE */
 .right img{
     display:none;
 }
@@ -112,10 +114,52 @@ body{
 /* ===== HEADER ===== */
 header{
     margin-top:100px;
-    padding:80px 20px;
+    padding:90px 20px;
     text-align:center;
-    background:#e8b97a;
     color:white;
+    position:relative;
+    background:#e8b97a;
+    overflow:hidden;
+}
+
+header::before{
+    content:"";
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    width:300px;
+    height:300px;
+    background:url("without_bg.png") no-repeat center;
+    background-size:contain;
+    opacity:0.08;
+}
+
+header h1,
+header p{
+    position:relative;
+    z-index:2;
+}
+
+/* ===== MENU BUTTONS (ADDED) ===== */
+.menu-buttons{
+    text-align:center;
+    margin-top:20px;
+}
+
+.menu-buttons button{
+    background:#FF9933;
+    color:white;
+    border:none;
+    padding:12px 18px;
+    margin:8px;
+    font-size:16px;
+    border-radius:6px;
+    cursor:pointer;
+}
+
+.menu-buttons button:hover{
+    background:#e67e22;
 }
 
 /* ===== SECTION ===== */
@@ -124,26 +168,39 @@ section{
     text-align:center;
 }
 
-/* BUTTONS */
-.btn{
+/* BUTTON */
+button{
     background:#27ae60;
     color:white;
-    padding:12px 20px;
+    padding:15px 25px;
     border:none;
-    font-size:16px;
-    margin:10px;
-    border-radius:6px;
+    font-size:18px;
     cursor:pointer;
+    border-radius:5px;
 }
 
-/* BOX */
-.box{
-    background:white;
-    padding:20px;
-    margin:20px auto;
-    max-width:400px;
+/* CARD */
+.complex-card{
+    width:320px;
+    margin:40px auto;
+    text-align:center;
+}
+
+.complex-photo{
+    width:300px;
+    border-radius:12px;
+    box-shadow:0 4px 12px rgba(0,0,0,0.3);
+}
+
+.complex-btn{
+    margin-top:15px;
+    background:#27ae60;
+    color:white;
+    padding:18px;
+    border:none;
+    font-size:20px;
     border-radius:10px;
-    box-shadow:0 3px 10px rgba(0,0,0,0.2);
+    cursor:pointer;
 }
 
 </style>
@@ -151,7 +208,7 @@ section{
 
 <body>
 
-<!-- NAVBAR -->
+<!-- ===== NAVBAR ===== -->
 <div class="navbar">
 
   <div class="left">
@@ -161,9 +218,9 @@ section{
   <div class="center">
     <h1>AHOBILAM</h1>
     <div class="menu" id="menu">
-      <a href="#about">About</a>
-      <a href="#details">Basic Details</a>
-      <a href="#timings">Temple Timings</a>
+      <a href="#">About</a>
+      <a href="#">Hotels</a>
+      <a href="#">Temple Timings</a>
     </div>
   </div>
   
@@ -174,49 +231,58 @@ section{
 
 </div>
 
-<!-- HEADER -->
-<header id="about">
+<!-- ===== HEADER ===== -->
+<header>
 <h1>Ahobilam Rooms</h1>
-<p>Your ideal accommodation near the sacred Ahobilam Temple.</p>
 
-<button class="btn" onclick="scrollToSection('details')">Basic Details</button>
-<button class="btn" onclick="scrollToSection('timings')">Temple Timings</button>
+<p>
+<strong>Welcome to Ahobilam Rooms</strong><br>
+Your ideal accommodation near the sacred Ahobilam Temple.
+</p>
 </header>
 
-<!-- BASIC DETAILS -->
-<section id="details">
-<h2>Basic Details</h2>
-
-<div class="box">
-<p><strong>Location:</strong> Near Ahobilam Temple</p>
-<p><strong>Contact:</strong> +91 7675962840</p>
-<p><strong>Room Types:</strong> AC / Non-AC</p>
-<p><strong>Facilities:</strong> Parking, Hot Water, Family Rooms</p>
+<!-- ===== MENU BUTTONS (ADDED) ===== -->
+<div class="menu-buttons">
+    <button>About</button>
+    <button>Hotels</button>
+    <button>Temple Timings</button>
 </div>
+
+<!-- ===== CONTENT ===== -->
+<section>
+
+<h2>Facilities</h2>
+
+<p>
+✅ AC & Non-AC Rooms<br>
+✅ Hot Water 24 Hours<br>
+✅ Parking Available<br>
+✅ Family Friendly
+</p>
+
+<button onclick="location.href='tel:+917675962840'">
+Call For Booking
+</button>
 
 </section>
 
-<!-- TEMPLE TIMINGS -->
-<section id="timings">
-<h2>Temple Timings</h2>
+<!-- ===== ROOM CARD ===== -->
+<div class="complex-card">
 
-<div class="box">
-<p><strong>Morning:</strong> 6:00 AM – 12:30 PM</p>
-<p><strong>Evening:</strong> 3:00 PM – 8:00 PM</p>
-<p><strong>Special Days:</strong> Extended Hours</p>
-<p><strong>Note:</strong> Timings may vary on festivals</p>
+<img src="Rajeshwari.Complex.jpeg" class="complex-photo">
+
+<button class="complex-btn"
+onclick="location.href='rooms.html'">
+Rajeshwari Complex<br>
+Book Now
+</button>
+
 </div>
 
-</section>
-
-<!-- SCRIPT -->
+<!-- ===== SCRIPT ===== -->
 <script>
 function toggleMenu(){
     document.getElementById("menu").classList.toggle("show");
-}
-
-function scrollToSection(id){
-    document.getElementById(id).scrollIntoView({behavior:"smooth"});
 }
 </script>
 
