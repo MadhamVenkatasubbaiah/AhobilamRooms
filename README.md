@@ -16,7 +16,7 @@ body{
 /* ================= NAVBAR ================= */
 .navbar{
     display:flex;
-    justify-content:space-between;
+    justify-content:space-between;   /* LEFT - CENTER - RIGHT */
     align-items:center;
     background:#FF9933;
     height:100px;
@@ -34,7 +34,7 @@ body{
     display:block;
 }
 
-/* CENTER TITLE + MENU */
+/* CENTER AREA */
 .center{
     flex:1;
     text-align:center;
@@ -60,7 +60,14 @@ body{
     font-weight:bold;
 }
 
-/* RIGHT LOGO */
+/* RIGHT LOGO (IMPORTANT FIX) */
+.right{
+    display:flex;
+    align-items:center;
+    justify-content:flex-end;
+    min-width:120px;   /* ensures it stays on right */
+}
+
 .right img{
     height:70px;
     width:auto;
@@ -240,7 +247,7 @@ button{
 
         <h1>AHOBILAM</h1>
 
-        <!--<span class="menu-toggle" onclick="toggleMenu()">☰</span> -->
+        <span class="menu-toggle" onclick="toggleMenu()">☰</span>
 
         <div class="menu" id="menu">
             <a href="#" onclick="openPanel('aboutPanel')">About</a>
@@ -250,7 +257,7 @@ button{
 
     </div>
 
-    <!-- ✅ FIXED: AVS LOGO IN RIGHT -->
+    <!-- ✅ RIGHT SIDE LOGO (FIXED) -->
     <div class="right">
         <img src="AVS3.png" alt="AVS Logo">
     </div>
