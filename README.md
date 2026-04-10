@@ -1,36 +1,48 @@
-<!DOCTYPE html>
 <html>
 <head>
-
+<br>
+    <br>
+        <br>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ahobilam Rooms</title>
+<title>Ahobilam Rooms 1</title>
 
 <style>
 
-/* BODY */
+/* ================= BODY ================= */
 body{
     font-family: Arial;
     margin:0;
     background:#FFF8E1;
 }
 
-/* NAVBAR */
-.navbar {
-    display: grid;
-    grid-template-columns: auto 1fr auto;
-    align-items: center;
-    background: #FF9933;
-    height: 100px;
-    padding: 0 20px;
-    position: fixed;
-    top: 0;
-    width: 100%;
+/* ================= NAVBAR ================= */
+.navbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    background:#FF9933;
+    height:100px;
+    padding:0 20px;
+    position:fixed;
+    top:0;
+    width:100%;
     z-index:1000;
 }
 
+/* LEFT */
+.nav-left img{
+    height:70px;
+}
+
 /* CENTER */
-.center{
+.nav-center{
     text-align:center;
+    flex:1;
+}
+
+.nav-center h2{
+    margin:0;
+    color:white;
 }
 
 /* MENU */
@@ -47,16 +59,8 @@ body{
 }
 
 /* RIGHT */
-.right{
-    display:flex;
-    align-items:center;
-    justify-content:flex-end;
-    gap:10px;
-}
-
-.right img{
+.nav-right img{
     height:70px;
-    display:block;
 }
 
 /* HAMBURGER */
@@ -67,18 +71,17 @@ body{
     cursor:pointer;
 }
 
-/* MOBILE MENU */
+/* ================= MOBILE ================= */
 @media(max-width:768px){
 
 .menu{
     display:none;
     flex-direction:column;
-    position:fixed;
+    position:absolute;
     top:100px;
     left:0;
     width:100%;
     background:#d6a65c;
-    text-align:center;
 }
 
 .menu a{
@@ -94,14 +97,12 @@ body{
     display:block;
 }
 
-/* hide AVS only on mobile */
-.right img{
+.nav-right img{
     display:none;
 }
-
 }
 
-/* HEADER */
+/* ================= HEADER ================= */
 header{
     margin-top:100px;
     padding:90px 20px;
@@ -111,6 +112,7 @@ header{
     position:relative;
 }
 
+/* WATERMARK */
 header::before{
     content:"";
     position:absolute;
@@ -124,7 +126,13 @@ header::before{
     opacity:0.08;
 }
 
-/* SECTION */
+header h1,
+header p{
+    position:relative;
+    z-index:1;
+}
+
+/* ================= CONTENT ================= */
 section{
     padding:40px;
     text-align:center;
@@ -151,7 +159,7 @@ button{
     border-radius:10px;
 }
 
-/* PANEL */
+/* ================= PANEL ================= */
 .panel{
     display:none;
     position:fixed;
@@ -165,7 +173,7 @@ button{
     overflow:auto;
 }
 
-/* ROOM ROW */
+/* ================= ROOMS ================= */
 .room-row{
     display:flex;
     align-items:center;
@@ -199,7 +207,7 @@ button{
     border-radius:10px;
 }
 
-/* WHATSAPP */
+/* ================= WHATSAPP ================= */
 .whatsapp{
     position:fixed;
     bottom:20px;
@@ -208,12 +216,7 @@ button{
     color:white;
     padding:14px;
     border-radius:50px;
-}
-
-/* FORCE FIX (IMPORTANT) */
-.right img{
-    visibility:visible;
-    opacity:1;
+    font-size:18px;
 }
 
 </style>
@@ -221,43 +224,43 @@ button{
 
 <body>
 
-<!-- NAVBAR -->
+<!-- ================= NAVBAR ================= -->
 <div class="navbar">
 
-<div>
-<img src="logo.png" height="70">
+    <!-- LEFT -->
+    <div class="nav-left">
+        <img src="logo.png" alt="Logo">
+    </div>
+
+    <!-- CENTER -->
+    <div class="nav-center">
+
+        <h2>AHOBILAM</h2>
+
+        <span class="menu-toggle" onclick="toggleMenu()">☰</span>
+
+        <div class="menu" id="menu">
+            <a href="#" onclick="openPanel('aboutPanel')">About</a>
+            <a href="#" onclick="openPanel('hotelsPanel')">Hotels</a>
+            <a href="#" onclick="openPanel('timingsPanel')">Temple Timings</a>
+        </div>
+
+    </div>
+
+    <!-- RIGHT (AVS LOGO FIXED) -->
+    <div class="nav-right">
+        <img src="AVS3.png" alt="AVS Logo">
+    </div>
+
 </div>
 
-<div class="center">
-
-<h2 style="color:white;margin:0;">AHOBILAM</h2>
-
-<span class="menu-toggle" onclick="toggleMenu()">☰</span>
-
-<div class="menu" id="menu">
-<a href="#" onclick="openPanel('aboutPanel')">About</a>
-<a href="#" onclick="openPanel('hotelsPanel')">Hotels</a>
-<a href="#" onclick="openPanel('timingsPanel')">Temple Timings</a>
-</div>
-
-</div>
-
-<div class="right">
-<img src="AVS3.png" height="70" alt="AVS Logo">
-</div>
-
-</div>
-
-<!-- HEADER -->
+<!-- ================= HEADER ================= -->
 <header>
 <h1>Ahobilam Rooms</h1>
-<p>
-<strong>Welcome to Ahobilam Rooms</strong><br>
-Your ideal accommodation near the temple
-</p>
+<p>Best stay near temple</p>
 </header>
 
-<!-- FACILITIES -->
+<!-- ================= FACILITIES ================= -->
 <section>
 
 <h2>Facilities</h2>
@@ -275,7 +278,7 @@ Call For Booking
 
 </section>
 
-<!-- COMPLEX -->
+<!-- ================= COMPLEX ================= -->
 <div class="complex-card">
 <img src="Rajeshwari.Complex.jpeg" class="complex-photo">
 <br><br>
@@ -284,19 +287,21 @@ Rajeshwari Complex - Book Now
 </button>
 </div>
 
-<!-- ROOMS PANEL -->
+<!-- ================= ROOMS PANEL ================= -->
 <div id="roomsPanel" class="panel">
 
 <button onclick="goHome()">⬅ Back</button>
 
-<h2>Rajeshwari Complex</h2>
+<h2>Rooms</h2>
 
 <!-- 3 BED -->
 <div class="room-row">
 <img src="3bed.jpeg" class="room-main" onclick="toggleGallery('g1')">
 <div class="room-info">
 <h3>3 Bed Room</h3>
-<button onclick="location.href='tel:+917675962840'">Book ₹1600</button>
+<button onclick="location.href='tel:+917675962840'">
+Book ₹1600
+</button>
 </div>
 </div>
 
@@ -310,7 +315,9 @@ Rajeshwari Complex - Book Now
 <img src="2-bed.jpeg" class="room-main" onclick="toggleGallery('g2')">
 <div class="room-info">
 <h3>2 Bed Room</h3>
-<button onclick="location.href='tel:+917675962840'">Book ₹1200</button>
+<button onclick="location.href='tel:+917675962840'">
+Book ₹1200
+</button>
 </div>
 </div>
 
@@ -320,7 +327,7 @@ Rajeshwari Complex - Book Now
 
 </div>
 
-<!-- PANELS -->
+<!-- ================= OTHER PANELS ================= -->
 <div id="aboutPanel" class="panel">
 <button onclick="goHome()">⬅ Back</button>
 <h2>About</h2>
@@ -336,7 +343,7 @@ Rajeshwari Complex - Book Now
 <h2>Temple Timings</h2>
 </div>
 
-<!-- WHATSAPP -->
+<!-- ================= WHATSAPP ================= -->
 <a class="whatsapp"
 href="https://wa.me/917675962840"
 target="_blank">💬</a>
@@ -352,7 +359,8 @@ document.getElementById(id).style.display="block";
 }
 
 function goHome(){
-document.querySelectorAll(".panel").forEach(p=>p.style.display="none");
+document.querySelectorAll(".panel")
+.forEach(p=>p.style.display="none");
 }
 
 function toggleGallery(id){
