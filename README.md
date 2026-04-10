@@ -185,8 +185,6 @@ button{
 
     <h1 class="site-title">AHOBILAM</h1>
 
-    <img src="without_bg.png" class="logo">
-
     <div class="menu-toggle" onclick="toggleMenu()">☰</div>
 
     <div class="menu" id="menu">
@@ -195,6 +193,7 @@ button{
         <a href="#">Temple Timings</a>
     </div>
 
+    <img src="without_bg.png" class="logo">
 </div>
 
 <!-- ===== HEADER ===== -->
