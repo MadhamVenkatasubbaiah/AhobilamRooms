@@ -49,7 +49,10 @@ body{
 
 /* MENU */
 .menu{
-    display:flex;
+  flex: 1;
+  display: flex;
+  justify-content: center;  /* THIS centers menu */
+  gap: 30px;
 }
 
 .menu a{
@@ -203,7 +206,7 @@ button{
 <h1>Ahobilam Rooms</h1>
 
 <p>
-<strong>Welcome to Ahobilam Rooms</strong><br>
+<strong>Welcome to Ahobilam Rooms 12</strong><br>
 Your ideal accommodation near the sacred Ahobilam Temple.
 </p>
 </header>
