@@ -259,7 +259,7 @@ button{
 
     <!-- ✅ RIGHT SIDE LOGO (FIXED) -->
     <div class="right">
-        <img src="AVS3.png" alt="AVS Logo">
+        <img src="AVS3.png" alt="AVS3 Logo">
     </div>
 
 </div>
