@@ -59,6 +59,13 @@ body{
     font-weight: bold;
 }
 
+/* RIGHT SIDE */
+.right{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
 /* HAMBURGER */
 .menu-toggle{
     display:none;
@@ -92,6 +99,11 @@ body{
 
 .menu-toggle{
     display:block;
+}
+
+/* 🔥 HIDE AVS IMAGE IN MOBILE */
+.right img{
+    display:none;
 }
 
 .center h1{
