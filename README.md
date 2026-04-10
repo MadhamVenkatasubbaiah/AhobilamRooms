@@ -289,7 +289,7 @@ Book Now
 
 </div>
 
-<!-- ===== ROOM CARD 2 (ADDED SAME) ===== -->
+<!-- ===== ROOM CARD 2 ===== -->
 <div class="complex-card">
 
 <img src="Rajeshwari.Complex.jpeg" class="complex-photo">
@@ -323,9 +323,9 @@ Book Now
   <p>Afternoon: 2:00 PM – 5:00 PM</p>
 </div>
 
-<!-- ===== WHATSAPP BUTTON ===== -->
+<!-- ===== WHATSAPP BUTTON (AUTO MESSAGE ADDED) ===== -->
 <a class="whatsapp"
-href="https://wa.me/917675962840"
+href="https://wa.me/917675962840?text=Hi%20I%20want%20to%20book%20a%20room%20at%20Ahobilam%20Rooms.%20Please%20share%20availability%20and%20price."
 target="_blank">
 💬
 </a>
