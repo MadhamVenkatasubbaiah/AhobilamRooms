@@ -21,7 +21,7 @@ body{
     display:flex;
     align-items:center;
     justify-content:space-between;
-    background:#d6a65c;
+    background:#FFF8E1;
     height:100px;
     padding:0 12px;
     position:fixed;
