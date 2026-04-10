@@ -13,14 +13,14 @@ body{
     background:#FFF8E1;
 }
 
-/* ================= NAVBAR ================= */
+/* ================= NAVBAR FIX ================= */
 .navbar{
     display:flex;
-    justify-content:space-between;   /* LEFT - CENTER - RIGHT */
+    justify-content:space-between;
     align-items:center;
     background:#FF9933;
     height:100px;
-    padding:0 20px;
+    padding:0 15px;
     position:fixed;
     top:0;
     width:100%;
@@ -30,46 +30,48 @@ body{
 
 /* LEFT LOGO */
 .left img{
-    height:70px;
+    height:60px;
     display:block;
 }
 
-/* CENTER AREA */
+/* CENTER AREA (IMPORTANT FIX) */
 .center{
     flex:1;
     text-align:center;
+    min-width:0;
 }
 
 .center h1{
     margin:0;
     color:white;
-    font-size:32px;
+    font-size:26px;
 }
 
 /* MENU */
 .menu{
     display:flex;
     justify-content:center;
-    gap:30px;
+    gap:20px;
     margin-top:5px;
+    flex-wrap:wrap;
 }
 
 .menu a{
     color:white;
     text-decoration:none;
     font-weight:bold;
+    font-size:14px;
 }
 
-/* RIGHT LOGO (IMPORTANT FIX) */
+/* RIGHT LOGO */
 .right{
+    flex-shrink:0;
     display:flex;
     align-items:center;
-    justify-content:flex-end;
-    min-width:120px;   /* ensures it stays on right */
 }
 
 .right img{
-    height:70px;
+    height:60px;
     width:auto;
     display:block;
 }
@@ -96,13 +98,13 @@ body{
     text-align:center;
 }
 
+.menu.show{
+    display:flex;
+}
+
 .menu a{
     padding:15px;
     border-top:1px solid rgba(255,255,255,0.3);
-}
-
-.menu.show{
-    display:flex;
 }
 
 .menu-toggle{
@@ -247,7 +249,7 @@ button{
 
         <h1>AHOBILAM</h1>
 
-       <!-- <span class="menu-toggle" onclick="toggleMenu()">☰</span> -->
+        <span class="menu-toggle" onclick="toggleMenu()">☰</span>
 
         <div class="menu" id="menu">
             <a href="#" onclick="openPanel('aboutPanel')">About</a>
@@ -257,9 +259,8 @@ button{
 
     </div>
 
-    <!-- ✅ RIGHT SIDE LOGO (FIXED) -->
     <div class="right">
-        <img src="AVS3.png" alt="AVS3 Logo">
+        <img src="AVS3.png" alt="AVS Logo">
     </div>
 
 </div>
