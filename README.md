@@ -1,11 +1,9 @@
-<!-- <!DOCTYPE html> -->
+<!DOCTYPE html>
 <html>
 <head>
 
-<!--<
-meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Ahobilam Rooms</title>
--->
 
 <style>
 
@@ -35,12 +33,11 @@ body{
     box-sizing: border-box;
 }
 
-/* Center section (title + menu stacked or inline) */
+/* Center */
 .center {
     text-align: center;
 }
 
-/* Title */
 .center h1 {
     margin: 0;
     color: white;
@@ -48,7 +45,7 @@ body{
     font-weight: bold;
 }
 
-/* Menu */
+/* MENU (DESKTOP) */
 .menu {
     display: flex;
     justify-content: center;
@@ -62,11 +59,11 @@ body{
     font-weight: bold;
 }
 
-/* MOBILE MENU BUTTON */
+/* HAMBURGER */
 .menu-toggle{
     display:none;
-    font-size:24px;
-    color:black;
+    font-size:28px;
+    color:white;
     cursor:pointer;
 }
 
@@ -76,16 +73,16 @@ body{
 .menu{
     display:none;
     flex-direction:column;
-    position:absolute;
-    top:55px;
-    right:0;
+    position:fixed;
+    top:100px;
+    left:0;
     background:#d6a65c;
     width:100%;
-    text-align:left;
+    text-align:center;
 }
 
 .menu a{
-    padding:12px;
+    padding:15px;
     border-top:1px solid rgba(255,255,255,0.3);
 }
 
@@ -97,14 +94,14 @@ body{
     display:block;
 }
 
-.site-title{
-    font-size:30px;
+.center h1{
+    font-size:24px;
 }
 }
 
-/* ===== HEADER WITH WATERMARK ===== */
+/* ===== HEADER ===== */
 header{
-    margin-top:55px;
+    margin-top:100px;
     padding:90px 20px;
     text-align:center;
     color:white;
@@ -113,7 +110,6 @@ header{
     overflow:hidden;
 }
 
-/* WATERMARK IMAGE */
 header::before{
     content:"";
     position:absolute;
@@ -124,10 +120,9 @@ header::before{
     height:300px;
     background:url("without_bg.png") no-repeat center;
     background-size:contain;
-    opacity:0.08; /* watermark effect */
+    opacity:0.08;
 }
 
-/* HEADER TEXT ABOVE WATERMARK */
 header h1,
 header p{
     position:relative;
@@ -151,7 +146,7 @@ button{
     border-radius:5px;
 }
 
-/* COMPLEX CARD */
+/* CARD */
 .complex-card{
     width:320px;
     margin:40px auto;
@@ -189,7 +184,7 @@ button{
   
   <div class="center">
     <h1>AHOBILAM</h1>
-    <div class="menu">
+    <div class="menu" id="menu">
       <a href="#">About</a>
       <a href="#">Hotels</a>
       <a href="#">Temple Timings</a>
@@ -197,6 +192,7 @@ button{
   </div>
   
   <div class="right">
+    <span class="menu-toggle" onclick="toggleMenu()">☰</span>
     <img src="AVS3.png" height="70">
   </div>
 
@@ -207,7 +203,7 @@ button{
 <h1>Ahobilam Rooms</h1>
 
 <p>
-<strong>Welcome to Ahobilam Rooms 12</strong><br>
+<strong>Welcome to Ahobilam Rooms</strong><br>
 Your ideal accommodation near the sacred Ahobilam Temple.
 </p>
 </header>
@@ -243,7 +239,7 @@ Book Now
 
 </div>
 
-<!-- ===== MOBILE MENU SCRIPT ===== -->
+<!-- ===== SCRIPT ===== -->
 <script>
 function toggleMenu(){
     document.getElementById("menu").classList.toggle("show");
