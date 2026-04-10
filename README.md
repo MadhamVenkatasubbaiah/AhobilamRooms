@@ -183,17 +183,24 @@ button{
 <!-- ===== NAVBAR ===== -->
 <div class="navbar">
 
-    <img src="AVS3.png" class="logo">
+  <div class="left">
+    <img src="logo.png" height="70">
+  </div>
 
-    <h1 class="site-title">AHOBILAM</h1>
-
-    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
-
-    <div class="menu" id="menu">
-        <a href="#">About</a>
-        <a href="#">Hotels</a>
-        <a href="#">Temple Timings  </a>
+  <div class="center">
+    <h1>AHOBILAM</h1>
+    <div class="menu">
+      <a href="#">About</a>
+      <a href="#">Hotels</a>
+      <a href="#">Temple Timings</a>
     </div>
+  </div>
+
+  <div class="right">
+    <img src="god.png" height="70">
+  </div>
+
+</div>
 
 
 
