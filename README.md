@@ -264,10 +264,10 @@ Your ideal accommodation near the sacred Ahobilam Temple.
 <h2>Facilities</h2>
 
 <p>
-✅ AC & Non-AC Rooms<br>
-✅ Hot Water 24 Hours<br>
-✅ Parking Available<br>
-✅ Family Friendly
+🛏 AC & Non-AC Rooms<br>
+🚿 Hot Water 24 Hours<br>
+🚘 Parking Available<br>
+👨‍👩‍👦 Family Friendly
 </p>
 
 <button onclick="location.href='tel:+917675962840'">
