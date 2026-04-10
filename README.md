@@ -79,7 +79,7 @@ body{
     right:0;
     background:#d6a65c;
     width:100%;
-    text-align:center;
+    text-align:left;
 }
 
 .menu a{
