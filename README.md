@@ -44,6 +44,19 @@ body{
     font-weight:bold;
 }
 
+.right{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+    .right img{
+        display:none;
+    }
+}
+
 /* HEADER */
 header{
     margin-top:100px;
@@ -176,7 +189,7 @@ button{
 
 </div>
 
-<div>
+<div class="right">
 <img src="AVS3.png" height="70">
 </div>
 
@@ -248,7 +261,7 @@ Book ₹1600
 </div>
 </div>
 
-<!-- 2 BED (ADDED BACK) -->
+<!-- 2 BED -->
 <div>
 <div class="room-row">
 
@@ -287,7 +300,7 @@ Book ₹1200
 
 <div id="timingsPanel" class="panel">
 <button onclick="goHome()">⬅ Back</button>
-<h2>Temple Timings</h2>
+<h2>Temple Timings1</h2>
 <p>Morning: 7AM - 1PM<br>Afternoon: 2PM - 5PM</p>
 </div>
 
