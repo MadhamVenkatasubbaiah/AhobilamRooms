@@ -255,7 +255,7 @@ button{
     </div>
 
     <div class="center">
-        <img src="AVS3.png" alt="Logo">
+        <img src="AVS3.png" alt="AVS Logo">
     </div>
 
 </div>
