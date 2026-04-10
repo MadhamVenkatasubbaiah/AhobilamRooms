@@ -28,10 +28,12 @@ body{
     z-index:1000;
 }
 
+/* CENTER */
 .center{
     text-align:center;
 }
 
+/* MENU */
 .menu{
     display:flex;
     justify-content:center;
@@ -44,17 +46,53 @@ body{
     font-weight:bold;
 }
 
+/* RIGHT */
 .right{
     display:flex;
     align-items:center;
     gap:10px;
 }
 
+/* HAMBURGER */
+.menu-toggle{
+    display:none;
+    font-size:28px;
+    color:white;
+    cursor:pointer;
+}
+
 /* MOBILE */
 @media(max-width:768px){
-    .right img{
-        display:none;
-    }
+
+.menu{
+    display:none;
+    flex-direction:column;
+    position:fixed;
+    top:100px;
+    left:0;
+    width:100%;
+    background:#d6a65c;
+    text-align:center;
+}
+
+.menu a{
+    padding:15px;
+    border-top:1px solid rgba(255,255,255,0.3);
+}
+
+.menu.show{
+    display:flex;
+}
+
+.menu-toggle{
+    display:block;
+}
+
+/* hide AVS logo in mobile */
+.right img{
+    display:none;
+}
+
 }
 
 /* HEADER */
@@ -130,7 +168,6 @@ button{
     margin:20px;
     padding:15px;
     border-radius:10px;
-    box-shadow:0 4px 10px rgba(0,0,0,0.2);
 }
 
 .room-main{
@@ -181,7 +218,7 @@ button{
 <div class="center">
 <h2 style="color:white;margin:0;">AHOBILAM</h2>
 
-<div class="menu">
+<div class="menu" id="menu">
 <a href="#" onclick="openPanel('aboutPanel')">About</a>
 <a href="#" onclick="openPanel('hotelsPanel')">Hotels</a>
 <a href="#" onclick="openPanel('timingsPanel')">Temple Timings</a>
@@ -190,6 +227,7 @@ button{
 </div>
 
 <div class="right">
+<span class="menu-toggle" onclick="toggleMenu()">☰</span>
 <img src="AVS3.png" height="70">
 </div>
 
@@ -198,17 +236,12 @@ button{
 <!-- HEADER -->
 <header>
 <h1>Ahobilam Rooms</h1>
-<p>
-<strong>Welcome to Ahobilam Rooms</strong><br>
-Your ideal accommodation near the sacred temple
-</p>
+<p>Welcome to Ahobilam Rooms</p>
 </header>
 
 <!-- FACILITIES -->
 <section>
-
 <h2>Facilities</h2>
-
 <p>
 🛏 AC & Non-AC Rooms<br>
 🚿 Hot Water 24 Hours<br>
@@ -219,7 +252,6 @@ Your ideal accommodation near the sacred temple
 <button onclick="location.href='tel:+917675962840'">
 Call For Booking
 </button>
-
 </section>
 
 <!-- COMPLEX -->
@@ -233,54 +265,35 @@ Rajeshwari Complex - Book Now
 
 <!-- ROOMS PANEL -->
 <div id="roomsPanel" class="panel">
-
 <button onclick="goHome()">⬅ Back</button>
 
 <h2>Rajeshwari Complex</h2>
 
 <!-- 3 BED -->
-<div>
 <div class="room-row">
-
-<img src="3bed.jpeg" class="room-main"
-onclick="toggleGallery('g1')">
-
+<img src="3bed.jpeg" class="room-main" onclick="toggleGallery('g1')">
 <div class="room-info">
 <h3>3 Bed Room</h3>
-<p>AC + WiFi</p>
-<button onclick="location.href='tel:+917675962840'">
-Book ₹1600
-</button>
+<button onclick="location.href='tel:+917675962840'">Book ₹1600</button>
 </div>
-
 </div>
 
 <div id="g1" class="gallery">
 <img src="3bed.jpeg">
 <img src="washroom.jpeg">
 </div>
-</div>
 
 <!-- 2 BED -->
-<div>
 <div class="room-row">
-
-<img src="2-bed.jpeg" class="room-main"
-onclick="toggleGallery('g2')">
-
+<img src="2-bed.jpeg" class="room-main" onclick="toggleGallery('g2')">
 <div class="room-info">
 <h3>2 Bed Room</h3>
-<p>AC + WiFi</p>
-<button onclick="location.href='tel:+917675962840'">
-Book ₹1200
-</button>
+<button onclick="location.href='tel:+917675962840'">Book ₹1200</button>
 </div>
-
 </div>
 
 <div id="g2" class="gallery">
 <img src="2-bed.jpeg">
-</div>
 </div>
 
 </div>
@@ -289,35 +302,34 @@ Book ₹1200
 <div id="aboutPanel" class="panel">
 <button onclick="goHome()">⬅ Back</button>
 <h2>About</h2>
-<p>Best stay near temple.</p>
 </div>
 
 <div id="hotelsPanel" class="panel">
 <button onclick="goHome()">⬅ Back</button>
 <h2>Hotels</h2>
-<p>Coming soon</p>
 </div>
 
 <div id="timingsPanel" class="panel">
 <button onclick="goHome()">⬅ Back</button>
-<h2>Temple Timings1</h2>
-<p>Morning: 7AM - 1PM<br>Afternoon: 2PM - 5PM</p>
+<h2>Temple Timings</h2>
 </div>
 
-<!-- WHATSAPP -->
 <a class="whatsapp"
-href="https://wa.me/917675962840?text=Hi%20I%20want%20room"
+href="https://wa.me/917675962840"
 target="_blank">💬</a>
 
 <script>
+
+function toggleMenu(){
+document.getElementById("menu").classList.toggle("show");
+}
 
 function openPanel(id){
 document.getElementById(id).style.display="block";
 }
 
 function goHome(){
-document.querySelectorAll(".panel")
-.forEach(p=>p.style.display="none");
+document.querySelectorAll(".panel").forEach(p=>p.style.display="none");
 }
 
 function toggleGallery(id){
