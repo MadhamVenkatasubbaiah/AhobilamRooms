@@ -7,14 +7,14 @@
 
 <style>
 
-/* ===== BODY ===== */
+/* BODY */
 body{
     font-family: Arial;
     margin:0;
     background:#FFF8E1;
 }
 
-/* ===== NAVBAR ===== */
+/* NAVBAR */
 .navbar {
     display: grid;
     grid-template-columns: auto 1fr auto;
@@ -25,71 +25,29 @@ body{
     position: fixed;
     top: 0;
     width: 100%;
-    z-index: 1000;
 }
 
-/* Center */
-.center {
-    text-align: center;
-}
-
-.center h1 {
-    margin: 0;
-    color: white;
-}
-
-/* MENU */
-.menu {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-}
-
-.menu a {
-    color: white;
-    text-decoration: none;
-}
-
-/* RIGHT SIDE */
-.right{
-    display:flex;
-    align-items:center;
-    gap:10px;
-}
-
-.menu-toggle{
-    display:none;
-    font-size:28px;
-    color:white;
-    cursor:pointer;
-}
-
-/* MOBILE */
-@media(max-width:768px){
-.menu{
-    display:none;
-    flex-direction:column;
-    position:fixed;
-    top:100px;
-    left:0;
-    background:#d6a65c;
-    width:100%;
-}
-.menu.show{
-    display:flex;
-}
-.menu-toggle{
-    display:block;
-}
-}
-
-/* HEADER */
+/* HEADER WITH WATERMARK */
 header{
     margin-top:100px;
     padding:90px 20px;
     text-align:center;
-    background:#e8b97a;
     color:white;
+    background:#e8b97a;
+    position:relative;
+}
+
+header::before{
+    content:"";
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    width:300px;
+    height:300px;
+    background:url("without_bg.png") no-repeat center;
+    background-size:contain;
+    opacity:0.08;
 }
 
 /* CONTENT */
@@ -104,11 +62,10 @@ button{
     color:white;
     padding:15px 25px;
     border:none;
-    cursor:pointer;
     border-radius:5px;
 }
 
-/* CARD */
+/* ROOM CARD */
 .complex-card{
     width:320px;
     margin:40px auto;
@@ -120,11 +77,7 @@ button{
     border-radius:12px;
 }
 
-.complex-btn{
-    margin-top:15px;
-}
-
-/* ===== PANELS ===== */
+/* PANELS */
 .panel{
     display:none;
     position:fixed;
@@ -138,39 +91,49 @@ button{
     overflow:auto;
 }
 
-/* ===== ROOMS DESIGN ===== */
+/* ROOMS */
 .rooms-container{
-display:flex;
-justify-content:center;
-gap:30px;
-flex-wrap:wrap;
-padding:40px;
+    display:flex;
+    justify-content:center;
+    padding:20px;
 }
 
-.room-card{
-background:white;
-border-radius:10px;
-box-shadow:0 4px 10px rgba(0,0,0,0.2);
-width:300px;
-padding:15px;
+/* ROOM ROW (IMAGE LEFT, BOOK RIGHT) */
+.room-row{
+    display:flex;
+    align-items:center;
+    gap:20px;
+    background:white;
+    padding:15px;
+    border-radius:10px;
+    box-shadow:0 4px 10px rgba(0,0,0,0.2);
 }
 
-.room-card img{
-width:100%;
-border-radius:10px;
+/* MAIN IMAGE */
+.room-main{
+    width:250px;
+    border-radius:10px;
+    cursor:pointer;
 }
 
-.book-btn{
-background:#27ae60;
-color:white;
-padding:10px 20px;
-border:none;
-border-radius:5px;
-cursor:pointer;
-margin-top:10px;
+/* RIGHT SIDE BOOK */
+.room-info{
+    text-align:left;
 }
 
-/* WhatsApp */
+/* HIDDEN GALLERY */
+.gallery{
+    display:none;
+    margin-top:20px;
+}
+
+.gallery img{
+    width:200px;
+    margin:10px;
+    border-radius:10px;
+}
+
+/* WHATSAPP */
 .whatsapp{
     position:fixed;
     bottom:20px;
@@ -186,122 +149,100 @@ margin-top:10px;
 
 <body>
 
-<!-- NAVBAR -->
-<div class="navbar">
-
-<div>
-<img src="logo.png" height="70">
-</div>
-
-<div class="center">
-<h1>AHOBILAM</h1>
-
-<div class="menu" id="menu">
-<a href="#" onclick="openPanel('aboutPanel')">About</a>
-<a href="#" onclick="openPanel('hotelsPanel')">Hotels</a>
-<a href="#" onclick="openPanel('timingsPanel')">Temple Timings</a>
-</div>
-</div>
-
-<div class="right">
-<span class="menu-toggle" onclick="toggleMenu()">☰</span>
-<img src="AVS3.png" height="70">
-</div>
-
-</div>
-
 <!-- HEADER -->
 <header>
 <h1>Ahobilam Rooms</h1>
-<p>Welcome to Ahobilam Rooms</p>
+<p>
+<strong>Welcome to Ahobilam Rooms</strong><br>
+Your ideal accommodation near temple
+</p>
 </header>
 
-<!-- CONTENT -->
+<!-- FACILITIES (RESTORED FULL) -->
 <section>
+
 <h2>Facilities</h2>
-<p>AC & Non-AC Rooms | Hot Water | Parking | Family Friendly</p>
+
+<p>
+🛏 AC & Non-AC Rooms<br>
+🚿 Hot Water 24 Hours<br>
+🚘 Parking Available<br>
+👨‍👩‍👦 Family Friendly
+</p>
 
 <button onclick="location.href='tel:+917675962840'">
 Call For Booking
 </button>
+
 </section>
 
-<!-- ROOM CARD -->
+<!-- COMPLEX -->
 <div class="complex-card">
 <img src="Rajeshwari.Complex.jpeg" class="complex-photo">
-<button class="complex-btn" onclick="openPanel('roomsPanel')">
-Rajeshwari Complex<br>Book Now
+<br><br>
+<button onclick="openPanel('roomsPanel')">
+Rajeshwari Complex - Book Now
 </button>
 </div>
 
-<!-- ===== ROOMS PANEL ===== -->
+<!-- ROOMS PANEL -->
 <div id="roomsPanel" class="panel">
 
 <button onclick="goHome()">⬅ Back</button>
 
-<h1>Rajeshwari Complex</h1>
+<h2>Rajeshwari Complex</h2>
 
 <div class="rooms-container">
 
-<div class="room-card">
-<img src="3bed.jpeg">
-<img src="washroom.jpeg">
+<!-- ROOM 1 -->
+<div>
+<div class="room-row">
+
+<img src="3bed.jpeg" class="room-main"
+onclick="toggleGallery('g1')">
+
+<div class="room-info">
 <h3>3 Bed Room</h3>
 <p>AC + WiFi</p>
-<button class="book-btn" onclick="location.href='tel:+917675962840'">
-Book Now - ₹1600
-</button>
-</div>
 
-<div class="room-card">
-<img src="2-bed.jpeg">
-<h3>2 Bed Room</h3>
-<p>AC + WiFi</p>
-<button class="book-btn" onclick="location.href='tel:+917675962840'">
-Book Now - ₹1200
+<button onclick="location.href='tel:+917675962840'">
+Book ₹1600
 </button>
 </div>
 
 </div>
+
+<!-- INSIDE PHOTOS -->
+<div id="g1" class="gallery">
+<img src="3bed.jpeg">
+<img src="washroom.jpeg">
+</div>
 </div>
 
-<!-- OTHER PANELS -->
-<div id="aboutPanel" class="panel">
-<button onclick="goHome()">⬅ Back</button>
-<h2>About</h2>
-<p>Best stay near temple.</p>
 </div>
 
-<div id="hotelsPanel" class="panel">
-<button onclick="goHome()">⬅ Back</button>
-<h2>Hotels</h2>
-<p>Coming soon</p>
 </div>
 
-<div id="timingsPanel" class="panel">
-<button onclick="goHome()">⬅ Back</button>
-<h2>Temple Timings</h2>
-<p>7AM - 5PM</p>
-</div>
-
-<!-- WhatsApp -->
+<!-- WHATSAPP -->
 <a class="whatsapp"
 href="https://wa.me/917675962840?text=Hi%20I%20want%20room"
 target="_blank">💬</a>
 
 <script>
 
-function toggleMenu(){
-document.getElementById("menu").classList.toggle("show");
-}
-
 function openPanel(id){
 document.getElementById(id).style.display="block";
 }
 
 function goHome(){
-let panels=document.querySelectorAll(".panel");
-panels.forEach(p=>p.style.display="none");
+document.querySelectorAll(".panel")
+.forEach(p=>p.style.display="none");
+}
+
+/* SHOW INSIDE PHOTOS */
+function toggleGallery(id){
+let g=document.getElementById(id);
+g.style.display = (g.style.display==="block") ? "none":"block";
 }
 
 </script>
