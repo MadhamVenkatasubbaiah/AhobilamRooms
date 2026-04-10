@@ -1,9 +1,10 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html> -->
 <html>
 <head>
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Ahobilam Rooms</title>
+-->
 
 <style>
 
@@ -291,8 +292,10 @@ Book Now
 <div id="timingsPanel" class="panel">
   <button onclick="goHome()">⬅ Back</button>
   <h2>Temple Timings</h2>
-  <p>Morning: 6:00 AM – 12:30 PM</p>
-  <p>Evening: 3:00 PM – 8:00 PM</p>
+   <img src="logo.png" height="70">
+  <p>Morning: 7:00 AM – 1:00 PM</p>
+  <p>Afternoon: 2:00 PM – 5:00 PM</p>
+    
 </div>
 
 <!-- ===== SCRIPT ===== -->
