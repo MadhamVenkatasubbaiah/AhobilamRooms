@@ -25,9 +25,26 @@ body{
     position: fixed;
     top: 0;
     width: 100%;
+    z-index:1000;
 }
 
-/* HEADER WITH WATERMARK */
+.center{
+    text-align:center;
+}
+
+.menu{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+}
+
+.menu a{
+    color:white;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+/* HEADER */
 header{
     margin-top:100px;
     padding:90px 20px;
@@ -50,7 +67,7 @@ header::before{
     opacity:0.08;
 }
 
-/* CONTENT */
+/* SECTION */
 section{
     padding:40px;
     text-align:center;
@@ -60,24 +77,24 @@ section{
 button{
     background:#27ae60;
     color:white;
-    padding:15px 25px;
+    padding:12px 20px;
     border:none;
     border-radius:5px;
+    cursor:pointer;
 }
 
-/* ROOM CARD */
+/* CARD */
 .complex-card{
-    width:320px;
-    margin:40px auto;
     text-align:center;
+    margin:30px;
 }
 
 .complex-photo{
     width:300px;
-    border-radius:12px;
+    border-radius:10px;
 }
 
-/* PANELS */
+/* PANEL */
 .panel{
     display:none;
     position:fixed;
@@ -91,44 +108,36 @@ button{
     overflow:auto;
 }
 
-/* ROOMS */
-.rooms-container{
-    display:flex;
-    justify-content:center;
-    padding:20px;
-}
-
-/* ROOM ROW (IMAGE LEFT, BOOK RIGHT) */
+/* ROOM ROW */
 .room-row{
     display:flex;
     align-items:center;
     gap:20px;
     background:white;
+    margin:20px;
     padding:15px;
     border-radius:10px;
     box-shadow:0 4px 10px rgba(0,0,0,0.2);
 }
 
-/* MAIN IMAGE */
 .room-main{
-    width:250px;
+    width:220px;
     border-radius:10px;
     cursor:pointer;
 }
 
-/* RIGHT SIDE BOOK */
 .room-info{
     text-align:left;
 }
 
-/* HIDDEN GALLERY */
+/* GALLERY */
 .gallery{
     display:none;
-    margin-top:20px;
+    margin-left:20px;
 }
 
 .gallery img{
-    width:200px;
+    width:180px;
     margin:10px;
     border-radius:10px;
 }
@@ -149,16 +158,40 @@ button{
 
 <body>
 
+<!-- NAVBAR -->
+<div class="navbar">
+
+<div>
+<img src="logo.png" height="70">
+</div>
+
+<div class="center">
+<h2 style="color:white;margin:0;">AHOBILAM</h2>
+
+<div class="menu">
+<a href="#" onclick="openPanel('aboutPanel')">About</a>
+<a href="#" onclick="openPanel('hotelsPanel')">Hotels</a>
+<a href="#" onclick="openPanel('timingsPanel')">Temple Timings</a>
+</div>
+
+</div>
+
+<div>
+<img src="AVS3.png" height="70">
+</div>
+
+</div>
+
 <!-- HEADER -->
 <header>
 <h1>Ahobilam Rooms</h1>
 <p>
 <strong>Welcome to Ahobilam Rooms</strong><br>
-Your ideal accommodation near temple
+Your ideal accommodation near the sacred temple
 </p>
 </header>
 
-<!-- FACILITIES (RESTORED FULL) -->
+<!-- FACILITIES -->
 <section>
 
 <h2>Facilities</h2>
@@ -192,9 +225,7 @@ Rajeshwari Complex - Book Now
 
 <h2>Rajeshwari Complex</h2>
 
-<div class="rooms-container">
-
-<!-- ROOM 1 -->
+<!-- 3 BED -->
 <div>
 <div class="room-row">
 
@@ -204,7 +235,6 @@ onclick="toggleGallery('g1')">
 <div class="room-info">
 <h3>3 Bed Room</h3>
 <p>AC + WiFi</p>
-
 <button onclick="location.href='tel:+917675962840'">
 Book ₹1600
 </button>
@@ -212,15 +242,53 @@ Book ₹1600
 
 </div>
 
-<!-- INSIDE PHOTOS -->
 <div id="g1" class="gallery">
 <img src="3bed.jpeg">
 <img src="washroom.jpeg">
 </div>
 </div>
 
+<!-- 2 BED (ADDED BACK) -->
+<div>
+<div class="room-row">
+
+<img src="2-bed.jpeg" class="room-main"
+onclick="toggleGallery('g2')">
+
+<div class="room-info">
+<h3>2 Bed Room</h3>
+<p>AC + WiFi</p>
+<button onclick="location.href='tel:+917675962840'">
+Book ₹1200
+</button>
 </div>
 
+</div>
+
+<div id="g2" class="gallery">
+<img src="2-bed.jpeg">
+</div>
+</div>
+
+</div>
+
+<!-- PANELS -->
+<div id="aboutPanel" class="panel">
+<button onclick="goHome()">⬅ Back</button>
+<h2>About</h2>
+<p>Best stay near temple.</p>
+</div>
+
+<div id="hotelsPanel" class="panel">
+<button onclick="goHome()">⬅ Back</button>
+<h2>Hotels</h2>
+<p>Coming soon</p>
+</div>
+
+<div id="timingsPanel" class="panel">
+<button onclick="goHome()">⬅ Back</button>
+<h2>Temple Timings</h2>
+<p>Morning: 7AM - 1PM<br>Afternoon: 2PM - 5PM</p>
 </div>
 
 <!-- WHATSAPP -->
@@ -239,7 +307,6 @@ document.querySelectorAll(".panel")
 .forEach(p=>p.style.display="none");
 }
 
-/* SHOW INSIDE PHOTOS */
 function toggleGallery(id){
 let g=document.getElementById(id);
 g.style.display = (g.style.display==="block") ? "none":"block";
