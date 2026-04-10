@@ -193,6 +193,8 @@ button{
         <a href="#">Temple Timings</a>
     </div>
 
+
+
     <img src="without_bg.png" class="logo">
 </div>
 
