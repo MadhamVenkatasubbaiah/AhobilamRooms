@@ -1,10 +1,9 @@
+<!DOCTYPE html>
 <html>
 <head>
-<br>
-    <br>
-        <br>
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ahobilam Rooms 1</title>
+<title>Ahobilam Rooms</title>
 
 <style>
 
@@ -15,7 +14,7 @@ body{
     background:#FFF8E1;
 }
 
-/* ================= NAVBAR ================= */
+/* ================= NAVBAR (FLEX FIXED) ================= */
 .navbar{
     display:flex;
     justify-content:space-between;
@@ -27,29 +26,33 @@ body{
     top:0;
     width:100%;
     z-index:1000;
+    box-sizing:border-box;
 }
 
-/* LEFT */
-.nav-left img{
+/* LEFT LOGO */
+.left img{
     height:70px;
+    display:block;
 }
 
 /* CENTER */
-.nav-center{
-    text-align:center;
+.center{
     flex:1;
+    text-align:center;
 }
 
-.nav-center h2{
+.center h1{
     margin:0;
     color:white;
+    font-size:32px;
 }
 
 /* MENU */
 .menu{
     display:flex;
     justify-content:center;
-    gap:20px;
+    gap:30px;
+    margin-top:5px;
 }
 
 .menu a{
@@ -58,9 +61,15 @@ body{
     font-weight:bold;
 }
 
-/* RIGHT */
-.nav-right img{
+/* RIGHT LOGO */
+.right{
+    display:flex;
+    align-items:center;
+}
+
+.right img{
     height:70px;
+    display:block;
 }
 
 /* HAMBURGER */
@@ -77,11 +86,12 @@ body{
 .menu{
     display:none;
     flex-direction:column;
-    position:absolute;
+    position:fixed;
     top:100px;
     left:0;
     width:100%;
     background:#d6a65c;
+    text-align:center;
 }
 
 .menu a{
@@ -97,12 +107,13 @@ body{
     display:block;
 }
 
-.nav-right img{
+/* hide AVS only on mobile */
+.right img{
     display:none;
 }
 }
 
-/* ================= HEADER ================= */
+/* ================= HEADER (WATERMARK) ================= */
 header{
     margin-top:100px;
     padding:90px 20px;
@@ -112,7 +123,6 @@ header{
     position:relative;
 }
 
-/* WATERMARK */
 header::before{
     content:"";
     position:absolute;
@@ -227,15 +237,13 @@ button{
 <!-- ================= NAVBAR ================= -->
 <div class="navbar">
 
-    <!-- LEFT -->
-    <div class="nav-left">
+    <div class="left">
         <img src="logo.png" alt="Logo">
     </div>
 
-    <!-- CENTER -->
-    <div class="nav-center">
+    <div class="center">
 
-        <h2>AHOBILAM</h2>
+        <h1>AHOBILAM</h1>
 
         <span class="menu-toggle" onclick="toggleMenu()">☰</span>
 
@@ -247,8 +255,7 @@ button{
 
     </div>
 
-    <!-- RIGHT (AVS LOGO FIXED) -->
-    <div class="nav-right">
+    <div class="right">
         <img src="AVS3.png" alt="AVS Logo">
     </div>
 
@@ -299,9 +306,7 @@ Rajeshwari Complex - Book Now
 <img src="3bed.jpeg" class="room-main" onclick="toggleGallery('g1')">
 <div class="room-info">
 <h3>3 Bed Room</h3>
-<button onclick="location.href='tel:+917675962840'">
-Book ₹1600
-</button>
+<button onclick="location.href='tel:+917675962840'">Book ₹1600</button>
 </div>
 </div>
 
@@ -315,9 +320,7 @@ Book ₹1600
 <img src="2-bed.jpeg" class="room-main" onclick="toggleGallery('g2')">
 <div class="room-info">
 <h3>2 Bed Room</h3>
-<button onclick="location.href='tel:+917675962840'">
-Book ₹1200
-</button>
+<button onclick="location.href='tel:+917675962840'">Book ₹1200</button>
 </div>
 </div>
 
@@ -327,7 +330,7 @@ Book ₹1200
 
 </div>
 
-<!-- ================= OTHER PANELS ================= -->
+<!-- ================= PANELS ================= -->
 <div id="aboutPanel" class="panel">
 <button onclick="goHome()">⬅ Back</button>
 <h2>About</h2>
@@ -359,8 +362,7 @@ document.getElementById(id).style.display="block";
 }
 
 function goHome(){
-document.querySelectorAll(".panel")
-.forEach(p=>p.style.display="none");
+document.querySelectorAll(".panel").forEach(p=>p.style.display="none");
 }
 
 function toggleGallery(id){
