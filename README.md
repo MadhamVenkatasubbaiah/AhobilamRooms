@@ -195,11 +195,6 @@ button{
       <a href="#">Temple Timings</a>
     </div>
   </div>
-
-<!-- THis menu toggle in mobile -->
-  <div class="right">
-    <span class="menu-toggle">☰</span>
-  </div>
   
   <div class="right">
     <img src="AVS3.png" height="70">
