@@ -190,7 +190,7 @@ button{
     <div class="menu" id="menu">
         <a href="#">About</a>
         <a href="#">Hotels</a>
-        <a href="#">Temple Timings</a>
+        <a href="#">Temple Timings  </a>
     </div>
 
 
