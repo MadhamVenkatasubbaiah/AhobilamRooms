@@ -1,10 +1,9 @@
-<!-- <!DOCTYPE html> -->
+<!DOCTYPE html>
 <html>
 <head>
 
-<!-- <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Ahobilam Rooms</title>
--->
 
 <style>
 
@@ -60,7 +59,7 @@ body{
     font-weight: bold;
 }
 
-/* RIGHT SIDE */
+/* RIGHT */
 .right{
     display:flex;
     align-items:center;
@@ -182,28 +181,19 @@ button{
     cursor:pointer;
 }
 
-/* ===== PANELS (NEW) ===== */
-.panel{
-    display:none;
+/* ===== WHATSAPP BUTTON ===== */
+.whatsapp-btn{
     position:fixed;
-    top:0;
-    left:0;
-    width:100%;
-    height:100%;
-    background:#FFF8E1;
-    z-index:2000;
-    padding:20px;
-    overflow:auto;
-}
-
-.panel button{
-    background:#FF9933;
+    bottom:20px;
+    right:20px;
+    background:#25D366;
     color:white;
-    border:none;
-    padding:10px 15px;
-    margin-bottom:20px;
-    border-radius:5px;
-    cursor:pointer;
+    padding:14px 16px;
+    border-radius:50px;
+    text-decoration:none;
+    font-size:18px;
+    box-shadow:0 4px 10px rgba(0,0,0,0.3);
+    z-index:2000;
 }
 
 </style>
@@ -221,9 +211,9 @@ button{
   <div class="center">
     <h1>AHOBILAM</h1>
     <div class="menu" id="menu">
-      <a href="#" onclick="openPanel('aboutPanel')">About</a>
-      <a href="#" onclick="openPanel('hotelsPanel')">Hotels</a>
-      <a href="#" onclick="openPanel('timingsPanel')">Temple Timings</a>
+      <a href="#">About</a>
+      <a href="#">Hotels</a>
+      <a href="#">Temple Timings</a>
     </div>
   </div>
   
@@ -262,7 +252,7 @@ Call For Booking
 
 </section>
 
-<!-- ===== ROOM CARD ===== -->
+<!-- ===== ROOM CARD 1 ===== -->
 <div class="complex-card">
 
 <img src="Rajeshwari.Complex.jpeg" class="complex-photo">
@@ -275,46 +265,31 @@ Book Now
 
 </div>
 
-<!-- ===== PANELS ===== -->
+<!-- ===== ROOM CARD 2 (SAME) ===== -->
+<div class="complex-card">
 
-<div id="aboutPanel" class="panel">
-  <button onclick="goHome()">⬅ Back</button>
-  <h2>About</h2>
-  <p>Welcome to Ahobilam Rooms. Best stay near temple.</p>
+<img src="Rajeshwari.Complex.jpeg" class="complex-photo">
+
+<button class="complex-btn"
+onclick="location.href='rooms.html'">
+Rajeshwari Complex<br>
+Book Now
+</button>
+
 </div>
 
-<div id="hotelsPanel" class="panel">
-  <button onclick="goHome()">⬅ Back</button>
-  <h2>Hotels</h2>
-  <p>Nearby hotels list will be added soon.</p>
-</div>
-
-<div id="timingsPanel" class="panel">
-  <button onclick="goHome()">⬅ Back</button>
-  <h2>Temple Timings</h2>
-   <img src="logo.png" height="70">
-  <p>Morning: 7:00 AM – 1:00 PM</p>
-  <p>Afternoon: 2:00 PM – 5:00 PM</p>
-    
-</div>
+<!-- ===== WHATSAPP BUTTON ===== -->
+<a class="whatsapp-btn"
+href="https://wa.me/917675962840"
+target="_blank">
+💬 WhatsApp
+</a>
 
 <!-- ===== SCRIPT ===== -->
 <script>
-
 function toggleMenu(){
     document.getElementById("menu").classList.toggle("show");
 }
-
-function openPanel(id){
-    document.getElementById(id).style.display = "block";
-}
-
-function goHome(){
-    document.getElementById("aboutPanel").style.display = "none";
-    document.getElementById("hotelsPanel").style.display = "none";
-    document.getElementById("timingsPanel").style.display = "none";
-}
-
 </script>
 
 </body>
