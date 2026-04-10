@@ -17,51 +17,49 @@ body{
 }
 
 /* ===== NAVBAR ===== */
-.navbar{
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    background:#FF9933;
-    height:100px;
-    padding:0 12px;
-    position:fixed;
-    top:0;
-    left:0;
-    width:100%;
-    z-index:1000;
-  /*  box-sizing:border-box; */
-    box-sizing:0;
+.navbar {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+
+    background: #FF9933;
+    height: 100px;
+    padding: 0 20px;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+
+    box-sizing: border-box;
 }
 
-/* LOGOS */
-.logo{
-    height:100px;
-    width:auto;
+/* Center section (title + menu stacked or inline) */
+.center {
+    text-align: center;
 }
 
-/* TITLE */
-.site-title{
-    color:white;
-    margin:0;
-    font-size:30px;
-    text-align:center;
-    flex:1;
+/* Title */
+.center h1 {
+    margin: 0;
+    color: white;
+    font-size: 32px;
+    font-weight: bold;
 }
 
-/* MENU */
-.menu{
-  flex: 1;
-  display: flex;
-  justify-content: center;  /* THIS centers menu */
-  gap: 30px;
+/* Menu */
+.menu {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 5px;
 }
 
-.menu a{
-    text-decoration:none;
-    color:white;
-    font-weight:bold;
-    font-size:20px;
-    margin-left:20px;
+.menu a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
 }
 
 /* MOBILE MENU BUTTON */
