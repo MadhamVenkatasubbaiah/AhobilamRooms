@@ -202,11 +202,6 @@ button{
 
 </div>
 
-
-
-    <img src="without_bg.png" class="logo">
-</div>
-
 <!-- ===== HEADER ===== -->
 <header>
 <h1>Ahobilam Rooms</h1>
