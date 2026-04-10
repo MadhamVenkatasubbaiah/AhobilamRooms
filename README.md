@@ -29,12 +29,13 @@ body{
     left:0;
     width:100%;
     z-index:1000;
-    box-sizing:border-box;
+  /*  box-sizing:border-box; */
+    box-sizing:0;
 }
 
 /* LOGOS */
 .logo{
-    height:70px;
+    height:100px;
     width:auto;
 }
 
