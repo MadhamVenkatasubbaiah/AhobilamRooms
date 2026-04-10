@@ -240,7 +240,7 @@ button{
 
         <h1>AHOBILAM</h1>
 
-        <span class="menu-toggle" onclick="toggleMenu()">☰</span>
+        <!--<span class="menu-toggle" onclick="toggleMenu()">☰</span> -->
 
         <div class="menu" id="menu">
             <a href="#" onclick="openPanel('aboutPanel')">About</a>
