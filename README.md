@@ -197,7 +197,7 @@ button{
   </div>
 
   <div class="right">
-    <img src="god.png" height="70">
+    <img src="AVS3.png" height="70">
   </div>
 
 </div>
