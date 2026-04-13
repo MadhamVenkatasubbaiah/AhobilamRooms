@@ -332,6 +332,15 @@ Rajeshwari Complex - Book Now
 
 </div>
 
+<!-- ================= COMPLEX ================= -->
+<div class="complex-card">
+<img src="Rajeshwari.Complex.jpeg" class="complex-photo">
+<br><br>
+<button onclick="openPanel('roomsPanel')">
+Veerabadhra Complex - Book Now
+</button>
+</div>
+
 <!-- ================= veerabadhra Complex PANEL ================= -->
 <div id="roomsPanel" class="panel">
 
@@ -365,6 +374,7 @@ Rajeshwari Complex - Book Now
 </div>
 
 </div>
+
 <!-- ================= PANELS ================= -->
 <div id="aboutPanel" class="panel">
 <button onclick="goHome()">⬅ Back</button>
