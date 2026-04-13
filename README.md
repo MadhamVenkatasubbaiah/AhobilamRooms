@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
 <head>
 
@@ -13,114 +14,77 @@ body{
     background:#FFF8E1;
 }
 
-/* ================= NAVBAR FIX ================= */
+/* ================= NAVBAR ================= */
 .navbar{
     display:flex;
     justify-content:space-between;
     align-items:center;
     background:#FF9933;
-    height:100px;
-    padding:0 15px;
+    height:60px;
+    padding:0 10px;
     position:fixed;
     top:0;
-    width:80%;
+    width:100%;
     z-index:1000;
     box-sizing:border-box;
 }
 
-/* LEFT LOGO */
-.left img{
-    height:60px;
-    display:block;
-}
+.left img{ height:40px; }
+.right img{ height:40px; }
 
-/* CENTER AREA (IMPORTANT FIX) */
 .center{
     flex:1;
     text-align:center;
-    min-width:0;
 }
 
 .center h1{
     margin:0;
     color:white;
-    font-size:26px;
+    font-size:20px;
 }
 
 /* MENU */
 .menu{
     display:flex;
     justify-content:center;
-    gap:20px;
-    margin-top:5px;
-    flex-wrap:wrap;
+    gap:12px;
+    margin-top:3px;
 }
 
 .menu a{
     color:white;
     text-decoration:none;
     font-weight:bold;
-    font-size:14px;
+    font-size:13px;
 }
 
-/* RIGHT LOGO */
-.right{
-    flex-shrink:0;
-    display:flex;
-    align-items:center;
-}
-
-.right img{
-    height:60px;
-    width:auto;
-    display:block;
-}
-
-/* HAMBURGER */
+/* MOBILE */
 .menu-toggle{
     display:none;
-    font-size:28px;
+    font-size:26px;
     color:white;
     cursor:pointer;
 }
 
-/* ================= MOBILE ================= */
 @media(max-width:768px){
-
 .menu{
     display:none;
     flex-direction:column;
     position:fixed;
-    top:100px;
+    top:60px;
     left:0;
     width:100%;
     background:#d6a65c;
-    text-align:center;
 }
-
-.menu.show{
-    display:flex;
-}
-
-.menu a{
-    padding:15px;
-    border-top:1px solid rgba(255,255,255,0.3);
-}
-
-.menu-toggle{
-    display:block;
-}
-
-/* hide AVS logo on mobile */
-.right img{
-    display:none;
-}
+.menu.show{ display:flex; }
+.menu-toggle{ display:block; }
+.right img{ display:none; }
 }
 
 /* ================= HEADER ================= */
 header{
-    margin-top:100px;
-    padding:90px 20px;
+    margin-top:60px;
+    padding:80px 20px;
     text-align:center;
     color:white;
     background:#e8b97a;
@@ -133,17 +97,11 @@ header::before{
     top:50%;
     left:50%;
     transform:translate(-50%,-50%);
-    width:600px;
-    height:600px;
+    width:400px;
+    height:400px;
     background:url("without_bg.png") no-repeat center;
     background-size:contain;
     opacity:0.08;
-}
-
-header h1,
-header p{
-    position:relative;
-    z-index:1;
 }
 
 /* ================= CONTENT ================= */
@@ -152,7 +110,6 @@ section{
     text-align:center;
 }
 
-/* BUTTON */
 button{
     background:#27ae60;
     color:white;
@@ -162,14 +119,20 @@ button{
     cursor:pointer;
 }
 
-/* CARD */
+/* ================= COMPLEX ================= */
+.complex-container{
+    display:flex;
+    justify-content:center;
+    gap:30px;
+    flex-wrap:wrap;
+}
+
 .complex-card{
     text-align:center;
-    margin:30px;
 }
 
 .complex-photo{
-    width:300px;
+    width:280px;
     border-radius:10px;
 }
 
@@ -196,29 +159,18 @@ button{
     margin:20px;
     padding:15px;
     border-radius:10px;
-    box-shadow:0 4px 10px rgba(0,0,0,0.2);
 }
 
-.room-main{
-    width:220px;
-    border-radius:10px;
-    cursor:pointer;
-}
+.room-main{ width:200px; }
+.room-info{ text-align:left; }
 
-.room-info{
-    text-align:left;
-}
-
-/* GALLERY */
 .gallery{
     display:none;
-    margin-left:20px;
 }
 
 .gallery img{
-    width:180px;
+    width:150px;
     margin:10px;
-    border-radius:10px;
 }
 
 /* ================= WHATSAPP ================= */
@@ -230,7 +182,6 @@ button{
     color:white;
     padding:14px;
     border-radius:50px;
-    font-size:18px;
 }
 
 </style>
@@ -238,49 +189,47 @@ button{
 
 <body>
 
-<!-- ================= NAVBAR ================= -->
+<!-- NAVBAR -->
 <div class="navbar">
 
-    <div class="left">
-        <img src="logo.png" alt="Logo">
-    </div>
+<div class="left">
+<img src="logo.png">
+</div>
 
-    <div class="center">
+<div class="center">
+<h1>AHOBILAM</h1>
 
-        <h1>AHOBILAM</h1>
+<span class="menu-toggle" onclick="toggleMenu()">☰</span>
 
-        <span class="menu-toggle" onclick="toggleMenu()">☰</span>
+<div class="menu" id="menu">
+<a href="#" onclick="openPanel('aboutPanel')">About</a>
+<a href="#" onclick="openPanel('hotelsPanel')">Hotels</a>
+<a href="#" onclick="openPanel('timingsPanel')">Temple Timings</a>
+</div>
+</div>
 
-        <div class="menu" id="menu">
-            <a href="#" onclick="openPanel('aboutPanel')">About</a>
-            <a href="#" onclick="openPanel('hotelsPanel')">Hotels</a>
-            <a href="#" onclick="openPanel('timingsPanel')">Temple Timings</a>
-        </div>
-
-    </div>
-
-    <div class="right">
-        <img src="AVS3.png" alt="AVS Logo">
-    </div>
+<div class="right">
+<img src="AVS3.png">
+</div>
 
 </div>
 
-<!-- ================= HEADER ================= -->
+<!-- HEADER -->
 <header>
 <h1>Ahobilam Rooms</h1>
-<p>Providing the best accommodation and services for your spiritual journey to Sree Lakshmi Narasimha Swamy Temple</p>
+<p>Providing the best accommodation near temple</p>
 </header>
 
-<!-- ================= FACILITIES ================= -->
+<!-- CONTENT -->
 <section>
 
 <h2>Facilities</h2>
 
 <p>
-🛏 AC & Non-AC Rooms<br>
-🚿 Hot Water 24 Hours<br>
-🚘 Parking Available<br>
-👨‍👩‍👦 Family Friendly
+AC & Non-AC Rooms<br>
+Hot Water 24 Hours<br>
+Parking Available<br>
+Family Friendly
 </p>
 
 <button onclick="location.href='tel:+917675962840'">
@@ -289,93 +238,38 @@ Call For Booking
 
 </section>
 
-<!-- ================= COMPLEX ================= -->
+<!-- COMPLEX SIDE BY SIDE -->
+<div class="complex-container">
+
 <div class="complex-card">
-<img src="Rajeshwari.Complex.jpeg" class="complex-photo">
-<br><br>
-<button onclick="openPanel('roomsPanel')">
+<img src="Rajeshwari.Complex.jpeg" class="complex-photo"><br><br>
+<button onclick="openPanel('rooms1')">
 Rajeshwari Complex - Book Now
 </button>
 </div>
 
-<!-- ================= ROOMS PANEL ================= -->
-<div id="roomsPanel" class="panel">
-
-<button onclick="goHome()">⬅ Back</button>
-
-<h2>Rooms</h2>
-
-<div class="room-row">
-<img src="3bed.jpeg" class="room-main" onclick="toggleGallery('g1')">
-<div class="room-info">
-<h3>3 Bed Room</h3>
-<button onclick="location.href='tel:+917675962840'">Book ₹1600</button>
-</div>
-</div>
-
-<div id="g1" class="gallery">
-<img src="3bed.jpeg">
-<img src="washroom.jpeg">
-</div>
-
-<div class="room-row">
-<img src="2-bed.jpeg" class="room-main" onclick="toggleGallery('g2')">
-<div class="room-info">
-<h3>2 Bed Room</h3>
-<button onclick="location.href='tel:+917675962840'">Book ₹1200</button>
-</div>
-</div>
-
-<div id="g2" class="gallery">
-<img src="2-bed.jpeg">
-</div>
-
-</div>
-
-<!-- ================= COMPLEX ================= -->
 <div class="complex-card">
-<img src="Rajeshwari.Complex.jpeg" class="complex-photo">
-<br><br>
-<button onclick="openPanel('roomsPanel')">
+<img src="Rajeshwari.Complex.jpeg" class="complex-photo"><br><br>
+<button onclick="openPanel('rooms2')">
 Veerabadhra Complex - Book Now
 </button>
 </div>
 
-<!-- ================= veerabadhra Complex PANEL ================= -->
-<div id="roomsPanel" class="panel">
+</div>
 
+<!-- PANEL 1 -->
+<div id="rooms1" class="panel">
 <button onclick="goHome()">⬅ Back</button>
-
-<h2>Rooms</h2>
-
-<div class="room-row">
-<img src="3bed.jpeg" class="room-main" onclick="toggleGallery('g1')">
-<div class="room-info">
-<h3>3 Bed Room</h3>
-<button onclick="location.href='tel:+917675962840'">Book ₹1600</button>
-</div>
+<h2>Rajeshwari Rooms</h2>
 </div>
 
-<div id="g1" class="gallery">
-<img src="3bed.jpeg">
-<img src="washroom.jpeg">
+<!-- PANEL 2 -->
+<div id="rooms2" class="panel">
+<button onclick="goHome()">⬅ Back</button>
+<h2>Veerabadhra Rooms</h2>
 </div>
 
-<div class="room-row">
-<img src="2-bed.jpeg" class="room-main" onclick="toggleGallery('g2')">
-<div class="room-info">
-<h3>2 Bed Room</h3>
-<button onclick="location.href='tel:+917675962840'">Book ₹1200</button>
-</div>
-</div>
-
-<div id="g2" class="gallery">
-<img src="2-bed.jpeg">
-</div>
-
-</div>
-
-<!-- ================= PANELS ================= -->
+<!-- PANELS -->
 <div id="aboutPanel" class="panel">
 <button onclick="goHome()">⬅ Back</button>
 <h2>About</h2>
@@ -391,10 +285,8 @@ Veerabadhra Complex - Book Now
 <h2>Temple Timings</h2>
 </div>
 
-<!-- ================= WHATSAPP ================= -->
-<a class="whatsapp"
-href="https://wa.me/917675962840"
-target="_blank">💬</a>
+<!-- WHATSAPP -->
+<a class="whatsapp" href="https://wa.me/917675962840">💬</a>
 
 <script>
 
@@ -408,11 +300,6 @@ document.getElementById(id).style.display="block";
 
 function goHome(){
 document.querySelectorAll(".panel").forEach(p=>p.style.display="none");
-}
-
-function toggleGallery(id){
-let g=document.getElementById(id);
-g.style.display = (g.style.display==="block") ? "none":"block";
 }
 
 </script>
