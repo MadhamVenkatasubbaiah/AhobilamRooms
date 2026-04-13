@@ -24,7 +24,7 @@ body{
     padding:0 10px;
     position:fixed;
     top:0;
-    width:50%;
+    width:80%;
     z-index:100;
     box-sizing:border-box;
     overflow:hidden; /* 🔥 FIX */
