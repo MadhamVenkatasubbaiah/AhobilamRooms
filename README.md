@@ -332,6 +332,39 @@ Rajeshwari Complex - Book Now
 
 </div>
 
+<!-- ================= veerabadhra Complex PANEL ================= -->
+<div id="roomsPanel" class="panel">
+
+<button onclick="goHome()">⬅ Back</button>
+
+<h2>Rooms</h2>
+
+<div class="room-row">
+<img src="3bed.jpeg" class="room-main" onclick="toggleGallery('g1')">
+<div class="room-info">
+<h3>3 Bed Room</h3>
+<button onclick="location.href='tel:+917675962840'">Book ₹1600</button>
+</div>
+</div>
+
+<div id="g1" class="gallery">
+<img src="3bed.jpeg">
+<img src="washroom.jpeg">
+</div>
+
+<div class="room-row">
+<img src="2-bed.jpeg" class="room-main" onclick="toggleGallery('g2')">
+<div class="room-info">
+<h3>2 Bed Room</h3>
+<button onclick="location.href='tel:+917675962840'">Book ₹1200</button>
+</div>
+</div>
+
+<div id="g2" class="gallery">
+<img src="2-bed.jpeg">
+</div>
+
+</div>
 <!-- ================= PANELS ================= -->
 <div id="aboutPanel" class="panel">
 <button onclick="goHome()">⬅ Back</button>
