@@ -52,14 +52,14 @@ body{
 .center h1{
     margin:0;
     color:white;
-    font-size:40px;
+    font-size:30px;
 }
 
 /* MENU */
 .menu{
     display:flex;
     justify-content:center;
-    gap:12px;
+    gap:15px;
     margin-top:5px;
     flex-wrap:nowrap;
     overflow:hidden; /* 🔥 FIX */
