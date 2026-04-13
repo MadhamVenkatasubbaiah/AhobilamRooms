@@ -25,7 +25,7 @@ body{
     position:fixed;
     top:0;
     width:80%;
-    z-index:100;
+    z-index:1000;
     box-sizing:border-box;
     overflow:hidden; /* 🔥 FIX */
 }
