@@ -59,7 +59,7 @@ body{
 .menu{
     display:flex;
     justify-content:center;
-    gap:15px;
+    gap:20px;
     margin-top:5px;
     flex-wrap:nowrap;
     overflow:hidden; /* 🔥 FIX */
