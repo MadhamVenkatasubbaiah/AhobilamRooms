@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html>
 <head>
 
@@ -14,45 +13,38 @@ body{
     background:#FFF8E1;
 }
 
-/* ================= NAVBAR ================= */
+/* ================= NAVBAR FIX ================= */
 .navbar{
     display:flex;
     justify-content:space-between;
     align-items:center;
     background:#FF9933;
-    height:80px;
-    padding:0 10px;
+    height:100px;
+    padding:0 15px;
     position:fixed;
     top:0;
-    width:80%;
+    width:100%;
     z-index:1000;
     box-sizing:border-box;
-    overflow:hidden; /* 🔥 FIX */
-}
-
-/* LEFT & RIGHT FIX */
-.left, .right{
-    flex:0 0 auto;  /* 🔥 FIX */
 }
 
 /* LEFT LOGO */
 .left img{
-    height:90px;
+    height:60px;
     display:block;
 }
 
-/* CENTER */
+/* CENTER AREA (IMPORTANT FIX) */
 .center{
     flex:1;
     text-align:center;
     min-width:0;
-    overflow:hidden; /* 🔥 FIX */
 }
 
 .center h1{
     margin:0;
     color:white;
-    font-size:30px;
+    font-size:26px;
 }
 
 /* MENU */
@@ -61,26 +53,25 @@ body{
     justify-content:center;
     gap:20px;
     margin-top:5px;
-    flex-wrap:nowrap;
-    overflow:hidden; /* 🔥 FIX */
+    flex-wrap:wrap;
 }
 
 .menu a{
     color:white;
     text-decoration:none;
     font-weight:bold;
-    font-size:20px;
-    white-space:nowrap;
+    font-size:14px;
 }
 
 /* RIGHT LOGO */
 .right{
+    flex-shrink:0;
     display:flex;
     align-items:center;
 }
 
 .right img{
-    height:90px;
+    height:60px;
     width:auto;
     display:block;
 }
@@ -88,7 +79,7 @@ body{
 /* HAMBURGER */
 .menu-toggle{
     display:none;
-    font-size:26px;
+    font-size:28px;
     color:white;
     cursor:pointer;
 }
@@ -100,7 +91,7 @@ body{
     display:none;
     flex-direction:column;
     position:fixed;
-    top:80px;
+    top:100px;
     left:0;
     width:100%;
     background:#d6a65c;
@@ -120,6 +111,7 @@ body{
     display:block;
 }
 
+/* hide AVS logo on mobile */
 .right img{
     display:none;
 }
@@ -127,7 +119,7 @@ body{
 
 /* ================= HEADER ================= */
 header{
-    margin-top:80px;
+    margin-top:100px;
     padding:90px 20px;
     text-align:center;
     color:white;
@@ -160,6 +152,7 @@ section{
     text-align:center;
 }
 
+/* BUTTON */
 button{
     background:#27ae60;
     color:white;
@@ -216,6 +209,7 @@ button{
     text-align:left;
 }
 
+/* GALLERY */
 .gallery{
     display:none;
     margin-left:20px;
@@ -244,14 +238,15 @@ button{
 
 <body>
 
-<!-- NAVBAR -->
+<!-- ================= NAVBAR ================= -->
 <div class="navbar">
 
     <div class="left">
-        <img src="logo.png">
+        <img src="logo.png" alt="Logo">
     </div>
 
     <div class="center">
+
         <h1>AHOBILAM</h1>
 
         <span class="menu-toggle" onclick="toggleMenu()">☰</span>
@@ -261,21 +256,22 @@ button{
             <a href="#" onclick="openPanel('hotelsPanel')">Hotels</a>
             <a href="#" onclick="openPanel('timingsPanel')">Temple Timings</a>
         </div>
+
     </div>
 
     <div class="right">
-        <img src="AVS3.png">
+        <img src="AVS3.png" alt="AVS Logo">
     </div>
 
 </div>
 
-<!-- HEADER -->
+<!-- ================= HEADER ================= -->
 <header>
-<h1>Ahobilam Rooms2123</h1>
+<h1>Ahobilam Rooms</h1>
 <p>Best stay near temple</p>
 </header>
 
-<!-- CONTENT -->
+<!-- ================= FACILITIES ================= -->
 <section>
 
 <h2>Facilities</h2>
@@ -293,6 +289,7 @@ Call For Booking
 
 </section>
 
+<!-- ================= COMPLEX ================= -->
 <div class="complex-card">
 <img src="Rajeshwari.Complex.jpeg" class="complex-photo">
 <br><br>
@@ -301,7 +298,63 @@ Rajeshwari Complex - Book Now
 </button>
 </div>
 
+<!-- ================= ROOMS PANEL ================= -->
+<div id="roomsPanel" class="panel">
+
+<button onclick="goHome()">⬅ Back</button>
+
+<h2>Rooms</h2>
+
+<div class="room-row">
+<img src="3bed.jpeg" class="room-main" onclick="toggleGallery('g1')">
+<div class="room-info">
+<h3>3 Bed Room</h3>
+<button onclick="location.href='tel:+917675962840'">Book ₹1600</button>
+</div>
+</div>
+
+<div id="g1" class="gallery">
+<img src="3bed.jpeg">
+<img src="washroom.jpeg">
+</div>
+
+<div class="room-row">
+<img src="2-bed.jpeg" class="room-main" onclick="toggleGallery('g2')">
+<div class="room-info">
+<h3>2 Bed Room</h3>
+<button onclick="location.href='tel:+917675962840'">Book ₹1200</button>
+</div>
+</div>
+
+<div id="g2" class="gallery">
+<img src="2-bed.jpeg">
+</div>
+
+</div>
+
+<!-- ================= PANELS ================= -->
+<div id="aboutPanel" class="panel">
+<button onclick="goHome()">⬅ Back</button>
+<h2>About</h2>
+</div>
+
+<div id="hotelsPanel" class="panel">
+<button onclick="goHome()">⬅ Back</button>
+<h2>Hotels</h2>
+</div>
+
+<div id="timingsPanel" class="panel">
+<button onclick="goHome()">⬅ Back</button>
+<h2>Temple Timings</h2>
+</div>
+
+<!-- ================= WHATSAPP ================= -->
+<a class="whatsapp"
+href="https://wa.me/917675962840"
+target="_blank">💬</a>
+
 <script>
+
 function toggleMenu(){
 document.getElementById("menu").classList.toggle("show");
 }
@@ -309,6 +362,16 @@ document.getElementById("menu").classList.toggle("show");
 function openPanel(id){
 document.getElementById(id).style.display="block";
 }
+
+function goHome(){
+document.querySelectorAll(".panel").forEach(p=>p.style.display="none");
+}
+
+function toggleGallery(id){
+let g=document.getElementById(id);
+g.style.display = (g.style.display==="block") ? "none":"block";
+}
+
 </script>
 
 </body>
