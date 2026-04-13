@@ -268,7 +268,7 @@ button{
 <!-- ================= HEADER ================= -->
 <header>
 <h1>Ahobilam Rooms</h1>
-<p>Best stay near temple</p>
+<p>Providing the best accommodation and services for your spiritual journey to Sree Lakshmi Narasimha Swamy Temple</p>
 </header>
 
 <!-- ================= FACILITIES ================= -->
