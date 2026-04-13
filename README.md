@@ -23,7 +23,7 @@ body{
     padding:0 15px;
     position:fixed;
     top:0;
-    width:100%;
+    width:80%;
     z-index:1000;
     box-sizing:border-box;
 }
