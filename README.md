@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
 <head>
 
@@ -19,22 +20,23 @@ body{
     justify-content:space-between;
     align-items:center;
     background:#FF9933;
-    height:100px;
-    padding:0 15px;
+    height:80px;              /* 🔥 reduced */
+    padding:0 10px;
     position:fixed;
     top:0;
     width:100%;
     z-index:1000;
     box-sizing:border-box;
+    overflow:hidden;          /* 🔥 fix overflow */
 }
 
 /* LEFT LOGO */
 .left img{
-    height:60px;
+    height:50px;              /* 🔥 reduced */
     display:block;
 }
 
-/* CENTER AREA (IMPORTANT FIX) */
+/* CENTER AREA */
 .center{
     flex:1;
     text-align:center;
@@ -44,23 +46,24 @@ body{
 .center h1{
     margin:0;
     color:white;
-    font-size:26px;
+    font-size:24px;
 }
 
 /* MENU */
 .menu{
     display:flex;
     justify-content:center;
-    gap:20px;
+    gap:15px;                 /* 🔥 reduced */
     margin-top:5px;
-    flex-wrap:wrap;
+    flex-wrap:nowrap;         /* 🔥 prevent breaking */
 }
 
 .menu a{
     color:white;
     text-decoration:none;
     font-weight:bold;
-    font-size:14px;
+    font-size:13px;
+    white-space:nowrap;       /* 🔥 prevent text break */
 }
 
 /* RIGHT LOGO */
@@ -71,7 +74,7 @@ body{
 }
 
 .right img{
-    height:60px;
+    height:50px;              /* 🔥 reduced */
     width:auto;
     display:block;
 }
@@ -79,7 +82,7 @@ body{
 /* HAMBURGER */
 .menu-toggle{
     display:none;
-    font-size:28px;
+    font-size:26px;
     color:white;
     cursor:pointer;
 }
@@ -91,7 +94,7 @@ body{
     display:none;
     flex-direction:column;
     position:fixed;
-    top:100px;
+    top:80px;
     left:0;
     width:100%;
     background:#d6a65c;
@@ -111,7 +114,7 @@ body{
     display:block;
 }
 
-/* hide AVS logo on mobile */
+/* hide right logo on mobile */
 .right img{
     display:none;
 }
@@ -119,7 +122,7 @@ body{
 
 /* ================= HEADER ================= */
 header{
-    margin-top:100px;
+    margin-top:80px;          /* 🔥 match navbar */
     padding:90px 20px;
     text-align:center;
     color:white;
@@ -298,61 +301,7 @@ Rajeshwari Complex - Book Now
 </button>
 </div>
 
-<!-- ================= ROOMS PANEL ================= -->
-<div id="roomsPanel" class="panel">
-
-<button onclick="goHome()">⬅ Back</button>
-
-<h2>Rooms</h2>
-
-<div class="room-row">
-<img src="3bed.jpeg" class="room-main" onclick="toggleGallery('g1')">
-<div class="room-info">
-<h3>3 Bed Room</h3>
-<button onclick="location.href='tel:+917675962840'">Book ₹1600</button>
-</div>
-</div>
-
-<div id="g1" class="gallery">
-<img src="3bed.jpeg">
-<img src="washroom.jpeg">
-</div>
-
-<div class="room-row">
-<img src="2-bed.jpeg" class="room-main" onclick="toggleGallery('g2')">
-<div class="room-info">
-<h3>2 Bed Room</h3>
-<button onclick="location.href='tel:+917675962840'">Book ₹1200</button>
-</div>
-</div>
-
-<div id="g2" class="gallery">
-<img src="2-bed.jpeg">
-</div>
-
-</div>
-
-<!-- ================= PANELS ================= -->
-<div id="aboutPanel" class="panel">
-<button onclick="goHome()">⬅ Back</button>
-<h2>About</h2>
-</div>
-
-<div id="hotelsPanel" class="panel">
-<button onclick="goHome()">⬅ Back</button>
-<h2>Hotels</h2>
-</div>
-
-<div id="timingsPanel" class="panel">
-<button onclick="goHome()">⬅ Back</button>
-<h2>Temple Timings</h2>
-</div>
-
-<!-- ================= WHATSAPP ================= -->
-<a class="whatsapp"
-href="https://wa.me/917675962840"
-target="_blank">💬</a>
-
+<!-- ================= SCRIPTS ================= -->
 <script>
 
 function toggleMenu(){
