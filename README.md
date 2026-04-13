@@ -132,9 +132,9 @@ header::before{
     position:absolute;
     top:50%;
     left:50%;
-    transform:translate(-50%,-50%);
-    width:300px;
-    height:300px;
+    transform:translate(-10%,-10%);
+    width:600px;
+    height:600px;
     background:url("without_bg.png") no-repeat center;
     background-size:contain;
     opacity:0.08;
