@@ -14,33 +14,39 @@ body{
     background:#FFF8E1;
 }
 
-/* ================= NAVBAR FIX ================= */
+/* ================= NAVBAR ================= */
 .navbar{
     display:flex;
     justify-content:space-between;
     align-items:center;
     background:#FF9933;
-    height:80px;              /* 🔥 reduced */
+    height:80px;
     padding:0 10px;
     position:fixed;
     top:0;
     width:100%;
     z-index:1000;
     box-sizing:border-box;
-    overflow:hidden;          /* 🔥 fix overflow */
+    overflow:hidden; /* 🔥 FIX */
+}
+
+/* LEFT & RIGHT FIX */
+.left, .right{
+    flex:0 0 auto;  /* 🔥 FIX */
 }
 
 /* LEFT LOGO */
 .left img{
-    height:50px;              /* 🔥 reduced */
+    height:45px;
     display:block;
 }
 
-/* CENTER AREA */
+/* CENTER */
 .center{
     flex:1;
     text-align:center;
     min-width:0;
+    overflow:hidden; /* 🔥 FIX */
 }
 
 .center h1{
@@ -53,9 +59,10 @@ body{
 .menu{
     display:flex;
     justify-content:center;
-    gap:15px;                 /* 🔥 reduced */
+    gap:12px;
     margin-top:5px;
-    flex-wrap:nowrap;         /* 🔥 prevent breaking */
+    flex-wrap:nowrap;
+    overflow:hidden; /* 🔥 FIX */
 }
 
 .menu a{
@@ -63,18 +70,17 @@ body{
     text-decoration:none;
     font-weight:bold;
     font-size:13px;
-    white-space:nowrap;       /* 🔥 prevent text break */
+    white-space:nowrap;
 }
 
 /* RIGHT LOGO */
 .right{
-    flex-shrink:0;
     display:flex;
     align-items:center;
 }
 
 .right img{
-    height:50px;              /* 🔥 reduced */
+    height:45px;
     width:auto;
     display:block;
 }
@@ -114,7 +120,6 @@ body{
     display:block;
 }
 
-/* hide right logo on mobile */
 .right img{
     display:none;
 }
@@ -122,7 +127,7 @@ body{
 
 /* ================= HEADER ================= */
 header{
-    margin-top:80px;          /* 🔥 match navbar */
+    margin-top:80px;
     padding:90px 20px;
     text-align:center;
     color:white;
@@ -155,7 +160,6 @@ section{
     text-align:center;
 }
 
-/* BUTTON */
 button{
     background:#27ae60;
     color:white;
@@ -212,7 +216,6 @@ button{
     text-align:left;
 }
 
-/* GALLERY */
 .gallery{
     display:none;
     margin-left:20px;
@@ -241,15 +244,14 @@ button{
 
 <body>
 
-<!-- ================= NAVBAR ================= -->
+<!-- NAVBAR -->
 <div class="navbar">
 
     <div class="left">
-        <img src="logo.png" alt="Logo">
+        <img src="logo.png">
     </div>
 
     <div class="center">
-
         <h1>AHOBILAM</h1>
 
         <span class="menu-toggle" onclick="toggleMenu()">☰</span>
@@ -259,22 +261,21 @@ button{
             <a href="#" onclick="openPanel('hotelsPanel')">Hotels</a>
             <a href="#" onclick="openPanel('timingsPanel')">Temple Timings</a>
         </div>
-
     </div>
 
     <div class="right">
-        <img src="AVS3.png" alt="AVS Logo">
+        <img src="AVS3.png">
     </div>
 
 </div>
 
-<!-- ================= HEADER ================= -->
+<!-- HEADER -->
 <header>
-<h1>Ahobilam Rooms 123</h1>
+<h1>Ahobilam Rooms</h1>
 <p>Best stay near temple</p>
 </header>
 
-<!-- ================= FACILITIES ================= -->
+<!-- CONTENT -->
 <section>
 
 <h2>Facilities</h2>
@@ -292,7 +293,6 @@ Call For Booking
 
 </section>
 
-<!-- ================= COMPLEX ================= -->
 <div class="complex-card">
 <img src="Rajeshwari.Complex.jpeg" class="complex-photo">
 <br><br>
@@ -301,9 +301,7 @@ Rajeshwari Complex - Book Now
 </button>
 </div>
 
-<!-- ================= SCRIPTS ================= -->
 <script>
-
 function toggleMenu(){
 document.getElementById("menu").classList.toggle("show");
 }
@@ -311,16 +309,6 @@ document.getElementById("menu").classList.toggle("show");
 function openPanel(id){
 document.getElementById(id).style.display="block";
 }
-
-function goHome(){
-document.querySelectorAll(".panel").forEach(p=>p.style.display="none");
-}
-
-function toggleGallery(id){
-let g=document.getElementById(id);
-g.style.display = (g.style.display==="block") ? "none":"block";
-}
-
 </script>
 
 </body>
