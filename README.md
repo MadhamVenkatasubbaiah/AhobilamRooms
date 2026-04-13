@@ -132,7 +132,7 @@ header::before{
     position:absolute;
     top:50%;
     left:50%;
-    transform:translate(-10%,-10%);
+    transform:translate(-100%,-100%);
     width:600px;
     height:600px;
     background:url("without_bg.png") no-repeat center;
