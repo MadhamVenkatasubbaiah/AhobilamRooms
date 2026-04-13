@@ -37,7 +37,7 @@ body{
 
 /* LEFT LOGO */
 .left img{
-    height:45px;
+    height:90px;
     display:block;
 }
 
@@ -52,7 +52,7 @@ body{
 .center h1{
     margin:0;
     color:white;
-    font-size:24px;
+    font-size:40px;
 }
 
 /* MENU */
@@ -80,7 +80,7 @@ body{
 }
 
 .right img{
-    height:75px;
+    height:90px;
     width:auto;
     display:block;
 }
