@@ -69,7 +69,7 @@ body{
     color:white;
     text-decoration:none;
     font-weight:bold;
-    font-size:13px;
+    font-size:20px;
     white-space:nowrap;
 }
 
