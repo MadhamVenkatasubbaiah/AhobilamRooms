@@ -80,7 +80,7 @@ body{
 }
 
 .right img{
-    height:45px;
+    height:75px;
     width:auto;
     display:block;
 }
