@@ -67,15 +67,11 @@ body{
     top:25px;
     left:0;
     background:#fff;
-    min-width:180px;
+    min-width:250px;
     border-radius:5px;
-    box-shadow:0 4px 10px rgba(0,0,0,0.2);
-}
-
-.dropdown-content a{
-    display:block;
     padding:10px;
-    color:black;
+    box-shadow:0 4px 10px rgba(0,0,0,0.2);
+    text-align:left;
 }
 
 .dropdown:hover .dropdown-content{
@@ -219,7 +215,7 @@ button{
     border-radius:10px;
 }
 
-/* ================= FLOAT BUTTONS ================= */
+/* ================= FLOAT ================= */
 .whatsapp{
     position:fixed;
     bottom:20px;
@@ -252,10 +248,6 @@ button{
     z-index:3000;
 }
 
-/* HEADER FONT */
-header h1{ font-size:50px; }
-header p{ font-size:25px; }
-
 </style>
 </head>
 
@@ -275,24 +267,25 @@ header p{ font-size:25px; }
 
 <div class="menu" id="menu">
 
-<a onclick="openPanel('aboutPanel')">About</a>
+<div class="dropdown">
+<a>About ▾</a>
+<div class="dropdown-content">
+According to legend, when the Devas witnessed the awe-inspiring form of Lord Vishnu as Narasimha, a fusion of great strength (“Ahobala”) and the divine cave (“Ahobila”), they exclaimed in awe. This led to the name Ahobilam.
+</div>
+</div>
 
-<!-- HOTELS -->
 <div class="dropdown">
 <a>Hotels ▾</a>
 <div class="dropdown-content">
-<a>Hotel 1</a>
-<a>Hotel 2</a>
-<a>Hotel 3</a>
+Hotel 1<br>Hotel 2<br>Hotel 3
 </div>
 </div>
 
-<!-- TEMPLE TIMINGS -->
 <div class="dropdown">
 <a>Temple Timings ▾</a>
 <div class="dropdown-content">
-<a>Morning: 6:00 AM – 1:00 PM</a>
-<a>Evening: 3:00 PM – 8:30 PM</a>
+Morning: 6:00 AM – 1:00 PM<br>
+Evening: 3:00 PM – 8:30 PM
 </div>
 </div>
 
@@ -414,23 +407,9 @@ Veerabadhra Complex - Book Now
 
 </div>
 
-<!-- ABOUT PANEL -->
-<div id="aboutPanel" class="panel">
-<button onclick="goHome()">⬅ Back</button>
-<h2>About</h2>
-<p>
-According to legend, when the Devas witnessed Lord Narasimha,
-they named this place Ahobilam.
-</p>
-</div>
-
-<!-- FLOAT BUTTONS -->
-<a class="whatsapp"
-href="https://wa.me/917675962840?text=Hello%20I%20want%20room"
-target="_blank">💬</a>
-
-<a class="call"
-href="tel:+917675962840">📞</a>
+<!-- FLOAT -->
+<a class="whatsapp" href="https://wa.me/917675962840">💬</a>
+<a class="call" href="tel:+917675962840">📞</a>
 
 <script>
 
