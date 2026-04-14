@@ -24,7 +24,7 @@ body{
     padding:0 10px;
     position:fixed;
     top:0;
-    width:100%;
+    width:80%;
     z-index:1000;
 }
 
