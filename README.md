@@ -1,5 +1,9 @@
+<!DOCTYPE html>
 <html>
 <head>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ahobilam Rooms</title>
 
 <style>
 
@@ -20,8 +24,10 @@ body{
     padding:0 10px;
     position:fixed;
     top:0;
-    width:80%;
+    left:0;
+    width:100%;
     z-index:1000;
+    box-sizing:border-box;
 }
 
 .left img{ height:40px; }
@@ -30,6 +36,7 @@ body{
 .center{
     flex:1;
     text-align:center;
+    position:relative;
 }
 
 .center h1{
@@ -61,23 +68,32 @@ body{
 }
 
 @media(max-width:768px){
+
 .menu{
     display:none;
     flex-direction:column;
     position:fixed;
-    top:60px;
+    top:80px;
     left:0;
     width:100%;
     background:#d6a65c;
 }
+
 .menu.show{ display:flex; }
-.menu-toggle{ display:block; }
+
+.menu-toggle{
+    display:block;
+    position:absolute;
+    right:10px;
+    top:5px;
+}
+
 .right img{ display:none; }
 }
 
 /* ================= HEADER ================= */
 header{
-    margin-top:60px;
+    margin-top:80px;
     padding:80px 20px;
     text-align:center;
     color:white;
@@ -178,12 +194,13 @@ button{
 /* ================= WHATSAPP ================= */
 .whatsapp{
     position:fixed;
-    bottom:40px;
-    right:40px;
+    bottom:20px;
+    right:20px;
     background:#25D366;
     color:white;
     padding:14px;
     border-radius:100px;
+    z-index:3000;
 }
 
 </style>
@@ -219,7 +236,7 @@ button{
 <!-- HEADER -->
 <header>
 <h1>Ahobilam Rooms</h1>
-<p> Providing the best accommodation near temple </p>
+<p>Providing the best accommodation near temple</p>
 </header>
 
 <!-- CONTENT -->
@@ -268,7 +285,6 @@ Veerabadhra Complex - Book Now
 
 <div class="room-row">
 <img src="3bed.jpeg" class="room-main" onclick="toggleGallery('g1a')">
-
 <div class="room-info">
 <h3>3 Bed Room</h3>
 <button onclick="location.href='tel:+917675962840'">Book ₹1600</button>
@@ -282,7 +298,6 @@ Veerabadhra Complex - Book Now
 
 <div class="room-row">
 <img src="2-bed.jpeg" class="room-main" onclick="toggleGallery('g2a')">
-
 <div class="room-info">
 <h3>2 Bed Room</h3>
 <button onclick="location.href='tel:+917675962840'">Book ₹1200</button>
@@ -304,7 +319,6 @@ Veerabadhra Complex - Book Now
 
 <div class="room-row">
 <img src="3bed.jpeg" class="room-main" onclick="toggleGallery('g1b')">
-
 <div class="room-info">
 <h3>3 Bed Room</h3>
 <button onclick="location.href='tel:+917675962840'">Book ₹1600</button>
@@ -313,11 +327,11 @@ Veerabadhra Complex - Book Now
 
 <div id="g1b" class="gallery">
 <img src="3bed.jpeg">
+<img src="washroom.jpeg">
 </div>
 
 <div class="room-row">
 <img src="2-bed.jpeg" class="room-main" onclick="toggleGallery('g2b')">
-
 <div class="room-info">
 <h3>2 Bed Room</h3>
 <button onclick="location.href='tel:+917675962840'">Book ₹1200</button>
