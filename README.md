@@ -137,19 +137,6 @@ header::before{
     background-size:contain;
     opacity:0.15;
 }
-<!-- AVS BG -->
-    header::before{
-    content:"";
-    position:absolute;
-    top:50%;
-    left:50%;
-    transform:translate(-50%,-50%);
-    width:1000px;
-    height:1000px;
-    background:url("AVS3.png") no-repeat down;
-    background-size:contain;
-    opacity:0.15;
-}
  
 
 /* ================= CONTENT ================= */
