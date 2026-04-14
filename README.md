@@ -208,6 +208,26 @@ button{
     transform:scale(1.1);
 }
 
+/* ===== ADDED ONLY (HEADER FONT SIZE) ===== */
+header h1{
+    font-size:36px;
+    font-weight:bold;
+}
+
+header p{
+    font-size:18px;
+}
+
+@media(max-width:768px){
+    header h1{
+        font-size:26px;
+    }
+
+    header p{
+        font-size:14px;
+    }
+}
+
 </style>
 </head>
 
@@ -314,7 +334,7 @@ Veerabadhra Complex - Book Now
 
 </div>
 
-<!-- PANEL 2 (FULL FIXED) -->
+<!-- PANEL 2 -->
 <div id="rooms2" class="panel">
 <button onclick="goHome()">⬅ Back</button>
 
