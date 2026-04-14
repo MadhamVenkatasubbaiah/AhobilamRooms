@@ -26,7 +26,6 @@ body{
     top:0;
     width:100%;
     z-index:1000;
-    box-sizing:border-box;
 }
 
 .left img{ height:40px; }
@@ -48,7 +47,6 @@ body{
     display:flex;
     justify-content:center;
     gap:12px;
-    margin-top:3px;
 }
 
 .menu a{
@@ -161,8 +159,15 @@ button{
     border-radius:10px;
 }
 
-.room-main{ width:200px; }
-.room-info{ text-align:left; }
+.room-main{
+    width:200px;
+    border-radius:10px;
+    cursor:pointer;
+}
+
+.room-info{
+    text-align:left;
+}
 
 .gallery{
     display:none;
@@ -171,6 +176,7 @@ button{
 .gallery img{
     width:150px;
     margin:10px;
+    border-radius:10px;
 }
 
 /* ================= WHATSAPP ================= */
@@ -238,7 +244,7 @@ Call For Booking
 
 </section>
 
-<!-- COMPLEX SIDE BY SIDE -->
+<!-- COMPLEX -->
 <div class="complex-container">
 
 <div class="complex-card">
@@ -257,16 +263,75 @@ Veerabadhra Complex - Book Now
 
 </div>
 
-<!-- PANEL 1 -->
+<!-- ================= PANEL 1 ================= -->
 <div id="rooms1" class="panel">
+
 <button onclick="goHome()">⬅ Back</button>
+
 <h2>Rajeshwari Rooms</h2>
+
+<div class="room-row">
+<img src="3bed.jpeg" class="room-main" onclick="toggleGallery('g1a')">
+
+<div class="room-info">
+<h3>3 Bed Room</h3>
+<button onclick="location.href='tel:+917675962840'">Book ₹1600</button>
+</div>
 </div>
 
-<!-- PANEL 2 -->
+<div id="g1a" class="gallery">
+<img src="3bed.jpeg">
+<img src="washroom.jpeg">
+</div>
+
+<div class="room-row">
+<img src="2-bed.jpeg" class="room-main" onclick="toggleGallery('g2a')">
+
+<div class="room-info">
+<h3>2 Bed Room</h3>
+<button onclick="location.href='tel:+917675962840'">Book ₹1200</button>
+</div>
+</div>
+
+<div id="g2a" class="gallery">
+<img src="2-bed.jpeg">
+</div>
+
+</div>
+
+<!-- ================= PANEL 2 ================= -->
 <div id="rooms2" class="panel">
+
 <button onclick="goHome()">⬅ Back</button>
+
 <h2>Veerabadhra Rooms</h2>
+
+<div class="room-row">
+<img src="3bed.jpeg" class="room-main" onclick="toggleGallery('g1b')">
+
+<div class="room-info">
+<h3>3 Bed Room</h3>
+<button onclick="location.href='tel:+917675962840'">Book ₹1600</button>
+</div>
+</div>
+
+<div id="g1b" class="gallery">
+<img src="3bed.jpeg">
+</div>
+
+<div class="room-row">
+<img src="2-bed.jpeg" class="room-main" onclick="toggleGallery('g2b')">
+
+<div class="room-info">
+<h3>2 Bed Room</h3>
+<button onclick="location.href='tel:+917675962840'">Book ₹1200</button>
+</div>
+</div>
+
+<div id="g2b" class="gallery">
+<img src="2-bed.jpeg">
+</div>
+
 </div>
 
 <!-- PANELS -->
@@ -300,6 +365,11 @@ document.getElementById(id).style.display="block";
 
 function goHome(){
 document.querySelectorAll(".panel").forEach(p=>p.style.display="none");
+}
+
+function toggleGallery(id){
+let g=document.getElementById(id);
+g.style.display = (g.style.display==="block") ? "none":"block";
 }
 
 </script>
