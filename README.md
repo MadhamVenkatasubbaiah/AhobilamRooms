@@ -26,8 +26,8 @@ body{
     box-sizing:border-box;
 }
 
-.left img{ height:40px; }
-.right img{ height:40px; }
+.left img{ height:70px; }
+.right img{ height:70px; }
 
 .center{
     flex:1;
@@ -38,14 +38,14 @@ body{
 .center h1{
     margin:0;
     color:white;
-    font-size:20px;
+    font-size:30px;
 }
 
 /* MENU */
 .menu{
     display:flex;
     justify-content:center;
-    gap:12px;
+    gap:20px;
 }
 
 .menu a{
