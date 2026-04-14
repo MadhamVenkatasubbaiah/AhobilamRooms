@@ -1,9 +1,5 @@
-<!DOCTYPE html>
 <html>
 <head>
-
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ahobilam Rooms</title>
 
 <style>
 
@@ -11,7 +7,7 @@
 body{
     font-family: Arial;
     margin:0;
-    background:#FFF8E1;
+    background:#FFE0B2;
 }
 
 /* ================= NAVBAR ================= */
@@ -154,7 +150,7 @@ button{
     left:0;
     width:100%;
     height:100%;
-    background:#FFF8E1;
+    background:#FFE0B2;
     z-index:2000;
     padding:20px;
     overflow:auto;
