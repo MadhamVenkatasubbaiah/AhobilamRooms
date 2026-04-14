@@ -26,8 +26,8 @@ body{
     box-sizing:border-box;
 }
 
-.left img{ height:70px; }
-.right img{ height:70px; }
+.left img{ height:90px; }
+.right img{ height:90px; }
 
 .center{
     flex:1;
@@ -52,7 +52,7 @@ body{
     color:white;
     text-decoration:none;
     font-weight:bold;
-    font-size:13px;
+    font-size:18px;
     cursor:pointer;
 }
 
