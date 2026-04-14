@@ -210,12 +210,12 @@ button{
 
 /* ===== ADDED ONLY (HEADER FONT SIZE) ===== */
 header h1{
-    font-size:36px;
+    font-size:50px;
     font-weight:bold;
 }
 
 header p{
-    font-size:18px;
+    font-size:25px;
 }
 
 @media(max-width:768px){
