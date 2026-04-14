@@ -1,9 +1,5 @@
-<!DOCTYPE html>
 <html>
 <head>
-
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ahobilam Rooms</title>
 
 <style>
 
@@ -20,7 +16,7 @@ body{
     justify-content:space-between;
     align-items:center;
     background:#FF9933;
-    height:60px;
+    height:80px;
     padding:0 10px;
     position:fixed;
     top:0;
