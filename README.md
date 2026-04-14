@@ -56,7 +56,7 @@ body{
     cursor:pointer;
 }
 
-/* HOTEL DROPDOWN */
+/* DROPDOWN */
 .dropdown{
     position:relative;
 }
@@ -67,18 +67,19 @@ body{
     top:25px;
     left:0;
     background:#fff;
-    min-width:150px;
+    min-width:180px;
     border-radius:5px;
-}
-
-.dropdown:hover .dropdown-content{
-    display:block;
+    box-shadow:0 4px 10px rgba(0,0,0,0.2);
 }
 
 .dropdown-content a{
     display:block;
     padding:10px;
     color:black;
+}
+
+.dropdown:hover .dropdown-content{
+    display:block;
 }
 
 /* MOBILE */
@@ -111,6 +112,11 @@ body{
 }
 
 .right img{ display:none; }
+
+.dropdown-content{
+    position:static;
+    box-shadow:none;
+}
 }
 
 /* ================= HEADER ================= */
@@ -271,6 +277,7 @@ header p{ font-size:25px; }
 
 <a onclick="openPanel('aboutPanel')">About</a>
 
+<!-- HOTELS -->
 <div class="dropdown">
 <a>Hotels ▾</a>
 <div class="dropdown-content">
@@ -280,7 +287,14 @@ header p{ font-size:25px; }
 </div>
 </div>
 
-<a onclick="openPanel('timingsPanel')">Temple Timings</a>
+<!-- TEMPLE TIMINGS -->
+<div class="dropdown">
+<a>Temple Timings ▾</a>
+<div class="dropdown-content">
+<a>Morning: 6:00 AM – 1:00 PM</a>
+<a>Evening: 3:00 PM – 8:30 PM</a>
+</div>
+</div>
 
 </div>
 </div>
@@ -407,16 +421,6 @@ Veerabadhra Complex - Book Now
 <p>
 According to legend, when the Devas witnessed Lord Narasimha,
 they named this place Ahobilam.
-</p>
-</div>
-
-<!-- TIMINGS PANEL -->
-<div id="timingsPanel" class="panel">
-<button onclick="goHome()">⬅ Back</button>
-<h2>Temple Timings</h2>
-<p>
-Morning: 6:00 AM – 1:00 PM<br>
-Evening: 3:00 PM – 8:30 PM
 </p>
 </div>
 
