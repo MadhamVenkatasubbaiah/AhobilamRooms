@@ -144,9 +144,9 @@ header::before{
     top:50%;
     left:50%;
     transform:translate(-50%,-50%);
-    width:600px;
-    height:600px;
-    background:url("AVS3.png") no-repeat center;
+    width:1000px;
+    height:1000px;
+    background:url("AVS3.png") no-repeat down;
     background-size:contain;
     opacity:0.15;
 }
