@@ -261,7 +261,7 @@ button{
 </div>
 
 <div class="center">
-<h1>AHOBILAM</h1>
+<h1>AHOBILAM ROOMS</h1>
 
 <span class="menu-toggle" onclick="toggleMenu()">☰</span>
 
