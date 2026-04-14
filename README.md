@@ -93,7 +93,7 @@ header{
     padding:80px 20px;
     text-align:center;
     color:white;
-    background:#e8b97a;
+    background:#FFE0B2;
     position:relative;
 }
 
@@ -194,9 +194,18 @@ button{
     right:20px;
     background:#25D366;
     color:white;
-    padding:30px;
-    border-radius:100px;
+    width:60px;
+    height:60px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:26px;
+    border-radius:50%;
     z-index:3000;
+}
+
+.whatsapp:hover{
+    transform:scale(1.1);
 }
 
 </style>
@@ -272,9 +281,8 @@ Veerabadhra Complex - Book Now
 
 </div>
 
-<!-- ================= PANEL 1 ================= -->
+<!-- PANEL 1 -->
 <div id="rooms1" class="panel">
-
 <button onclick="goHome()">⬅ Back</button>
 
 <h2>Rajeshwari Rooms</h2>
@@ -306,9 +314,8 @@ Veerabadhra Complex - Book Now
 
 </div>
 
-<!-- ================= PANEL 2 ================= -->
+<!-- PANEL 2 (FULL FIXED) -->
 <div id="rooms2" class="panel">
-
 <button onclick="goHome()">⬅ Back</button>
 
 <h2>Veerabadhra Rooms</h2>
@@ -340,24 +347,10 @@ Veerabadhra Complex - Book Now
 
 </div>
 
-<!-- PANELS -->
-<div id="aboutPanel" class="panel">
-<button onclick="goHome()">⬅ Back</button>
-<h2>About</h2>
-</div>
-
-<div id="hotelsPanel" class="panel">
-<button onclick="goHome()">⬅ Back</button>
-<h2>Hotels</h2>
-</div>
-
-<div id="timingsPanel" class="panel">
-<button onclick="goHome()">⬅ Back</button>
-<h2>Temple Timings</h2>
-</div>
-
 <!-- WHATSAPP -->
-<a class="whatsapp" href="https://wa.me/917675962840">💬</a>
+<a class="whatsapp"
+href="https://wa.me/917675962840?text=Hello%20I%20want%20to%20book%20a%20room%20in%20Ahobilam"
+target="_blank">💬</a>
 
 <script>
 
