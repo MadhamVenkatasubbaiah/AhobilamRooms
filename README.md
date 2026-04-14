@@ -95,7 +95,7 @@ header::before{
     height:400px;
     background:url("without_bg.png") no-repeat center;
     background-size:contain;
-    opacity:0.08;
+    opacity:0.20;
 }
 
 /* ================= CONTENT ================= */
