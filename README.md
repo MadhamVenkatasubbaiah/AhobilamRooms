@@ -55,6 +55,19 @@ body{
     font-size:13px;
 }
 
+/* HOTEL DROPDOWN */
+#hotelDropdown{
+    display:none;
+    position:absolute;
+    top:80px;
+    left:0;
+    width:100%;
+    background:#fff3e0;
+    text-align:center;
+    padding:15px;
+    z-index:999;
+}
+
 /* MOBILE */
 .menu-toggle{
     display:none;
@@ -85,6 +98,11 @@ body{
 }
 
 .right img{ display:none; }
+
+#hotelDropdown{
+    position:fixed;
+    top:140px;
+}
 }
 
 /* ================= HEADER ================= */
@@ -231,9 +249,19 @@ header p{ font-size:25px; }
 
 <div class="menu" id="menu">
 <a href="#" onclick="openPanel('aboutPanel')">About</a>
-<a href="#" onclick="openPanel('hotelsPanel')">Hotels</a>
+<a href="#" onclick="toggleHotels()">Hotels</a>
 <a href="#" onclick="openPanel('timingsPanel')">Temple Timings</a>
 </div>
+
+<!-- HOTEL DROPDOWN -->
+<div id="hotelDropdown">
+<p><b>Hotel 1</b></p>
+<p><b>Hotel 2</b></p>
+<p><b>Hotel 3</b></p>
+<br>
+<button onclick="location.href='tel:+917675962840'">📞 Call Now</button>
+</div>
+
 </div>
 
 <div class="right">
@@ -287,7 +315,6 @@ Veerabadhra Complex - Book Now
 
 <!-- PANEL 1 -->
 <div id="rooms1" class="panel">
-
 <button onclick="goHome()">⬅ Back</button>
 
 <h2>Rajeshwari Rooms</h2>
@@ -321,7 +348,6 @@ Veerabadhra Complex - Book Now
 
 <!-- PANEL 2 -->
 <div id="rooms2" class="panel">
-
 <button onclick="goHome()">⬅ Back</button>
 
 <h2>Veerabadhra Rooms</h2>
@@ -353,30 +379,18 @@ Veerabadhra Complex - Book Now
 
 </div>
 
-<!-- ===== MENU PANELS (ADDED ONLY) ===== -->
-
+<!-- ABOUT PANEL -->
 <div id="aboutPanel" class="panel">
 <button onclick="goHome()">⬅ Back</button>
 <h2>About</h2>
-<p>According to legend, when the Devas witnessed... Ahobilam.</p>
-<button onclick="location.href='tel:+917675962840'">📞 Call Now</button>
-<a class="whatsapp" href="https://wa.me/917675962840" target="_blank">💬</a>
+<p>Ahobilam is a sacred place of Lord Narasimha.</p>
 </div>
 
-<div id="hotelsPanel" class="panel">
-<button onclick="goHome()">⬅ Back</button>
-<h2>Hotels</h2>
-<p>Hotel 1<br>Hotel 2<br>Hotel 3</p>
-<button onclick="location.href='tel:+917675962840'">📞 Call Now</button>
-<a class="whatsapp" href="https://wa.me/917675962840" target="_blank">💬</a>
-</div>
-
+<!-- TIMINGS PANEL -->
 <div id="timingsPanel" class="panel">
 <button onclick="goHome()">⬅ Back</button>
 <h2>Temple Timings</h2>
 <p>Morning: 6:00 AM – 1:00 PM<br>Evening: 3:00 PM – 8:30 PM</p>
-<button onclick="location.href='tel:+917675962840'">📞 Call Now</button>
-<a class="whatsapp" href="https://wa.me/917675962840" target="_blank">💬</a>
 </div>
 
 <!-- WHATSAPP -->
@@ -388,6 +402,11 @@ target="_blank">💬</a>
 
 function toggleMenu(){
 document.getElementById("menu").classList.toggle("show");
+}
+
+function toggleHotels(){
+let d=document.getElementById("hotelDropdown");
+d.style.display=(d.style.display==="block")?"none":"block";
 }
 
 function openPanel(id){
