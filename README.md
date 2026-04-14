@@ -53,19 +53,32 @@ body{
     text-decoration:none;
     font-weight:bold;
     font-size:13px;
+    cursor:pointer;
 }
 
 /* HOTEL DROPDOWN */
-#hotelDropdown{
+.dropdown{
+    position:relative;
+}
+
+.dropdown-content{
     display:none;
     position:absolute;
-    top:80px;
+    top:25px;
     left:0;
-    width:100%;
-    background:#fff3e0;
-    text-align:center;
-    padding:15px;
-    z-index:999;
+    background:#fff;
+    min-width:150px;
+    border-radius:5px;
+}
+
+.dropdown:hover .dropdown-content{
+    display:block;
+}
+
+.dropdown-content a{
+    display:block;
+    padding:10px;
+    color:black;
 }
 
 /* MOBILE */
@@ -98,11 +111,6 @@ body{
 }
 
 .right img{ display:none; }
-
-#hotelDropdown{
-    position:fixed;
-    top:140px;
-}
 }
 
 /* ================= HEADER ================= */
@@ -205,7 +213,7 @@ button{
     border-radius:10px;
 }
 
-/* ================= WHATSAPP ================= */
+/* ================= FLOAT BUTTONS ================= */
 .whatsapp{
     position:fixed;
     bottom:20px;
@@ -222,8 +230,20 @@ button{
     z-index:3000;
 }
 
-.whatsapp:hover{
-    transform:scale(1.1);
+.call{
+    position:fixed;
+    bottom:90px;
+    right:20px;
+    background:#007bff;
+    color:white;
+    width:60px;
+    height:60px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:22px;
+    border-radius:50%;
+    z-index:3000;
 }
 
 /* HEADER FONT */
@@ -248,20 +268,21 @@ header p{ font-size:25px; }
 <span class="menu-toggle" onclick="toggleMenu()">☰</span>
 
 <div class="menu" id="menu">
-<a href="#" onclick="openPanel('aboutPanel')">About</a>
-<a href="#" onclick="toggleHotels()">Hotels</a>
-<a href="#" onclick="openPanel('timingsPanel')">Temple Timings</a>
+
+<a onclick="openPanel('aboutPanel')">About</a>
+
+<div class="dropdown">
+<a>Hotels ▾</a>
+<div class="dropdown-content">
+<a>Hotel 1</a>
+<a>Hotel 2</a>
+<a>Hotel 3</a>
+</div>
 </div>
 
-<!-- HOTEL DROPDOWN -->
-<div id="hotelDropdown">
-<p><b>Hotel 1</b></p>
-<p><b>Hotel 2</b></p>
-<p><b>Hotel 3</b></p>
-<br>
-<button onclick="location.href='tel:+917675962840'">📞 Call Now</button>
-</div>
+<a onclick="openPanel('timingsPanel')">Temple Timings</a>
 
+</div>
 </div>
 
 <div class="right">
@@ -383,30 +404,34 @@ Veerabadhra Complex - Book Now
 <div id="aboutPanel" class="panel">
 <button onclick="goHome()">⬅ Back</button>
 <h2>About</h2>
-<p>Ahobilam is a sacred place of Lord Narasimha.</p>
+<p>
+According to legend, when the Devas witnessed Lord Narasimha,
+they named this place Ahobilam.
+</p>
 </div>
 
 <!-- TIMINGS PANEL -->
 <div id="timingsPanel" class="panel">
 <button onclick="goHome()">⬅ Back</button>
 <h2>Temple Timings</h2>
-<p>Morning: 6:00 AM – 1:00 PM<br>Evening: 3:00 PM – 8:30 PM</p>
+<p>
+Morning: 6:00 AM – 1:00 PM<br>
+Evening: 3:00 PM – 8:30 PM
+</p>
 </div>
 
-<!-- WHATSAPP -->
+<!-- FLOAT BUTTONS -->
 <a class="whatsapp"
-href="https://wa.me/917675962840?text=Hello%20I%20want%20to%20book%20a%20room%20in%20Ahobilam"
+href="https://wa.me/917675962840?text=Hello%20I%20want%20room"
 target="_blank">💬</a>
+
+<a class="call"
+href="tel:+917675962840">📞</a>
 
 <script>
 
 function toggleMenu(){
 document.getElementById("menu").classList.toggle("show");
-}
-
-function toggleHotels(){
-let d=document.getElementById("hotelDropdown");
-d.style.display=(d.style.display==="block")?"none":"block";
 }
 
 function openPanel(id){
