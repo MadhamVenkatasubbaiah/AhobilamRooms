@@ -105,7 +105,7 @@ header::before{
 /* ================= CONTENT ================= */
 section{
     padding:40px;
-    text-align:center;
+    text-align:left;
 }
 
 button{
