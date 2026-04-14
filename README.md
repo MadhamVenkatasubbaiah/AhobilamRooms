@@ -208,25 +208,9 @@ button{
     transform:scale(1.1);
 }
 
-/* ===== ADDED ONLY (HEADER FONT SIZE) ===== */
-header h1{
-    font-size:50px;
-    font-weight:bold;
-}
-
-header p{
-    font-size:25px;
-}
-
-@media(max-width:768px){
-    header h1{
-        font-size:26px;
-    }
-
-    header p{
-        font-size:14px;
-    }
-}
+/* HEADER FONT */
+header h1{ font-size:50px; }
+header p{ font-size:25px; }
 
 </style>
 </head>
@@ -303,6 +287,7 @@ Veerabadhra Complex - Book Now
 
 <!-- PANEL 1 -->
 <div id="rooms1" class="panel">
+
 <button onclick="goHome()">⬅ Back</button>
 
 <h2>Rajeshwari Rooms</h2>
@@ -336,6 +321,7 @@ Veerabadhra Complex - Book Now
 
 <!-- PANEL 2 -->
 <div id="rooms2" class="panel">
+
 <button onclick="goHome()">⬅ Back</button>
 
 <h2>Veerabadhra Rooms</h2>
@@ -365,6 +351,32 @@ Veerabadhra Complex - Book Now
 <img src="2-bed.jpeg">
 </div>
 
+</div>
+
+<!-- ===== MENU PANELS (ADDED ONLY) ===== -->
+
+<div id="aboutPanel" class="panel">
+<button onclick="goHome()">⬅ Back</button>
+<h2>About</h2>
+<p>According to legend, when the Devas witnessed... Ahobilam.</p>
+<button onclick="location.href='tel:+917675962840'">📞 Call Now</button>
+<a class="whatsapp" href="https://wa.me/917675962840" target="_blank">💬</a>
+</div>
+
+<div id="hotelsPanel" class="panel">
+<button onclick="goHome()">⬅ Back</button>
+<h2>Hotels</h2>
+<p>Hotel 1<br>Hotel 2<br>Hotel 3</p>
+<button onclick="location.href='tel:+917675962840'">📞 Call Now</button>
+<a class="whatsapp" href="https://wa.me/917675962840" target="_blank">💬</a>
+</div>
+
+<div id="timingsPanel" class="panel">
+<button onclick="goHome()">⬅ Back</button>
+<h2>Temple Timings</h2>
+<p>Morning: 6:00 AM – 1:00 PM<br>Evening: 3:00 PM – 8:30 PM</p>
+<button onclick="location.href='tel:+917675962840'">📞 Call Now</button>
+<a class="whatsapp" href="https://wa.me/917675962840" target="_blank">💬</a>
 </div>
 
 <!-- WHATSAPP -->
