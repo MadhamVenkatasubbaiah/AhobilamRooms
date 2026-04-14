@@ -178,8 +178,8 @@ button{
 /* ================= WHATSAPP ================= */
 .whatsapp{
     position:fixed;
-    bottom:20px;
-    right:20px;
+    bottom:40px;
+    right:40px;
     background:#25D366;
     color:white;
     padding:14px;
