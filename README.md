@@ -136,7 +136,7 @@ header{
     margin-top:80px;
     padding:80px 20px;
     text-align:center;
-    color:white;
+    color:black;
     background:#FFE0B2;
     position:relative;
 }
