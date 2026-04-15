@@ -94,12 +94,21 @@ html, body{
     display:block;
 }
 
-/* MOBILE */
+<!-- MOBILE view 
 .menu-toggle{
     display:none;
     font-size:26px;
     color:white;
     cursor:pointer;
+}
+-->
+.menu-toggle{
+    display:none;
+    font-size:26px;
+    color:white;
+    cursor:pointer;
+    align-self:flex-end;   /* ADD THIS */
+    margin-right:10px;     /* ADD THIS */
 }
 
 @media(max-width:768px){
@@ -118,9 +127,9 @@ html, body{
 
 .menu-toggle{
     display:block;
-    position:absolute;
-    right:10px;
-    top:5px;
+/*   position:absolute; */
+/*    right:10px; */
+/*    top:5px; */
 }
 
 .right img{ display:none; }
