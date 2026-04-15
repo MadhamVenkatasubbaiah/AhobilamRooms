@@ -361,7 +361,7 @@ width="100%" height="300" style="border:0;border-radius:10px;"></iframe>
 </section>
 
 <!-- REVIEWS comple
-<!-- REVIEWS -->
+
 <section>
 <h2>Customer Reviews</h2>
 <p style="font-size:20px;">⭐⭐⭐⭐⭐ (4.8 / 5)</p>
