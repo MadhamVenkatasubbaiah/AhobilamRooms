@@ -68,7 +68,7 @@ html, body{
     color:white;
     text-decoration:none;
     font-weight:bold;
-    font-size:25px;
+    font-size:20px;
     cursor:pointer;
 }
 
