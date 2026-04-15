@@ -381,7 +381,7 @@ width="100%" height="300" style="border:0;border-radius:10px;"></iframe>
 <div id="rooms1" class="panel">
 <button onclick="goHome()">⬅ Back</button>
 
-<h2>Rajeshwari Rooms 🛜 </h2>
+<h2>Rajeshwari Rooms</h2>
 
 <div class="room-row">
 <img src="3bed.jpeg" class="room-main" onclick="toggleGallery('g1a')">
