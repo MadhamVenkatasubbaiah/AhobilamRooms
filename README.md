@@ -8,6 +8,13 @@ body{
     font-family: Arial;
     margin:0;
     background:#FFE0B2;
+    overflow-x:hidden;
+    width:100%;
+}
+
+html, body{
+    max-width:100%;
+    overflow-x:hidden;
 }
 
 /* ================= NAVBAR ================= */
@@ -21,18 +28,26 @@ body{
     position:fixed;
     top:0;
     left:0;
+    right:0;
     width:100%;
     z-index:1000;
     box-sizing:border-box;
 }
 
-.left img{ height:90px; }
-.right img{ height:90px; }
+.left img,
+.right img{
+    height:70px;
+    width:auto;
+}
 
+/* CENTER FIX */
 .center{
     flex:1;
     text-align:center;
     position:relative;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
 }
 
 .center h1{
@@ -46,6 +61,7 @@ body{
     display:flex;
     justify-content:center;
     gap:20px;
+    flex-wrap:wrap;
 }
 
 .menu a{
@@ -360,16 +376,6 @@ width="100%" height="300" style="border:0;border-radius:10px;"></iframe>
 width="100%" height="300" style="border:0;border-radius:10px;"></iframe>
 </section>
 
-<!-- REVIEWS comple
-
-<section>
-<h2>Customer Reviews</h2>
-<p style="font-size:20px;">⭐⭐⭐⭐⭐ (4.8 / 5)</p>
-<p>Clean rooms | Near temple | Good service | Family friendly</p>
-</section>
-
--->
-
 <!-- PANEL 1 -->
 <div id="rooms1" class="panel">
 <button onclick="goHome()">⬅ Back</button>
@@ -446,12 +452,15 @@ width="100%" height="300" style="border:0;border-radius:10px;"></iframe>
 function toggleMenu(){
 document.getElementById("menu").classList.toggle("show");
 }
+
 function openPanel(id){
 document.getElementById(id).style.display="block";
 }
+
 function goHome(){
 document.querySelectorAll(".panel").forEach(p=>p.style.display="none");
 }
+
 function toggleGallery(id){
 let g=document.getElementById(id);
 g.style.display = (g.style.display==="block") ? "none":"block";
