@@ -1,4 +1,4 @@
-<html>
+<img width="225" height="144" alt="image" src="https://github.com/user-attachments/assets/92cf3230-48af-4955-8a4b-d97a1029a679" /><html>
 <head>
 
 <style>
@@ -147,11 +147,11 @@ header::before{
     top:50%;
     left:50%;
     transform:translate(-50%,-50%);
-    width:600px;
-    height:600px;
+    width:500px;
+    height:500px;
     background:url("without_bg.png") no-repeat center;
     background-size:contain;
-    opacity:0.15;
+    opacity:0.10;
 }
 
 /* ================= CONTENT ================= */
@@ -333,6 +333,7 @@ Evening: 3:00 PM – 8:30 PM
 🚿 Hot Water 24 Hours<br>
 🚘 Parking Available<br>
 👨‍👩‍👦 Family Friendly
+📹 CCTV Surveillance
 </p>
 
 <button onclick="location.href='tel:+917675962840'">
@@ -350,7 +351,7 @@ Call For Booking
 
 <div class="complex-card">
 <img src="Rajeshwari.Complex.jpeg" class="complex-photo"><br><br>
-<button onclick="openPanel('rooms1')">Rajeshwari Complex</button>
+<button onclick="openPanel('rooms1')">Rajeshwari Complex 🛜 </button>
 </div>
 
 <div class="complex-card">
