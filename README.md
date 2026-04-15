@@ -65,7 +65,7 @@ html, body{
 }
 
 .menu a{
-    color:white;
+    color:black;
     text-decoration:none;
     font-weight:bold;
     font-size:20px;
