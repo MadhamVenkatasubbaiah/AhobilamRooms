@@ -1,250 +1,193 @@
-import React from "react";
+<html>
+<head>
+<style>
 
-export default function App() {
-  const phone = "917675962840";
-
-  return (
-    <div style={styles.page}>
-
-      {/* HEADER */}
-      <header style={styles.header}>
-        <h2 style={styles.logo}>Ahobilam Haven Stay</h2>
-        <a style={styles.bookBtn} href={`https://wa.me/${phone}`} target="_blank">
-          Book Now
-        </a>
-      </header>
-
-      {/* HERO */}
-      <section style={styles.hero}>
-        <div style={styles.overlay}></div>
-
-        <div style={styles.heroContent}>
-          <h1 style={styles.title}>Peaceful Stay Near Ahobilam Temple</h1>
-          <p>Comfortable rooms • Family friendly • Near Narasimha Temple</p>
-
-          <a
-            href={`https://wa.me/${phone}`}
-            style={styles.greenBtn}
-            target="_blank"
-          >
-            Book on WhatsApp
-          </a>
-        </div>
-      </section>
-
-      {/* FEATURES */}
-      <section style={styles.section}>
-        <h2>Why Choose Us</h2>
-
-        <div style={styles.grid}>
-          <div style={styles.card}>🛏 Clean Rooms</div>
-          <div style={styles.card}>❄ AC Available</div>
-          <div style={styles.card}>🔒 Safe Stay</div>
-          <div style={styles.card}>📍 Near Temple</div>
-        </div>
-      </section>
-
-      {/* ROOMS */}
-      <section style={styles.sectionAlt}>
-        <h2>Our Rooms</h2>
-
-        <div style={styles.grid}>
-
-          <div style={styles.roomCard}>
-            <img
-              src="https://images.unsplash.com/photo-1560184897-ae75f418493e"
-              style={styles.roomImg}
-            />
-            <h3>2 Sharing AC Room</h3>
-            <a style={styles.greenBtn} href={`https://wa.me/${phone}`}>
-              Book Now
-            </a>
-          </div>
-
-          <div style={styles.roomCard}>
-            <img
-              src="https://images.unsplash.com/photo-1578683010236-d716f9a3f461"
-              style={styles.roomImg}
-            />
-            <h3>Family AC Room</h3>
-            <a style={styles.greenBtn} href={`https://wa.me/${phone}`}>
-              Book Now
-            </a>
-          </div>
-
-        </div>
-      </section>
-
-      {/* ABOUT TEMPLE */}
-      <section style={styles.about}>
-        <div>
-          <h2>Ahobilam Temple</h2>
-          <p>
-            One of the most powerful Narasimha Swamy temples in India,
-            located in the Nallamala Hills of Andhra Pradesh.
-          </p>
-        </div>
-
-        <img
-          src="https://images.unsplash.com/photo-1601404395112-9e5a6a7b6c56"
-          style={styles.templeImg}
-        />
-      </section>
-
-      {/* FOOTER */}
-      <footer style={styles.footer}>
-        © {new Date().getFullYear()} Ahobilam Haven Stay
-      </footer>
-
-      {/* FLOAT WHATSAPP */}
-      <a
-        href={`https://wa.me/${phone}`}
-        target="_blank"
-        style={styles.whatsapp}
-      >
-        💬
-      </a>
-
-    </div>
-  );
+/* ===== BODY ===== */
+body{
+    margin:0;
+    font-family:Arial;
+    background:#111;
+    color:white;
 }
 
-/* ================= STYLES ================= */
-const styles: any = {
+/* ===== NAVBAR ===== */
+.navbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 40px;
+    background:black;
+    position:fixed;
+    width:100%;
+    top:0;
+    z-index:1000;
+}
 
-  page: {
-    fontFamily: "Arial",
-    margin: 0,
-    padding: 0
-  },
+/* LEFT LOGO */
+.logo{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    color:#d4af37;
+}
 
-  header: {
-    position: "fixed",
-    top: 0,
-    width: "100%",
-    background: "#ff9933",
-    display: "flex",
-    justifyContent: "space-between",
-    padding: "15px 20px",
-    alignItems: "center",
-    zIndex: 1000
-  },
+.logo img{
+    height:40px;
+}
 
-  logo: {
-    color: "white",
-    margin: 0
-  },
+.logo h2{
+    margin:0;
+    font-size:20px;
+}
 
-  bookBtn: {
-    background: "#25D366",
-    color: "white",
-    padding: "8px 14px",
-    borderRadius: "5px",
-    textDecoration: "none"
-  },
+/* MENU */
+.menu{
+    display:flex;
+    gap:30px;
+    align-items:center;
+}
 
-  hero: {
-    height: "90vh",
-    backgroundImage: "url('https://images.unsplash.com/photo-1542314831-068cd1dbfeeb')",
-    backgroundSize: "cover",
-    backgroundPosition: "center",
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-    color: "white",
-    position: "relative",
-    marginTop: "70px"
-  },
+.menu a{
+    color:#ccc;
+    text-decoration:none;
+    font-size:16px;
+}
 
-  overlay: {
-    position: "absolute",
-    width: "100%",
-    height: "100%",
-    background: "rgba(0,0,0,0.6)"
-  },
+.menu a:hover{
+    color:#d4af37;
+}
 
-  heroContent: {
-    position: "relative",
-    textAlign: "center"
-  },
+/* BOOK BUTTON */
+.book-btn{
+    background:#d4af37;
+    color:black;
+    padding:10px 20px;
+    border-radius:6px;
+    font-weight:bold;
+}
 
-  title: {
-    fontSize: "42px"
-  },
+/* ===== HERO SECTION ===== */
+.hero{
+    height:100vh;
+    background:url("Rajeshwari.Complex.jpeg") no-repeat center;
+    background-size:cover;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    position:relative;
+}
 
-  section: {
-    padding: "60px",
-    textAlign: "center"
-  },
+/* DARK OVERLAY */
+.hero::before{
+    content:"";
+    position:absolute;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.6);
+}
 
-  sectionAlt: {
-    padding: "60px",
-    background: "#f7f7f7",
-    textAlign: "center"
-  },
+/* HERO CONTENT */
+.hero-content{
+    position:relative;
+    z-index:2;
+}
 
-  grid: {
-    display: "flex",
-    gap: "20px",
-    justifyContent: "center",
-    flexWrap: "wrap",
-    marginTop: "20px"
-  },
+.hero h1{
+    font-size:60px;
+    color:#d4af37;
+    margin:0;
+}
 
-  card: {
-    padding: "20px",
-    background: "white",
-    borderRadius: "10px",
-    width: "150px"
-  },
+.hero p{
+    font-size:20px;
+    color:#ccc;
+}
 
-  roomCard: {
-    width: "250px",
-    background: "white",
-    borderRadius: "10px",
-    padding: "10px"
-  },
+/* BUTTONS */
+.hero-buttons{
+    margin-top:20px;
+}
 
-  roomImg: {
-    width: "100%",
-    height: "180px",
-    objectFit: "cover",
-    borderRadius: "10px"
-  },
+.hero-buttons button{
+    padding:12px 25px;
+    margin:10px;
+    border:none;
+    cursor:pointer;
+    border-radius:5px;
+}
 
-  about: {
-    display: "flex",
-    gap: "20px",
-    padding: "60px",
-    alignItems: "center",
-    flexWrap: "wrap"
-  },
+.whatsapp-btn{
+    background:#d4af37;
+    color:black;
+    font-weight:bold;
+}
 
-  templeImg: {
-    width: "350px",
-    borderRadius: "10px"
-  },
+.view-btn{
+    background:transparent;
+    border:1px solid #d4af37;
+    color:#d4af37;
+}
 
-  footer: {
-    background: "#222",
-    color: "white",
-    textAlign: "center",
-    padding: "20px"
-  },
+/* ===== RESPONSIVE ===== */
+@media(max-width:768px){
+    .menu{
+        display:none;
+    }
 
-  whatsapp: {
-    position: "fixed",
-    bottom: "20px",
-    right: "20px",
-    width: "60px",
-    height: "60px",
-    background: "#25D366",
-    color: "white",
-    borderRadius: "50%",
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-    fontSize: "28px",
-    textDecoration: "none"
-  }
-};
+    .hero h1{
+        font-size:35px;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<div class="navbar">
+
+<div class="logo">
+<img src="logo.png">
+<h2>Madam Rajeswari<br><small>COMPLEX</small></h2>
+</div>
+
+<div class="menu">
+<a href="#">Home</a>
+<a href="#">Rooms</a>
+<a href="#">Temple History</a>
+<a href="#">Contact</a>
+<a href="tel:+917675962840" class="book-btn">📞 Book Now</a>
+</div>
+
+</div>
+
+<!-- HERO SECTION -->
+<div class="hero">
+
+<div class="hero-content">
+
+<p>WELCOME TO</p>
+
+<h1>Madam Rajeswari<br>Complex</h1>
+
+<p>Ahobilam, Andhra Pradesh</p>
+<p>Your divine stay near the sacred Narasimha temples</p>
+
+<div class="hero-buttons">
+<button class="whatsapp-btn" onclick="window.location.href='https://wa.me/917675962840'">
+Book via WhatsApp
+</button>
+
+<button class="view-btn">
+View Rooms
+</button>
+</div>
+
+</div>
+
+</div>
+
+</body>
+</html>
