@@ -23,7 +23,7 @@ html, body{
     justify-content:space-between;
     align-items:center;
     background:#FF9933;
-    height:100px;
+    height:120px;
     padding:0 10px;
     position:fixed;
     top:0;
@@ -36,7 +36,7 @@ html, body{
 
 .left img,
 .right img{
-    height:90px;
+    height:110px;
     width:auto;
 }
 
