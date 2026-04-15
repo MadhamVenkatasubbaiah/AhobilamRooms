@@ -304,7 +304,7 @@ Upper Ahobilam: 7:00 AM to 1:00 PM and 2:00 PM to 5:30 PM.
 <!-- HEADER -->
 <header>
 <h1>Ahobilam Rooms</h1>
-<p>Providing the best accommodation near temple</p>
+<p>Best rooms in Ahobilam near temple. AC & Non-AC rooms available with parking and 24 hours hot water.</p>
 </header>
 
 <!-- FACILITIES -->
