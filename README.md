@@ -278,15 +278,15 @@ Ahobilam, located in Andhra Pradesh's Nallamala hills, is the sacred site where 
 <div class="dropdown">
 <a>Hotels ▾</a>
 <div class="dropdown-content">
-Hotel 1<br>Hotel 2<br>Hotel 3
+Rajeshwari Complex<br>Veerabadhra Complex<br>Hotel 3
 </div>
 </div>
 
 <div class="dropdown">
 <a>Temple Timings ▾</a>
 <div class="dropdown-content">
-Morning: 6:00 AM – 1:00 PM<br>
-Evening: 3:00 PM – 8:30 PM
+Lower Ahobilam: 6:30 AM to 1:00 PM and 3:00 PM to 8:00 PM.
+Upper Ahobilam: 7:00 AM to 1:00 PM and 2:00 PM to 5:30 PM.
 </div>
 </div>
 
