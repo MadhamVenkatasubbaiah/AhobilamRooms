@@ -272,23 +272,23 @@ button{
 <div class="dropdown">
 <a>About ▾</a>
 <div class="dropdown-content">
-Ahobilam sacred Narasimha temple location.
+According to legend, when the Devas witnessed Lord Narasimha, they named this place Ahobilam.
 </div>
 </div>
 
 <div class="dropdown">
 <a>Hotels ▾</a>
 <div class="dropdown-content">
-<div onclick="openPanel('rooms1')" style="cursor:pointer;">Rajeshwari Complex</div>
-<div onclick="openPanel('rooms2')" style="cursor:pointer;">Veerabadhra Complex</div>
+<div onclick="openPanel('rooms1')" style="cursor:pointer;padding:5px;">Rajeshwari Complex</div>
+<div onclick="openPanel('rooms2')" style="cursor:pointer;padding:5px;">Veerabadhra Complex</div>
 </div>
 </div>
 
 <div class="dropdown">
 <a>Temple Timings ▾</a>
 <div class="dropdown-content">
-Morning: 6AM–1PM<br>
-Evening: 3PM–8:30PM
+Morning: 6:00 AM – 1:00 PM<br>
+Evening: 3:00 PM – 8:30 PM
 </div>
 </div>
 
@@ -325,7 +325,7 @@ Call For Booking
 
 </section>
 
-<!-- HOTELS BELOW -->
+<!-- HOTELS -->
 <section>
 
 <h2>Our Hotels</h2>
@@ -346,14 +346,29 @@ Call For Booking
 
 </section>
 
-<!-- MAP -->
+<!-- LOCATION -->
 <section>
-<h2>Location</h2>
-<iframe 
-src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d710.4421127558048!2d78.67541071202811!3d15.131055112543342"
-width="100%" height="300" style="border:0;border-radius:10px;">
-</iframe>
+<h2>Our Location</h2>
+<iframe src="https://www.google.com/maps?q=Ahobilam%20Rajeshwari%20Complex&output=embed"
+width="100%" height="300" style="border:0;border-radius:10px;"></iframe>
 </section>
+
+<!-- TEMPLE MAP -->
+<section>
+<h2>Ahobilam Temple</h2>
+<iframe src="https://www.google.com/maps?q=Ahobilam%20Temple&output=embed"
+width="100%" height="300" style="border:0;border-radius:10px;"></iframe>
+</section>
+
+<!-- REVIEWS comple
+<!-- REVIEWS -->
+<section>
+<h2>Customer Reviews</h2>
+<p style="font-size:20px;">⭐⭐⭐⭐⭐ (4.8 / 5)</p>
+<p>Clean rooms | Near temple | Good service | Family friendly</p>
+</section>
+
+-->
 
 <!-- PANEL 1 -->
 <div id="rooms1" class="panel">
@@ -428,24 +443,19 @@ width="100%" height="300" style="border:0;border-radius:10px;">
 <a class="call" href="tel:+917675962840">📞</a>
 
 <script>
-
 function toggleMenu(){
 document.getElementById("menu").classList.toggle("show");
 }
-
 function openPanel(id){
 document.getElementById(id).style.display="block";
 }
-
 function goHome(){
 document.querySelectorAll(".panel").forEach(p=>p.style.display="none");
 }
-
 function toggleGallery(id){
 let g=document.getElementById(id);
 g.style.display = (g.style.display==="block") ? "none":"block";
 }
-
 </script>
 
 </body>
