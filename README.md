@@ -1,95 +1,102 @@
 import React from "react";
 
 export default function App() {
-
   const phone = "917675962840";
 
   return (
     <div style={styles.page}>
 
-      {/* ================= HEADER ================= */}
+      {/* HEADER */}
       <header style={styles.header}>
-        <h1 style={styles.logo}>AHOBILAM ROOMS</h1>
+        <h2 style={styles.logo}>Ahobilam Haven Stay</h2>
+        <a style={styles.bookBtn} href={`https://wa.me/${phone}`} target="_blank">
+          Book Now
+        </a>
       </header>
 
-      {/* ================= HERO ================= */}
+      {/* HERO */}
       <section style={styles.hero}>
         <div style={styles.overlay}></div>
 
         <div style={styles.heroContent}>
-          <h1 style={styles.title}>Ahobilam Rooms</h1>
-          <p>Best stay near Narasimha Temple</p>
+          <h1 style={styles.title}>Peaceful Stay Near Ahobilam Temple</h1>
+          <p>Comfortable rooms • Family friendly • Near Narasimha Temple</p>
 
           <a
-            style={styles.btnGreen}
             href={`https://wa.me/${phone}`}
+            style={styles.greenBtn}
             target="_blank"
           >
-            Book Now
+            Book on WhatsApp
           </a>
         </div>
       </section>
 
-      {/* ================= ROOMS ================= */}
+      {/* FEATURES */}
       <section style={styles.section}>
-        <h2>Rooms</h2>
+        <h2>Why Choose Us</h2>
 
-        <div style={styles.cardContainer}>
+        <div style={styles.grid}>
+          <div style={styles.card}>🛏 Clean Rooms</div>
+          <div style={styles.card}>❄ AC Available</div>
+          <div style={styles.card}>🔒 Safe Stay</div>
+          <div style={styles.card}>📍 Near Temple</div>
+        </div>
+      </section>
 
-          <div style={styles.card}>
+      {/* ROOMS */}
+      <section style={styles.sectionAlt}>
+        <h2>Our Rooms</h2>
+
+        <div style={styles.grid}>
+
+          <div style={styles.roomCard}>
             <img
               src="https://images.unsplash.com/photo-1560184897-ae75f418493e"
-              style={styles.image}
+              style={styles.roomImg}
             />
-            <h3>King AC Room</h3>
-            <a
-              style={styles.btnGreen}
-              href={`https://wa.me/${phone}?text=I want King AC Room`}
-              target="_blank"
-            >
-              Book
+            <h3>2 Sharing AC Room</h3>
+            <a style={styles.greenBtn} href={`https://wa.me/${phone}`}>
+              Book Now
             </a>
           </div>
 
-          <div style={styles.card}>
+          <div style={styles.roomCard}>
             <img
               src="https://images.unsplash.com/photo-1578683010236-d716f9a3f461"
-              style={styles.image}
+              style={styles.roomImg}
             />
-            <h3>Family Room</h3>
-            <a
-              style={styles.btnGreen}
-              href={`https://wa.me/${phone}?text=I want Family Room`}
-              target="_blank"
-            >
-              Book
+            <h3>Family AC Room</h3>
+            <a style={styles.greenBtn} href={`https://wa.me/${phone}`}>
+              Book Now
             </a>
           </div>
 
         </div>
       </section>
 
-      {/* ================= TEMPLE ================= */}
-      <section style={styles.sectionRow}>
+      {/* ABOUT TEMPLE */}
+      <section style={styles.about}>
+        <div>
+          <h2>Ahobilam Temple</h2>
+          <p>
+            One of the most powerful Narasimha Swamy temples in India,
+            located in the Nallamala Hills of Andhra Pradesh.
+          </p>
+        </div>
+
         <img
           src="https://images.unsplash.com/photo-1601404395112-9e5a6a7b6c56"
           style={styles.templeImg}
         />
-
-        <div>
-          <h2>Ahobilam Temple</h2>
-          <p>
-            Famous Narasimha Swamy temple in Andhra Pradesh. Divine and peaceful place.
-          </p>
-        </div>
       </section>
 
-      {/* ================= FOOTER ================= */}
+      {/* FOOTER */}
       <footer style={styles.footer}>
-        © {new Date().getFullYear()} Ahobilam Rooms
+        © {new Date().getFullYear()} Ahobilam Haven Stay
       </footer>
 
-      {/* ================= WHATSAPP FLOAT ================= */}
+      {/* FLOAT WHATSAPP */}
       <a
         href={`https://wa.me/${phone}`}
         target="_blank"
@@ -102,33 +109,38 @@ export default function App() {
   );
 }
 
-/* ================= INLINE STYLES ================= */
+/* ================= STYLES ================= */
 const styles: any = {
 
   page: {
     fontFamily: "Arial",
     margin: 0,
-    padding: 0,
-    overflowX: "hidden"
+    padding: 0
   },
 
   header: {
     position: "fixed",
     top: 0,
-    left: 0,
     width: "100%",
-    height: "70px",
-    background: "#FF9933",
+    background: "#ff9933",
     display: "flex",
+    justifyContent: "space-between",
+    padding: "15px 20px",
     alignItems: "center",
-    justifyContent: "center",
-    zIndex: 1000,
-    color: "white"
+    zIndex: 1000
   },
 
   logo: {
-    margin: 0,
-    fontSize: "22px"
+    color: "white",
+    margin: 0
+  },
+
+  bookBtn: {
+    background: "#25D366",
+    color: "white",
+    padding: "8px 14px",
+    borderRadius: "5px",
+    textDecoration: "none"
   },
 
   hero: {
@@ -136,18 +148,16 @@ const styles: any = {
     backgroundImage: "url('https://images.unsplash.com/photo-1542314831-068cd1dbfeeb')",
     backgroundSize: "cover",
     backgroundPosition: "center",
-    position: "relative",
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
     color: "white",
+    position: "relative",
     marginTop: "70px"
   },
 
   overlay: {
     position: "absolute",
-    top: 0,
-    left: 0,
     width: "100%",
     height: "100%",
     background: "rgba(0,0,0,0.6)"
@@ -159,58 +169,60 @@ const styles: any = {
   },
 
   title: {
-    fontSize: "40px",
-    marginBottom: "10px"
+    fontSize: "42px"
   },
 
   section: {
-    padding: "50px",
+    padding: "60px",
     textAlign: "center"
   },
 
-  cardContainer: {
+  sectionAlt: {
+    padding: "60px",
+    background: "#f7f7f7",
+    textAlign: "center"
+  },
+
+  grid: {
     display: "flex",
     gap: "20px",
     justifyContent: "center",
-    flexWrap: "wrap"
+    flexWrap: "wrap",
+    marginTop: "20px"
   },
 
   card: {
-    width: "280px",
-    border: "1px solid #ddd",
+    padding: "20px",
+    background: "white",
     borderRadius: "10px",
-    padding: "15px"
+    width: "150px"
   },
 
-  image: {
+  roomCard: {
+    width: "250px",
+    background: "white",
+    borderRadius: "10px",
+    padding: "10px"
+  },
+
+  roomImg: {
     width: "100%",
     height: "180px",
     objectFit: "cover",
     borderRadius: "10px"
   },
 
-  sectionRow: {
+  about: {
     display: "flex",
     gap: "20px",
-    padding: "50px",
+    padding: "60px",
     alignItems: "center",
     flexWrap: "wrap"
   },
 
   templeImg: {
-    width: "400px",
-    maxWidth: "100%",
+    width: "350px",
     borderRadius: "10px"
-  },
-
-  btnGreen: {
-    display: "inline-block",
-    marginTop: "10px",
-    background: "#25D366",
-    color: "white",
-    padding: "10px 15px",
-    borderRadius: "5px",
-    textDecoration: "none"
   },
 
   footer: {
@@ -228,11 +240,11 @@ const styles: any = {
     height: "60px",
     background: "#25D366",
     color: "white",
-    fontSize: "28px",
     borderRadius: "50%",
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
+    fontSize: "28px",
     textDecoration: "none"
   }
 };
