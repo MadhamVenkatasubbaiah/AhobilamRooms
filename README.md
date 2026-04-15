@@ -137,7 +137,6 @@ header::before{
     background-size:contain;
     opacity:0.15;
 }
- 
 
 /* ================= CONTENT ================= */
 section{
@@ -271,22 +270,23 @@ button{
 <div class="dropdown">
 <a>About ▾</a>
 <div class="dropdown-content">
-Ahobilam, located in Andhra Pradesh's Nallamala hills, is the sacred site where Lord Narasimha (the fourth avatar of Vishnu) emerged from a pillar, killed the demon Hiranyakashipu to save his devotee Prahlad, and later married Chenchu Lakshmi. It is renowned for nine distinct Narasimha shrines (Nava Narasimha) and the intense, fiery "Ugra Stambham" pillar.
+Ahobilam is a sacred place of Lord Narasimha.
 </div>
 </div>
 
 <div class="dropdown">
 <a>Hotels ▾</a>
 <div class="dropdown-content">
-Rajeshwari Complex<br>Veerabadhra Complex<br>Hotel 3
+<div onclick="openPanel('rooms1')" style="cursor:pointer;padding:5px;">Rajeshwari Complex</div>
+<div onclick="openPanel('rooms2')" style="cursor:pointer;padding:5px;">Veerabadhra Complex</div>
 </div>
 </div>
 
 <div class="dropdown">
 <a>Temple Timings ▾</a>
 <div class="dropdown-content">
-Lower Ahobilam: 6:30 AM to 1:00 PM and 3:00 PM to 8:00 PM.
-Upper Ahobilam: 7:00 AM to 1:00 PM and 2:00 PM to 5:30 PM.
+Morning: 6:00 AM – 1:00 PM<br>
+Evening: 3:00 PM – 8:30 PM
 </div>
 </div>
 
@@ -305,7 +305,7 @@ Upper Ahobilam: 7:00 AM to 1:00 PM and 2:00 PM to 5:30 PM.
 <p>Providing the best accommodation near temple</p>
 </header>
 
-<!-- CONTENT -->
+<!-- FACILITIES -->
 <section>
 
 <h2>Facilities</h2>
@@ -323,24 +323,30 @@ Call For Booking
 
 </section>
 
-<!-- COMPLEX -->
+<!-- ===== HOTELS BELOW FACILITIES (ADDED) ===== -->
+<section>
+
+<h2>Our Hotels</h2>
+
 <div class="complex-container">
 
 <div class="complex-card">
 <img src="Rajeshwari.Complex.jpeg" class="complex-photo"><br><br>
 <button onclick="openPanel('rooms1')">
-Rajeshwari Complex - Book Now
+Rajeshwari Complex
 </button>
 </div>
 
 <div class="complex-card">
 <img src="Rajeshwari.Complex.jpeg" class="complex-photo"><br><br>
 <button onclick="openPanel('rooms2')">
-Veerabadhra Complex - Book Now
+Veerabadhra Complex
 </button>
 </div>
 
 </div>
+
+</section>
 
 <!-- PANEL 1 -->
 <div id="rooms1" class="panel">
@@ -349,28 +355,11 @@ Veerabadhra Complex - Book Now
 <h2>Rajeshwari Rooms</h2>
 
 <div class="room-row">
-<img src="3bed.jpeg" class="room-main" onclick="toggleGallery('g1a')">
+<img src="3bed.jpeg" class="room-main">
 <div class="room-info">
 <h3>3 Bed Room</h3>
 <button onclick="location.href='tel:+917675962840'">Book ₹1600</button>
 </div>
-</div>
-
-<div id="g1a" class="gallery">
-<img src="3bed.jpeg">
-<img src="washroom.jpeg">
-</div>
-
-<div class="room-row">
-<img src="2-bed.jpeg" class="room-main" onclick="toggleGallery('g2a')">
-<div class="room-info">
-<h3>2 Bed Room</h3>
-<button onclick="location.href='tel:+917675962840'">Book ₹1200</button>
-</div>
-</div>
-
-<div id="g2a" class="gallery">
-<img src="2-bed.jpeg">
 </div>
 
 </div>
@@ -382,28 +371,11 @@ Veerabadhra Complex - Book Now
 <h2>Veerabadhra Rooms</h2>
 
 <div class="room-row">
-<img src="3bed.jpeg" class="room-main" onclick="toggleGallery('g1b')">
-<div class="room-info">
-<h3>3 Bed Room</h3>
-<button onclick="location.href='tel:+917675962840'">Book ₹1600</button>
-</div>
-</div>
-
-<div id="g1b" class="gallery">
-<img src="3bed.jpeg">
-<img src="washroom.jpeg">
-</div>
-
-<div class="room-row">
-<img src="2-bed.jpeg" class="room-main" onclick="toggleGallery('g2b')">
+<img src="2-bed.jpeg" class="room-main">
 <div class="room-info">
 <h3>2 Bed Room</h3>
 <button onclick="location.href='tel:+917675962840'">Book ₹1200</button>
 </div>
-</div>
-
-<div id="g2b" class="gallery">
-<img src="2-bed.jpeg">
 </div>
 
 </div>
@@ -424,11 +396,6 @@ document.getElementById(id).style.display="block";
 
 function goHome(){
 document.querySelectorAll(".panel").forEach(p=>p.style.display="none");
-}
-
-function toggleGallery(id){
-let g=document.getElementById(id);
-g.style.display = (g.style.display==="block") ? "none":"block";
 }
 
 </script>
