@@ -60,7 +60,7 @@ html, body{
 .menu{
     display:flex;
     justify-content:center;
-    gap:20px;
+    gap:30px;
     flex-wrap:wrap;
 }
 
@@ -68,7 +68,7 @@ html, body{
     color:white;
     text-decoration:none;
     font-weight:bold;
-    font-size:18px;
+    font-size:25px;
     cursor:pointer;
 }
 
