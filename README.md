@@ -95,14 +95,6 @@ html, body{
     display:block;
 }
 
-<!-- MOBILE view 
-.menu-toggle{
-    display:none;
-    font-size:26px;
-    color:white;
-    cursor:pointer;
-}
--->
 .menu-toggle{
     display:none;
     font-size:26px;
@@ -128,9 +120,6 @@ html, body{
 
 .menu-toggle{
     display:block;
-/*   position:absolute; */
-/*    right:10px; */
-/*    top:5px; */
 }
 
 .right img{ display:none; }
@@ -375,7 +364,7 @@ Call For Booking
 
 <!-- LOCATION -->
 <section>
-<h2>Our Location</h2>
+<h2>Rajeshwari Complex</h2>
 <iframe src="https://www.google.com/maps?q=Ahobilam%20Rajeshwari%20Complex&output=embed"
 width="100%" height="300" style="border:0;border-radius:10px;"></iframe>
 </section>
