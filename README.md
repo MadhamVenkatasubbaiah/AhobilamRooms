@@ -363,7 +363,7 @@ Evening: 3PM–8:30PM
 <section>
 <h2>Location</h2>
 <iframe width="100%" height="300"
-src="https://www.google.com/maps?q=Ahobilam&output=embed">
+src="[https://www.google.com/maps?q=Ahobilam&output=embed](https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d710.4421127558048!2d78.67541071202811!3d15.131055112543342!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bb4f595d79cde9f%3A0xadc69bec3e67e13d!2sAhobilam%20Rajeshwari%20Complex!5e1!3m2!1sen!2sin!4v1776260115261!5m2!1sen!2sin)">
 </iframe>
 </section>
 
