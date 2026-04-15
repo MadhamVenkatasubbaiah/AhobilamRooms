@@ -1,471 +1,138 @@
-<html>
-<head>
-
-<style>
-
-/* ================= BODY ================= */
-body{
-    font-family: Arial;
-    margin:0;
-    background:#FFE0B2;
-    overflow-x:hidden;
-    width:100%;
-}
-
-html, body{
-    max-width:100%;
-    overflow-x:hidden;
-}
-
-/* ================= NAVBAR ================= */
-.navbar{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    background:#FF9933;
-    height:120px;
-    padding:0 10px;
-    position:fixed;
-    top:0;
-    left:0;
-    right:0;
-    width:100%;
-    z-index:1000;
-    box-sizing:border-box;
-}
-
-.left img,
-.right img{
-    height:110px;
-    width:auto;
-}
-
-/* CENTER FIX */
-.center{
-    flex:1;
-    text-align:center;
-    position:relative;
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    gap:5px;
-}
-
-.center h1{
-    margin:0;
-    color:white;
-    font-size:25px;
-}
-
-/* MENU */
-.menu{
-    display:flex;
-    justify-content:center;
-    gap:30px;
-    flex-wrap:wrap;
-}
-
-.menu a{
-    color:black;
-    text-decoration:none;
-    font-weight:bold;
-    font-size:20px;
-    cursor:pointer;
-}
-
-/* DROPDOWN */
-.dropdown{
-    position:relative;
-}
-
-.dropdown-content{
-    display:none;
-    position:absolute;
-    top:25px;
-    left:0;
-    background:#fff;
-    min-width:250px;
-    border-radius:5px;
-    padding:10px;
-    box-shadow:0 4px 10px rgba(0,0,0,0.2);
-    text-align:left;
-}
-
-.dropdown:hover .dropdown-content{
-    display:block;
-}
-
-.menu-toggle{
-    display:none;
-    font-size:26px;
-    color:white;
-    cursor:pointer;
-    align-self:flex-end;   /* ADD THIS */
-    margin-right:10px;     /* ADD THIS */
-}
-
-@media(max-width:768px){
-
-.menu{
-    display:none;
-    flex-direction:column;
-    position:fixed;
-    top:80px;
-    left:0;
-    width:100%;
-    background:#d6a65c;
-}
-
-.menu.show{ display:flex; }
-
-.menu-toggle{
-    display:block;
-}
-
-.right img{ display:none; }
-
-.dropdown-content{
-    position:static;
-    box-shadow:none;
-}
-}
-
-/* ================= HEADER ================= */
-header{
-    margin-top:80px;
-    padding:80px 20px;
-    text-align:center;
-    color:black;
-    background:#FFE0B2;
-    position:relative;
-}
-
-header::before{
-    content:"";
-    position:absolute;
-    top:50%;
-    left:50%;
-    transform:translate(-50%,-50%);
-    width:500px;
-    height:500px;
-    background:url("without_bg.png") no-repeat center;
-    background-size:contain;
-    opacity:0.10;
-}
-
-/* ================= CONTENT ================= */
-section{
-    padding:40px;
-    text-align:center;
-}
-
-button{
-    background:#27ae60;
-    color:white;
-    padding:12px 20px;
-    border:none;
-    border-radius:5px;
-    cursor:pointer;
-}
-
-/* ================= COMPLEX ================= */
-.complex-container{
-    display:flex;
-    justify-content:center;
-    gap:30px;
-    flex-wrap:wrap;
-}
-
-.complex-card{
-    text-align:center;
-}
-
-.complex-photo{
-    width:280px;
-    border-radius:10px;
-}
-
-/* ================= PANEL ================= */
-.panel{
-    display:none;
-    position:fixed;
-    top:0;
-    left:0;
-    width:100%;
-    height:100%;
-    background:#FFE0B2;
-    z-index:2000;
-    padding:20px;
-    overflow:auto;
-}
-
-/* ================= ROOMS ================= */
-.room-row{
-    display:flex;
-    align-items:center;
-    gap:20px;
-    background:white;
-    margin:20px;
-    padding:15px;
-    border-radius:10px;
-}
-
-.room-main{
-    width:200px;
-    border-radius:10px;
-    cursor:pointer;
-}
-
-.room-info{
-    text-align:left;
-}
-
-/* GALLERY */
-.gallery{
-    display:none;
-    margin-left:20px;
-}
-
-.gallery img{
-    width:150px;
-    margin:10px;
-    border-radius:10px;
-}
-
-/* ================= FLOAT ================= */
-.whatsapp{
-    position:fixed;
-    bottom:20px;
-    right:20px;
-    background:#25D366;
-    color:white;
-    width:60px;
-    height:60px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-size:26px;
-    border-radius:50%;
-    z-index:3000;
-}
-
-.call{
-    position:fixed;
-    bottom:90px;
-    right:20px;
-    background:#007bff;
-    color:white;
-    width:60px;
-    height:60px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-size:22px;
-    border-radius:50%;
-    z-index:3000;
-}
-
-</style>
-</head>
-
-<body>
-
-<!-- NAVBAR -->
-<div class="navbar">
-
-<div class="left">
-<img src="logo.png">
-</div>
-
-<div class="center">
-<h1>AHOBILAM ROOMS</h1>
-
-<span class="menu-toggle" onclick="toggleMenu()">☰</span>
-
-<div class="menu" id="menu">
-
-<div class="dropdown">
-<a>About ▾</a>
-<div class="dropdown-content">
-According to legend, when the Devas witnessed Lord Narasimha, they named this place Ahobilam.
-</div>
-</div>
-
-<div class="dropdown">
-<a>Hotels ▾</a>
-<div class="dropdown-content">
-<div onclick="openPanel('rooms1')" style="cursor:pointer;padding:5px;">Rajeshwari Complex </div>
-<div onclick="openPanel('rooms2')" style="cursor:pointer;padding:5px;">Veerabadhra Complex </div>
-</div>
-</div>
-
-<div class="dropdown">
-<a>Temple Timings ▾</a>
-<div class="dropdown-content">
-Morning: 6:00 AM – 1:00 PM<br>
-Evening: 3:00 PM – 8:30 PM
-</div>
-</div>
-
-</div>
-</div>
-
-<div class="right">
-<img src="AVS3.png">
-</div>
-
-</div>
-
-<!-- HEADER -->
-<header>
-<h1>Ahobilam Rooms</h1>
-<p>Best rooms in Ahobilam near temple. AC & Non-AC rooms available with parking and 24 hours hot water.</p>
-</header>
-
-<!-- FACILITIES -->
-<section>
-
-<h2>Facilities</h2>
-
-<p>
-🛏 AC & Non-AC Rooms<br>
-🚿 Hot Water 24 Hours<br>
-🚘 Parking Available<br>
-👨‍👩‍👦 Family Friendly<br>
-📹 CCTV Surveillance
-</p>
-
-<button onclick="location.href='tel:+917675962840'">
-Call For Booking
-</button>
-
-</section>
-
-<!-- HOTELS -->
-<section>
-
-<h2>Our Hotels</h2>
-
-<div class="complex-container">
-
-<div class="complex-card">
-<img src="Rajeshwari.Complex.jpeg" class="complex-photo"><br><br>
-<button onclick="openPanel('rooms1')">Rajeshwari Complex <br> WIFI  </button>
-</div>
-
-<div class="complex-card">
-<img src="Rajeshwari.Complex.jpeg" class="complex-photo"><br><br>
-<button onclick="openPanel('rooms2')">Veerabadhra Complex</button>
-</div>
-
-</div>
-
-</section>
-
-<!-- LOCATION -->
-<section>
-<h2>Rajeshwari Complex</h2>
-<iframe src="https://www.google.com/maps?q=Ahobilam%20Rajeshwari%20Complex&output=embed"
-width="100%" height="300" style="border:0;border-radius:10px;"></iframe>
-</section>
-
-<!-- TEMPLE MAP -->
-<section>
-<h2>Ahobilam Temple</h2>
-<iframe src="https://www.google.com/maps?q=Ahobilam%20Temple&output=embed"
-width="100%" height="300" style="border:0;border-radius:10px;"></iframe>
-</section>
-
-<!-- PANEL 1 -->
-<div id="rooms1" class="panel">
-<button onclick="goHome()">⬅ Back</button>
-
-<h2>Rajeshwari Rooms</h2>
-
-<div class="room-row">
-<img src="3bed.jpeg" class="room-main" onclick="toggleGallery('g1a')">
-<div class="room-info">
-<h3>3 Bed Room</h3>
-<button onclick="location.href='tel:+917675962840'">Book ₹1600</button>
-</div>
-</div>
-
-<div id="g1a" class="gallery">
-<img src="3bed.jpeg">
-<img src="washroom.jpeg">
-</div>
-
-<div class="room-row">
-<img src="2-bed.jpeg" class="room-main" onclick="toggleGallery('g2a')">
-<div class="room-info">
-<h3>2 Bed Room</h3>
-<button onclick="location.href='tel:+917675962840'">Book ₹1200</button>
-</div>
-</div>
-
-<div id="g2a" class="gallery">
-<img src="2-bed.jpeg">
-<img src="washroom.jpeg">
-</div>
-
-</div>
-
-<!-- PANEL 2 -->
-<div id="rooms2" class="panel">
-<button onclick="goHome()">⬅ Back</button>
-
-<h2>Veerabadhra Rooms</h2>
-
-<div class="room-row">
-<img src="3bed.jpeg" class="room-main" onclick="toggleGallery('g1b')">
-<div class="room-info">
-<h3>3 Bed Room</h3>
-<button onclick="location.href='tel:+917675962840'">Book ₹1600</button>
-</div>
-</div>
-
-<div id="g1b" class="gallery">
-<img src="3bed.jpeg">
-<img src="washroom.jpeg">
-</div>
-
-<div class="room-row">
-<img src="2-bed.jpeg" class="room-main" onclick="toggleGallery('g2b')">
-<div class="room-info">
-<h3>2 Bed Room</h3>
-<button onclick="location.href='tel:+917675962840'">Book ₹1200</button>
-</div>
-</div>
-
-<div id="g2b" class="gallery">
-<img src="2-bed.jpeg">
-<img src="washroom.jpeg">
-</div>
-
-</div>
-
-<!-- FLOAT -->
-<a class="whatsapp" href="https://wa.me/917675962840">💬</a>
-<a class="call" href="tel:+917675962840">📞</a>
-
-<script>
-function toggleMenu(){
-document.getElementById("menu").classList.toggle("show");
-}
-
-function openPanel(id){
-document.getElementById(id).style.display="block";
-}
-
-function goHome(){
-document.querySelectorAll(".panel").forEach(p=>p.style.display="none");
-}
-
-function toggleGallery(id){
-let g=document.getElementById(id);
-g.style.display = (g.style.display==="block") ? "none":"block";
-}
-</script>
-
-</body>
-</html>
+import { Link } from "react-router-dom";
+import { Star, Wifi, Wind, ShieldCheck, MapPin, ArrowRight } from "lucide-react";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
+import WhatsAppButton from "@/components/WhatsAppButton";
+import heroImage from "@/assets/hero-hotel.jpg";
+import roomImage from "@/assets/room-king.jpg";
+import templeImage from "@/assets/ahobilam-temple.jpg";
+
+const features = [
+  { icon: Wind, title: "Air Conditioned", desc: "All rooms are fully air conditioned" },
+  { icon: Star, title: "King Size Beds", desc: "Premium king size beds for comfort" },
+  { icon: Wifi, title: "Free Wi-Fi", desc: "Complimentary high-speed internet" },
+  { icon: ShieldCheck, title: "24/7 Security", desc: "Round the clock security & reception" },
+];
+
+const Index = () => (
+  <div className="min-h-screen bg-background">
+    <Header />
+
+    {/* Hero */}
+    <section className="relative h-[90vh] flex items-center justify-center overflow-hidden">
+      <img src={heroImage} alt="Madam Rajeswari Complex Hotel Room" className="absolute inset-0 w-full h-full object-cover" width={1920} height={1080} />
+      <div className="absolute inset-0 bg-background/70" />
+      <div className="relative z-10 text-center px-4 max-w-3xl animate-fade-in">
+        <p className="text-primary tracking-[0.3em] uppercase text-sm mb-4">Welcome to</p>
+        <h1 className="font-heading text-4xl md:text-6xl lg:text-7xl text-gradient-gold mb-4">
+          Madam Rajeswari Complex
+        </h1>
+        <p className="text-muted-foreground text-lg md:text-xl mb-2">Ahobilam, Andhra Pradesh</p>
+        <p className="text-muted-foreground mb-8">Your divine stay near the sacred Narasimha temples</p>
+        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <a
+            href="https://wa.me/917675962840?text=Hi%2C%20I%20want%20to%20book%20a%20room"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-gold-gradient text-primary-foreground px-8 py-3 rounded-md font-semibold hover:opacity-90 transition-opacity"
+          >
+            Book via WhatsApp
+          </a>
+          <Link
+            to="/rooms"
+            className="border border-primary text-primary px-8 py-3 rounded-md font-semibold hover:bg-primary hover:text-primary-foreground transition-colors"
+          >
+            View Rooms
+          </Link>
+        </div>
+      </div>
+    </section>
+
+    {/* Features */}
+    <section className="py-16 md:py-24">
+      <div className="container mx-auto px-4">
+        <h2 className="font-heading text-3xl md:text-4xl text-center text-gradient-gold mb-12">Our Amenities</h2>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+          {features.map((f) => (
+            <div key={f.title} className="bg-card border border-border rounded-lg p-6 text-center hover:border-primary transition-colors">
+              <f.icon className="w-8 h-8 text-primary mx-auto mb-3" />
+              <h3 className="font-heading text-lg text-foreground mb-1">{f.title}</h3>
+              <p className="text-muted-foreground text-sm">{f.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    {/* Rooms Preview */}
+    <section className="py-16 md:py-24 bg-secondary">
+      <div className="container mx-auto px-4">
+        <h2 className="font-heading text-3xl md:text-4xl text-center text-gradient-gold mb-12">Our Rooms</h2>
+        <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+          {[
+            { title: "King AC Room – 2 Sharing", guests: "Perfect for couples & pairs" },
+            { title: "King AC Room – 3 Sharing", guests: "Ideal for family & friends" },
+          ].map((room) => (
+            <div key={room.title} className="bg-card border border-border rounded-lg overflow-hidden group hover:border-primary transition-colors">
+              <div className="overflow-hidden">
+                <img src={roomImage} alt={room.title} className="w-full h-56 object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" width={800} height={600} />
+              </div>
+              <div className="p-6">
+                <h3 className="font-heading text-xl text-foreground mb-2">{room.title}</h3>
+                <p className="text-muted-foreground text-sm mb-4">{room.guests}</p>
+                <div className="flex gap-3 text-xs text-muted-foreground mb-4">
+                  <span className="bg-muted px-2 py-1 rounded">AC</span>
+                  <span className="bg-muted px-2 py-1 rounded">King Bed</span>
+                  <span className="bg-muted px-2 py-1 rounded">Wi-Fi</span>
+                  <span className="bg-muted px-2 py-1 rounded">TV</span>
+                </div>
+                <a
+                  href={`https://wa.me/917675962840?text=Hi%2C%20I%20want%20to%20book%20${encodeURIComponent(room.title)}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-gold-gradient text-primary-foreground px-6 py-2.5 rounded-md text-sm font-semibold inline-block hover:opacity-90 transition-opacity"
+                >
+                  Book Now
+                </a>
+              </div>
+            </div>
+          ))}
+        </div>
+        <div className="text-center mt-8">
+          <Link to="/rooms" className="text-primary hover:text-accent inline-flex items-center gap-1 font-medium">
+            View all room details <ArrowRight className="w-4 h-4" />
+          </Link>
+        </div>
+      </div>
+    </section>
+
+    {/* Ahobilam Temple */}
+    <section className="py-16 md:py-24">
+      <div className="container mx-auto px-4">
+        <div className="grid md:grid-cols-2 gap-8 items-center max-w-5xl mx-auto">
+          <div>
+            <p className="text-primary tracking-[0.2em] uppercase text-sm mb-2">Discover</p>
+            <h2 className="font-heading text-3xl md:text-4xl text-gradient-gold mb-4">Ahobilam – The Sacred Abode</h2>
+            <p className="text-muted-foreground leading-relaxed mb-4">
+              Ahobilam is a renowned pilgrimage centre in Kurnool district of Andhra Pradesh, famous for the nine temples of Lord Narasimha (Nava Narasimha Kshetram). Nestled in the Nallamala Hills, it attracts devotees and nature lovers from across India.
+            </p>
+            <p className="text-muted-foreground leading-relaxed mb-6">
+              Our hotel is conveniently located near the temple complex, making it the perfect base for your spiritual journey.
+            </p>
+            <Link to="/temple-history" className="text-primary hover:text-accent inline-flex items-center gap-1 font-medium">
+              <MapPin className="w-4 h-4" /> Learn more about Ahobilam
+            </Link>
+          </div>
+          <div className="rounded-lg overflow-hidden border border-border">
+            <img src={templeImage} alt="Ahobilam Temple" className="w-full h-72 md:h-96 object-cover" loading="lazy" width={1200} height={600} />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <Footer />
+    <WhatsAppButton />
+  </div>
+);
+
+export default Index;
