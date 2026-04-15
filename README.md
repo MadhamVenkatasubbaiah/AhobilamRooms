@@ -217,6 +217,33 @@ button{
     border-radius:10px;
 }
 
+/* ===== SLIDER (ADDED) ===== */
+.slider{
+    display:none;
+    margin-left:20px;
+    position:relative;
+}
+
+.slide{ display:none; }
+
+.slide img{
+    width:200px;
+    border-radius:10px;
+}
+
+.prev,.next{
+    position:absolute;
+    top:40%;
+    padding:8px;
+    background:rgba(0,0,0,0.5);
+    color:white;
+    cursor:pointer;
+    border-radius:50%;
+}
+
+.prev{ left:0; }
+.next{ right:0; }
+
 /* ================= FLOAT ================= */
 .whatsapp{
     position:fixed;
@@ -272,23 +299,23 @@ button{
 <div class="dropdown">
 <a>About ▾</a>
 <div class="dropdown-content">
-Ahobilam, located in Andhra Pradesh's Nallamala hills...
+Ahobilam sacred Narasimha temple location with 9 forms of Lord Narasimha.
 </div>
 </div>
 
 <div class="dropdown">
 <a>Hotels ▾</a>
 <div class="dropdown-content">
-<div onclick="openPanel('rooms1')" style="cursor:pointer;padding:5px;">Rajeshwari Complex</div>
-<div onclick="openPanel('rooms2')" style="cursor:pointer;padding:5px;">Veerabadhra Complex</div>
+<div onclick="openPanel('rooms1')" style="cursor:pointer;">Rajeshwari Complex</div>
+<div onclick="openPanel('rooms2')" style="cursor:pointer;">Veerabadhra Complex</div>
 </div>
 </div>
 
 <div class="dropdown">
 <a>Temple Timings ▾</a>
 <div class="dropdown-content">
-Lower Ahobilam: 6:30 AM to 1:00 PM...<br>
-Upper Ahobilam: 7:00 AM to 5:30 PM.
+Morning: 6AM–1PM<br>
+Evening: 3PM–8:30PM
 </div>
 </div>
 
@@ -304,79 +331,61 @@ Upper Ahobilam: 7:00 AM to 5:30 PM.
 <!-- HEADER -->
 <header>
 <h1>Ahobilam Rooms</h1>
-<p>Best rooms in Ahobilam near temple...123456</p>
+<p>Best rooms near temple</p>
 </header>
 
 <!-- FACILITIES -->
 <section>
 <h2>Facilities</h2>
-
-<p>
-🛏 AC & Non-AC Rooms<br>
-🚿 Hot Water 24 Hours<br>
-🚘 Parking Available<br>
-👨‍👩‍👦 Family Friendly
-</p>
-
-<button onclick="location.href='tel:+917675962840'">
-Call For Booking
-</button>
-
+🛏 AC Rooms<br>🚿 Hot Water<br>🚘 Parking
 </section>
 
-<!-- HOTELS BELOW -->
+<!-- HOTELS -->
 <section>
-
 <h2>Our Hotels</h2>
 
 <div class="complex-container">
 
 <div class="complex-card">
 <img src="Rajeshwari.Complex.jpeg" class="complex-photo"><br><br>
-<button onclick="openPanel('rooms1')">Rajeshwari Complex</button>
+<button onclick="openPanel('rooms1')">Rajeshwari</button>
 </div>
 
 <div class="complex-card">
 <img src="Rajeshwari.Complex.jpeg" class="complex-photo"><br><br>
-<button onclick="openPanel('rooms2')">Veerabadhra Complex</button>
+<button onclick="openPanel('rooms2')">Veerabadhra</button>
 </div>
 
 </div>
+</section>
 
+<!-- MAP -->
+<section>
+<h2>Location</h2>
+<iframe width="100%" height="300"
+src="https://www.google.com/maps?q=Ahobilam&output=embed">
+</iframe>
+</section>
+
+<!-- REVIEWS -->
+<section>
+<h2>Reviews ⭐</h2>
+<div>⭐⭐⭐⭐⭐ Good rooms</div>
+<div>⭐⭐⭐⭐ Nice stay</div>
 </section>
 
 <!-- PANEL 1 -->
 <div id="rooms1" class="panel">
 <button onclick="goHome()">⬅ Back</button>
-
-<!-- ✅ ADDED BACK TO HOTELS -->
-<button onclick="scrollToHotels()">🏨 Back to Hotels</button>
-
 <h2>Rajeshwari Rooms</h2>
 
-<div class="room-row">
-<img src="3bed.jpeg" class="room-main" onclick="toggleGallery('g1a')">
-<div class="room-info">
-<h3>3 Bed Room</h3>
-<button onclick="location.href='tel:+917675962840'">Book ₹1600</button>
-</div>
-</div>
+<img src="3bed.jpeg" class="room-main" onclick="openSlider('s1')">
 
-<div id="g1a" class="gallery">
-<img src="3bed.jpeg">
-<img src="washroom.jpeg">
-</div>
-
-<div class="room-row">
-<img src="2-bed.jpeg" class="room-main" onclick="toggleGallery('g2a')">
-<div class="room-info">
-<h3>2 Bed Room</h3>
-<button onclick="location.href='tel:+917675962840'">Book ₹1200</button>
-</div>
-</div>
-
-<div id="g2a" class="gallery">
-<img src="2-bed.jpeg">
+<div id="s1" class="slider">
+<div class="slide"><img src="3bed.jpeg"></div>
+<div class="slide"><img src="washroom.jpeg"></div>
+<span class="prev" onclick="moveSlide('s1',-1)">❮</span>
+<span class="next" onclick="moveSlide('s1',1)">❯</span>
 </div>
 
 </div>
@@ -384,35 +393,15 @@ Call For Booking
 <!-- PANEL 2 -->
 <div id="rooms2" class="panel">
 <button onclick="goHome()">⬅ Back</button>
-
-<!-- ✅ ADDED BACK TO HOTELS -->
-<button onclick="scrollToHotels()">🏨 Back to Hotels</button>
-
 <h2>Veerabadhra Rooms</h2>
 
-<div class="room-row">
-<img src="3bed.jpeg" class="room-main" onclick="toggleGallery('g1b')">
-<div class="room-info">
-<h3>3 Bed Room</h3>
-<button onclick="location.href='tel:+917675962840'">Book ₹1600</button>
-</div>
-</div>
+<img src="3bed.jpeg" class="room-main" onclick="openSlider('s2')">
 
-<div id="g1b" class="gallery">
-<img src="3bed.jpeg">
-<img src="washroom.jpeg">
-</div>
-
-<div class="room-row">
-<img src="2-bed.jpeg" class="room-main" onclick="toggleGallery('g2b')">
-<div class="room-info">
-<h3>2 Bed Room</h3>
-<button onclick="location.href='tel:+917675962840'">Book ₹1200</button>
-</div>
-</div>
-
-<div id="g2b" class="gallery">
-<img src="2-bed.jpeg">
+<div id="s2" class="slider">
+<div class="slide"><img src="3bed.jpeg"></div>
+<div class="slide"><img src="washroom.jpeg"></div>
+<span class="prev" onclick="moveSlide('s2',-1)">❮</span>
+<span class="next" onclick="moveSlide('s2',1)">❯</span>
 </div>
 
 </div>
@@ -435,20 +424,26 @@ function goHome(){
 document.querySelectorAll(".panel").forEach(p=>p.style.display="none");
 }
 
-/* ✅ FIXED GALLERY ISSUE */
-function toggleGallery(id){
-let g=document.getElementById(id);
-if(g.style.display==="block"){
-    g.style.display="none";
-}else{
-    g.style.display="block";
-}
+/* SLIDER */
+let slideIndex={};
+
+function openSlider(id){
+document.getElementById(id).style.display="block";
+slideIndex[id]=0;
+showSlide(id,0);
 }
 
-/* ✅ NEW FUNCTION */
-function scrollToHotels(){
-goHome();
-window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+function moveSlide(id,n){
+slideIndex[id]+=n;
+showSlide(id,slideIndex[id]);
+}
+
+function showSlide(id,n){
+let slides=document.querySelectorAll("#"+id+" .slide");
+if(n>=slides.length){slideIndex[id]=0;}
+if(n<0){slideIndex[id]=slides.length-1;}
+slides.forEach(s=>s.style.display="none");
+slides[slideIndex[id]].style.display="block";
 }
 
 </script>
