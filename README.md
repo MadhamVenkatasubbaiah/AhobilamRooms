@@ -272,7 +272,7 @@ button{
 <div class="dropdown">
 <a>About ▾</a>
 <div class="dropdown-content">
-Ahobilam is a sacred place of Lord Narasimha.
+Ahobilam, located in Andhra Pradesh's Nallamala hills, is the sacred site where Lord Narasimha (the fourth avatar of Vishnu) emerged from a pillar, killed the demon Hiranyakashipu to save his devotee Prahlad, and later married Chenchu Lakshmi. It is renowned for nine distinct Narasimha shrines (Nava Narasimha) and the intense, fiery "Ugra Stambham" pillar.
 </div>
 </div>
 
@@ -287,8 +287,8 @@ Ahobilam is a sacred place of Lord Narasimha.
 <div class="dropdown">
 <a>Temple Timings ▾</a>
 <div class="dropdown-content">
-Morning: 6:00 AM – 1:00 PM<br>
-Evening: 3:00 PM – 8:30 PM
+Lower Ahobilam: 6:30 AM to 1:00 PM and 3:00 PM to 8:00 PM.<br>
+Upper Ahobilam: 7:00 AM to 1:00 PM and 2:00 PM to 5:30 PM.
 </div>
 </div>
 
