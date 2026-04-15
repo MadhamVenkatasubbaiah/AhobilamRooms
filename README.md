@@ -1,4 +1,4 @@
-<img width="225" height="144" alt="image" src="https://github.com/user-attachments/assets/92cf3230-48af-4955-8a4b-d97a1029a679" /><html>
+<html>
 <head>
 
 <style>
@@ -295,8 +295,8 @@ According to legend, when the Devas witnessed Lord Narasimha, they named this pl
 <div class="dropdown">
 <a>Hotels ▾</a>
 <div class="dropdown-content">
-<div onclick="openPanel('rooms1')" style="cursor:pointer;padding:5px;">Rajeshwari Complex</div>
-<div onclick="openPanel('rooms2')" style="cursor:pointer;padding:5px;">Veerabadhra Complex</div>
+<div onclick="openPanel('rooms1')" style="cursor:pointer;padding:5px;">Rajeshwari Complex 🛜</div>
+<div onclick="openPanel('rooms2')" style="cursor:pointer;padding:5px;">Veerabadhra Complex 🛜</div>
 </div>
 </div>
 
@@ -351,7 +351,7 @@ Call For Booking
 
 <div class="complex-card">
 <img src="Rajeshwari.Complex.jpeg" class="complex-photo"><br><br>
-<button onclick="openPanel('rooms1')">Rajeshwari Complex</button>
+<button onclick="openPanel('rooms1')">Rajeshwari Complex 🛜 </button>
 </div>
 
 <div class="complex-card">
