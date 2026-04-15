@@ -272,7 +272,7 @@ button{
 <div class="dropdown">
 <a>About ▾</a>
 <div class="dropdown-content">
-Ahobilam, located in Andhra Pradesh's Nallamala hills, is the sacred site where Lord Narasimha (the fourth avatar of Vishnu) emerged from a pillar, killed the demon Hiranyakashipu to save his devotee Prahlad, and later married Chenchu Lakshmi. It is renowned for nine distinct Narasimha shrines (Nava Narasimha) and the intense, fiery "Ugra Stambham" pillar.
+Ahobilam, located in Andhra Pradesh's Nallamala hills...
 </div>
 </div>
 
@@ -287,8 +287,8 @@ Ahobilam, located in Andhra Pradesh's Nallamala hills, is the sacred site where 
 <div class="dropdown">
 <a>Temple Timings ▾</a>
 <div class="dropdown-content">
-Lower Ahobilam: 6:30 AM to 1:00 PM and 3:00 PM to 8:00 PM.<br>
-Upper Ahobilam: 7:00 AM to 1:00 PM and 2:00 PM to 5:30 PM.
+Lower Ahobilam: 6:30 AM to 1:00 PM...<br>
+Upper Ahobilam: 7:00 AM to 5:30 PM.
 </div>
 </div>
 
@@ -304,12 +304,11 @@ Upper Ahobilam: 7:00 AM to 1:00 PM and 2:00 PM to 5:30 PM.
 <!-- HEADER -->
 <header>
 <h1>Ahobilam Rooms</h1>
-<p>Best rooms in Ahobilam near temple. AC & Non-AC rooms available with parking and 24 hours hot water.</p>
+<p>Best rooms in Ahobilam near temple...</p>
 </header>
 
 <!-- FACILITIES -->
 <section>
-
 <h2>Facilities</h2>
 
 <p>
@@ -350,6 +349,9 @@ Call For Booking
 <div id="rooms1" class="panel">
 <button onclick="goHome()">⬅ Back</button>
 
+<!-- ✅ ADDED BACK TO HOTELS -->
+<button onclick="scrollToHotels()">🏨 Back to Hotels</button>
+
 <h2>Rajeshwari Rooms</h2>
 
 <div class="room-row">
@@ -382,6 +384,9 @@ Call For Booking
 <!-- PANEL 2 -->
 <div id="rooms2" class="panel">
 <button onclick="goHome()">⬅ Back</button>
+
+<!-- ✅ ADDED BACK TO HOTELS -->
+<button onclick="scrollToHotels()">🏨 Back to Hotels</button>
 
 <h2>Veerabadhra Rooms</h2>
 
@@ -430,9 +435,20 @@ function goHome(){
 document.querySelectorAll(".panel").forEach(p=>p.style.display="none");
 }
 
+/* ✅ FIXED GALLERY ISSUE */
 function toggleGallery(id){
 let g=document.getElementById(id);
-g.style.display = (g.style.display==="block") ? "none":"block";
+if(g.style.display==="block"){
+    g.style.display="none";
+}else{
+    g.style.display="block";
+}
+}
+
+/* ✅ NEW FUNCTION */
+function scrollToHotels(){
+goHome();
+window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
 }
 
 </script>
