@@ -45,7 +45,6 @@ h1,h2,h3{
 .menu a{
     color:#d4af37;
     text-decoration:none;
-    font-weight:500;
 }
 
 .book-btn{
@@ -53,13 +52,12 @@ h1,h2,h3{
     color:black;
     padding:10px 18px;
     border-radius:8px;
-    font-weight:bold;
 }
 
 /* ================= HERO ================= */
 .hero{
     height:100vh;
-    background:url("room.jpg") center/cover no-repeat;
+    background:url("https://images.unsplash.com/photo-1560066984-138dadb4c035") center/cover no-repeat;
     display:flex;
     align-items:center;
     justify-content:center;
@@ -81,15 +79,11 @@ h1,h2,h3{
 }
 
 .hero h1{
-    font-size:60px;
+    font-size:55px;
 }
 
 .hero p{
     color:#ccc;
-}
-
-.hero-buttons{
-    margin-top:20px;
 }
 
 .hero-buttons button{
@@ -110,12 +104,13 @@ h1,h2,h3{
     color:#d4af37;
 }
 
-/* ================= AMENITIES ================= */
+/* ================= SECTION ================= */
 .section{
     padding:80px 40px;
     text-align:center;
 }
 
+/* ================= AMENITIES ================= */
 .amenities{
     display:flex;
     gap:20px;
@@ -140,9 +135,9 @@ h1,h2,h3{
 
 .room-card{
     width:320px;
+    background:#111;
     border-radius:12px;
     overflow:hidden;
-    background:#111;
 }
 
 .room-card img{
@@ -159,7 +154,40 @@ h1,h2,h3{
     border:none;
     padding:10px;
     border-radius:6px;
-    margin-top:10px;
+}
+
+/* ================= DISCOVER ================= */
+.discover-container{
+    display:flex;
+    align-items:center;
+    gap:40px;
+    max-width:1100px;
+    margin:auto;
+    flex-wrap:wrap;
+}
+
+.discover-text{
+    flex:1;
+    text-align:left;
+}
+
+.small-title{
+    letter-spacing:3px;
+    color:#d4af37;
+    font-size:14px;
+}
+
+.discover-text p{
+    color:#ccc;
+}
+
+.discover-image{
+    flex:1;
+}
+
+.discover-image img{
+    width:100%;
+    border-radius:12px;
 }
 
 /* ================= FLOAT ================= */
@@ -197,7 +225,7 @@ h1,h2,h3{
 <a href="#">Rooms</a>
 <a href="#">Temple History</a>
 <a href="#">Contact</a>
-<a class="book-btn" href="tel:+917675962840">📞 Book Now</a>
+<a class="book-btn" href="#">📞 Book Now</a>
 </div>
 </div>
 
@@ -235,7 +263,7 @@ h1,h2,h3{
 <div class="rooms">
 
 <div class="room-card">
-<img src="room.jpg">
+<img src="https://images.unsplash.com/photo-1618773928121-c32242e63f39">
 <div class="room-content">
 <h3>King AC Room – 2 Sharing</h3>
 <p>Perfect for couples</p>
@@ -244,12 +272,37 @@ h1,h2,h3{
 </div>
 
 <div class="room-card">
-<img src="room.jpg">
+<img src="https://images.unsplash.com/photo-1590490360182-c33d57733427">
 <div class="room-content">
 <h3>King AC Room – 3 Sharing</h3>
 <p>Ideal for family</p>
 <button>Book Now</button>
 </div>
+</div>
+
+</div>
+</div>
+
+<!-- DISCOVER -->
+<div class="section">
+<div class="discover-container">
+
+<div class="discover-text">
+<p class="small-title">DISCOVER</p>
+<h2>Ahobilam – The Sacred Abode</h2>
+
+<p>
+Ahobilam is a famous pilgrimage center known for Lord Narasimha temples located in the Nallamala Hills.
+</p>
+
+<p>
+Stay close to divine energy and nature with comfortable rooms near the temple.
+</p>
+
+</div>
+
+<div class="discover-image">
+<img src="https://images.unsplash.com/photo-1605640840605-14ac1855827b">
 </div>
 
 </div>
