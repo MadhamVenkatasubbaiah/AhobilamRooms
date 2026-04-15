@@ -205,8 +205,10 @@ button{
     text-align:left;
 }
 
+/* GALLERY */
 .gallery{
     display:none;
+    margin-left:20px;
 }
 
 .gallery img{
@@ -323,7 +325,7 @@ Call For Booking
 
 </section>
 
-<!-- ===== HOTELS BELOW FACILITIES (ADDED) ===== -->
+<!-- HOTELS BELOW -->
 <section>
 
 <h2>Our Hotels</h2>
@@ -332,16 +334,12 @@ Call For Booking
 
 <div class="complex-card">
 <img src="Rajeshwari.Complex.jpeg" class="complex-photo"><br><br>
-<button onclick="openPanel('rooms1')">
-Rajeshwari Complex
-</button>
+<button onclick="openPanel('rooms1')">Rajeshwari Complex</button>
 </div>
 
 <div class="complex-card">
 <img src="Rajeshwari.Complex.jpeg" class="complex-photo"><br><br>
-<button onclick="openPanel('rooms2')">
-Veerabadhra Complex
-</button>
+<button onclick="openPanel('rooms2')">Veerabadhra Complex</button>
 </div>
 
 </div>
@@ -355,11 +353,28 @@ Veerabadhra Complex
 <h2>Rajeshwari Rooms</h2>
 
 <div class="room-row">
-<img src="3bed.jpeg" class="room-main">
+<img src="3bed.jpeg" class="room-main" onclick="toggleGallery('g1a')">
 <div class="room-info">
 <h3>3 Bed Room</h3>
 <button onclick="location.href='tel:+917675962840'">Book ₹1600</button>
 </div>
+</div>
+
+<div id="g1a" class="gallery">
+<img src="3bed.jpeg">
+<img src="washroom.jpeg">
+</div>
+
+<div class="room-row">
+<img src="2-bed.jpeg" class="room-main" onclick="toggleGallery('g2a')">
+<div class="room-info">
+<h3>2 Bed Room</h3>
+<button onclick="location.href='tel:+917675962840'">Book ₹1200</button>
+</div>
+</div>
+
+<div id="g2a" class="gallery">
+<img src="2-bed.jpeg">
 </div>
 
 </div>
@@ -371,11 +386,28 @@ Veerabadhra Complex
 <h2>Veerabadhra Rooms</h2>
 
 <div class="room-row">
-<img src="2-bed.jpeg" class="room-main">
+<img src="3bed.jpeg" class="room-main" onclick="toggleGallery('g1b')">
+<div class="room-info">
+<h3>3 Bed Room</h3>
+<button onclick="location.href='tel:+917675962840'">Book ₹1600</button>
+</div>
+</div>
+
+<div id="g1b" class="gallery">
+<img src="3bed.jpeg">
+<img src="washroom.jpeg">
+</div>
+
+<div class="room-row">
+<img src="2-bed.jpeg" class="room-main" onclick="toggleGallery('g2b')">
 <div class="room-info">
 <h3>2 Bed Room</h3>
 <button onclick="location.href='tel:+917675962840'">Book ₹1200</button>
 </div>
+</div>
+
+<div id="g2b" class="gallery">
+<img src="2-bed.jpeg">
 </div>
 
 </div>
@@ -396,6 +428,11 @@ document.getElementById(id).style.display="block";
 
 function goHome(){
 document.querySelectorAll(".panel").forEach(p=>p.style.display="none");
+}
+
+function toggleGallery(id){
+let g=document.getElementById(id);
+g.style.display = (g.style.display==="block") ? "none":"block";
 }
 
 </script>
