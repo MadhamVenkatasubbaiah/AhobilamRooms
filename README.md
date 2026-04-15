@@ -23,7 +23,7 @@ html, body{
     justify-content:space-between;
     align-items:center;
     background:#FF9933;
-    height:80px;
+    height:100px;
     padding:0 10px;
     position:fixed;
     top:0;
@@ -36,7 +36,7 @@ html, body{
 
 .left img,
 .right img{
-    height:70px;
+    height:90px;
     width:auto;
 }
 
@@ -53,7 +53,7 @@ html, body{
 .center h1{
     margin:0;
     color:white;
-    font-size:30px;
+    font-size:25px;
 }
 
 /* MENU */
