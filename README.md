@@ -304,7 +304,7 @@ Upper Ahobilam: 7:00 AM to 5:30 PM.
 <!-- HEADER -->
 <header>
 <h1>Ahobilam Rooms</h1>
-<p>Best rooms in Ahobilam near temple...</p>
+<p>Best rooms in Ahobilam near temple...123456</p>
 </header>
 
 <!-- FACILITIES -->
