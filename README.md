@@ -271,7 +271,7 @@ button{
 <div class="dropdown">
 <a>About ▾</a>
 <div class="dropdown-content">
-According to legend, when the Devas witnessed the awe-inspiring form of Lord Vishnu as Narasimha, a fusion of great strength (“Ahobala”) and the divine cave (“Ahobila”), they exclaimed in awe. This led to the name Ahobilam.
+Ahobilam, located in Andhra Pradesh's Nallamala hills, is the sacred site where Lord Narasimha (the fourth avatar of Vishnu) emerged from a pillar, killed the demon Hiranyakashipu to save his devotee Prahlad, and later married Chenchu Lakshmi. It is renowned for nine distinct Narasimha shrines (Nava Narasimha) and the intense, fiery "Ugra Stambham" pillar.
 </div>
 </div>
 
