@@ -115,7 +115,7 @@
             <!-- Hotel 2 Card -->
             <div class="hotel-card">
                 <!-- రెండో హోటల్ ఫోటో -->
-                <img src="WhatsApp Image .jpeg" alt="Second Hotel Branch">
+                <img src="WhatsApp Image .jpeg" alt="Veerabadhra Complex">
                 <div class="hotel-info">
                     <!-- మీ రెండో హోటల్ పేరు ఇక్కడ మార్చుకోండి -->
                     <h3>Second Hotel Branch</h3> 
