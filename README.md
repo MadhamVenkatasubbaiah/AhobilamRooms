@@ -109,7 +109,7 @@
                     <h3>Madham Rajeshwari Complex</h3>
                     <p>Experience comfortable stay with premium amenities near the sacred Ahobilam temples.</p>
                     <!-- దీని మీద క్లిక్ చేస్తే hotel1.html పేజీ ఓపెన్ అవుతుంది -->
-                    <a href="Madham-Rajeshwari-complex.html" class="btn-explore">Explore Complex</a>
+                    <a href="madam-rajeswari-complex.html" class="btn-explore">Explore Complex</a>
                 </div>
             </div>
 
