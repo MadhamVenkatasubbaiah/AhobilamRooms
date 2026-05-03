@@ -1,315 +1,383 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<style>
-
-/* ================= GLOBAL ================= */
-body{
-    margin:0;
-    font-family: 'Segoe UI', sans-serif;
-    background:#0b0b0b;
-    color:#fff;
-}
-
-h1,h2,h3{
-    color:#d4af37;
-}
-
-/* ================= NAVBAR ================= */
-.navbar{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:15px 40px;
-    background:#000;
-    position:fixed;
-    width:100%;
-    top:0;
-    z-index:1000;
-}
-
-.logo{
-    color:#d4af37;
-    font-size:22px;
-    font-weight:bold;
-}
-
-.menu{
-    display:flex;
-    gap:30px;
-    align-items:center;
-}
-
-.menu a{
-    color:#d4af37;
-    text-decoration:none;
-}
-
-.book-btn{
-    background:#d4af37;
-    color:black;
-    padding:10px 18px;
-    border-radius:8px;
-}
-
-/* ================= HERO ================= */
-.hero{
-    height:100vh;
-    background:url("https://images.unsplash.com/photo-1560066984-138dadb4c035") center/cover no-repeat;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    text-align:center;
-    position:relative;
-}
-
-.hero::after{
-    content:"";
-    position:absolute;
-    width:100%;
-    height:100%;
-    background:rgba(0,0,0,0.6);
-}
-
-.hero-content{
-    position:relative;
-    z-index:2;
-}
-
-.hero h1{
-    font-size:55px;
-}
-
-.hero p{
-    color:#ccc;
-}
-
-.hero-buttons button{
-    padding:12px 25px;
-    margin:10px;
-    border-radius:8px;
-    border:none;
-    font-weight:bold;
-}
-
-.whatsapp-btn{
-    background:#d4af37;
-}
-
-.view-btn{
-    background:transparent;
-    border:1px solid #d4af37;
-    color:#d4af37;
-}
-
-/* ================= SECTION ================= */
-.section{
-    padding:80px 40px;
-    text-align:center;
-}
-
-/* ================= AMENITIES ================= */
-.amenities{
-    display:flex;
-    gap:20px;
-    flex-wrap:wrap;
-    justify-content:center;
-}
-
-.card{
-    border:1px solid #333;
-    padding:25px;
-    border-radius:12px;
-    width:220px;
-}
-
-/* ================= ROOMS ================= */
-.rooms{
-    display:flex;
-    gap:30px;
-    flex-wrap:wrap;
-    justify-content:center;
-}
-
-.room-card{
-    width:320px;
-    background:#111;
-    border-radius:12px;
-    overflow:hidden;
-}
-
-.room-card img{
-    width:100%;
-}
-
-.room-content{
-    padding:20px;
-    text-align:left;
-}
-
-.room-content button{
-    background:#d4af37;
-    border:none;
-    padding:10px;
-    border-radius:6px;
-}
-
-/* ================= DISCOVER ================= */
-.discover-container{
-    display:flex;
-    align-items:center;
-    gap:40px;
-    max-width:1100px;
-    margin:auto;
-    flex-wrap:wrap;
-}
-
-.discover-text{
-    flex:1;
-    text-align:left;
-}
-
-.small-title{
-    letter-spacing:3px;
-    color:#d4af37;
-    font-size:14px;
-}
-
-.discover-text p{
-    color:#ccc;
-}
-
-.discover-image{
-    flex:1;
-}
-
-.discover-image img{
-    width:100%;
-    border-radius:12px;
-}
-
-/* ================= FLOAT ================= */
-.whatsapp{
-    position:fixed;
-    bottom:20px;
-    right:20px;
-    background:#25D366;
-    width:60px;
-    height:60px;
-    border-radius:50%;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    font-size:25px;
-}
-
-/* ================= MOBILE ================= */
-@media(max-width:768px){
-.hero h1{ font-size:35px; }
-.menu{ display:none; }
-}
-
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Madam Rajeswari Complex - Ahobilam</title>
+    <!-- CSS లింక్ -->
+    <link rel="stylesheet" href="style.css">
+    <!-- ఫాంట్స్ కోసం Google Fonts లింక్ -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+    <!-- ఐకాన్స్ కోసం FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
-
 <body>
 
-<!-- NAVBAR -->
-<div class="navbar">
-<div class="logo">Madam Rajeswari</div>
+    <!-- Header Section -->
+    <header class="navbar">
+        <div class="logo-section">
+            <div class="logo-icon">
+                <!-- ఇక్కడ ఓం ఐకాన్ తీసేసి మీ లోగో ఇమేజ్ పెట్టాం -->
+                <img src="logo.png" alt="Madam Rajeswari Logo" class="custom-logo">
+            </div>
+            <div class="logo-text">
+                <h1>Madam Rajeswari</h1>
+                <p>COMPLEX</p>
+            </div>
+        </div>
 
-<div class="menu">
-<a href="#">Home</a>
-<a href="#">Rooms</a>
-<a href="#">Temple History</a>
-<a href="#">Contact</a>
-<a class="book-btn" href="#">📞 Book Now</a>
-</div>
-</div>
+        <!-- నావిగేషన్ లింక్స్ -->
+        <nav class="nav-links" id="nav-links">
+            <a href="index.html" class="active">Home</a>
+            <a href="rooms.html">Rooms</a>
+            <a href="temple-history.html">Temple History</a>
+            <a href="contact.html">Contact</a>
+            <!-- మొబైల్ లో మాత్రమే కనిపించే బుక్ బటన్ -->
+            <button class="book-now-btn mobile-only">
+                <i class="fa-solid fa-phone"></i> Book Now
+            </button>
+        </nav>
 
-<!-- HERO -->
-<div class="hero">
-<div class="hero-content">
-<p>WELCOME TO</p>
-<h1>Madam Rajeswari Complex</h1>
-<p>Ahobilam, Andhra Pradesh</p>
-<p>Your divine stay near Narasimha temples</p>
+        <div class="right-section">
+            <!-- సిస్టమ్ లో మాత్రమే కనిపించే బుక్ బటన్ -->
+            <button class="book-now-btn desktop-only">
+                <i class="fa-solid fa-phone"></i> Book Now
+            </button>
+            
+            <!-- మొబైల్ మెనూ ఐకాన్ (Hamburger) -->
+            <div class="menu-toggle" id="mobile-menu">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </div>
+    </header>
 
-<div class="hero-buttons">
-<button class="whatsapp-btn">Book via WhatsApp</button>
-<button class="view-btn">View Rooms</button>
-</div>
-</div>
-</div>
+<!-- మొబైల్ మెనూ కోసం అప్‌డేటెడ్ జావాస్క్రిప్ట్ -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            const navLinks = document.getElementById('nav-links');
+            
+            if(mobileMenu && navLinks) {
+                const icon = mobileMenu.querySelector('i');
+                
+                mobileMenu.addEventListener('click', function() {
+                    // మెనూ ని ఓపెన్/క్లోజ్ చేయడం
+                    navLinks.classList.toggle('active');
+                    
+                    // ఐకాన్ ని (మూడు గీతలు <-> X) కి మార్చడం
+                    if(navLinks.classList.contains('active')) {
+                        icon.classList.remove('fa-bars');
+                        icon.classList.add('fa-xmark');
+                    } else {
+                        icon.classList.remove('fa-xmark');
+                        icon.classList.add('fa-bars');
+                    }
+                });
+            }
+        });
+    </script>
 
-<!-- AMENITIES -->
-<div class="section">
-<h2>Our Amenities</h2>
+<!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-overlay"></div> <!-- ఫోటో మీద నల్లటి షేడ్ కోసం -->
+        
+        <div class="hero-content">
+            <p class="welcome-text">WELCOME TO</p>
+            <h1 class="hero-title">Madam Rajeswari<br>Complex</h1>
+            <p class="hero-location">Ahobilam, Andhra Pradesh</p>
+            <p class="hero-tagline">Your divine stay near the sacred Narasimha temples</p>
+            
+            <div class="hero-buttons">
+                <!-- వాట్సాప్ లింక్ ని ఈ href లో తర్వాత యాడ్ చేసుకోవచ్చు -->
+                <a href="#" class="btn-whatsapp" onclick="openBookingModal(); return false;">Book via WhatsApp</a>
+                <a href="#rooms" class="btn-outline">View Rooms</a>
+            </div>
+        </div>
+    </section>
 
-<div class="amenities">
-<div class="card">Air Conditioned</div>
-<div class="card">King Size Beds</div>
-<div class="card">Free Wi-Fi</div>
-<div class="card">24/7 Security</div>
-</div>
-</div>
+    <!-- Our Properties / Hotels Section -->
+    <section id="hotels" class="hotels-section">
+        <h2 class="section-title">Our Properties</h2>
+        
+        <div class="hotels-container">
+            <!-- Hotel 1 Card -->
+            <div class="hotel-card">
+                <!-- మొదటి హోటల్ ఫోటో -->
+                <img src="dhanu4.jpeg" alt="Madam Rajeswari Complex">
+                <div class="hotel-info">
+                    <h3>Madam Rajeswari Complex</h3>
+                    <p>Experience comfortable stay with premium amenities near the sacred Ahobilam temples.</p>
+                    <!-- దీని మీద క్లిక్ చేస్తే hotel1.html పేజీ ఓపెన్ అవుతుంది -->
+                    <a href="madam-rajeswari-complex.html" class="btn-explore">Explore Complex</a>
+                </div>
+            </div>
 
-<!-- ROOMS -->
-<div class="section">
-<h2>Our Rooms</h2>
+            <!-- Hotel 2 Card -->
+            <div class="hotel-card">
+                <!-- రెండో హోటల్ ఫోటో -->
+                <img src="WhatsApp Image .jpeg" alt="Second Hotel Branch">
+                <div class="hotel-info">
+                    <!-- మీ రెండో హోటల్ పేరు ఇక్కడ మార్చుకోండి -->
+                    <h3>Second Hotel Branch</h3> 
+                    <p>Your perfect base for a spiritual journey with excellent hospitality and care.</p>
+                    <!-- దీని మీద క్లిక్ చేస్తే hotel2.html పేజీ ఓపెన్ అవుతుంది -->
+                    <a href="veerabadhra-complex.html" class="btn-explore">Explore Hotel</a>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<div class="rooms">
+    <!-- Our Amenities Section -->
+    <section id="amenities" class="amenities-section">
+        <h2 class="section-title">Our Amenities</h2>
+        
+        <div class="amenities-container">
+            <!-- Amenity 1 -->
+            <div class="amenity-card">
+                <i class="fa-solid fa-wind amenity-icon"></i>
+                <h3>Air Conditioned</h3>
+                <p>All rooms are fully air conditioned</p>
+            </div>
 
-<div class="room-card">
-<img src="https://images.unsplash.com/photo-1618773928121-c32242e63f39">
-<div class="room-content">
-<h3>King AC Room – 2 Sharing</h3>
-<p>Perfect for couples</p>
-<button>Book Now</button>
-</div>
-</div>
+            <!-- Amenity 2 -->
+            <div class="amenity-card">
+                <i class="fa-regular fa-star amenity-icon"></i>
+                <h3>King Size Beds</h3>
+                <p>Premium king size beds for comfort</p>
+            </div>
 
-<div class="room-card">
-<img src="https://images.unsplash.com/photo-1590490360182-c33d57733427">
-<div class="room-content">
-<h3>King AC Room – 3 Sharing</h3>
-<p>Ideal for family</p>
-<button>Book Now</button>
-</div>
-</div>
+            <!-- Amenity 3 (దీనికి active-amenity అని ఇచ్చాం కాబట్టి గోల్డ్ బార్డర్ వస్తుంది) -->
+            <div class="amenity-card active-amenity">
+                <i class="fa-solid fa-wifi amenity-icon"></i>
+                <h3>Free Wi-Fi</h3>
+                <p>Complimentary high-speed internet</p>
+            </div>
 
-</div>
-</div>
+            <!-- Amenity 4 -->
+            <div class="amenity-card">
+                <i class="fa-solid fa-shield-halved amenity-icon"></i>
+                <h3>24/7 Security</h3>
+                <p>Round the clock security & reception</p>
+            </div>
+        </div>
+    </section>
+ 
+    <!-- Discover Ahobilam Section -->
+    <section id="history" class="discover-section">
+        <div class="discover-container">
+            
+            <!-- ఎడమ వైపు టెక్స్ట్ -->
+           <!-- ఎడమ వైపు టెక్స్ట్ -->
+            <div class="discover-content">
+                <span class="sub-heading">DISCOVER</span>
+                <h2 class="discover-title">Ahobilam – The Sacred Abode</h2>
+                <p>Ahobilam is a highly revered pilgrimage center nestled in the lush Nallamala Hills of Andhra Pradesh. Known as the 'Nava Narasimha Kshetram,' it is the only place where Lord Narasimha is worshipped in nine distinct forms, spread across the upper and lower hills.</p>
+                <p>The profound spiritual energy, combined with the breathtaking natural beauty of dense forests and ancient paths, makes Ahobilam a truly unique destination. According to legends, this is the very place where Lord Vishnu took the fierce half-lion, half-human avatar to protect his devotee Prahlada.</p>
+                <p>Our hotel is conveniently located near the temple complex, offering a serene, comfortable, and highly accessible base for your spiritual journey.</p>
+                
+                <a href="#" class="learn-more-link">
+                    <i class="fa-solid fa-location-dot"></i> Learn more about Ahobilam
+                </a>
+            </div>
 
-<!-- DISCOVER -->
-<div class="section">
-<div class="discover-container">
+            <!-- కుడి వైపు ఇమేజ్ -->
+            <div class="discover-image">
+                <!-- ఇక్కడ మీ టెంపుల్ ఇమేజ్ వస్తుంది -->
+                <img src="abm.jpg" alt="Ahobilam Temple Landscape">
+            </div>
 
-<div class="discover-text">
-<p class="small-title">DISCOVER</p>
-<h2>Ahobilam – The Sacred Abode</h2>
+        </div>
+    </section>
 
-<p>
-Ahobilam is a famous pilgrimage center known for Lord Narasimha temples located in the Nallamala Hills.
-</p>
+    <!-- Footer Section -->
+    <footer id="contact" class="footer">
+        <div class="footer-container">
+            <!-- కాలమ్ 1: అడ్రస్ / అబౌట్ -->
+            <div class="footer-col">
+                <h3 class="footer-title">Madam Rajeswari Complex</h3>
+                <p>Your comfortable stay near the sacred Ahobilam temples. Experience divine hospitality with modern amenities.</p>
+            </div>
 
-<p>
-Stay close to divine energy and nature with comfortable rooms near the temple.
-</p>
+            <!-- కాలమ్ 2: క్విక్ లింక్స్ -->
+            <div class="footer-col">
+                <h3 class="footer-title">Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="rooms.html">Rooms</a></li>
+                    <li><a href="temple-history.html">Temple History</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="terms.html">Terms & Conditions</a></li>
+                </ul>
+            </div>
 
-</div>
+            <!-- కాలమ్ 3: కాంటాక్ట్ డీటెయిల్స్ -->
+            <div class="footer-col">
+                <h3 class="footer-title">Contact Info</h3>
+                <ul class="footer-contact">
+                    <li><i class="fa-solid fa-location-dot"></i> Ahobilam, Kurnool District, Andhra Pradesh, India</li>
+                    <!-- స్క్రీన్ షాట్ లో ఉన్న నెంబర్ ఇచ్చాను -->
+                    <li><i class="fa-solid fa-phone"></i> +91 76759 62840</li>
+                    <li><i class="fa-solid fa-envelope"></i>madhamvenkatasubbaiah363@gmail.com</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2026 Madam Rajeswari Complex. All rights reserved.</p>
+        </div>
+    </footer>
 
-<div class="discover-image">
-<img src="https://images.unsplash.com/photo-1605640840605-14ac1855827b">
-</div>
+    <!-- ================= BOOKING FORM MODAL STYLES ================= -->
+    <style>
+        /* ఫామ్ పాప్-అప్ డిజైన్ */
+        .booking-modal {
+            display: none; position: fixed; z-index: 10000; left: 0; top: 0; width: 100%; height: 100%;
+            background-color: rgba(0,0,0,0.85); backdrop-filter: blur(5px);
+        }
+        .booking-modal-content {
+            background-color: #1e1e1e; margin: 5vh auto; padding: 30px;
+            border: 1px solid #dfb160; width: 90%; max-width: 500px;
+            border-radius: 12px; position: relative; box-shadow: 0 10px 30px rgba(0,0,0,0.8);
+            max-height: 90vh; overflow-y: auto; /* స్క్రీన్ చిన్నగా ఉంటే స్క్రోల్ అవ్వడానికి */
+        }
+        .close-booking {
+            position: absolute; right: 20px; top: 15px; color: #b3b3b3;
+            font-size: 28px; font-weight: bold; cursor: pointer; transition: 0.3s;
+        }
+        .close-booking:hover { color: #dfb160; }
+        .booking-modal-content h3 {
+            color: #dfb160; text-align: center; margin-bottom: 25px;
+            font-family: 'Playfair Display', serif; font-size: 26px; border-bottom: 1px dashed #444; padding-bottom: 10px;
+        }
+        
+        /* ఫామ్ ఫీల్డ్స్ డిజైన్ */
+        .form-group { margin-bottom: 18px; }
+        .form-group label { display: block; color: #b3b3b3; margin-bottom: 6px; font-size: 14px; font-weight: 500;}
+        .form-group input, .form-group select {
+            width: 100%; padding: 12px; background-color: #2a2a2a;
+            border: 1px solid #444; color: #fff; border-radius: 6px;
+            font-family: 'Inter', sans-serif; font-size: 15px; transition: 0.3s;
+        }
+        .form-group input:focus, .form-group select:focus {
+            outline: none; border-color: #dfb160; box-shadow: 0 0 5px rgba(223, 177, 96, 0.3);
+        }
+        .date-group { display: flex; gap: 15px; }
+        .date-group .form-group { width: 50%; }
+        
+        /* వాట్సాప్ కి పంపే బటన్ */
+        .submit-wa-btn {
+            width: 100%; background-color: #25d366; color: #fff; border: none;
+            padding: 14px; font-size: 16px; font-weight: bold; border-radius: 6px;
+            cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 10px;
+            margin-top: 10px; transition: 0.3s;
+        }
+        .submit-wa-btn:hover { background-color: #1ebd57; transform: translateY(-2px); }
+        
+        /* క్యాలెండర్ ఐకాన్ డార్క్ థీమ్ లో కనిపించడానికి */
+        ::-webkit-calendar-picker-indicator { filter: invert(1); cursor: pointer; }
+    </style>
 
-</div>
-</div>
+    <!-- ================= BOOKING FORM HTML ================= -->
+    <div id="bookingModal" class="booking-modal">
+        <div class="booking-modal-content">
+            <span class="close-booking" onclick="closeBookingModal()">&times;</span>
+            <h3>Book Your Stay</h3>
+            
+            <form id="whatsappBookingForm" onsubmit="sendWhatsApp(event)">
+                
+                <div class="form-group">
+                    <label>Full Name *</label>
+                    <input type="text" id="b_name" placeholder="Enter your name" required>
+                </div>
 
-<!-- FLOAT -->
-<div class="whatsapp">💬</div>
+                <div class="form-group">
+                    <label>Select Hotel *</label>
+                    <select id="b_hotel" required>
+                        <option value="">-- Choose Property --</option>
+                        <option value="Madam Rajeswari Complex">Madam Rajeswari Complex</option>
+                        <option value="Veerabadhra Complex">Veerabadhra Complex</option>
+                    </select>
+                </div>
+
+                <div class="date-group">
+                    <div class="form-group">
+                        <label>Check-in Date *</label>
+                        <input type="date" id="b_checkin" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Check-out Date *</label>
+                        <input type="date" id="b_checkout" required>
+                    </div>
+                </div>
+
+                <div class="date-group">
+                    <div class="form-group">
+                        <label>No. of Persons *</label>
+                        <input type="number" id="b_persons" min="1" placeholder="Ex: 2" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Room Preference *</label>
+                        <select id="b_roomtype" required>
+                            <option value="AC Room">AC Room</option>
+                            <option value="Non-AC Room">Non-AC Room</option>
+                        </select>
+                    </div>
+                </div>
+
+                <button type="submit" class="submit-wa-btn">
+                    <i class="fa-brands fa-whatsapp"></i> Send Booking Request
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- ================= BOOKING FORM JAVASCRIPT ================= -->
+    <script>
+        // ఈరోజు కంటే పాత డేట్స్ సెలెక్ట్ చేసుకోకుండా సెట్ చేయడం
+        const today = new Date().toISOString().split('T')[0];
+        document.getElementById("b_checkin").setAttribute('min', today);
+        document.getElementById("b_checkout").setAttribute('min', today);
+
+        // ఫామ్ ఓపెన్/క్లోజ్ ఫంక్షన్స్
+        function openBookingModal() {
+            document.getElementById('bookingModal').style.display = 'block';
+        }
+
+        function closeBookingModal() {
+            document.getElementById('bookingModal').style.display = 'none';
+        }
+
+        // ఫామ్ ఫిల్ చేసి సబ్మిట్ కొట్టగానే వాట్సాప్ కి వెళ్ళే లాజిక్
+        function sendWhatsApp(e) {
+            e.preventDefault(); // పేజీ రీలోడ్ అవ్వకుండా ఆపుతుంది
+
+            // ఫామ్ లో ఇచ్చిన డీటెయిల్స్ తీసుకోవడం
+            const name = document.getElementById('b_name').value;
+            const hotel = document.getElementById('b_hotel').value;
+            const checkin = document.getElementById('b_checkin').value;
+            const checkout = document.getElementById('b_checkout').value;
+            const persons = document.getElementById('b_persons').value;
+            const roomType = document.getElementById('b_roomtype').value;
+
+            // వాట్సాప్ కి వెళ్ళే మెసేజ్ ఫార్మాట్
+            const message = `*NEW BOOKING REQUEST* 🔔\n\n*Name:* ${name}\n*Hotel:* ${hotel}\n*Check-in:* ${checkin}\n*Check-out:* ${checkout}\n*Persons:* ${persons}\n*Type:* ${roomType}\n\n_Please confirm availability and let me know the advance amount._`;
+
+            // మీ ఫోన్ నెంబర్ కు మెసేజ్ వెళ్ళేలా లింక్ క్రియేట్ చేయడం
+            const whatsappUrl = `https://wa.me/917675962840?text=${encodeURIComponent(message)}`;
+            
+            // వాట్సాప్ ఓపెన్ చేసి, ఫామ్ క్లోజ్ చేయడం
+            window.open(whatsappUrl, '_blank');
+            closeBookingModal();
+        }
+
+        // పాప్-అప్ బయట క్లిక్ చేస్తే ఫామ్ క్లోజ్ అవ్వడానికి
+        window.onclick = function(event) {
+            let modal = document.getElementById('bookingModal');
+            if (event.target == modal) {
+                closeBookingModal();
+            }
+        }
+    </script>
 
 </body>
 </html>
