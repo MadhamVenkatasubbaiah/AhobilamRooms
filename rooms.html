@@ -1,94 +1,235 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<title>Rooms - Ahobilam Rooms</title>
-
-<style>
-
-body{
-font-family: Arial;
-background:#FFF8E1;
-margin:0;
-text-align:center;
-}
-
-/* Rooms container */
-.rooms-container{
-display:flex;
-justify-content:center;
-gap:30px;
-flex-wrap:wrap;
-padding:40px;
-}
-
-/* Room card */
-.room-card{
-background:white;
-border-radius:10px;
-box-shadow:0 4px 10px rgba(0,0,0,0.2);
-width:300px;
-padding:15px;
-}
-
-/* Image */
-.room-card img{
-width:100%;
-border-radius:10px;
-}
-
-/* Booking button */
-.book-btn{
-background:#27ae60;
-color:white;
-padding:10px 20px;
-border:none;
-border-radius:5px;
-cursor:pointer;
-font-size:16px;
-margin-top:10px;
-}
-
-.book-btn:hover{
-background:#219150;
-}
-
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Madam Rajeswari Complex - Ahobilam</title>
+    <!-- CSS లింక్ -->
+    <link rel="stylesheet" href="style.css">
+    <!-- ఫాంట్స్ కోసం Google Fonts లింక్ -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+    <!-- ఐకాన్స్ కోసం FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
-
 <body>
 
-<h1>Welcome to Rajeshwari Complex </h1>
+    <!-- Header Section -->
+    <header class="navbar">
+        <div class="logo-section">
+            <div class="logo-icon">
+                <!-- ఇక్కడ ఓం ఐకాన్ తీసేసి మీ లోగో ఇమేజ్ పెట్టాం -->
+                <img src="logo.png" alt="Madam Rajeswari Logo" class="custom-logo">
+            </div>
+            <div class="logo-text">
+                <h1>Madam Rajeswari</h1>
+                <p>COMPLEX</p>
+            </div>
+        </div>
+
+        <!-- నావిగేషన్ లింక్స్ -->
+        <nav class="nav-links" id="nav-links">
+            <a href="index.html" class="active">Home</a>
+            <a href="rooms.html">Rooms</a>
+            <a href="temple-history.html">Temple History</a>
+            <a href="contact.html">Contact</a>
+            <!-- మొబైల్ లో మాత్రమే కనిపించే బుక్ బటన్ -->
+            <button class="book-now-btn mobile-only">
+                <i class="fa-solid fa-phone"></i> Book Now
+            </button>
+        </nav>
+
+        <div class="right-section">
+            <!-- సిస్టమ్ లో మాత్రమే కనిపించే బుక్ బటన్ -->
+            <button class="book-now-btn desktop-only">
+                <i class="fa-solid fa-phone"></i> Book Now
+            </button>
+            
+            <!-- మొబైల్ మెనూ ఐకాన్ (Hamburger) -->
+            <div class="menu-toggle" id="mobile-menu">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+<!-- మొబైల్ మెనూ కోసం అప్‌డేటెడ్ జావాస్క్రిప్ట్ -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            const navLinks = document.getElementById('nav-links');
+            
+            if(mobileMenu && navLinks) {
+                const icon = mobileMenu.querySelector('i');
+                
+                mobileMenu.addEventListener('click', function() {
+                    // మెనూ ని ఓపెన్/క్లోజ్ చేయడం
+                    navLinks.classList.toggle('active');
+                    
+                    // ఐకాన్ ని (మూడు గీతలు <-> X) కి మార్చడం
+                    if(navLinks.classList.contains('active')) {
+                        icon.classList.remove('fa-bars');
+                        icon.classList.add('fa-xmark');
+                    } else {
+                        icon.classList.remove('fa-xmark');
+                        icon.classList.add('fa-bars');
+                    }
+                });
+            }
+        });
+    </script>
+<!-- ================= ఇక్కడి నుంచి CSS స్టైల్స్ ================= -->
+    <style>
+        .choose-stay-section {
+            padding: 130px 5% 80px; 
+            min-height: 100vh;
+            background-color: #1e1e1e; /* డార్క్ థీమ్ బ్యాక్ గ్రౌండ్ */
+        }
+
+        .page-title {
+            text-align: center; color: #dfb160; font-size: 36px; margin-bottom: 50px;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .stay-list {
+            display: flex; flex-direction: column; gap: 40px; max-width: 1000px; margin: 0 auto;
+        }
+
+        /* కార్డ్ డిజైన్ (పక్కపక్కన రావడానికి) */
+        .stay-horizontal-card {
+            display: flex; background-color: #2a2a2a; border-radius: 12px; border: 1px solid #333; 
+            overflow: hidden; transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .stay-horizontal-card:hover {
+            border-color: #dfb160; box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+        }
+
+        .stay-img-box { width: 40%; min-width: 300px; }
+        .stay-img-box img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+        .stay-details { width: 60%; padding: 40px 30px; display: flex; flex-direction: column; justify-content: center; }
+        .stay-name { color: #dfb160; font-size: 26px; margin-bottom: 8px; font-family: 'Playfair Display', serif; }
+        .stay-location { color: #b3b3b3; font-size: 14px; margin-bottom: 25px; display: flex; align-items: center; gap: 8px; }
+        .map-icon { color: #ff4d4d; }
+
+        /* వసతుల బాక్సులు (గ్రీన్ టిక్స్ తో) */
+        .amenities-tags { display: flex; flex-wrap: wrap; gap: 15px; margin-bottom: 25px; }
+        .tag { display: flex; align-items: center; gap: 8px; border: 1px solid #444; color: #ffffff; padding: 8px 15px; border-radius: 6px; font-size: 13px; }
+        .tag i { color: #25d366; }
+
+        .stay-timing { color: #b3b3b3; font-size: 13px; border-top: 1px dashed #444; padding-top: 15px; margin-bottom: 25px; }
+
+        /* సెలెక్ట్ రూమ్ బటన్ */
+        .btn-select-room {
+            display: inline-block; background-color: #dfb160; color: #000; text-decoration: none; 
+            padding: 12px 35px; font-size: 15px; font-weight: 600; border-radius: 5px; 
+            align-self: flex-start; transition: all 0.3s ease;
+        }
+        .btn-select-room:hover { background-color: #c49950; transform: translateY(-2px); }
+
+        /* మొబైల్ రెస్పాన్సివ్ */
+        @media screen and (max-width: 800px) {
+            .stay-horizontal-card { flex-direction: column; }
+            .stay-img-box, .stay-details { width: 100%; }
+            .stay-img-box { height: 250px; }
+            .btn-select-room { width: 100%; text-align: center; }
+        }
+    </style>
+    <!-- ================= CSS స్టైల్స్ ఎండ్ ================= -->
+
+
+    <!-- ================= మెయిన్ కోడ్ (హెడర్, ఫుటర్ మధ్యలో పెట్టండి) ================= -->
+    <main class="choose-stay-section">
+        <h2 class="page-title">Choose Your Stay in Ahobilam</h2>
+
+        <div class="stay-list">
+            
+            <!-- Stay Card 1: Rayala Charitable Trust -->
+            <div class="stay-horizontal-card">
+                <div class="stay-img-box">
+                    <!-- ఇక్కడ రేయల ట్రస్ట్ ఫోటో పేరు ఇవ్వండి -->
+                    <img src="rayala-trust.jpg" alt="Madam Rajeswari Complex ">
+                </div>
+                <div class="stay-details">
+                    <h3 class="stay-name">Madam Rajeswari Complex</h3>
+                    <p class="stay-location"><i class="fa-solid fa-location-dot map-icon"></i> Near Bypass Road, Diguva Ahobilam</p>
+                    
+                    <div class="amenities-tags">
+                        <span class="tag"><i class="fa-solid fa-check"></i> AC / Non-AC</span>
+                        <span class="tag"><i class="fa-solid fa-check"></i> Hot Water</span>
+                        <span class="tag"><i class="fa-solid fa-check"></i> Parking</span>
+                        <span class="tag"><i class="fa-solid fa-check"></i> Free Lunch & Dinner</span>
+                    </div>
+
+                    <p class="stay-timing">Check-in: 24 Hrs | Check-out: 24 Hrs</p>
+
+                    <!-- సెలెక్ట్ రూమ్ పై క్లిక్ చేస్తే వెళ్ళే పేజీ లింక్ -->
+                    <a href="madam-rajeswari-complex.html" class="btn-select-room">Select Room</a>
+                </div>
+            </div>
+
+            <!-- Stay Card 2: Madam Rajeswari Complex -->
+            <div class="stay-horizontal-card">
+                <div class="stay-img-box">
+                    <!-- ఇక్కడ మేడమ్ రాజేశ్వరి ఫోటో పేరు ఇవ్వండి (ఉదా: dhanu4.jpeg) -->
+                    <img src="dhanu4.jpeg" alt="Veerabadhra Complex">
+                </div>
+                <div class="stay-details">
+                    <h3 class="stay-name">Veerabadhra Complex</h3>
+                    <p class="stay-location"><i class="fa-solid fa-location-dot map-icon"></i> Main Temple Road, Ahobilam</p>
+                    
+                    <div class="amenities-tags">
+                        <span class="tag"><i class="fa-solid fa-check"></i> Premium Rooms</span>
+                        <span class="tag"><i class="fa-solid fa-check"></i> Wi-Fi Access</span>
+                        <span class="tag"><i class="fa-solid fa-check"></i> 24/7 Security</span>
+                    </div>
+
+                    <p class="stay-timing">Check-in: 12:00 PM | Check-out: 11:00 AM</p>
+
+                    <!-- సెలెక్ట్ రూమ్ పై క్లిక్ చేస్తే వెళ్ళే పేజీ లింక్ -->
+                    <a href="veerabadhra-complex.html" class="btn-select-room">Select Room</a>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
     
-<button onclick="location.href='index.html'">
-    ⬅ Back to Home
-</button>
+    <!-- Footer Section -->
+    <footer id="contact" class="footer">
+        <div class="footer-container">
+            <!-- కాలమ్ 1: అడ్రస్ / అబౌట్ -->
+            <div class="footer-col">
+                <h3 class="footer-title">Madam Rajeswari Complex</h3>
+                <p>Your comfortable stay near the sacred Ahobilam temples. Experience divine hospitality with modern amenities.</p>
+            </div>
 
-<div class="rooms-container">
+            <!-- కాలమ్ 2: క్విక్ లింక్స్ -->
+            <div class="footer-col">
+                <h3 class="footer-title">Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="rooms.html">Rooms</a></li>
+                    <li><a href="temple-history.html">Temple History</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="terms.html">Terms & Conditions</a></li>
+                </ul>
+            </div>
 
-    <div class="room-card">
-        <img src="3bed.jpeg" alt="Deluxe Room">
-        <img src="washroom.jpeg" alt="Deluxe Room">
-        <h3>3 Bed-Room </h3>
-        <p>Comfortable stay with AC and WiFi</p>
-
-        <button class="book-btn"
-        onclick="location.href='tel:+917675962840'">
-        Book Now 
-        Price - 1600₹
-        </button>
-    </div>
-
-    <div class="room-card">
-        <img src="2-bed.jpeg" alt="Family Room">
-        <h3>2 Bed-Room</h3>
-        <p>Comfortable stay with AC and WiFi</p>
-
-        <button class="book-btn"
-        onclick="location.href='tel:+917675962840'">
-        Book Now Price - 1200₹
-        </button>
-    </div>
-
-</div>
-
+            <!-- కాలమ్ 3: కాంటాక్ట్ డీటెయిల్స్ -->
+            <div class="footer-col">
+                <h3 class="footer-title">Contact Info</h3>
+                <ul class="footer-contact">
+                    <li><i class="fa-solid fa-location-dot"></i> Ahobilam, Kurnool District, Andhra Pradesh, India</li>
+                    <!-- స్క్రీన్ షాట్ లో ఉన్న నెంబర్ ఇచ్చాను -->
+                    <li><i class="fa-solid fa-phone"></i> +91 76759 62840</li>
+                    <li><i class="fa-solid fa-envelope"></i>madhamvenkatasubbaiah363@gmail.com</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2026 Madam Rajeswari Complex. All rights reserved.</p>
+        </div>
+    </footer>
 </body>
 </html>
