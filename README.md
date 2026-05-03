@@ -99,7 +99,7 @@
     <style>
         /* మీ బ్యాక్‌గ్రౌండ్ ఫోటో కోడ్ ఇక్కడ కరెక్ట్ గా యాడ్ చేయండి */
         .hero-section {
-            background-image: url('logo.png'); /* ఇక్కడ మీ ఫోటో పేరు (abm.jpg లేదా మరేదైనా) ఇవ్వండి */
+            background-image: url('hero_BG.jpeg'); /* ఇక్కడ మీ ఫోటో పేరు (abm.jpg లేదా మరేదైనా) ఇవ్వండి */
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
