@@ -104,7 +104,7 @@
             <!-- Hotel 1 Card -->
             <div class="hotel-card">
                 <!-- మొదటి హోటల్ ఫోటో -->
-                <img src="dhanu4.jpeg" alt="Madham Rajeshwari Complex">
+                <img src="RJ_mainbed.jpeg" alt="Madham Rajeshwari Complex">
                 <div class="hotel-info">
                     <h3>Madham Rajeshwari Complex</h3>
                     <p>Experience comfortable stay with premium amenities near the sacred Ahobilam temples.</p>
@@ -116,7 +116,7 @@
             <!-- Hotel 2 Card -->
             <div class="hotel-card">
                 <!-- రెండో హోటల్ ఫోటో -->
-                <img src="WhatsApp Image .jpeg" alt="Veerabadhra Complex">
+                <img src="hero_BG.jpeg" alt="Veerabadhra Complex">
                 <div class="hotel-info">
                     <!-- మీ రెండో హోటల్ పేరు ఇక్కడ మార్చుకోండి -->
                     <h3>Veerabadhra Complex</h3> 
