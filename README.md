@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Madham Rajeswari Complex - Ahobilam</title>
+    <title>Madham Rajeshwari Complex - Ahobilam</title>
     <!-- CSS లింక్ -->
     <link rel="stylesheet" href="style.css">
     <!-- ఫాంట్స్ కోసం Google Fonts లింక్ -->
@@ -18,10 +18,10 @@
         <div class="logo-section">
             <div class="logo-icon">
                 <!-- ఇక్కడ ఓం ఐకాన్ తీసేసి మీ లోగో ఇమేజ్ పెట్టాం -->
-                <img src="logo.png" alt="Madham Rajeswari Logo" class="custom-logo">
+                <img src="logo.png" alt="Madham Rajeshwari Logo" class="custom-logo">
             </div>
             <div class="logo-text">
-                <h1>Madham Rajeswari</h1>
+                <h1>Madham Rajeshwari</h1>
                 <p>COMPLEX</p>
             </div>
         </div>
@@ -83,7 +83,7 @@
         
         <div class="hero-content">
             <p class="welcome-text">WELCOME TO</p>
-            <h1 class="hero-title">Madham Rajeswari<br>Complex</h1>
+            <h1 class="hero-title">Madham Rajeshwari<br>Complex</h1>
             <p class="hero-location">Ahobilam, Andhra Pradesh</p>
             <p class="hero-tagline">Your divine stay near the sacred Narasimha temples</p>
             
@@ -103,12 +103,12 @@
             <!-- Hotel 1 Card -->
             <div class="hotel-card">
                 <!-- మొదటి హోటల్ ఫోటో -->
-                <img src="dhanu4.jpeg" alt="Madham Rajeswari Complex">
+                <img src="dhanu4.jpeg" alt="Madham Rajeshwari Complex">
                 <div class="hotel-info">
-                    <h3>Madham Rajeswari Complex</h3>
+                    <h3>Madham Rajeshwari Complex</h3>
                     <p>Experience comfortable stay with premium amenities near the sacred Ahobilam temples.</p>
                     <!-- దీని మీద క్లిక్ చేస్తే hotel1.html పేజీ ఓపెన్ అవుతుంది -->
-                    <a href="Madham-rajeswari-complex.html" class="btn-explore">Explore Complex</a>
+                    <a href="Madham-Rajeshwari-complex.html" class="btn-explore">Explore Complex</a>
                 </div>
             </div>
 
@@ -194,7 +194,7 @@
         <div class="footer-container">
             <!-- కాలమ్ 1: అడ్రస్ / అబౌట్ -->
             <div class="footer-col">
-                <h3 class="footer-title">Madham Rajeswari Complex</h3>
+                <h3 class="footer-title">Madham Rajeshwari Complex</h3>
                 <p>Your comfortable stay near the sacred Ahobilam temples. Experience divine hospitality with modern amenities.</p>
             </div>
 
@@ -223,7 +223,7 @@
         </div>
         
         <div class="footer-bottom">
-            <p>&copy; 2026 Madham Rajeswari Complex. All rights reserved.</p>
+            <p>&copy; 2026 Madham Rajeshwari Complex. All rights reserved.</p>
         </div>
     </footer>
 
@@ -294,7 +294,7 @@
                     <label>Select Hotel *</label>
                     <select id="b_hotel" required>
                         <option value="">-- Choose Property --</option>
-                        <option value="Madham Rajeswari Complex">Madham Rajeswari Complex</option>
+                        <option value="Madham Rajeshwari Complex">Madham Rajeshwari Complex</option>
                         <option value="Veerabadhra Complex">Veerabadhra Complex</option>
                     </select>
                 </div>
