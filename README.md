@@ -95,31 +95,7 @@
         </div>
     </section>
 
-    <!-- ================= BOOKING FORM MODAL STYLES ================= -->
-    <style>
-        /* మీ బ్యాక్‌గ్రౌండ్ ఫోటో కోడ్ ఇక్కడ కరెక్ట్ గా యాడ్ చేయండి */
-        .hero-section {
-            background-image: url('hero_BG.jpeg'); /* ఇక్కడ మీ ఫోటో పేరు (abm.jpg లేదా మరేదైనా) ఇవ్వండి */
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            position: relative;
-        }
-
-        .hero-overlay {
-            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-            background-color: rgba(0, 0, 0, 0.6); /* అక్షరాలు స్పష్టంగా కనిపించడానికి నల్లటి షేడ్ */
-            z-index: 1;
-        }
-
-        .hero-content {
-            position: relative; z-index: 2;
-        }
-
-        /* ఫామ్ పాప్-అప్ డిజైన్ (ఇది ఆల్రెడీ మీ కోడ్ లో ఉంది, దీని పైన పేస్ట్ చేయాలి) */
-        .booking-modal {
-            display: none; position: fixed; z-index: 10000; left: 0; top: 0; width: 100%; height: 100%;
-
+    
     <!-- Our Properties / Hotels Section -->
     <section id="hotels" class="hotels-section">
         <h2 class="section-title">Our Properties</h2>
@@ -403,6 +379,31 @@
             }
         }
     </script>
+
+<!-- ================= BOOKING FORM MODAL STYLES ================= -->
+    <style>
+        /* మీ బ్యాక్‌గ్రౌండ్ ఫోటో కోడ్ ఇక్కడ కరెక్ట్ గా యాడ్ చేయండి */
+        .hero-section {
+            background-image: url('hero_BG.jpeg'); /* ఇక్కడ మీ ఫోటో పేరు (abm.jpg లేదా మరేదైనా) ఇవ్వండి */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            position: relative;
+        }
+
+        .hero-overlay {
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            background-color: rgba(0, 0, 0, 0.6); /* అక్షరాలు స్పష్టంగా కనిపించడానికి నల్లటి షేడ్ */
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative; z-index: 2;
+        }
+
+        /* ఫామ్ పాప్-అప్ డిజైన్ (ఇది ఆల్రెడీ మీ కోడ్ లో ఉంది, దీని పైన పేస్ట్ చేయాలి) */
+        .booking-modal {
+            display: none; position: fixed; z-index: 10000; left: 0; top: 0; width: 100%; height: 100%;
 
 </body>
 </html>
