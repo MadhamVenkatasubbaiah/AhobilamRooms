@@ -119,7 +119,7 @@
                 <img src="WhatsApp Image .jpeg" alt="Veerabadhra Complex">
                 <div class="hotel-info">
                     <!-- మీ రెండో హోటల్ పేరు ఇక్కడ మార్చుకోండి -->
-                    <h3>Second Hotel Branch</h3> 
+                    <h3>Veerabadhra Complex</h3> 
                     <p>Your perfect base for a spiritual journey with excellent hospitality and care.</p>
                     <!-- దీని మీద క్లిక్ చేస్తే hotel2.html పేజీ ఓపెన్ అవుతుంది -->
                     <a href="veerabadhra-complex.html" class="btn-explore">Explore Hotel</a>
