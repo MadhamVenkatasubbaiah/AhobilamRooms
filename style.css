@@ -1,0 +1,623 @@
+/* బేసిక్ సెట్టింగ్స్ & కలర్స్ */
+/* బేసిక్ సెట్టింగ్స్ & కలర్స్ - అప్‌డేటెడ్ (లైట్ డార్క్/గ్రే థీమ్) */
+:root {
+    --bg-dark: #1e1e1e; /* మరీ బ్లాక్ కాకుండా డార్క్ గ్రే */
+    --text-gold: #dfb160;
+    --text-white: #ffffff;
+    --text-gray: #b3b3b3; /* టెక్స్ట్ ఇంకా క్లియర్ గా చదవడానికి */
+    --btn-hover: #c49950;
+    --card-bg: #2a2a2a; /* కార్డ్స్ కోసం కొంచెం లైట్ గ్రే */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-dark);
+    font-family: 'Inter', sans-serif;
+    color: var(--text-white);
+}
+
+h1, h2, h3 {
+    font-family: 'Playfair Display', serif;
+}
+
+/* --- Header Navbar Styles --- */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5%;
+    background-color: rgba(17, 17, 17, 0.98);
+    border-bottom: 1px solid #333;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.logo-section {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+/* కొత్త లోగో ఇమేజ్ డిజైన్ */
+.custom-logo {
+    height: 40px; /* లోగో ఎత్తు, అవసరమైతే మార్చుకోవచ్చు */
+    width: auto;
+    display: block;
+    object-fit: contain;
+}
+
+.logo-text h1 {
+    color: var(--text-gold);
+    font-size: 24px;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.logo-text p {
+    color: var(--text-gray);
+    font-size: 11px;
+    letter-spacing: 3px;
+    margin-top: 2px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+
+.nav-links a {
+    color: var(--text-white);
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover, 
+.nav-links a.active {
+    color: var(--text-gold);
+}
+
+.right-section {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.book-now-btn {
+    background-color: var(--text-gold);
+    color: #000;
+    border: none;
+    padding: 10px 20px;
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: background-color 0.3s ease;
+}
+
+.book-now-btn:hover {
+    background-color: var(--btn-hover);
+}
+
+.menu-toggle {
+    display: none; /* సిస్టమ్ లో ఐకాన్ కనిపించకూడదు */
+    color: var(--text-gold);
+    font-size: 26px;
+    cursor: pointer;
+}
+
+.mobile-only {
+    display: none;
+}
+
+/* =========================================
+   Mobile Responsiveness (మొబైల్ ఫోన్ల కోసం)
+   ========================================= */
+@media screen and (max-width: 850px) {
+    .menu-toggle {
+        display: block; /* మొబైల్ లో ఐకాన్ కనిపిస్తుంది */
+    }
+
+    .desktop-only {
+        display: none; /* మొబైల్ లో పైన ఉన్న బటన్ దాచేస్తాం */
+    }
+
+    .nav-links {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: #111111;
+        flex-direction: column; /* లింక్స్ కిందకి వస్తాయి */
+        padding: 30px 0;
+        gap: 25px;
+        border-top: 1px solid #333;
+        display: none; /* మెనూ ఓపెన్ చేయకముందు దాచేస్తాం */
+    }
+
+    /* JavaScript తో ఇది యాడ్ అయినప్పుడు మెనూ కనిపిస్తుంది */
+    .nav-links.active {
+        display: flex;
+    }
+
+    .mobile-only {
+        display: flex; /* మెనూ లోపల బటన్ చూపిస్తాం */
+        margin-top: 10px;
+    }
+
+    .logo-text h1 {
+        font-size: 20px;
+    }
+}
+
+/* =========================================
+   Hero Section Styles
+   ========================================= */
+.hero-section {
+    position: relative;
+    height: 100vh; /* స్క్రీన్ మొత్తం నిండడానికి */
+    width: 100%;
+    /* మీ రూమ్ ఫోటోని ఇక్కడ లింక్ చేసాం */
+    background-image: url('dhanu.jpg'); 
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-top: 0; 
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* ఇక్కడ 0.4 అని మార్చాము, ఇమేజ్ క్లియర్ గా కనిపిస్తుంది */
+    background-color: rgba(0, 0, 0, 0.4); 
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2; /* షేడ్ కి పైన టెక్స్ట్ కనిపించడానికి */
+    padding: 0 20px;
+    max-width: 800px;
+}
+
+.welcome-text {
+    color: var(--text-gold);
+    letter-spacing: 4px;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.9); /* టెక్స్ట్ కి డార్క్ నీడ */
+}
+
+.hero-title {
+    color: var(--text-gold);
+    font-size: 65px; 
+    line-height: 1.1;
+    margin-bottom: 25px;
+    text-shadow: 4px 4px 10px rgba(0, 0, 0, 0.95); /* పెద్ద అక్షరాలకు పెద్ద నీడ */
+}
+
+.hero-location {
+    color: var(--text-white);
+    font-size: 22px;
+    margin-bottom: 10px;
+    font-weight: 600; /* అక్షరాలు కొంచెం మందంగా కనిపించడానికి */
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.9);
+}
+
+.hero-tagline {
+    color: #e0e0e0; /* గ్రే కలర్ నుండి కొంచెం వైట్ కి మార్చాను క్లియర్ గా ఉండటానికి */
+    font-size: 16px;
+    margin-bottom: 40px;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.9);
+}
+
+/* Hero Buttons */
+.hero-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.btn-whatsapp {
+    background-color: var(--text-gold);
+    color: #000;
+    text-decoration: none;
+    padding: 12px 30px;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.btn-whatsapp:hover {
+    background-color: var(--btn-hover);
+}
+
+.btn-outline {
+    background-color: transparent;
+    color: var(--text-gold);
+    text-decoration: none;
+    padding: 12px 30px;
+    font-size: 16px;
+    font-weight: 600;
+    border: 1px solid var(--text-gold);
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.btn-outline:hover {
+    background-color: rgba(223, 177, 96, 0.1);
+}
+
+/* Hero Section Mobile Responsiveness */
+@media screen and (max-width: 850px) {
+    .hero-title {
+        font-size: 45px;
+    }
+    
+    .hero-location {
+        font-size: 18px;
+    }
+    
+    .hero-buttons {
+        flex-direction: column; /* మొబైల్ లో బటన్స్ ఒకదాని కింద ఒకటి రావడానికి */
+        gap: 15px;
+        padding: 0 20px;
+    }
+}
+
+/* =========================================
+   Our Properties / Hotels Section Styles
+   ========================================= */
+.hotels-section {
+    padding: 80px 5%;
+    background-color: var(--bg-dark);
+}
+
+.section-title {
+    text-align: center;
+    color: var(--text-gold);
+    font-size: 36px;
+    margin-bottom: 50px;
+}
+
+.hotels-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); 
+    gap: 40px; /* రెండు హోటల్స్ మధ్య గ్యాప్ */
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.hotel-card {
+    background-color: var(--card-bg); /* లైట్ గ్రే బ్యాక్ గ్రౌండ్ */
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid #3a3a3a;
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hotel-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--text-gold);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.5); /* మౌస్ పెట్టినప్పుడు నీడ వస్తుంది */
+}
+
+.hotel-card img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    display: block;
+    border-bottom: 3px solid var(--text-gold);
+}
+
+.hotel-info {
+    padding: 30px;
+    text-align: center; /* హోటల్ పేరు, టెక్స్ట్ మధ్యలోకి రావడానికి */
+}
+
+.hotel-info h3 {
+    color: var(--text-white);
+    font-size: 24px;
+    margin-bottom: 12px;
+    font-family: 'Playfair Display', serif;
+}
+
+.hotel-info p {
+    color: var(--text-gray);
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 25px; /* బటన్ కి పైన గ్యాప్ */
+}
+
+/* హోటల్ లోపలికి వెళ్ళే బటన్ డిజైన్ */
+.btn-explore {
+    display: inline-block;
+    background-color: transparent;
+    color: var(--text-gold);
+    text-decoration: none;
+    padding: 10px 25px;
+    font-size: 15px;
+    font-weight: 600;
+    border: 1px solid var(--text-gold);
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.btn-explore:hover {
+    background-color: var(--text-gold);
+    color: #000;
+}
+
+/* =========================================
+   Our Amenities Section Styles
+   ========================================= */
+.amenities-section {
+    padding: 60px 5% 80px;
+    background-color: var(--bg-dark); /* మనం మార్చిన గ్రే థీమ్ వస్తుంది */
+}
+
+.amenities-container {
+    display: grid;
+    /* స్క్రీన్ సైజ్ ని బట్టి ఆటోమాటిక్ గా 4 కార్డ్స్ లేదా 2 కార్డ్స్ లేదా 1 కార్డ్ గా మారుతుంది */
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); 
+    gap: 25px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.amenity-card {
+    background-color: transparent;
+    border: 1px solid #333; /* నార్మల్ గా ఉన్నప్పుడు డార్క్ బార్డర్ */
+    border-radius: 8px;
+    padding: 40px 20px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+/* మౌస్ పెట్టినప్పుడు (Hover) మరియు Active గా ఉన్న కార్డ్ కి గోల్డ్ ఎఫెక్ట్ */
+.amenity-card:hover, 
+.amenity-card.active-amenity {
+    border-color: var(--text-gold);
+    background-color: rgba(223, 177, 96, 0.03); /* లోపల చాలా లైట్ గా గోల్డ్ షేడ్ */
+}
+
+.amenity-icon {
+    color: var(--text-gold);
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+.amenity-card h3 {
+    color: var(--text-white);
+    font-size: 18px;
+    margin-bottom: 12px;
+    font-family: 'Inter', sans-serif; /* ఇక్కడ నార్మల్ ఫాంట్ వాడాము */
+    font-weight: 600;
+}
+
+.amenity-card p {
+    color: var(--text-gray);
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+/* =========================================
+   Discover Ahobilam Section Styles
+   ========================================= */
+.discover-section {
+    padding: 80px 5%;
+    background-color: var(--bg-dark);
+}
+
+.discover-container {
+    display: flex;
+    align-items: center; /* ఇమేజ్ మరియు టెక్స్ట్ మధ్యలో సమానంగా ఉండటానికి */
+    justify-content: space-between;
+    max-width: 1100px;
+    margin: 0 auto;
+    gap: 60px; /* టెక్స్ట్ కి, ఫోటోకి మధ్య గ్యాప్ */
+}
+
+.discover-content {
+    flex: 1; /* సగం జాగా టెక్స్ట్ తీసుకుంటుంది */
+}
+
+.sub-heading {
+    color: var(--text-gold);
+    font-size: 12px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-weight: 600;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.discover-title {
+    color: var(--text-gold);
+    font-size: 38px;
+    margin-bottom: 25px;
+    line-height: 1.2;
+    font-family: 'Playfair Display', serif;
+}
+
+.discover-content p {
+    color: var(--text-gray);
+    font-size: 15px;
+    line-height: 1.7;
+    margin-bottom: 20px;
+}
+
+.learn-more-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--text-gold);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 15px;
+    margin-top: 10px;
+    transition: opacity 0.3s ease;
+}
+
+.learn-more-link:hover {
+    opacity: 0.8; /* మౌస్ పెట్టినప్పుడు చిన్న షేడ్ వస్తుంది */
+}
+
+.discover-image {
+    flex: 1; /* మిగిలిన సగం జాగా ఫోటో తీసుకుంటుంది */
+}
+
+.discover-image img {
+    width: 100%;
+    border-radius: 12px; /* ఫోటో మూలలు కొద్దిగా వంపు తిరగడానికి */
+    display: block;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.5); /* ఫోటోకి వెనకాల నీడ */
+}
+
+/* =========================================
+   Discover Section Mobile Responsiveness
+   ========================================= */
+@media screen and (max-width: 850px) {
+    .discover-container {
+        flex-direction: column; /* మొబైల్ లో ఒకదాని కింద ఒకటి రావడానికి */
+        text-align: center; /* టెక్స్ట్ మధ్యలోకి రావడానికి */
+        gap: 40px;
+    }
+    
+    .discover-title {
+        font-size: 30px;
+    }
+    
+    .learn-more-link {
+        justify-content: center;
+    }
+}
+
+/* =========================================
+   Footer Section Styles
+   ========================================= */
+.footer {
+    background-color: #111111; /* ఫుటర్ కొంచెం డార్క్ గా ఉండాలి */
+    padding: 60px 5% 20px;
+    border-top: 1px solid #333; /* పైన ఒక సన్నటి గీత */
+}
+
+.footer-container {
+    display: grid;
+    /* స్క్రీన్ బట్టి 3 కాలమ్స్ లేదా 1 కాలమ్ గా మారుతుంది */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    max-width: 1100px;
+    margin: 0 auto 40px;
+}
+
+.footer-title {
+    color: var(--text-gold);
+    font-size: 20px;
+    margin-bottom: 20px;
+    font-family: 'Playfair Display', serif;
+}
+
+.footer-col p {
+    color: var(--text-gray);
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.footer-links, .footer-contact {
+    list-style: none; /* బుల్లెట్ పాయింట్స్ (చుక్కలు) తీసేయడానికి */
+}
+
+.footer-links li, .footer-contact li {
+    margin-bottom: 15px;
+}
+
+.footer-links a {
+    color: var(--text-gray);
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: var(--text-gold); /* లింక్ మీద మౌస్ పెడితే గోల్డ్ కలర్ కి మారుతుంది */
+}
+
+.footer-contact li {
+    color: var(--text-gray);
+    font-size: 14px;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.footer-contact i {
+    color: var(--text-gold);
+    margin-top: 3px; /* ఐకాన్ కరెక్ట్ గా టెక్స్ట్ కి సమానంగా ఉండటానికి */
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid #222;
+    color: #666;
+    font-size: 13px;
+}
+
+/* =========================================
+   Floating WhatsApp Button
+   ========================================= */
+.float-whatsapp {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 30px;
+    right: 30px;
+    background-color: #25d366; /* వాట్సాప్ గ్రీన్ కలర్ */
+    color: #FFF;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 35px;
+    box-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
+}
+
+.float-whatsapp:hover {
+    transform: scale(1.1); /* మౌస్ పెట్టినప్పుడు కొంచెం పెద్దదవుతుంది */
+}
+
+/* మొబైల్ ఫోన్ లో వాట్సాప్ ఐకాన్ కొంచెం చిన్నగా ఉండాలి */
+@media screen and (max-width: 850px) {
+    .float-whatsapp {
+        width: 50px;
+        height: 50px;
+        font-size: 30px;
+        bottom: 20px;
+        right: 20px;
+    }
+}
