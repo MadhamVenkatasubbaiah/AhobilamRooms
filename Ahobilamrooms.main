@@ -352,7 +352,7 @@
             e.preventDefault(); // పేజీ రీలోడ్ అవ్వకుండా ఆపుతుంది
 
             // ఫామ్ లో ఇచ్చిన డీటెయిల్స్ తీసుకోవడం
-            const name = document.getElementById('b_name').value;
+            const name = document.getElementById('b_name ').value;
             const hotel = document.getElementById('b_hotel').value;
             const checkin = document.getElementById('b_checkin').value;
             const checkout = document.getElementById('b_checkout').value;
