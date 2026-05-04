@@ -21,7 +21,7 @@
                 <img src="logo.png" alt="Madham Rajeshwari Logo" class="custom-logo">
             </div>
             <div class="logo-text">
-                <h1>Madham Rajeshwari112</h1>
+                <h1>Madham Rajeshwari</h1>
                 <p>COMPLEX</p>
             </div>
         </div>
