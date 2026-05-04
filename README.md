@@ -116,7 +116,7 @@
             <!-- Hotel 2 Card -->
             <div class="hotel-card">
                 <!-- రెండో హోటల్ ఫోటో -->
-                <img src="hero_BG.jpeg" alt="Veerabadhra Complex">
+                <img src="VB_House.jpeg" alt="Veerabadhra Complex">
                 <div class="hotel-info">
                     <!-- మీ రెండో హోటల్ పేరు ఇక్కడ మార్చుకోండి -->
                     <h3>Veerabadhra Complex</h3> 
