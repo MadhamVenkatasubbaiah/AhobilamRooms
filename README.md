@@ -104,7 +104,7 @@
             <!-- Hotel 1 Card -->
             <div class="hotel-card">
                 <!-- మొదటి హోటల్ ఫోటో -->
-                <img src="RJ_mainbed.jpeg" alt="Madham Rajeshwari Complex">
+                <img src="MR-Complex.jpeg" alt="Madham Rajeshwari Complex">
                 <div class="hotel-info">
                     <h3>Madham Rajeshwari Complex</h3>
                     <p>Experience comfortable stay with premium amenities near the sacred Ahobilam temples.</p>
