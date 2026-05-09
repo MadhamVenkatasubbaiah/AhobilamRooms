@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -9,8 +11,14 @@
 
 <style>
 
-body{
+/* REMOVE TOP EMPTY SPACE */
+*{
     margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
     font-family:Arial, sans-serif;
     background:#f5f0e8;
 }
@@ -19,7 +27,8 @@ body{
 .title{
     text-align:center;
     font-size:45px;
-    margin-top:40px;
+    padding-top:30px;
+    margin-bottom:40px;
     color:#8B5E00;
 }
 
@@ -30,7 +39,6 @@ body{
     display:grid;
     grid-template-columns:repeat(3,1fr);
     gap:30px;
-    margin-top:50px;
     padding-bottom:50px;
 }
 
@@ -110,6 +118,7 @@ body{
 
 .popup-text h2{
     color:#8B5E00;
+    margin-bottom:15px;
 }
 
 .close{
