@@ -30,7 +30,7 @@
         <nav class="nav-links" id="nav-links">
             <a href="index.html" class="active">Home</a>
             <a href="rooms.html">Rooms</a>
-            <a href="temple-history.html">Temple History</a>
+            <a href="Temple History.html">Temple History</a>
             <a href="contact.html">Contact</a>
             <!-- మొబైల్ లో మాత్రమే కనిపించే బుక్ బటన్ -->
             <button class="book-now-btn mobile-only">
