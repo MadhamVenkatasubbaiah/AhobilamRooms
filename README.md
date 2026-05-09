@@ -26,11 +26,6 @@
             font-family: 'Inter', sans-serif;
         }
 
-        /* --- నీలం రంగు 'AhobilamRooms' టెక్స్ట్ రాకుండా పక్కా ఫిక్స్ --- */
-        body > a:first-of-type, body > span:first-of-type {
-            display: none !important;
-        }
-
         header.navbar {
             display: flex;
             justify-content: space-between;
