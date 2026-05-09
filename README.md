@@ -273,6 +273,17 @@
         }
         .submit-wa-btn:hover { background-color: #1ebd57; transform: translateY(-2px); }
         
+        /* జూమ్ ఫిక్స్ కోసం ఇక్కడ మార్పు చేశాను */
+        .right-section {
+            display: flex !important;
+            align-items: center !important;
+            gap: 15px;
+            min-width: max-content;
+        }
+        .desktop-only {
+            display: inline-flex !important;
+        }
+
         /* క్యాలెండర్ ఐకాన్ డార్క్ థీమ్ లో కనిపించడానికి */
         ::-webkit-calendar-picker-indicator { filter: invert(1); cursor: pointer; }
 
