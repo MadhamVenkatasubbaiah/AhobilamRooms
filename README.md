@@ -1,81 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
+    
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Madham Rajeshwari Complex - Ahobilam</title>
+    <!-- CSS లింక్ -->
+    <link rel="stylesheet" href="style.css">
+    <!-- ఫాంట్స్ కోసం Google Fonts లింక్ -->
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+    <!-- ఐకాన్స్ కోసం FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <style>
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        body, html { overflow-x: hidden; width: 100%; background-color: #111; font-family: 'Inter', sans-serif; }
-        /* నీలం టెక్స్ట్ హైడింగ్ కోసం */
-        body > a:first-of-type, body > span:first-of-type, body > div:first-of-type:not(.navbar) { display: none !important; visibility: hidden !important; }
-        header.navbar { display: flex; justify-content: space-between; align-items: center; padding: 15px 5%; background-color: #111; position: sticky; top: 0; z-index: 1000; width: 100%; border-bottom: 1px solid #333; }
-        .logo-section { display: flex; align-items: center; gap: 15px; }
-        .custom-logo { height: 50px; border-radius: 50%; }
-        .logo-text h1 { color: #dfb160; font-family: 'Playfair Display', serif; font-size: 22px; margin: 0; }
-        .logo-text p { color: #fff; font-size: 10px; letter-spacing: 3px; margin: 0; }
-        .nav-links { display: flex; gap: 30px; }
-        .nav-links a { color: #fff; text-decoration: none; font-size: 15px; }
-        .nav-links a:hover { color: #dfb160; }
-        .book-now-btn { background-color: #dfb160; color: #000; padding: 10px 22px; border-radius: 5px; text-decoration: none; font-weight: 700; border: none; cursor: pointer; }
-        .hero-section { height: 85vh; background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('hero_BG.jpeg') no-repeat center center/cover; display: flex; align-items: center; justify-content: center; color: #fff; text-align: center; }
-        .hero-title { font-family: 'Playfair Display', serif; font-size: clamp(35px, 7vw, 65px); margin-bottom: 20px; }
-        .hotels-section { padding: 80px 5%; background: #111; color: #fff; }
-        .section-title { text-align: center; font-family: 'Playfair Display', serif; font-size: 36px; color: #dfb160; margin-bottom: 50px; }
-        .hotels-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
-        .hotel-card { background: #1e1e1e; border-radius: 10px; overflow: hidden; border: 1px solid #333; }
-        .hotel-card img { width: 100%; height: 250px; object-fit: cover; }
-        .hotel-info { padding: 25px; }
-        .footer { background: #000; padding: 40px 5%; color: #ccc; border-top: 1px solid #333; text-align: center; }
-    </style>
 </head>
 <body>
+
+    <!-- Header Section -->
     <header class="navbar">
         <div class="logo-section">
-            <img src="logo.png" alt="Logo" class="custom-logo">
+            <div class="logo-icon">
+                <!-- ఇక్కడ ఓం ఐకాన్ తీసేసి మీ లోగో ఇమేజ్ పెట్టాం -->
+                <img src="logo.png" alt="Madham Rajeshwari Logo" class="custom-logo">
+            </div>
             <div class="logo-text">
                 <h1>Madham Rajeshwari</h1>
                 <p>COMPLEX</p>
             </div>
         </div>
-        <nav class="nav-links">
-            <a href="index.html">Home</a>
+
+        <!-- నావిగేషన్ లింక్స్ -->
+        <nav class="nav-links" id="nav-links">
+            <a href="index.html" class="active">Home</a>
             <a href="rooms.html">Rooms</a>
+            <a href="temple-history.html">Temple History</a>
             <a href="contact.html">Contact</a>
+            <!-- మొబైల్ లో మాత్రమే కనిపించే బుక్ బటన్ -->
+            <button class="book-now-btn mobile-only">
+                <i class="fa-solid fa-phone"></i> Book Now
+            </button>
         </nav>
-        <button class="book-now-btn" onclick="window.location.href='https://wa.me/917675962840'">Book Now</button>
+
+        <div class="right-section">
+            <!-- సిస్టమ్ లో మాత్రమే కనిపించే బుక్ బటన్ -->
+            <button class="book-now-btn desktop-only">
+                <i class="fa-solid fa-phone"></i> Book Now
+            </button>
+            
+            <!-- మొబైల్ మెనూ ఐకాన్ (Hamburger) -->
+            <div class="menu-toggle" id="mobile-menu">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </div>
     </header>
-
-    <section class="hero-section">
-        <div>
-            <p style="color:#dfb160; letter-spacing:4px;">WELCOME TO</p>
-            <h1 class="hero-title">Madham Rajeshwari<br>Complex</h1>
-            <a href="#hotels" class="book-now-btn" style="display:inline-block; margin-top:20px;">Explore More</a>
-        </div>
-    </section>
-
-    <section id="hotels" class="hotels-section">
-        <h2 class="section-title">Our Properties</h2>
-        <div class="hotels-container">
-            <div class="hotel-card">
-                <img src="MR-Complex.jpeg" alt="MR Complex">
-                <div class="hotel-info">
-                    <h3>Madham Rajeshwari Complex</h3>
-                    <p>Lower Ahobilam</p>
-                </div>
-            </div>
-            <div class="hotel-card">
-                <img src="VB_House.jpeg" alt="VB House">
-                <div class="hotel-info">
-                    <h3>Veerabadhra Complex</h3>
-                    <p>Ahobilam</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
 <!-- మొబైల్ మెనూ కోసం అప్‌డేటెడ్ జావాస్క్రిప్ట్ -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
