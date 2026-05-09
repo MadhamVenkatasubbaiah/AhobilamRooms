@@ -50,7 +50,7 @@
             </div>
         </div>
     </header>
-
+    
 <!-- మొబైల్ మెనూ కోసం అప్‌డేటెడ్ జావాస్క్రిప్ట్ -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
