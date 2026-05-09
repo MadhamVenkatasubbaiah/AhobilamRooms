@@ -133,7 +133,7 @@
                 <img src="logo.png" alt="Logo" class="custom-logo">
             </div>
             <div class="logo-text">
-                <h1>Madham Rajeshwari</h1>
+                <h1>Madham Rajeshwari 1</h1>
                 <p>COMPLEX</p>
             </div>
         </div>
