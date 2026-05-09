@@ -51,10 +51,12 @@
         </div>
     </header>
 
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Temple History - 9 Temples</title>
+    <title>Temple History - Black Theme</title>
     <style>
         /* RESET & BASE STYLES */
         * {
@@ -64,51 +66,57 @@
         }
 
         body {
-            font-family: 'Segoe UI', Arial, sans-serif;
-            background: #f5f0e8;
+            font-family: 'Georgia', 'Times New Roman', Times, serif; /* Traditional Font */
+            background: #000000; /* Black Background */
+            color: #d4a017; /* Gold/Yellowish Text */
             overflow-x: hidden;
             padding-bottom: 50px;
         }
 
         .title {
-            text-align: left; 
-            font-size: 45px;
-            padding: 40px 40px 10px 40px;
-            color: #8B5E00;
+            text-align: center; /* Centered Title */
+            font-size: 50px;
+            padding: 40px 20px 10px 20px;
+            color: #b88a14; /* Golden Color */
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 2px 2px 4px rgba(212, 160, 23, 0.3);
         }
 
-        /* CONTAINER: Cards left nunchi start avvadaniki main logic ikkada undi */
+        /* CONTAINER: Full width, no side padding for alignment */
         .temple-container {
             display: grid;
-            /* Screen size ni batti automatic ga columns sardhukuntayi, kani left nunchi start avthayi */
-            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(3, 1fr); /* Exactly 3 columns as requested */
+            gap: 1px; /* Minimal gap between cards */
             width: 100%;
-            padding: 20px 40px;
-            justify-content: start; 
+            padding: 0; /* Removing padding to remove empty left space */
         }
 
-        /* CARD STYLE */
+        /* CARD STYLE: Matching the traditional look */
         .temple-card {
-            background: white;
-            border-radius: 20px;
+            background: #111111; /* Dark Gray Card Background */
+            border: 1px solid #222222; /* Subtle card border */
+            border-radius: 0; /* Sharp edges */
             overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.15);
             transition: 0.3s ease;
             cursor: pointer;
             display: flex;
             flex-direction: column;
+            width: 100%;
         }
 
         .temple-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            border-color: #b88a14; /* Gold border on hover */
+            transform: scale(1.02);
+            z-index: 5;
         }
 
         .temple-card img {
             width: 100%;
-            height: 250px;
+            height: 300px; /* Larger image height */
             object-fit: cover;
+            border-bottom: 2px solid #b88a14; /* Gold line below image */
         }
 
         .temple-content {
@@ -117,27 +125,31 @@
         }
 
         .temple-content h2 {
-            color: #4d1f00;
+            color: #d4a017; /* Golden Text */
             margin-bottom: 15px;
-            font-size: 1.5rem;
+            font-size: 1.8rem;
+            font-weight: bold;
         }
 
         .temple-content button {
-            background: #d4a017;
+            background: #b88a14; /* Gold Background for button */
             color: black;
-            border: none;
-            padding: 12px 25px;
-            border-radius: 8px;
+            border: 2px solid #b88a14;
+            padding: 12px 30px;
+            border-radius: 0; /* Sharp edges */
             font-weight: bold;
+            font-size: 1.1rem;
             cursor: pointer;
             transition: 0.2s;
+            text-transform: uppercase;
         }
 
         .temple-content button:hover {
-            background: #b88a14;
+            background: transparent;
+            color: #d4a017;
         }
 
-        /* POPUP STYLES */
+        /* POPUP STYLES: Black Theme */
         .popup {
             display: none;
             position: fixed;
@@ -146,56 +158,57 @@
             top: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0,0,0,0.85);
-            backdrop-filter: blur(5px);
+            background: rgba(0,0,0,0.95);
         }
 
         .popup-content {
-            background: white;
+            background: #111111;
             width: 90%;
-            max-width: 800px;
+            max-width: 900px;
             margin: 5% auto;
-            border-radius: 20px;
+            border-radius: 0;
+            border: 3px solid #b88a14;
             overflow: hidden;
             position: relative;
-            animation: fadeIn 0.3s;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: scale(0.9); }
-            to { opacity: 1; transform: scale(1); }
         }
 
         .popup-content img {
             width: 100%;
-            height: 400px;
+            height: 500px;
             object-fit: cover;
+            border-bottom: 3px solid #b88a14;
         }
 
         .popup-text {
             padding: 30px;
+            color: #cccccc;
         }
 
         .popup-text h2 {
-            color: #8B5E00;
-            margin-bottom: 10px;
+            color: #d4a017;
+            margin-bottom: 15px;
+            font-size: 2.5rem;
         }
 
         .close {
             position: absolute;
             top: 15px;
             right: 20px;
-            font-size: 40px;
-            color: white;
+            font-size: 45px;
+            color: #b88a14;
             cursor: pointer;
-            text-shadow: 0 0 10px rgba(0,0,0,0.5);
             z-index: 10;
         }
 
         /* RESPONSIVE */
-        @media(max-width:600px){
-            .temple-container { padding: 20px; }
-            .title { font-size: 32px; padding-left: 20px; }
+        @media(max-width:1000px){
+            .temple-container { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        @media(max-width:650px){
+            .temple-container { grid-template-columns: 1fr; }
+            .title { font-size: 36px; }
+            .popup-content img { height: 300px; }
         }
     </style>
 </head>
@@ -220,17 +233,17 @@
 </div>
 
 <script>
-    // 9 Temples Data
+    // 9 Temples Data with high-quality images and specific histories
     const temples = [
-        { id: 1, name: "Temple 1", img: "https://images.unsplash.com/photo-1524492412937-b28074a5d7da?q=80&w=600", desc: "History of Temple 1 goes here..." },
-        { id: 2, name: "Temple 2", img: "https://images.unsplash.com/photo-1514222134-b57cbb8ce073?q=80&w=600", desc: "History of Temple 2 goes here..." },
-        { id: 3, name: "Temple 3", img: "https://images.unsplash.com/photo-1564507592333-c60657eea523?q=80&w=600", desc: "History of Temple 3 goes here..." },
-        { id: 4, name: "Temple 4", img: "https://images.unsplash.com/photo-1548013146-72479768bada?q=80&w=600", desc: "History of Temple 4 goes here..." },
-        { id: 5, name: "Temple 5", img: "https://images.unsplash.com/photo-1570168007204-dfb528c6958f?q=80&w=600", desc: "History of Temple 5 goes here..." },
-        { id: 6, name: "Temple 6", img: "https://images.unsplash.com/photo-1532375810709-75b1da00537c?q=80&w=600", desc: "History of Temple 6 goes here..." },
-        { id: 7, name: "Temple 7", img: "https://images.unsplash.com/photo-1605649487212-47bdab064df7?q=80&w=600", desc: "History of Temple 7 goes here..." },
-        { id: 8, name: "Temple 8", img: "https://images.unsplash.com/photo-1512632578888-169bbbc64f33?q=80&w=600", desc: "History of Temple 8 goes here..." },
-        { id: 9, name: "Temple 9", img: "https://images.unsplash.com/photo-1509099836639-18ba1795216d?q=80&w=600", desc: "History of Temple 9 goes here..." }
+        { id: 1, name: "Kashi Vishwanath", img: "https://images.unsplash.com/photo-1620803140139-445e0546505c?q=80&w=800", desc: "Located on the banks of the Ganges, Kashi Vishwanath Temple in Varanasi is dedicated to Lord Shiva and is one of the most sacred pilgrimage sites." },
+        { id: 2, name: "Konark Sun Temple", img: "https://images.unsplash.com/photo-1608678648358-158a27d2c380?q=80&w=800", desc: "A masterpiece of Odisha architecture, the Sun Temple at Konark was built in the 13th century. It is designed as a chariot pull by seven horses." },
+        { id: 3, name: "Meenakshi Amman", img: "https://images.unsplash.com/photo-1584281720167-270830491845?q=80&w=800", desc: "Located in Madurai, this massive temple is dedicated to Meenakshi (a form of Parvati) and Sundareswarar (Shiva). It features intricate gopurams." },
+        { id: 4, name: "Golden Temple", img: "https://images.unsplash.com/photo-1606338541991-628d011ff5a4?q=80&w=800", desc: "Harmandir Sahib in Amritsar is the holiest shrine of Sikhism. Built with white marble and gold, it sits in the middle of a large pool." },
+        { id: 5, name: "Brihadeeswarar", img: "https://images.unsplash.com/photo-1621538318080-0a373b9e5987?q=80&w=800", desc: "Built by Rajaraja Chola I in Thanjavur, this temple is a brilliant example of Chola architecture. It has one of the largest Shiva lingas." },
+        { id: 6, name: "Venkateswara Swamy", img: "https://images.unsplash.com/photo-1601007907572-8703e25d2c8c?q=80&w=800", desc: "Tirumala Venkateswara Temple, often called the 'Temple of Seven Hills', is dedicated to Lord Venkateswara, an incarnation of Vishnu." },
+        { id: 7, name: "Somnath Temple", img: "https://images.unsplash.com/photo-1602334812328-f1c5c56c6c7b?q=80&w=800", desc: "Located in Prabhas Patan, Somnath is the first of the twelve Jyotirlinga shrines of Lord Shiva. It has been destroyed and rebuilt multiple times." },
+        { id: 8, name: "Siddhivinayak", img: "https://images.unsplash.com/photo-1608241031338-7f9185a539c8?q=80&w=800", desc: "A temple dedicated to Lord Ganesha in Mumbai, known for granting wishes. The temple features a small sanctum with a gold-plated roof." },
+        { id: 9, name: "Rishikesh Temples", img: "https://images.unsplash.com/photo-1596700423188-3e5f2ae00a4d?q=80&w=800", desc: "The Parmarth Niketan and other temples in Rishikesh are famous hubs of yoga and spiritual retreat on the banks of the river Ganga." }
     ];
 
     const container = document.getElementById('main-container');
@@ -269,6 +282,8 @@
         }
     }
 </script>
+
+
 
     <!-- Footer Section -->
     <footer id="contact" class="footer">
