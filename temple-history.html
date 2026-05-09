@@ -56,9 +56,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Temple History - Black Theme</title>
+    <title>Temple History</title>
     <style>
-        /* RESET & BASE STYLES */
+        /* RESET */
         * {
             margin: 0;
             padding: 0;
@@ -66,149 +66,134 @@
         }
 
         body {
-            font-family: 'Georgia', 'Times New Roman', Times, serif; /* Traditional Font */
-            background: #000000; /* Black Background */
-            color: #d4a017; /* Gold/Yellowish Text */
+            font-family: Arial, sans-serif;
+            background: #f5f0e8;
             overflow-x: hidden;
-            padding-bottom: 50px;
         }
 
         .title {
-            text-align: center; /* Centered Title */
-            font-size: 50px;
-            padding: 40px 20px 10px 20px;
-            color: #b88a14; /* Golden Color */
-            font-weight: bold;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            text-shadow: 2px 2px 4px rgba(212, 160, 23, 0.3);
+            text-align: left; /* Left ki align chesam */
+            font-size: 45px;
+            padding: 20px 40px 0 40px;
+            margin-bottom: 20px;
+            color: #8B5E00;
         }
 
-        /* CONTAINER: Full width, no side padding for alignment */
         .temple-container {
             display: grid;
-            grid-template-columns: repeat(3, 1fr); /* Exactly 3 columns as requested */
-            gap: 1px; /* Minimal gap between cards */
+            /* Ekada 1fr badulu auto-fill vaadithe, cards left nunchi start avthayi */
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
             width: 100%;
-            padding: 0; /* Removing padding to remove empty left space */
+            padding: 20px 40px;
+            justify-content: start; /* Idi main change */
         }
 
-        /* CARD STYLE: Matching the traditional look */
+        /* CARD */
         .temple-card {
-            background: #111111; /* Dark Gray Card Background */
-            border: 1px solid #222222; /* Subtle card border */
-            border-radius: 0; /* Sharp edges */
+            background: white;
+            border-radius: 20px;
             overflow: hidden;
-            transition: 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            transition: 0.3s;
             cursor: pointer;
-            display: flex;
-            flex-direction: column;
-            width: 100%;
+            width: 100%; /* Grid column width ni follow avthundi */
         }
 
         .temple-card:hover {
-            border-color: #b88a14; /* Gold border on hover */
-            transform: scale(1.02);
-            z-index: 5;
+            transform: translateY(-8px);
         }
 
+        /* IMAGE */
         .temple-card img {
             width: 100%;
-            height: 300px; /* Larger image height */
+            height: 250px;
             object-fit: cover;
-            border-bottom: 2px solid #b88a14; /* Gold line below image */
         }
 
+        /* CONTENT */
         .temple-content {
             padding: 20px;
             text-align: center;
         }
 
         .temple-content h2 {
-            color: #d4a017; /* Golden Text */
+            color: #4d1f00;
             margin-bottom: 15px;
-            font-size: 1.8rem;
-            font-weight: bold;
         }
 
         .temple-content button {
-            background: #b88a14; /* Gold Background for button */
+            background: #d4a017;
             color: black;
-            border: 2px solid #b88a14;
-            padding: 12px 30px;
-            border-radius: 0; /* Sharp edges */
+            border: none;
+            padding: 12px 25px;
+            border-radius: 8px;
             font-weight: bold;
-            font-size: 1.1rem;
             cursor: pointer;
-            transition: 0.2s;
-            text-transform: uppercase;
         }
 
-        .temple-content button:hover {
-            background: transparent;
-            color: #d4a017;
-        }
-
-        /* POPUP STYLES: Black Theme */
+        /* POPUP styles ikkada same untayi... */
         .popup {
             display: none;
             position: fixed;
-            z-index: 9999;
+            z-index: 999;
             left: 0;
             top: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0,0,0,0.95);
+            background: rgba(0,0,0,0.8);
         }
 
         .popup-content {
-            background: #111111;
-            width: 90%;
-            max-width: 900px;
-            margin: 5% auto;
-            border-radius: 0;
-            border: 3px solid #b88a14;
+            background: white;
+            width: 80%;
+            max-width: 800px;
+            margin: 50px auto;
+            border-radius: 20px;
             overflow: hidden;
             position: relative;
         }
 
         .popup-content img {
             width: 100%;
-            height: 500px;
+            height: 400px;
             object-fit: cover;
-            border-bottom: 3px solid #b88a14;
         }
 
         .popup-text {
             padding: 30px;
-            color: #cccccc;
         }
 
         .popup-text h2 {
-            color: #d4a017;
+            color: #8B5E00;
             margin-bottom: 15px;
-            font-size: 2.5rem;
         }
 
         .close {
             position: absolute;
             top: 15px;
             right: 20px;
-            font-size: 45px;
-            color: #b88a14;
+            font-size: 35px;
+            color: red;
             cursor: pointer;
-            z-index: 10;
         }
 
-        /* RESPONSIVE */
-        @media(max-width:1000px){
-            .temple-container { grid-template-columns: repeat(2, 1fr); }
+        /* MOBILE RESPONSIVE */
+        @media(max-width:900px){
+            .temple-container{
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            }
         }
 
-        @media(max-width:650px){
-            .temple-container { grid-template-columns: 1fr; }
-            .title { font-size: 36px; }
-            .popup-content img { height: 300px; }
+        @media(max-width:600px){
+            .temple-container{
+                grid-template-columns: 1fr;
+                padding: 20px;
+            }
+            .title{
+                font-size: 32px;
+                padding-left: 20px;
+            }
         }
     </style>
 </head>
@@ -216,15 +201,29 @@
 
 <h1 class="title">Temple History</h1>
 
-<div class="temple-container" id="main-container">
-    <!-- Cards will be generated here -->
-</div>
+<div class="temple-container">
+    <div class="temple-card" onclick="openPopup('Temple 1', 'https://images.unsplash.com/photo-1524492412937-b28074a5d7da?q=80&w=1200&auto=format&fit=crop', 'Temple 1 history details here.')">
+        <img src="https://images.unsplash.com/photo-1524492412937-b28074a5d7da?q=80&w=1200&auto=format&fit=crop">
+        <div class="temple-content">
+            <h2>Temple 1</h2>
+            <button>View History</button>
+        </div>
+    </div>
 
-<!-- POPUP -->
+    <div class="temple-card" onclick="openPopup('Temple 2', 'https://images.unsplash.com/photo-1514222134-b57cbb8ce073?q=80&w=1200&auto=format&fit=crop', 'Temple 2 history details here.')">
+        <img src="https://images.unsplash.com/photo-1514222134-b57cbb8ce073?q=80&w=1200&auto=format&fit=crop">
+        <div class="temple-content">
+            <h2>Temple 2</h2>
+            <button>View History</button>
+        </div>
+    </div>
+
+    </div>
+
 <div class="popup" id="popup">
-    <span class="close" onclick="closePopup()">&times;</span>
     <div class="popup-content">
-        <img id="popupImage" src="">
+        <span class="close" onclick="closePopup()">&times;</span>
+        <img id="popupImage">
         <div class="popup-text">
             <h2 id="popupTitle"></h2>
             <p id="popupDescription"></p>
@@ -233,57 +232,19 @@
 </div>
 
 <script>
-    // 9 Temples Data with high-quality images and specific histories
-    const temples = [
-        { id: 1, name: "Kashi Vishwanath", img: "https://images.unsplash.com/photo-1620803140139-445e0546505c?q=80&w=800", desc: "Located on the banks of the Ganges, Kashi Vishwanath Temple in Varanasi is dedicated to Lord Shiva and is one of the most sacred pilgrimage sites." },
-        { id: 2, name: "Konark Sun Temple", img: "https://images.unsplash.com/photo-1608678648358-158a27d2c380?q=80&w=800", desc: "A masterpiece of Odisha architecture, the Sun Temple at Konark was built in the 13th century. It is designed as a chariot pull by seven horses." },
-        { id: 3, name: "Meenakshi Amman", img: "https://images.unsplash.com/photo-1584281720167-270830491845?q=80&w=800", desc: "Located in Madurai, this massive temple is dedicated to Meenakshi (a form of Parvati) and Sundareswarar (Shiva). It features intricate gopurams." },
-        { id: 4, name: "Golden Temple", img: "https://images.unsplash.com/photo-1606338541991-628d011ff5a4?q=80&w=800", desc: "Harmandir Sahib in Amritsar is the holiest shrine of Sikhism. Built with white marble and gold, it sits in the middle of a large pool." },
-        { id: 5, name: "Brihadeeswarar", img: "https://images.unsplash.com/photo-1621538318080-0a373b9e5987?q=80&w=800", desc: "Built by Rajaraja Chola I in Thanjavur, this temple is a brilliant example of Chola architecture. It has one of the largest Shiva lingas." },
-        { id: 6, name: "Venkateswara Swamy", img: "https://images.unsplash.com/photo-1601007907572-8703e25d2c8c?q=80&w=800", desc: "Tirumala Venkateswara Temple, often called the 'Temple of Seven Hills', is dedicated to Lord Venkateswara, an incarnation of Vishnu." },
-        { id: 7, name: "Somnath Temple", img: "https://images.unsplash.com/photo-1602334812328-f1c5c56c6c7b?q=80&w=800", desc: "Located in Prabhas Patan, Somnath is the first of the twelve Jyotirlinga shrines of Lord Shiva. It has been destroyed and rebuilt multiple times." },
-        { id: 8, name: "Siddhivinayak", img: "https://images.unsplash.com/photo-1608241031338-7f9185a539c8?q=80&w=800", desc: "A temple dedicated to Lord Ganesha in Mumbai, known for granting wishes. The temple features a small sanctum with a gold-plated roof." },
-        { id: 9, name: "Rishikesh Temples", img: "https://images.unsplash.com/photo-1596700423188-3e5f2ae00a4d?q=80&w=800", desc: "The Parmarth Niketan and other temples in Rishikesh are famous hubs of yoga and spiritual retreat on the banks of the river Ganga." }
-    ];
-
-    const container = document.getElementById('main-container');
-
-    // Generate HTML for 9 cards
-    temples.forEach(temple => {
-        const card = document.createElement('div');
-        card.className = 'temple-card';
-        card.onclick = () => openPopup(temple.name, temple.img, temple.desc);
-        
-        card.innerHTML = `
-            <img src="${temple.img}" alt="${temple.name}">
-            <div class="temple-content">
-                <h2>${temple.name}</h2>
-                <button>View History</button>
-            </div>
-        `;
-        container.appendChild(card);
-    });
-
-    function openPopup(title, image, description) {
-        document.getElementById('popup').style.display = 'block';
-        document.getElementById('popupTitle').innerText = title;
+    function openPopup(title, image, description){
+        document.getElementById('popup').style.display='block';
+        document.getElementById('popupTitle').innerHTML = title;
         document.getElementById('popupImage').src = image;
-        document.getElementById('popupDescription').innerText = description;
+        document.getElementById('popupDescription').innerHTML = description;
     }
 
-    function closePopup() {
-        document.getElementById('popup').style.display = 'none';
-    }
-
-    // Close popup on outside click
-    window.onclick = function(event) {
-        if (event.target == document.getElementById('popup')) {
-            closePopup();
-        }
+    function closePopup(){
+        document.getElementById('popup').style.display='none';
     }
 </script>
 
-
+</body>
 
     <!-- Footer Section -->
     <footer id="contact" class="footer">
@@ -322,5 +283,5 @@
             <p>&copy; 2026 Madam Rajeswari Complex. All rights reserved.</p>
         </div>
     </footer>
-</body>
+</html>
 </html>
