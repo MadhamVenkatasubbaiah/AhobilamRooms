@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -19,13 +20,17 @@
         }
 
         body, html {
-            overflow-x: hidden; /* ఆ నీలం రంగు టెక్స్ట్ లేదా గ్యాప్ రాకుండా ఆపుతుంది */
+            overflow-x: hidden;
             width: 100%;
             background-color: #111;
             font-family: 'Inter', sans-serif;
         }
 
-        /* మీరు పంపిన ఫోటోలో ఉన్న ఆ నీలం రంగు AhobilamRooms టెక్స్ట్ అసలు రాకుండా ఇక్కడ నియంత్రిస్తున్నాం */
+        /* --- నీలం రంగు 'AhobilamRooms' టెక్స్ట్ రాకుండా పక్కా ఫిక్స్ --- */
+        body > a:first-of-type, body > span:first-of-type {
+            display: none !important;
+        }
+
         header.navbar {
             display: flex;
             justify-content: space-between;
@@ -98,11 +103,7 @@
         .hotel-card img { width: 100%; height: 250px; object-fit: cover; }
         .hotel-info { padding: 25px; }
 
-        .amenities-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; }
-        .amenity-card { background: #1a1a1a; padding: 30px; text-align: center; border-radius: 8px; border: 1px solid #333; }
-        .amenity-icon { font-size: 40px; color: #dfb160; margin-bottom: 15px; }
-
-        /* Footer with Complete Contact Info */
+        /* Footer */
         .footer { background: #000; padding: 60px 5% 20px; color: #ccc; border-top: 1px solid #333; }
         .footer-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; }
         .footer-col h3 { color: #dfb160; margin-bottom: 25px; font-family: 'Playfair Display', serif; }
@@ -110,10 +111,10 @@
         .footer-links li { margin-bottom: 12px; }
         .footer-links a { color: #ccc; text-decoration: none; transition: 0.3s; }
         .footer-links a:hover { color: #dfb160; }
-        .footer-contact li { display: flex; gap: 15px; margin-bottom: 20px; line-height: 1.5; }
+        .footer-contact li { display: flex; gap: 15px; margin-bottom: 20px; line-height: 1.5; list-style: none; }
         .footer-contact i { color: #dfb160; margin-top: 5px; }
 
-        /* Responsive Mobile Menu */
+        /* Mobile Menu */
         .menu-toggle { display: none; color: #fff; font-size: 24px; cursor: pointer; }
         @media (max-width: 992px) {
             .nav-links { display: none; position: absolute; top: 80px; left: 0; width: 100%; background: #111; flex-direction: column; padding: 20px; text-align: center; }
@@ -191,7 +192,7 @@
         </div>
     </section>
 
-    <!-- Footer with Your Full Contact Details -->
+    <!-- Footer -->
     <footer class="footer">
         <div class="footer-container">
             <div class="footer-col">
@@ -208,7 +209,7 @@
             </div>
             <div class="footer-col">
                 <h3>Contact Info</h3>
-                <ul class="footer-contact" style="list-style:none;">
+                <ul class="footer-contact">
                     <li>
                         <i class="fa-solid fa-location-dot"></i>
                         <span>Madham Rajeshwari Complex, Lower Ahobilam, Kurnool Dist, AP - 518543</span>
@@ -254,7 +255,6 @@
             icon.classList.toggle('fa-xmark');
         });
 
-        // Close modal on outside click
         window.onclick = function(event) {
             if (event.target == document.getElementById('bookingModal')) {
                 closeBookingModal();
