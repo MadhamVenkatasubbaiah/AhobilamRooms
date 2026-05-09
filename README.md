@@ -131,7 +131,7 @@
     <header class="navbar">
         <div class="logo-section">
             <div class="logo-text">
-                <h1 style="color: var(--primary-gold); margin:0;">Madham Rajeshwari</h1>
+                <h1 style="color: var(--primary-gold); margin:0;">Madham Rajeshwari 1</h1>
                 <p style="margin:0; letter-spacing: 2px; font-size: 12px; color: #ccc;">COMPLEX</p>
             </div>
         </div>
