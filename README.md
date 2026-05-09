@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Madham Rajeshwari Complex1 - Ahobilam</title>
+    <title>Madham Rajeshwari Complex - Ahobilam</title>
     <!-- CSS లింక్ -->
     <link rel="stylesheet" href="style.css">
     <!-- ఫాంట్స్ కోసం Google Fonts లింక్ -->
@@ -90,7 +90,7 @@
                 <img src="logo.png" alt="Madham Rajeshwari Logo" class="custom-logo">
             </div>
             <div class="logo-text">
-                <h1>Madham Rajeshwari</h1>
+                <h1>Madham Rajeshwari1</h1>
                 <p>COMPLEX</p>
             </div>
         </div>
