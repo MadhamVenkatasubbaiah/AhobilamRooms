@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Madham Rajeshwari Complex - Ahobilam</title>
+    <title>Madham Rajeshwari Complex1 - Ahobilam</title>
     <!-- CSS లింక్ -->
     <link rel="stylesheet" href="style.css">
     <!-- ఫాంట్స్ కోసం Google Fonts లింక్ -->
