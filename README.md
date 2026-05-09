@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
     <style>
-        /* --- జూమ్ మరియు గ్యాప్ సమస్యల కోసం పరిష్కారం --- */
+        /* --- జూమ్ మరియు గ్యాప్ సమస్యల కోసం పక్కా ఫిక్స్ --- */
         * {
             box-sizing: border-box;
             margin: 0;
@@ -20,16 +20,18 @@
         }
 
         body, html {
-            overflow-x: hidden; /* ఎడమ వైపు గ్రే గ్యాప్ రాకుండా ఆపుతుంది */
+            overflow-x: hidden; /* ఆ నీలం రంగు టెక్స్ట్ లేదా గ్యాప్ రాకుండా ఆపుతుంది */
             width: 100%;
-            background-color: #000;
+            background-color: #111;
+            font-family: 'Inter', sans-serif;
         }
 
-        .navbar {
+        /* మీరు పంపిన ఫోటోలో ఉన్న ఆ నీలం రంగు AhobilamRooms టెక్స్ట్ అసలు రాకుండా ఇక్కడ నియంత్రిస్తున్నాం */
+        header.navbar {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 15px 5%; /* కంటెంట్ సెంటర్ లో ఉండటానికి */
+            padding: 15px 5%;
             background-color: #111;
             position: sticky;
             top: 0;
@@ -42,96 +44,83 @@
             display: flex !important;
             align-items: center;
             gap: 15px;
-            min-width: max-content; /* బటన్ సైజు తగ్గకుండా చూస్తుంది */
+            min-width: max-content;
         }
 
         .book-now-btn.desktop-only {
-            display: inline-flex !important; /* 100% వ్యూలో బటన్ కనిపించేలా చేస్తుంది */
+            display: inline-flex !important;
             background-color: #dfb160;
             color: #000;
             padding: 10px 22px;
             border-radius: 5px;
             text-decoration: none;
             font-weight: 700;
-            transition: 0.3s;
-            border: none;
             cursor: pointer;
+            border: none;
         }
 
-        /* Hero Overlay ఫిక్స్ (image_7560d4.jpg లోని లైన్ 341 ప్రకారం) */
-        .hero-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.6);
-            z-index: 1;
-        }
-
-        /* --- మీ ఒరిజినల్ స్టైల్స్ ఇక్కడి నుండి మొదలవుతాయి --- */
         .logo-section { display: flex; align-items: center; gap: 15px; }
         .custom-logo { height: 50px; border-radius: 50%; }
         .logo-text h1 { color: #dfb160; font-family: 'Playfair Display', serif; font-size: 22px; margin: 0; }
         .logo-text p { color: #fff; font-size: 10px; letter-spacing: 3px; margin: 0; }
         
         .nav-links { display: flex; gap: 30px; }
-        .nav-links a { color: #fff; text-decoration: none; font-size: 15px; font-weight: 500; transition: 0.3s; }
+        .nav-links a { color: #fff; text-decoration: none; font-size: 15px; transition: 0.3s; }
         .nav-links a:hover, .nav-links a.active { color: #dfb160; }
-        .mobile-only { display: none; }
 
+        /* Hero Section */
         .hero-section {
             height: 85vh;
             background: url('hero_BG.jpeg') no-repeat center center/cover;
             display: flex;
             align-items: center;
             justify-content: center;
-            text-align: center;
             position: relative;
             color: #fff;
+            text-align: center;
         }
-
-        .hero-content { z-index: 2; padding: 0 20px; }
-        .welcome-text { color: #dfb160; letter-spacing: 4px; font-size: 14px; margin-bottom: 10px; }
-        .hero-title { font-family: 'Playfair Display', serif; font-size: clamp(32px, 6vw, 60px); line-height: 1.1; margin-bottom: 15px; }
-        .hero-location { font-size: 18px; color: #ccc; margin-bottom: 30px; }
+        .hero-overlay {
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0, 0, 0, 0.6); z-index: 1;
+        }
+        .hero-content { z-index: 2; }
+        .hero-title { font-family: 'Playfair Display', serif; font-size: clamp(35px, 7vw, 65px); margin-bottom: 20px; }
         
-        .hero-buttons { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; }
-        .btn-whatsapp { background-color: #dfb160; color: #000; padding: 15px 30px; text-decoration: none; font-weight: bold; border-radius: 5px; }
+        .hero-buttons { display: flex; gap: 20px; justify-content: center; margin-top: 30px; }
+        .btn-whatsapp { background: #dfb160; color: #000; padding: 15px 30px; text-decoration: none; font-weight: bold; border-radius: 5px; }
         .btn-outline { border: 1px solid #fff; color: #fff; padding: 15px 30px; text-decoration: none; border-radius: 5px; }
 
-        .hotels-section, .amenities-section, .discover-section { padding: 80px 5%; background-color: #111; color: #fff; }
+        /* Sections Styling */
+        .hotels-section, .amenities-section { padding: 80px 5%; background: #111; color: #fff; }
         .section-title { text-align: center; font-family: 'Playfair Display', serif; font-size: 36px; color: #dfb160; margin-bottom: 50px; }
         
         .hotels-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
-        .hotel-card { background: #1e1e1e; border: 1px solid #333; overflow: hidden; border-radius: 10px; }
+        .hotel-card { background: #1e1e1e; border-radius: 10px; overflow: hidden; border: 1px solid #333; }
         .hotel-card img { width: 100%; height: 250px; object-fit: cover; }
         .hotel-info { padding: 25px; }
-        .btn-explore { display: inline-block; margin-top: 15px; color: #dfb160; text-decoration: none; font-weight: bold; }
 
         .amenities-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; }
-        .amenity-card { background: #1a1a1a; padding: 30px; text-align: center; border-radius: 8px; border: 1px solid #333; transition: 0.3s; }
-        .active-amenity { border-color: #dfb160; }
-        .amenity-icon { font-size: 40px; color: #dfb160; margin-bottom: 20px; }
+        .amenity-card { background: #1a1a1a; padding: 30px; text-align: center; border-radius: 8px; border: 1px solid #333; }
+        .amenity-icon { font-size: 40px; color: #dfb160; margin-bottom: 15px; }
 
-        .footer { background: #000; padding: 60px 5% 20px; border-top: 1px solid #333; color: #ccc; }
+        /* Footer with Complete Contact Info */
+        .footer { background: #000; padding: 60px 5% 20px; color: #ccc; border-top: 1px solid #333; }
         .footer-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; }
-        .footer-title { color: #dfb160; margin-bottom: 20px; font-family: 'Playfair Display', serif; }
+        .footer-col h3 { color: #dfb160; margin-bottom: 25px; font-family: 'Playfair Display', serif; }
         .footer-links { list-style: none; }
-        .footer-links li { margin-bottom: 10px; }
-        .footer-links a { color: #ccc; text-decoration: none; }
-        .footer-contact li { display: flex; gap: 10px; margin-bottom: 15px; }
-        .footer-bottom { text-align: center; padding-top: 40px; border-top: 1px solid #222; margin-top: 40px; font-size: 13px; }
+        .footer-links li { margin-bottom: 12px; }
+        .footer-links a { color: #ccc; text-decoration: none; transition: 0.3s; }
+        .footer-links a:hover { color: #dfb160; }
+        .footer-contact li { display: flex; gap: 15px; margin-bottom: 20px; line-height: 1.5; }
+        .footer-contact i { color: #dfb160; margin-top: 5px; }
 
-        /* మెనూ టాగుల్ */
+        /* Responsive Mobile Menu */
         .menu-toggle { display: none; color: #fff; font-size: 24px; cursor: pointer; }
-
         @media (max-width: 992px) {
-            .nav-links { display: none; position: absolute; top: 80px; left: 0; width: 100%; background: #111; flex-direction: column; padding: 20px; text-align: center; border-bottom: 1px solid #333; }
+            .nav-links { display: none; position: absolute; top: 80px; left: 0; width: 100%; background: #111; flex-direction: column; padding: 20px; text-align: center; }
             .nav-links.active { display: flex; }
             .menu-toggle { display: block; }
             .desktop-only { display: none !important; }
-            .mobile-only { display: block; margin-top: 10px; background: #dfb160; color: #000; padding: 12px; border-radius: 5px; }
         }
     </style>
 </head>
@@ -154,9 +143,6 @@
             <a href="rooms.html">Rooms</a>
             <a href="temple-history.html">Temple History</a>
             <a href="contact.html">Contact</a>
-            <button class="book-now-btn mobile-only" onclick="openBookingModal()">
-                <i class="fa-solid fa-phone"></i> Book Now
-            </button>
         </nav>
 
         <div class="right-section">
@@ -173,9 +159,9 @@
     <section class="hero-section">
         <div class="hero-overlay"></div>
         <div class="hero-content">
-            <p class="welcome-text">WELCOME TO</p>
+            <p style="color:#dfb160; letter-spacing:4px; margin-bottom:10px;">WELCOME TO</p>
             <h1 class="hero-title">Madham Rajeshwari<br>Complex</h1>
-            <p class="hero-location">Ahobilam, Andhra Pradesh</p>
+            <p style="font-size:18px; color:#ccc;">Ahobilam, Andhra Pradesh</p>
             <div class="hero-buttons">
                 <a href="#" class="btn-whatsapp" onclick="openBookingModal(); return false;">Book via WhatsApp</a>
                 <a href="#hotels" class="btn-outline">View Rooms</a>
@@ -183,75 +169,76 @@
         </div>
     </section>
 
-    <!-- Properties Section -->
+    <!-- Properties -->
     <section id="hotels" class="hotels-section">
         <h2 class="section-title">Our Properties</h2>
         <div class="hotels-container">
             <div class="hotel-card">
-                <img src="MR-Complex.jpeg" alt="Madham Rajeshwari Complex">
+                <img src="MR-Complex.jpeg" alt="MR Complex">
                 <div class="hotel-info">
                     <h3>Madham Rajeshwari Complex</h3>
                     <p>Experience comfortable stay with premium amenities near temples.</p>
-                    <a href="madam-rajeswari-complex.html" class="btn-explore">Explore Complex</a>
+                    <a href="madam-rajeswari-complex.html" style="color:#dfb160; text-decoration:none; font-weight:bold; display:block; margin-top:15px;">Explore Complex →</a>
                 </div>
             </div>
             <div class="hotel-card">
-                <img src="VB_House.jpeg" alt="Veerabadhra Complex">
+                <img src="VB_House.jpeg" alt="VB Complex">
                 <div class="hotel-info">
                     <h3>Veerabadhra Complex</h3>
                     <p>Your perfect base for a spiritual journey in Ahobilam.</p>
-                    <a href="veerabadhra-complex.html" class="btn-explore">Explore Hotel</a>
+                    <a href="veerabadhra-complex.html" style="color:#dfb160; text-decoration:none; font-weight:bold; display:block; margin-top:15px;">Explore Hotel →</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Amenities -->
-    <section class="amenities-section">
-        <h2 class="section-title">Our Amenities</h2>
-        <div class="amenities-container">
-            <div class="amenity-card">
-                <i class="fa-solid fa-wind amenity-icon"></i>
-                <h3>Air Conditioned</h3>
-            </div>
-            <div class="amenity-card active-amenity">
-                <i class="fa-solid fa-wifi amenity-icon"></i>
-                <h3>Free Wi-Fi</h3>
-            </div>
-            <div class="amenity-card">
-                <i class="fa-solid fa-shield-halved amenity-icon"></i>
-                <h3>24/7 Security</h3>
-            </div>
-            <div class="amenity-card">
-                <i class="fa-solid fa-power-off amenity-icon"></i>
-                <h3>Power Backup</h3>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
+    <!-- Footer with Your Full Contact Details -->
     <footer class="footer">
         <div class="footer-container">
             <div class="footer-col">
-                <h3 class="footer-title">Contact Info</h3>
-                <ul class="footer-contact">
-                    <li><i class="fa-solid fa-location-dot"></i> Ahobilam, Andhra Pradesh</li>
-                    <li><i class="fa-solid fa-phone"></i> +91 76759 62840</li>
+                <h3>About Us</h3>
+                <p>Madham Rajeshwari Complex provides the best hospitality services for pilgrims visiting the holy Nava Narasimha Kshetra, Ahobilam.</p>
+            </div>
+            <div class="footer-col">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="rooms.html">Rooms</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Contact Info</h3>
+                <ul class="footer-contact" style="list-style:none;">
+                    <li>
+                        <i class="fa-solid fa-location-dot"></i>
+                        <span>Madham Rajeshwari Complex, Lower Ahobilam, Kurnool Dist, AP - 518543</span>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-phone"></i>
+                        <span>+91 76759 62840</span>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-envelope"></i>
+                        <span>madhamvenkatasubbaiah363@gmail.com</span>
+                    </li>
                 </ul>
             </div>
         </div>
-        <div class="footer-bottom">
+        <div style="text-align:center; margin-top:50px; padding-top:20px; border-top:1px solid #222; font-size:14px;">
             <p>&copy; 2026 Madham Rajeshwari Complex. All rights reserved.</p>
         </div>
     </footer>
 
-    <!-- Booking Modal -->
-    <div id="bookingModal" style="display:none; position:fixed; z-index:9999; left:0; top:0; width:100%; height:100%; background:rgba(0,0,0,0.9);">
-        <div style="background:#1e1e1e; width:90%; max-width:400px; margin:10% auto; padding:30px; border:1px solid #dfb160; border-radius:10px; position:relative;">
-            <span onclick="closeBookingModal()" style="position:absolute; right:20px; top:10px; color:#fff; cursor:pointer; font-size:24px;">&times;</span>
-            <h3 style="color:#dfb160; text-align:center;">Book via WhatsApp</h3>
-            <p style="color:#ccc; text-align:center; margin-top:10px;">Contact us directly to confirm your booking.</p>
-            <a href="https://wa.me/917675962840" style="display:block; background:#25d366; color:#fff; text-align:center; padding:12px; margin-top:20px; text-decoration:none; border-radius:5px; font-weight:bold;">Chat on WhatsApp</a>
+    <!-- WhatsApp Modal -->
+    <div id="bookingModal" style="display:none; position:fixed; z-index:9999; left:0; top:0; width:100%; height:100%; background:rgba(0,0,0,0.85); backdrop-filter:blur(5px);">
+        <div style="background:#1e1e1e; width:90%; max-width:400px; margin:15% auto; padding:30px; border:1px solid #dfb160; border-radius:10px; position:relative; text-align:center;">
+            <span onclick="closeBookingModal()" style="position:absolute; right:20px; top:10px; color:#fff; cursor:pointer; font-size:28px;">&times;</span>
+            <h3 style="color:#dfb160; font-family:'Playfair Display'; font-size:24px;">Book Now</h3>
+            <p style="color:#ccc; margin:20px 0;">Contact us on WhatsApp for room availability and pricing.</p>
+            <a href="https://wa.me/917675962840" target="_blank" style="display:inline-block; background:#25d366; color:#fff; padding:12px 30px; text-decoration:none; border-radius:5px; font-weight:bold;">
+                <i class="fa-brands fa-whatsapp"></i> Chat on WhatsApp
+            </a>
         </div>
     </div>
 
@@ -261,8 +248,19 @@
         
         const mobileMenu = document.getElementById('mobile-menu');
         const navLinks = document.getElementById('nav-links');
-        mobileMenu.addEventListener('click', () => { navLinks.classList.toggle('active'); });
-    </script>
+        mobileMenu.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            const icon = mobileMenu.querySelector('i');
+            icon.classList.toggle('fa-bars');
+            icon.classList.toggle('fa-xmark');
+        });
 
+        // Close modal on outside click
+        window.onclick = function(event) {
+            if (event.target == document.getElementById('bookingModal')) {
+                closeBookingModal();
+            }
+        }
+    </script>
 </body>
 </html>
