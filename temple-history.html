@@ -3,62 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Madham Rajeshwari Complex - Ahobilam</title>
-    <!-- CSS లింక్ -->
-    <link rel="stylesheet" href="style.css">
-    <!-- ఫాంట్స్ కోసం Google Fonts లింక్ -->
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
-    <!-- ఐకాన్స్ కోసం FontAwesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-</head>
-<body>
-
-    <!-- Header Section -->
-    <header class="navbar">
-        <div class="logo-section">
-            <div class="logo-icon">
-                <!-- ఇక్కడ ఓం ఐకాన్ తీసేసి మీ లోగో ఇమేజ్ పెట్టాం -->
-                <img src="logo.png" alt="Madham Rajeshwari Logo" class="custom-logo">
-            </div>
-            <div class="logo-text">
-                <h1>Madham Rajeshwari</h1>
-                <p>COMPLEX</p>
-            </div>
-        </div>
-
-        <!-- నావిగేషన్ లింక్స్ -->
-        <nav class="nav-links" id="nav-links">
-            <a href="index.html" class="active">Home</a>
-            <a href="rooms.html">Rooms</a>
-            <a href="temple-history.html">Temple History</a>
-            <a href="contact.html">Contact</a>
-            <!-- మొబైల్ లో మాత్రమే కనిపించే బుక్ బటన్ -->
-            <button class="book-now-btn mobile-only">
-                <i class="fa-solid fa-phone"></i> Book Now
-            </button>
-        </nav>
-
-        <div class="right-section">
-            <!-- సిస్టమ్ లో మాత్రమే కనిపించే బుక్ బటన్ -->
-            <button class="book-now-btn desktop-only">
-                <i class="fa-solid fa-phone"></i> Book Now
-            </button>
-            
-            <!-- మొబైల్ మెనూ ఐకాన్ (Hamburger) -->
-            <div class="menu-toggle" id="mobile-menu">
-                <i class="fa-solid fa-bars"></i>
-            </div>
-        </div>
-    </header>
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Temple History</title>
+    <title>Temple History - 9 Temples</title>
     <style>
-        /* RESET */
+        /* RESET & BASE STYLES */
         * {
             margin: 0;
             padding: 0;
@@ -66,52 +13,53 @@
         }
 
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Segoe UI', Arial, sans-serif;
             background: #f5f0e8;
             overflow-x: hidden;
+            padding-bottom: 50px;
         }
 
         .title {
-            text-align: left; /* Left ki align chesam */
+            text-align: left; 
             font-size: 45px;
-            padding: 20px 40px 0 40px;
-            margin-bottom: 20px;
+            padding: 40px 40px 10px 40px;
             color: #8B5E00;
         }
 
+        /* CONTAINER: Cards left nunchi start avvadaniki main logic ikkada undi */
         .temple-container {
             display: grid;
-            /* Ekada 1fr badulu auto-fill vaadithe, cards left nunchi start avthayi */
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            /* Screen size ni batti automatic ga columns sardhukuntayi, kani left nunchi start avthayi */
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
             gap: 30px;
             width: 100%;
             padding: 20px 40px;
-            justify-content: start; /* Idi main change */
+            justify-content: start; 
         }
 
-        /* CARD */
+        /* CARD STYLE */
         .temple-card {
             background: white;
             border-radius: 20px;
             overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-            transition: 0.3s;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+            transition: 0.3s ease;
             cursor: pointer;
-            width: 100%; /* Grid column width ni follow avthundi */
+            display: flex;
+            flex-direction: column;
         }
 
         .temple-card:hover {
-            transform: translateY(-8px);
+            transform: translateY(-10px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
         }
 
-        /* IMAGE */
         .temple-card img {
             width: 100%;
             height: 250px;
             object-fit: cover;
         }
 
-        /* CONTENT */
         .temple-content {
             padding: 20px;
             text-align: center;
@@ -120,6 +68,7 @@
         .temple-content h2 {
             color: #4d1f00;
             margin-bottom: 15px;
+            font-size: 1.5rem;
         }
 
         .temple-content button {
@@ -130,28 +79,40 @@
             border-radius: 8px;
             font-weight: bold;
             cursor: pointer;
+            transition: 0.2s;
         }
 
-        /* POPUP styles ikkada same untayi... */
+        .temple-content button:hover {
+            background: #b88a14;
+        }
+
+        /* POPUP STYLES */
         .popup {
             display: none;
             position: fixed;
-            z-index: 999;
+            z-index: 9999;
             left: 0;
             top: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0,0,0,0.8);
+            background: rgba(0,0,0,0.85);
+            backdrop-filter: blur(5px);
         }
 
         .popup-content {
             background: white;
-            width: 80%;
+            width: 90%;
             max-width: 800px;
-            margin: 50px auto;
+            margin: 5% auto;
             border-radius: 20px;
             overflow: hidden;
             position: relative;
+            animation: fadeIn 0.3s;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.9); }
+            to { opacity: 1; transform: scale(1); }
         }
 
         .popup-content img {
@@ -166,34 +127,24 @@
 
         .popup-text h2 {
             color: #8B5E00;
-            margin-bottom: 15px;
+            margin-bottom: 10px;
         }
 
         .close {
             position: absolute;
             top: 15px;
             right: 20px;
-            font-size: 35px;
-            color: red;
+            font-size: 40px;
+            color: white;
             cursor: pointer;
+            text-shadow: 0 0 10px rgba(0,0,0,0.5);
+            z-index: 10;
         }
 
-        /* MOBILE RESPONSIVE */
-        @media(max-width:900px){
-            .temple-container{
-                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            }
-        }
-
+        /* RESPONSIVE */
         @media(max-width:600px){
-            .temple-container{
-                grid-template-columns: 1fr;
-                padding: 20px;
-            }
-            .title{
-                font-size: 32px;
-                padding-left: 20px;
-            }
+            .temple-container { padding: 20px; }
+            .title { font-size: 32px; padding-left: 20px; }
         }
     </style>
 </head>
@@ -201,29 +152,15 @@
 
 <h1 class="title">Temple History</h1>
 
-<div class="temple-container">
-    <div class="temple-card" onclick="openPopup('Temple 1', 'https://images.unsplash.com/photo-1524492412937-b28074a5d7da?q=80&w=1200&auto=format&fit=crop', 'Temple 1 history details here.')">
-        <img src="https://images.unsplash.com/photo-1524492412937-b28074a5d7da?q=80&w=1200&auto=format&fit=crop">
-        <div class="temple-content">
-            <h2>Temple 1</h2>
-            <button>View History</button>
-        </div>
-    </div>
+<div class="temple-container" id="main-container">
+    <!-- Cards will be generated here -->
+</div>
 
-    <div class="temple-card" onclick="openPopup('Temple 2', 'https://images.unsplash.com/photo-1514222134-b57cbb8ce073?q=80&w=1200&auto=format&fit=crop', 'Temple 2 history details here.')">
-        <img src="https://images.unsplash.com/photo-1514222134-b57cbb8ce073?q=80&w=1200&auto=format&fit=crop">
-        <div class="temple-content">
-            <h2>Temple 2</h2>
-            <button>View History</button>
-        </div>
-    </div>
-
-    </div>
-
+<!-- POPUP -->
 <div class="popup" id="popup">
+    <span class="close" onclick="closePopup()">&times;</span>
     <div class="popup-content">
-        <span class="close" onclick="closePopup()">&times;</span>
-        <img id="popupImage">
+        <img id="popupImage" src="">
         <div class="popup-text">
             <h2 id="popupTitle"></h2>
             <p id="popupDescription"></p>
@@ -232,56 +169,55 @@
 </div>
 
 <script>
-    function openPopup(title, image, description){
-        document.getElementById('popup').style.display='block';
-        document.getElementById('popupTitle').innerHTML = title;
+    // 9 Temples Data
+    const temples = [
+        { id: 1, name: "Temple 1", img: "https://images.unsplash.com/photo-1524492412937-b28074a5d7da?q=80&w=600", desc: "History of Temple 1 goes here..." },
+        { id: 2, name: "Temple 2", img: "https://images.unsplash.com/photo-1514222134-b57cbb8ce073?q=80&w=600", desc: "History of Temple 2 goes here..." },
+        { id: 3, name: "Temple 3", img: "https://images.unsplash.com/photo-1564507592333-c60657eea523?q=80&w=600", desc: "History of Temple 3 goes here..." },
+        { id: 4, name: "Temple 4", img: "https://images.unsplash.com/photo-1548013146-72479768bada?q=80&w=600", desc: "History of Temple 4 goes here..." },
+        { id: 5, name: "Temple 5", img: "https://images.unsplash.com/photo-1570168007204-dfb528c6958f?q=80&w=600", desc: "History of Temple 5 goes here..." },
+        { id: 6, name: "Temple 6", img: "https://images.unsplash.com/photo-1532375810709-75b1da00537c?q=80&w=600", desc: "History of Temple 6 goes here..." },
+        { id: 7, name: "Temple 7", img: "https://images.unsplash.com/photo-1605649487212-47bdab064df7?q=80&w=600", desc: "History of Temple 7 goes here..." },
+        { id: 8, name: "Temple 8", img: "https://images.unsplash.com/photo-1512632578888-169bbbc64f33?q=80&w=600", desc: "History of Temple 8 goes here..." },
+        { id: 9, name: "Temple 9", img: "https://images.unsplash.com/photo-1509099836639-18ba1795216d?q=80&w=600", desc: "History of Temple 9 goes here..." }
+    ];
+
+    const container = document.getElementById('main-container');
+
+    // Generate HTML for 9 cards
+    temples.forEach(temple => {
+        const card = document.createElement('div');
+        card.className = 'temple-card';
+        card.onclick = () => openPopup(temple.name, temple.img, temple.desc);
+        
+        card.innerHTML = `
+            <img src="${temple.img}" alt="${temple.name}">
+            <div class="temple-content">
+                <h2>${temple.name}</h2>
+                <button>View History</button>
+            </div>
+        `;
+        container.appendChild(card);
+    });
+
+    function openPopup(title, image, description) {
+        document.getElementById('popup').style.display = 'block';
+        document.getElementById('popupTitle').innerText = title;
         document.getElementById('popupImage').src = image;
-        document.getElementById('popupDescription').innerHTML = description;
+        document.getElementById('popupDescription').innerText = description;
     }
 
-    function closePopup(){
-        document.getElementById('popup').style.display='none';
+    function closePopup() {
+        document.getElementById('popup').style.display = 'none';
+    }
+
+    // Close popup on outside click
+    window.onclick = function(event) {
+        if (event.target == document.getElementById('popup')) {
+            closePopup();
+        }
     }
 </script>
 
 </body>
-
-    <!-- Footer Section -->
-    <footer id="contact" class="footer">
-        <div class="footer-container">
-            <!-- కాలమ్ 1: అడ్రస్ / అబౌట్ -->
-            <div class="footer-col">
-                <h3 class="footer-title">Madam Rajeswari Complex</h3>
-                <p>Your comfortable stay near the sacred Ahobilam temples. Experience divine hospitality with modern amenities.</p>
-            </div>
-
-            <!-- కాలమ్ 2: క్విక్ లింక్స్ -->
-            <div class="footer-col">
-                <h3 class="footer-title">Quick Links</h3>
-                <ul class="footer-links">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="rooms.html">Rooms</a></li>
-                    <li><a href="temple-history.html">Temple History</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                    <li><a href="terms.html">Terms & Conditions</a></li>
-                </ul>
-            </div>
-
-            <!-- కాలమ్ 3: కాంటాక్ట్ డీటెయిల్స్ -->
-            <div class="footer-col">
-                <h3 class="footer-title">Contact Info</h3>
-                <ul class="footer-contact">
-                    <li><i class="fa-solid fa-location-dot"></i> Ahobilam, Kurnool District, Andhra Pradesh, India</li>
-                    <!-- స్క్రీన్ షాట్ లో ఉన్న నెంబర్ ఇచ్చాను -->
-                    <li><i class="fa-solid fa-phone"></i> +91 76759 62840</li>
-                    <li><i class="fa-solid fa-envelope"></i>madhamvenkatasubbaiah363@gmail.com</li>
-                </ul>
-            </div>
-        </div>
-        
-        <div class="footer-bottom">
-            <p>&copy; 2026 Madam Rajeswari Complex. All rights reserved.</p>
-        </div>
-    </footer>
-</html>
 </html>
