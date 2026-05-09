@@ -6,330 +6,248 @@
     <title>Madham Rajeshwari Complex - Ahobilam</title>
     <!-- CSS లింక్ -->
     <link rel="stylesheet" href="style.css">
-    <!-- ఫాంట్స్ కోసం Google Fonts లింక్ -->
+    <!-- ఫాంట్స్ -->
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
-    <!-- ఐకాన్స్ కోసం FontAwesome -->
+    <!-- ఐకాన్స్ -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
     <style>
-        /* మీ బ్యాక్‌గ్రౌండ్ ఫోటో మరియు ఇతర స్టైల్స్ ఇక్కడ ఉన్నాయి */
+        /* జూమ్ సమస్యను పరిష్కరించడానికి అవసరమైన CSS */
+        :root {
+            --primary-gold: #dfb160;
+            --dark-bg: #1e1e1e;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 5%;
+            background: rgba(0,0,0,0.9);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .right-section {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            min-width: fit-content; /* బటన్ కంప్రెస్ అవ్వకుండా చేస్తుంది */
+        }
+
+        /* బటన్ స్టైల్స్ */
+        .book-now-btn {
+            background-color: var(--primary-gold);
+            color: #000;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-weight: 700;
+            cursor: pointer;
+            text-decoration: none;
+            transition: 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            white-space: nowrap;
+        }
+
+        /* డెస్క్‌టాప్ మరియు మొబైల్ విజిబిలిటీ ఫిక్స్ */
+        @media screen and (min-width: 769px) {
+            .mobile-only { display: none !important; }
+            .desktop-only { display: inline-flex !important; }
+        }
+
+        @media screen and (max-width: 768px) {
+            .desktop-only { display: none !important; }
+            .mobile-only { display: inline-flex !important; }
+            .nav-links {
+                display: none; /* మొబైల్ మెనూ లాజిక్ */
+            }
+            .nav-links.active {
+                display: flex;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: var(--dark-bg);
+                padding: 20px;
+            }
+        }
+
+        /* Hero Section Fix */
         .hero-section {
-            background-image: url('hero_BG.jpeg');
+            background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('hero_BG.jpeg');
             background-size: cover;
             background-position: center;
-            background-repeat: no-repeat;
-            position: relative;
-            min-height: 80vh; /* హైట్ కోసం */
+            min-height: 80vh;
             display: flex;
             align-items: center;
             justify-content: center;
-        }
-
-        .hero-overlay {
-            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-            background-color: rgba(0, 0, 0, 0.6);
-            z-index: 1;
-        }
-
-        .hero-content {
-            position: relative; z-index: 2;
             text-align: center;
             color: #fff;
         }
 
-        /* ఫామ్ పాప్-అప్ డిజైన్ */
+        /* Modal Styles */
         .booking-modal {
-            display: none; position: fixed; z-index: 10000; left: 0; top: 0; width: 100%; height: 100%;
-            background-color: rgba(0,0,0,0.85); backdrop-filter: blur(5px);
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.9);
+            backdrop-filter: blur(5px);
         }
+
         .booking-modal-content {
-            background-color: #1e1e1e; margin: 5vh auto; padding: 30px;
-            border: 1px solid #dfb160; width: 90%; max-width: 500px;
-            border-radius: 12px; position: relative; box-shadow: 0 10px 30px rgba(0,0,0,0.8);
-            max-height: 90vh; overflow-y: auto;
+            background-color: #2a2a2a;
+            margin: 5% auto;
+            padding: 30px;
+            width: 90%;
+            max-width: 500px;
+            border-radius: 15px;
+            border: 1px solid var(--primary-gold);
+            color: #fff;
         }
-        .close-booking {
-            position: absolute; right: 20px; top: 15px; color: #b3b3b3;
-            font-size: 28px; font-weight: bold; cursor: pointer; transition: 0.3s;
-        }
-        .close-booking:hover { color: #dfb160; }
-        .booking-modal-content h3 {
-            color: #dfb160; text-align: center; margin-bottom: 25px;
-            font-family: 'Playfair Display', serif; font-size: 26px; border-bottom: 1px dashed #444; padding-bottom: 10px;
-        }
-        
-        .form-group { margin-bottom: 18px; }
-        .form-group label { display: block; color: #b3b3b3; margin-bottom: 6px; font-size: 14px; font-weight: 500;}
+
+        .form-group { margin-bottom: 15px; }
         .form-group input, .form-group select {
-            width: 100%; padding: 12px; background-color: #2a2a2a;
-            border: 1px solid #444; color: #fff; border-radius: 6px;
-            font-family: 'Inter', sans-serif; font-size: 15px; transition: 0.3s;
+            width: 100%;
+            padding: 12px;
+            margin-top: 5px;
+            background: #1e1e1e;
+            border: 1px solid #444;
+            color: #fff;
+            border-radius: 5px;
         }
-        .form-group input:focus, .form-group select:focus {
-            outline: none; border-color: #dfb160; box-shadow: 0 0 5px rgba(223, 177, 96, 0.3);
-        }
-        .date-group { display: flex; gap: 15px; }
-        .date-group .form-group { width: 50%; }
-        
-        .submit-wa-btn {
-            width: 100%; background-color: #25d366; color: #fff; border: none;
-            padding: 14px; font-size: 16px; font-weight: bold; border-radius: 6px;
-            cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 10px;
-            margin-top: 10px; transition: 0.3s;
-        }
-        .submit-wa-btn:hover { background-color: #1ebd57; transform: translateY(-2px); }
-        ::-webkit-calendar-picker-indicator { filter: invert(1); cursor: pointer; }
     </style>
 </head>
 <body>
 
-    <!-- Header Section -->
     <header class="navbar">
         <div class="logo-section">
-            <div class="logo-icon">
-                <img src="logo.png" alt="Madham Rajeshwari Logo" class="custom-logo">
-            </div>
             <div class="logo-text">
-                <h1>Madham Rajeshwari1</h1>
-                <p>COMPLEX</p>
+                <h1 style="color: var(--primary-gold); margin:0;">Madham Rajeshwari</h1>
+                <p style="margin:0; letter-spacing: 2px; font-size: 12px; color: #ccc;">COMPLEX</p>
             </div>
         </div>
 
         <nav class="nav-links" id="nav-links">
-            <a href="index.html" class="active">Home</a>
-            <a href="rooms.html">Rooms</a>
-            <a href="temple-history.html">Temple History</a>
-            <a href="contact.html">Contact</a>
-            <button class="book-now-btn mobile-only" onclick="openBookingModal()">
-                <i class="fa-solid fa-phone"></i> Book Now
-            </button>
+            <a href="index.html" style="color:#fff; text-decoration:none; margin: 0 15px;">Home</a>
+            <a href="rooms.html" style="color:#fff; text-decoration:none; margin: 0 15px;">Rooms</a>
+            <a href="temple-history.html" style="color:#fff; text-decoration:none; margin: 0 15px;">Temple History</a>
+            <a href="contact.html" style="color:#fff; text-decoration:none; margin: 0 15px;">Contact</a>
         </nav>
 
         <div class="right-section">
             <button class="book-now-btn desktop-only" onclick="openBookingModal()">
                 <i class="fa-solid fa-phone"></i> Book Now
             </button>
-            <div class="menu-toggle" id="mobile-menu">
+            <div class="menu-toggle" id="mobile-menu" style="color:#fff; font-size: 24px; cursor:pointer;">
                 <i class="fa-solid fa-bars"></i>
             </div>
         </div>
     </header>
 
-    <!-- Hero Section -->
     <section class="hero-section">
-        <div class="hero-overlay"></div>
         <div class="hero-content">
-            <p class="welcome-text">WELCOME TO</p>
-            <h1 class="hero-title">Madham Rajeshwari<br>Complex</h1>
-            <p class="hero-location">Ahobilam, Andhra Pradesh</p>
-            <p class="hero-tagline">Your divine stay near the sacred Narasimha temples</p>
-            
-            <div class="hero-buttons">
-                <a href="#" class="btn-whatsapp" onclick="openBookingModal(); return false;">Book via WhatsApp</a>
-                <a href="#hotels" class="btn-outline">View Rooms</a>
+            <p style="letter-spacing: 3px;">WELCOME TO</p>
+            <h1 style="font-size: 3rem; margin: 10px 0;">Madham Rajeshwari Complex</h1>
+            <p>Ahobilam, Andhra Pradesh</p>
+            <div style="margin-top: 30px;">
+                <a href="#" class="book-now-btn" onclick="openBookingModal(); return false;" style="background:#25d366; color:#fff;">Book via WhatsApp</a>
+                <a href="#hotels" class="book-now-btn" style="background:transparent; border: 1px solid #fff; color:#fff; margin-left:10px;">View Properties</a>
             </div>
         </div>
     </section>
 
-    <!-- Our Properties Section -->
-    <section id="hotels" class="hotels-section">
-        <h2 class="section-title">Our Properties</h2>
-        <div class="hotels-container">
-            <div class="hotel-card">
-                <img src="MR-Complex.jpeg" alt="Madham Rajeshwari Complex">
-                <div class="hotel-info">
+    <!-- Properties Section -->
+    <section id="hotels" style="padding: 60px 5%; background: #f9f9f9;">
+        <h2 style="text-align:center; margin-bottom: 40px;">Our Properties</h2>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
+            <div class="hotel-card" style="background:#fff; border-radius: 10px; overflow:hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+                <img src="MR-Complex.jpeg" style="width:100%; height:250px; object-fit:cover;">
+                <div style="padding: 20px;">
                     <h3>Madham Rajeshwari Complex</h3>
                     <p>Experience comfortable stay with premium amenities near the sacred Ahobilam temples.</p>
-                    <a href="madam-rajeswari-complex.html" class="btn-explore">Explore Complex</a>
+                    <a href="madam-rajeswari-complex.html" style="color:var(--primary-gold); font-weight:bold;">Explore Complex →</a>
                 </div>
             </div>
-
-            <div class="hotel-card">
-                <img src="VB_House.jpeg" alt="Veerabadhra Complex">
-                <div class="hotel-info">
-                    <h3>Veerabadhra Complex</h3> 
+            <div class="hotel-card" style="background:#fff; border-radius: 10px; overflow:hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+                <img src="VB_House.jpeg" style="width:100%; height:250px; object-fit:cover;">
+                <div style="padding: 20px;">
+                    <h3>Veerabadhra Complex</h3>
                     <p>Your perfect base for a spiritual journey with excellent hospitality and care.</p>
-                    <a href="veerabadhra-complex.html" class="btn-explore">Explore Hotel</a>
+                    <a href="veerabadhra-complex.html" style="color:var(--primary-gold); font-weight:bold;">Explore Hotel →</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Our Amenities Section -->
-    <section id="amenities" class="amenities-section">
-        <h2 class="section-title">Our Amenities</h2>
-        <div class="amenities-container">
-            <div class="amenity-card">
-                <i class="fa-solid fa-wind amenity-icon"></i>
-                <h3>Air Conditioned</h3>
-                <p>All rooms are fully air conditioned</p>
-            </div>
-            <div class="amenity-card">
-                <i class="fa-regular fa-star amenity-icon"></i>
-                <h3>King Size Beds</h3>
-                <p>Premium king size beds for comfort</p>
-            </div>
-            <div class="amenity-card active-amenity">
-                <i class="fa-solid fa-wifi amenity-icon"></i>
-                <h3>Free Wi-Fi</h3>
-                <p>Complimentary high-speed internet</p>
-            </div>
-            <div class="amenity-card">
-                <i class="fa-solid fa-shield-halved amenity-icon"></i>
-                <h3>24/7 Security</h3>
-                <p>Round the clock security & reception</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Discover Ahobilam Section -->
-    <section id="history" class="discover-section">
-        <div class="discover-container">
-            <div class="discover-content">
-                <span class="sub-heading">DISCOVER</span>
-                <h2 class="discover-title">Ahobilam – The Sacred Abode</h2>
-                <p>Ahobilam is a highly revered pilgrimage center nestled in the lush Nallamala Hills of Andhra Pradesh. Known as the 'Nava Narasimha Kshetram,' it is the only place where Lord Narasimha is worshipped in nine distinct forms.</p>
-                <p>Our hotel is conveniently located near the temple complex, offering a serene, comfortable, and highly accessible base for your spiritual journey.</p>
-                <a href="temple-history.html" class="learn-more-link">
-                    <i class="fa-solid fa-location-dot"></i> Learn more about Ahobilam
-                </a>
-            </div>
-            <div class="discover-image">
-                <img src="abm.jpg" alt="Ahobilam Temple Landscape">
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer Section -->
-    <footer id="contact" class="footer">
-        <div class="footer-container">
-            <div class="footer-col">
-                <h3 class="footer-title">Madham Rajeshwari Complex</h3>
-                <p>Your comfortable stay near the sacred Ahobilam temples. Experience divine hospitality with modern amenities.</p>
-            </div>
-            <div class="footer-col">
-                <h3 class="footer-title">Quick Links</h3>
-                <ul class="footer-links">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="rooms.html">Rooms</a></li>
-                    <li><a href="temple-history.html">Temple History</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h3 class="footer-title">Contact Info</h3>
-                <ul class="footer-contact">
-                    <li><i class="fa-solid fa-location-dot"></i> Ahobilam, Kurnool District, Andhra Pradesh, India</li>
-                    <li><i class="fa-solid fa-phone"></i> +91 76759 62840</li>
-                    <li><i class="fa-solid fa-envelope"></i> madhamvenkatasubbaiah363@gmail.com</li>
-                </ul>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2026 Madham Rajeshwari Complex. All rights reserved.</p>
-        </div>
-    </footer>
-
-    <!-- Booking Form Modal -->
+    <!-- Booking Modal -->
     <div id="bookingModal" class="booking-modal">
         <div class="booking-modal-content">
-            <span class="close-booking" onclick="closeBookingModal()">&times;</span>
-            <h3>Book Your Stay</h3>
-            <form id="whatsappBookingForm" onsubmit="sendWhatsApp(event)">
+            <span onclick="closeBookingModal()" style="float:right; cursor:pointer; font-size: 24px;">&times;</span>
+            <h3 style="color:var(--primary-gold);">Book Your Stay</h3>
+            <form onsubmit="sendWhatsApp(event)">
                 <div class="form-group">
-                    <label>Full Name *</label>
-                    <input type="text" id="b_name" placeholder="Enter your name" required>
+                    <label>Full Name</label>
+                    <input type="text" id="b_name" required>
                 </div>
                 <div class="form-group">
-                    <label>Select Hotel *</label>
+                    <label>Select Property</label>
                     <select id="b_hotel" required>
-                        <option value="">-- Choose Property --</option>
                         <option value="Madham Rajeshwari Complex">Madham Rajeshwari Complex</option>
                         <option value="Veerabadhra Complex">Veerabadhra Complex</option>
                     </select>
                 </div>
-                <div class="date-group">
-                    <div class="form-group">
-                        <label>Check-in Date *</label>
+                <div style="display:flex; gap:10px;">
+                    <div class="form-group" style="flex:1;">
+                        <label>Check-in</label>
                         <input type="date" id="b_checkin" required>
                     </div>
-                    <div class="form-group">
-                        <label>Check-out Date *</label>
+                    <div class="form-group" style="flex:1;">
+                        <label>Check-out</label>
                         <input type="date" id="b_checkout" required>
                     </div>
                 </div>
-                <div class="date-group">
-                    <div class="form-group">
-                        <label>No. of Persons *</label>
-                        <input type="number" id="b_persons" min="1" placeholder="Ex: 2" required>
-                    </div>
-                    <div class="form-group">
-                        <label>Room Preference *</label>
-                        <select id="b_roomtype" required>
-                            <option value="AC Room">AC Room</option>
-                            <option value="Non-AC Room">Non-AC Room</option>
-                        </select>
-                    </div>
-                </div>
-                <button type="submit" class="submit-wa-btn">
-                    <i class="fa-brands fa-whatsapp"></i> Send Booking Request
+                <button type="submit" class="book-now-btn" style="width:100%; justify-content:center; background:#25d366; color:#fff; margin-top:10px;">
+                    <i class="fa-brands fa-whatsapp"></i> Send WhatsApp Request
                 </button>
             </form>
         </div>
     </div>
 
+    <footer style="background:#111; color:#999; padding: 40px 5%; text-align:center;">
+        <p>Ahobilam, Andhra Pradesh | +91 76759 62840</p>
+        <p>&copy; 2026 Madham Rajeshwari Complex. All rights reserved.</p>
+    </footer>
+
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const mobileMenu = document.getElementById('mobile-menu');
-            const navLinks = document.getElementById('nav-links');
-            
-            if(mobileMenu && navLinks) {
-                const icon = mobileMenu.querySelector('i');
-                mobileMenu.addEventListener('click', function() {
-                    navLinks.classList.toggle('active');
-                    if(navLinks.classList.contains('active')) {
-                        icon.classList.replace('fa-bars', 'fa-xmark');
-                    } else {
-                        icon.classList.replace('fa-xmark', 'fa-bars');
-                    }
-                });
-            }
+        // Mobile Menu Toggle
+        const mobileMenu = document.getElementById('mobile-menu');
+        const navLinks = document.getElementById('nav-links');
+        mobileMenu.onclick = () => navLinks.classList.toggle('active');
 
-            // Date constraints
-            const today = new Date().toISOString().split('T')[0];
-            document.getElementById("b_checkin").setAttribute('min', today);
-            document.getElementById("b_checkout").setAttribute('min', today);
-        });
+        // Modal Functions
+        function openBookingModal() { document.getElementById('bookingModal').style.display = 'block'; }
+        function closeBookingModal() { document.getElementById('bookingModal').style.display = 'none'; }
 
-        function openBookingModal() {
-            document.getElementById('bookingModal').style.display = 'block';
-        }
-
-        function closeBookingModal() {
-            document.getElementById('bookingModal').style.display = 'none';
-        }
-
+        // WhatsApp Logic
         function sendWhatsApp(e) {
             e.preventDefault();
             const name = document.getElementById('b_name').value;
             const hotel = document.getElementById('b_hotel').value;
-            const checkin = document.getElementById('b_checkin').value;
-            const checkout = document.getElementById('b_checkout').value;
-            const persons = document.getElementById('b_persons').value;
-            const roomType = document.getElementById('b_roomtype').value;
-
-            const message = `*NEW BOOKING REQUEST* 🔔\n\n*Name:* ${name}\n*Hotel:* ${hotel}\n*Check-in:* ${checkin}\n*Check-out:* ${checkout}\n*Persons:* ${persons}\n*Type:* ${roomType}\n\n_Please confirm availability and let me know the advance amount._`;
-            const whatsappUrl = `https://wa.me/917675962840?text=${encodeURIComponent(message)}`;
-            
-            window.open(whatsappUrl, '_blank');
-            closeBookingModal();
+            const msg = `*NEW BOOKING*\nName: ${name}\nHotel: ${hotel}\nCheck-in: ${document.getElementById('b_checkin').value}`;
+            window.open(`https://wa.me/917675962840?text=${encodeURIComponent(msg)}`, '_blank');
         }
 
-        window.onclick = function(event) {
-            let modal = document.getElementById('bookingModal');
-            if (event.target == modal) {
-                closeBookingModal();
-            }
+        window.onclick = (event) => {
+            if (event.target == document.getElementById('bookingModal')) closeBookingModal();
         }
     </script>
 </body>
