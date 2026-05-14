@@ -162,52 +162,80 @@
         .popup-text { padding: 30px; color: #eee; line-height: 1.6; }
         .close { position: absolute; top: 15px; right: 20px; font-size: 35px; color: #fff; cursor: pointer; }
 
-        @media(max-width: 600px) {
-            .title { font-size: 30px; padding-top: 120px; }
-            .navbar { padding: 15px 20px; }
+/* ఇక్కడ నుంచి యాడ్ చేయండి */
+/* డెస్క్‌టాప్ సెట్టింగ్స్ */
+.mobile-only { display: none; }
+.desktop-only { display: block; }
+
+/* మొబైల్ వ్యూ సెట్టింగ్స్ */
+@media (max-width: 600px) {
+    .desktop-only { display: none; } 
+    .mobile-only { display: block; width: 100%; margin-top: 10px; } 
+
+    .nav-links {
+        display: none; 
+        position: absolute;
+        top: 75px; 
+        left: 0;
+        width: 100%;
+        background: #111;
+        flex-direction: column;
+        padding: 20px;
+        border-bottom: 2px solid #d4a017;
+        z-index: 1001; /* మెనూ పైన కనిపించడానికి */
+    }
+
+    .nav-links.active {
+        display: flex; 
+    }
+
+    .menu-toggle {
+        display: block; 
+        cursor: pointer;
+        font-size: 24px;
+        color: #d4a017;
+    }
+    
+    .title { font-size: 30px; padding-top: 110px; }
+}
+/* ఇక్కడి వరకు */
         }
     </style>
 </head>
 
 <body>
 
-    <!-- Header Section -->
-    <header class="navbar">
-        <div class="logo-section">
-            <div class="logo-icon">
-                <!-- ఇక్కడ ఓం ఐకాన్ తీసేసి మీ లోగో ఇమేజ్ పెట్టాం -->
-                <img src="logo.png" alt="Madam Rajeswari Logo" class="custom-logo">
-            </div>
-            <div class="logo-text">
-                <h1>Madam Rajeswari</h1>
-                <p>COMPLEX</p>
-            </div>
+<!-- Header Section -->
+<header class="navbar">
+    <div class="logo-section">
+        <img src="logo.png" alt="Logo" class="custom-logo">
+        <div class="logo-text">
+            <h1>Madam Rajeswari</h1>
+            <p>COMPLEX</p>
         </div>
+    </div>
 
-        <!-- నావిగేషన్ లింక్స్ -->
-        <nav class="nav-links" id="nav-links">
-            <a href="index.html" class="active">Home</a>
-            <a href="rooms.html">Rooms</a>
-            <a href="temple-history.html">Temple History</a>
-            <a href="contact.html">Contact</a>
-            <!-- మొబైల్ లో మాత్రమే కనిపించే బుక్ బటన్ -->
-            <button class="book-now-btn mobile-only">
-                <i class="fa-solid fa-phone"></i> Book Now
-            </button>
-        </nav>
+    <!-- మొబైల్ మెనూ ఐకాన్ (కుడివైపు వస్తుంది) -->
+    <div class="menu-toggle" id="mobile-menu">
+        <i class="fa-solid fa-bars"></i>
+    </div>
 
-        <div class="right-section">
-            <!-- సిస్టమ్ లో మాత్రమే కనిపించే బుక్ బటన్ -->
-            <button class="book-now-btn desktop-only">
-                <i class="fa-solid fa-phone"></i> Book Now
-            </button>
-            
-            <!-- మొబైల్ మెనూ ఐకాన్ (Hamburger) -->
-            <div class="menu-toggle" id="mobile-menu">
-                <i class="fa-solid fa-bars"></i>
-            </div>
-        </div>
-    </header>
+    <!-- నావిగేషన్ లింక్స్ -->
+    <nav class="nav-links" id="nav-links">
+        <a href="index.html">Home</a>
+        <a href="rooms.html">Rooms</a>
+        <a href="temple-history.html" class="active">Temple History</a>
+        <a href="contact.html">Contact</a>
+        <!-- మొబైల్ లో మాత్రమే కనిపించే బటన్ -->
+        <button class="book-now-btn mobile-only">Book Now</button>
+    </nav>
+
+    <!-- డెస్క్‌టాప్ లో మాత్రమే కనిపించే బటన్ -->
+    <button class="book-now-btn desktop-only">Book Now</button>
+</header>
+
+
+    
     <h1 class="title">Temple History</h1>
 
     <div class="temple-container" id="main-container">
