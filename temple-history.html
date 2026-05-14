@@ -167,44 +167,71 @@
 .mobile-only { display: none; }
 .desktop-only { display: block; }
 
-/* మొబైల్ వ్యూ సెట్టింగ్స్ */
 @media (max-width: 600px) {
-    .desktop-only { display: none; } 
-    .mobile-only { display: block; width: 100%; margin-top: 10px; } 
-
     .nav-links {
         display: none; 
-        position: absolute;
-        top: 75px; 
+        position: fixed;
+        top: 0;
         left: 0;
         width: 100%;
-        background: #111;
+        height: 100vh;
+        background: #111111; /* ఇమేజ్‌లో ఉన్నట్లు డార్క్ బ్యాక్‌గ్రౌండ్ */
         flex-direction: column;
+        
+        /* కంటెంట్‌ను సెంటర్ చేయడానికి */
+        justify-content: center; 
+        align-items: center;
+        
+        gap: 25px; /* లింక్స్ మధ్య దూరం */
+        z-index: 2000;
         padding: 20px;
-        border-bottom: 2px solid #d4a017;
-        z-index: 1001; /* మెనూ పైన కనిపించడానికి */
     }
 
-.nav-links.active {
+    .nav-links.active {
         display: flex;
     }
 
+    /* టెక్స్ట్ సైజు మరియు ఫాంట్ స్టైల్ - image_76cf15.png ప్రకారం */
     .nav-links a {
-        font-size: 24px; /* ఇమేజ్‌లో ఉన్నట్లు పెద్ద అక్షరాలు */
-        font-family: 'Playfair Display', serif;
+        font-size: 22px; 
+        font-weight: 500;
+        font-family: 'Inter', sans-serif; /* క్లీన్ లుక్ కోసం ఇంటర్ ఫాంట్ */
+        color: #ffffff;
+        text-decoration: none;
+        letter-spacing: 1px;
+        transition: color 0.3s;
     }
 
-.menu-toggle {
-        display: block;
-        position: relative;
-        z-index: 2100; /* 'X' ఐకాన్ మెనూ పైన కనిపించడానికి */
-        font-size: 28px;
+    /* యాక్టివ్ పేజీ లింక్ రంగు */
+    .nav-links a.active {
+        color: #dfb160; 
     }
-    
-    .title { font-size: 30px; padding-top: 110px; }
+
+    /* బుక్ నౌ బటన్ స్టైల్ */
+    .mobile-only.book-now-btn {
+        margin-top: 15px;
+        background-color: #dfb160;
+        color: #000;
+        padding: 12px 35px;
+        font-size: 18px;
+        border-radius: 8px;
+        width: auto; /* ఫుల్ విడ్త్ కాకుండా ఇమేజ్‌లో ఉన్నట్లు */
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    /* మెనూ ఐకాన్ (X) స్టైల్ */
+    .menu-toggle {
+        display: block;
+        position: fixed;
+        right: 20px;
+        top: 20px;
+        z-index: 2100;
+        font-size: 28px;
+        color: #dfb160;
+    }
 }
-/* ఇక్కడి వరకు */
-        }
     </style>
 </head>
 
