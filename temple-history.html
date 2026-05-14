@@ -194,11 +194,11 @@
         font-family: 'Playfair Display', serif;
     }
 
-    .menu-toggle {
-        display: block; 
-        cursor: pointer;
-        font-size: 24px;
-        color: #d4a017;
+.menu-toggle {
+        display: block;
+        position: relative;
+        z-index: 2100; /* 'X' ఐకాన్ మెనూ పైన కనిపించడానికి */
+        font-size: 28px;
     }
     
     .title { font-size: 30px; padding-top: 110px; }
@@ -284,6 +284,24 @@
     </footer>
 
     <script>
+        // <script> ట్యాగ్ మొదట్లోనే ఇది ఉండాలి
+document.addEventListener('DOMContentLoaded', function() {
+    const mobileMenu = document.getElementById('mobile-menu');
+    const navLinks = document.getElementById('nav-links');
+    const icon = mobileMenu.querySelector('i');
+
+    mobileMenu.addEventListener('click', function() {
+        navLinks.classList.toggle('active');
+        
+        if (navLinks.classList.contains('active')) {
+            icon.classList.replace('fa-bars', 'fa-xmark'); // 'X' గా మారుతుంది
+            document.body.style.overflow = 'hidden'; 
+        } else {
+            icon.classList.replace('fa-xmark', 'fa-bars'); // మళ్ళీ 3 గీతలు వస్తాయి
+            document.body.style.overflow = 'auto';
+        }
+    });
+});
         const temples = [
             { name: "Ahobila Narasimha", img: "upper.jpeg", desc: "The temple, situated on the Upper Ahobilam, at a distance of 8km from the Lower Ahobilam, is the main temple and the earliest of all the nine temples there. The Lord here appears in his fierce aspect, called Ugra Narasimha, who is the presiding deity of the temple and is known as Ahobila Nrisimha Swamy. It is firmly believed the Lord Narasimha was ‘Svayambhu’ (self-manifest) here." },
             { name: "jwala Narasimha", img: "jwala.jpg", desc: "The temple of Jwala Nrisimha Swamy, lies higher up the above temple, on a hill called, ‘Achalachaya Meru’. This is about 4km from the Upper Ahobilam temple. This place is said to be the actual spot, where the fierce anger of the Lord reached its culmination when he tore Hiranyakasipu." },
